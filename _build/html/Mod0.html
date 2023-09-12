@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Wprowadzenie &#8212; Python Course Institute of Geodesy and Geoinformatics</title>
+    <title>Wprowadzenie &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
   
   
@@ -35,6 +35,17 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/vendor/fontawesome/6.1.2/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -53,6 +64,24 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/copybutton_funcs.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/documentation_options.js"></script>
+    <script src="_static/jquery-3.6.0.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/sphinx-thebe.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/underscore-1.13.1.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/scripts/bootstrap.js"></script>
+    <script src="_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -174,7 +203,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="Mod8_cw.html">Moduł 8 - Pisanie skryptów konsolowych - ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod8.html">Moduł 8 - Pisanie skryptów konsolowych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod8_cw.html">Moduł 8 - Ćwiczenia</a></li>
 </ul>
 
     </div>
@@ -369,15 +399,21 @@ document.write(`
 <h2>System pracy i program<a class="headerlink" href="#system-pracy-i-program" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
 <ul class="simple">
-<li><p>Moduł 1 - Podstawy - przypomninie+ - Lista ćwiczeń = zal</p>
+<li><p>Moduł 1 - Przygotowanie środowiska</p>
 <ul>
-<li><p>wprowadzenie + instalacja + środowisko programistyczne</p></li>
+<li><p>Powershell</p></li>
+<li><p>Instalacja pakietów</p></li>
+<li><p>Korzystanie ze środowisk wirtualnych</p></li>
+</ul>
+</li>
+<li><p>Moduł 2 - Podstawy - przypomninie+ - Lista ćwiczeń = zal</p>
+<ul>
 <li><p>podstawowe typy danych i operatory</p></li>
 <li><p>typy sekwencyjne</p></li>
 <li><p>klasy i obiekty</p></li>
 </ul>
 </li>
-<li><p>Moduł 2 - Przepływ danych - przypomnienie - Lista ćwiczenia + kartkówka (Moduł 1+2) = zal + 1 ocena</p>
+<li><p>Moduł 3 - Przepływ danych - - Lista ćwiczenia + kartkówka (Moduł 2+3) = 1 ocena</p>
 <ul>
 <li><p>pakowanie / odpakowywanie sekwencji</p></li>
 <li><p>kontrola przepływu:</p>
@@ -389,19 +425,19 @@ document.write(`
 <li><p>formatowanie tekstu</p></li>
 </ul>
 </li>
-<li><p>Moduł 3 - Funkcje - przypomnienie - Lista ćwiczenia + kartkówka = zal + 1 ocena</p>
+<li><p>Moduł 4 - Funkcje - Lista ćwiczenia + kartkówka = 1 ocena</p>
 <ul>
 <li><p>funkcje i moduły</p></li>
 <li><p>obsługa wyjątków</p></li>
 <li><p>typy mapujące - słowniki</p></li>
 </ul>
 </li>
-<li><p>Moduł 4 - Macierze - Lista ćwiczenia + kartkówka = zal + 1 ocena</p>
+<li><p>Moduł 5 - Macierze - Lista ćwiczenia + kartkówka = 1 ocena</p>
 <ul>
 <li><p>Wykorzystanie biblioteki Numpy</p></li>
 </ul>
 </li>
-<li><p>Moduł 5 - Analiza danych z biblioteką pandas - Lista ćwiczenia + kartkówka = zal + 1 ocena</p>
+<li><p>Moduł 6 - Analiza danych z biblioteką pandas - Lista ćwiczenia + kartkówka = 1 ocena</p>
 <ul>
 <li><p>Analiza danych z biblioteką Pandas i GeoPandas</p></li>
 <li><p>Wprowadzenie do tabel Pandas</p></li>
@@ -410,16 +446,16 @@ document.write(`
 <li><p>Łączenie danych</p></li>
 </ul>
 </li>
-<li><p>Moduł 6 - Tworzenie skryptów konsolowych - Lista ćwiczenia + kartkówka = zal + 1 ocena</p>
+<li><p>Moduł 7 - Matplotlib - Lista ćwiczenia + kartkówka = zal + 1 ocena</p>
+<ul>
+<li><p>Tworzenie wykresów</p></li>
+<li><p>Dostosowywanie wykresów</p></li>
+</ul>
+</li>
+<li><p>Moduł 8 - Tworzenie skryptów konsolowych - Wykład + praca w grupie = 1 ocena</p>
 <ul>
 <li><p>Tworzenie skryptów z parametrami</p></li>
 <li><p>Działania na plikach w folderze</p></li>
-</ul>
-</li>
-<li><p>Moduł 7 - Git - Projekt grupowy - Ocena</p>
-<ul>
-<li><p>Praca z githubem</p></li>
-<li><p>Tworzenie projektu grupowego i wspólna praca nad oprogramowaniem</p></li>
 </ul>
 </li>
 </ul>

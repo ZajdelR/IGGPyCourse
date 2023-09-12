@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Moduł 2 - Ćwiczenia &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/Mod2_cw';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Mod0.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 4 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod6.html">Moduł 6 - Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod6_cw.html">Moduł 6 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod8_cw.html">Moduł 8 - Ćwiczenia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/_sources/Mod2_cw.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Moduł 2 - Ćwiczenia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11">Zad 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12">Zad 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13">Zad 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14">Zad 14</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <img src="./src/header.png"><hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="modul-2-cwiczenia">
+<h1>Moduł 2 - Ćwiczenia<a class="headerlink" href="#modul-2-cwiczenia" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<hr class="docutils" />
+<section id="zad-1">
+<h2>Zad 1<a class="headerlink" href="#zad-1" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zapoznaj się z działaniem środowiska Jupyter Notebook</p>
+</section>
+<hr class="docutils" />
+<section id="zad-2">
+<h2>Zad 2<a class="headerlink" href="#zad-2" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz zmienną o nazwie <code class="docutils literal notranslate"><span class="pre">pi</span></code> i wartości 3.14. Wykorzystaj ją do obliczenia pola koła o promieniu 12. Wynik wyświetl na ekran. Zrób to samo importując wartość pi z biblioteki math</p>
+</section>
+<hr class="docutils" />
+<section id="zad-3">
+<h2>Zad 3<a class="headerlink" href="#zad-3" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Wykorzystaj zmienną ‘pi’ z biblioteki math:</p>
+<ul class="simple">
+<li><p>Przypisz wartość zmiennej ‘pi’ z biblioteki math do nowej zmiennej o nazwie ‘liczba_pi’</p></li>
+<li><p>Zaimportuj zmienną pi bezpośrednio do programu, bez deklaracji nowej zmiennej
+(2 sposoby)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-4">
+<h2>Zad 4<a class="headerlink" href="#zad-4" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Korzystając z wbudowanej dokumentacji znajdź funkcję, która wyznacza licznik i mianownik ułamka zwykłego dowolnej liczby zmiennoprzecinkowej.</p>
+<ul class="simple">
+<li><p>Wskazówka: <code class="docutils literal notranslate"><span class="pre">help(float)</span></code>*</p></li>
+<li><p>Przetestuj jej działanie na kilku dowolnych przykładach.</p></li>
+<li><p>Przetestuj działania na dowolnej liczbie niewymiernej np. pi lub pierwiastek z 3</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-5">
+<h2>Zad 5<a class="headerlink" href="#zad-5" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Sprawdź czy:</p>
+<ul class="simple">
+<li><p>liczba pi zaimportowana z biblioteki math jest równa liczbie pi obliczonej dwoma dowolnymi metodami szybko zbieżnymi (<a class="reference external" href="https://pl.wikipedia.org/wiki/Pi#Wzory_szybko_zbie%C5%BCne">https://pl.wikipedia.org/wiki/Pi#Wzory_szybko_zbieżne</a>)</p></li>
+<li><p>liczba pi zaimportowana z biblioteki math jest „w przybliżeniu” równa liczbie pi obliczonej dwoma dowolnymi metodami szybko zbieżnymi</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-6">
+<h2>Zad 6<a class="headerlink" href="#zad-6" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zdefiniuj dwie zmienne typu tekstowego i jedną całkowitą, np.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;jeden&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;dwa&quot;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Wykonaj następujące polecenia, następnie skomentuj wyniki:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">c</span>
+<span class="n">a</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="zad-7">
+<h2>Zad 7<a class="headerlink" href="#zad-7" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Korzystając z dokumentacji klasy string (<code class="docutils literal notranslate"><span class="pre">help(str)</span></code>) zapoznaj się z definicjami funkcji: <code class="docutils literal notranslate"><span class="pre">strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">isnumeric()</span></code> oraz <code class="docutils literal notranslate"><span class="pre">rjust()</span></code>. Zademonstruj ich działanie na dowolnych przykładach.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-8">
+<h2>Zad 8<a class="headerlink" href="#zad-8" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz skrypt, który wykona następujące czynności:</p>
+<ul class="simple">
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">a</span></code> przypisze wartość podaną przez użytkownika np. <code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">b</span></code> przypisze wartość podaną przez użytkownika np. <code class="docutils literal notranslate"><span class="pre">3</span></code></p></li>
+<li><p>zmiennej <code class="docutils literal notranslate"><span class="pre">P</span></code> przypisze wartość <code class="docutils literal notranslate"><span class="pre">a*b</span></code></p></li>
+<li><p>wypisze na ekranie “Pole prostokąta o bokach <code class="docutils literal notranslate"><span class="pre">a</span></code> i <code class="docutils literal notranslate"><span class="pre">b</span></code> wynosi <code class="docutils literal notranslate"><span class="pre">P</span></code>.” (gdzie w miejsce zmiennych zostaną wstawione odpowiednie wartości).</p></li>
+</ul>
+<p>! Wykorzystaj funkcje input do wykonania tego ćwiczenia ! help(input)
+Zwróć uwagę jakiego typu zmienną zwraca funkcja input()</p>
+</section>
+<hr class="docutils" />
+<section id="zad-9">
+<h2>Zad 9<a class="headerlink" href="#zad-9" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz krotkę zawierającą pięć cyfr: 0, 1, 2, 3, 4 oraz pięć literałów słownych: “pięć”, “sześć”, “siedem”, “osiem”, “dziewięć”.</p>
+<ul class="simple">
+<li><p>Wydrukuj na ekranie trzy pierwsze elementy.</p></li>
+<li><p>Wydrukuj na ekranie 2 ostatnie elementy.</p></li>
+<li><p>Wydrukuj co drugi element (zaczynając od drugiego).</p></li>
+<li><p>Wydrukuj elementy krotki zaczynając od ostatniego (odwrotnie)</p></li>
+<li><p>Korzystając z funkcji <em>len</em> sprawdź ilość elementów w krotce oraz długość przedostatniego elementu.</p></li>
+<li><p>Niech <code class="docutils literal notranslate"><span class="pre">x</span></code> oznacza nazwę krotki. Wykonaj:</p></li>
+<li><p>x[:5] + (5, 6) + x[-3:]</p></li>
+<li><p>x[:5], (5, 6), x[-3:]</p></li>
+<li><p>porównaj i opisz otrzymane wyniki</p></li>
+<li><p>Dodaj pusty literał słowny na koniec krotki ‘x’. Czy możesz skorzystać z funkcji <em>append</em>?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-10">
+<h2>Zad 10<a class="headerlink" href="#zad-10" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz listę studentów: Kasia, Basia, Marek, Darek.</p>
+<ul class="simple">
+<li><p>Korzystając z metody <em>append</em> dodaj do listy Józka.</p></li>
+<li><p>Korzystając z metody <em>extend</em> dodaj do listy Anię i Basię.</p></li>
+<li><p>Posortuj alfabetycznie studentów.</p></li>
+<li><p>Wypisz na ekranie:</p>
+<ul>
+<li><p>czwartego studenta na liście</p></li>
+<li><p>dwóch pierwszych studentów na liście</p></li>
+<li><p>dwóch ostatnich studentów na liście</p></li>
+</ul>
+</li>
+<li><p>Usuń wszystkie Basie z listy</p></li>
+<li><p>Korzystając z funkcji <em>len</em> sprawdź ilość studentów.</p></li>
+<li><p>Z ostatecznej listy studentów utwórz krotkę.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-11">
+<h2>Zad 11<a class="headerlink" href="#zad-11" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Wykonaj polecenia:</p>
+<ul class="simple">
+<li><p>Korzystając z <code class="docutils literal notranslate"><span class="pre">range</span></code> utwórz listę zawierającą wszystkie wielokrotności liczby 3 mniejsze od 100.</p></li>
+<li><p>Korzystając z <code class="docutils literal notranslate"><span class="pre">del</span></code> usuń co trzeci element (zaczynając od piątego).</p></li>
+<li><p>Sprawdź definicję funkcji wbudowanej <em>sum</em> (<code class="docutils literal notranslate"><span class="pre">help(sum)</span></code>). Wykorzystaj ją oraz funkcję <em>len</em>, aby wyliczyć średnią arytmetyczną otrzymanej listy.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-12">
+<h2>Zad 12<a class="headerlink" href="#zad-12" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz krotkę: <code class="docutils literal notranslate"><span class="pre">('a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d')</span></code></p>
+<ul class="simple">
+<li><p>Zapoznaj się z dokumentacją funkcji <code class="docutils literal notranslate"><span class="pre">str.join</span></code>.</p></li>
+<li><p>Wykonaj następujące polecenia (gdzie <code class="docutils literal notranslate"><span class="pre">x</span></code> to zmienna wskazująca na krotkę):</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Wydrukuj na ekranie 100 zer oddzielonych tabulacjami (spróbuj wykonać to w jednej lini).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-13">
+<h2>Zad 13<a class="headerlink" href="#zad-13" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz obiekt przechowujący inwokację Pana Tadeusza pod zmienną <code class="docutils literal notranslate"><span class="pre">inwokacja</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inwokacja</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Litwo! Ojczyzno moja! Ty jesteś jak zdrowie,</span>
+<span class="s2">Ile cię trzeba cenić, ten tylko się dowie,</span>
+<span class="s2">Kto cię stracił. Dziś piękność twą w całej ozdobie</span>
+<span class="s2">Widzę i opisuję, bo tęsknię po tobie</span>
+<span class="s2">Panno święta, co Jasnej bronisz Częstochowy</span>
+<span class="s2">I w Ostrej świecisz Bramie! Ty, co gród zamkowy</span>
+<span class="s2">Nowogródzki ochraniasz z jego wiernym ludem!</span>
+<span class="s2">Jak mnie dziecko do zdrowia powróciłaś cudem,</span>
+<span class="s2">Gdy od płaczącej matki pod Twoją opiekę</span>
+<span class="s2">Ofiarowany, martwą podniosłem powiekę</span>
+<span class="s2">I zaraz mogłem pieszo do Twych świątyń progu</span>
+<span class="s2">Iść za wrócone życie podziękować Bogu,</span>
+<span class="s2">Tak nas powrócisz cudem na Ojczyzny łono.</span>
+<span class="s2">Tymczasem przenoś moją duszę utęsknioną</span>
+<span class="s2">Do tych pagórków leśnych, do tych łąk zielonych,</span>
+<span class="s2">Szeroko nad błękitnym Niemnem rozciągnionych;</span>
+<span class="s2">Do tych pól malowanych zbożem rozmaitem,</span>
+<span class="s2">Wyzłacanych pszenicą, posrebrzanych żytem;</span>
+<span class="s2">Gdzie bursztynowy świerzop, gryka jak śnieg biała,</span>
+<span class="s2">Gdzie panieńskim rumieńcem dzięcielina pała,</span>
+<span class="s2">A wszystko przepasane jakby wstęgą, miedzą</span>
+<span class="s2">Zieloną, na niej z rzadka ciche grusze siedzą.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Popraw zmienną <code class="docutils literal notranslate"><span class="pre">inwokacja</span></code>, aby tekst zaczynał się małą literą (załóżmy że nie wiesz jaka to litera).</p></li>
+<li><p>Korzystając z funkcji <em>count</em> sprawdź, ile razy występuje spójnik “i”.</p></li>
+<li><p>Korzystając z funkcji <em>count</em> sprawdź, ile razy występuje litera “i” (niezależnie od wielkości).</p></li>
+<li><p>Sprawdź, czy słowo “dziecko” występuje w tekście</p></li>
+<li><p>Korzystając z funkcji <em>str.split</em>:</p>
+<ul>
+<li><p>stwórz listę wyrazów występujących w tekście (np. 30 słów =&gt; 30 elementów</p></li>
+<li><p>stwórz listę, której każdy element odpowiada jednej linijce tekstu (4 linie =&gt; 4 elementy)</p></li>
+<li><p>Popraw zmienną <code class="docutils literal notranslate"><span class="pre">inwokacja</span></code>, tak aby każda linijka tekstu zaczynała się małą literą.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-14">
+<h2>Zad 14<a class="headerlink" href="#zad-14" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zapoznaj się z dokumentacją funkcji <em>id</em>.</p>
+<ul class="simple">
+<li><p>Wykonaj następujące polecenia:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Wykonaj następujące polecenia:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Wyjaśnij, dlaczego modyfikacja y w drugim przypadku zmieniła także x</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11">Zad 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12">Zad 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13">Zad 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14">Zad 14</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radosław Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
