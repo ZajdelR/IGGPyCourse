@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Moduł 1 - Środowisko Python &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,8 +49,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -105,6 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -204,6 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="Mod8.html">Moduł 8 - Pisanie skryptów konsolowych</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod8_cw.html">Moduł 8 - Ćwiczenia</a></li>
 </ul>
 
@@ -313,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -324,7 +335,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -420,7 +431,7 @@ is friendly &amp; easy to learn;
 is Open.</p>
 </div></blockquote>
 <hr class="docutils" />
-<p>Python jest klasyfikowany jako skryptowy język wysokiego poziomu i jest umiejscawiany przy językach t.jk. Perl, Tcl, Ruby.</p>
+<p>Python jest klasyfikowany jako skryptowy język wysokiego poziomu i jest umiejscawiany przy językach takich jak Perl, Tcl, Ruby.</p>
 <ul class="simple">
 <li><p>otwarte oprogramowanie (<em>open source</em>)</p></li>
 <li><p>przenośny</p>
@@ -428,11 +439,47 @@ is Open.</p>
 <li><p>Linux, Mac OS</p></li>
 <li><p>Windows - instalator ze strony <a class="reference external" href="https://www.python.org">https://www.python.org</a></p></li>
 <li><p>Anaconda - <a class="reference external" href="https://www.continuum.io/">https://www.continuum.io/</a></p></li>
+<li><p>Solaris, Amiga, PlayStation …</p></li>
 </ul>
 </li>
 <li><p>zwięzły i elegancki (prawie jak pseudokod)</p></li>
 <li><p>bogata bilbioteka standardowa i niezliczona ilość bibliotek zewnętrznych</p></li>
 </ul>
+<img src="./src/python-and-zope-an-introduction-may-2004-3-638.jpg"><h2> Język wysokiego poziomu </h2>
+<p>Nigdy nie ma potrzeby martwienia się problemami typowymi dla języków niskiego poziomu jak:</p>
+<ul>
+    <li>Zarządzanie pamięcią</li>
+    <li>Mapowanie typów zmiennych</li>
+    <li>Alokacja pamięci</li>
+</ul><h2> Jest językiem interpretowanym </h2>
+<p>Wyróżniamy dwa typy języków:</p>
+<ul>
+    <li> Kompilowane </li>
+    <li> Interpretowane </li>
+</ul>
+<p>Języki programowania kompilowane (C/C++) są kowertowane do języka źródłowego (kodu maszynowego), który jest językiem bezpośrednio rozumianym przez komputer (0101001001010) - kodu binarnego.</p>
+<p>Języki interpretowane, jak Python, nie są kompilowane do kodu binarnego. Kod jest poprostu uruchamiany z kodu źródłowego i intrpretowany za pomocą wbudowanego interpretera. Python konwertuje kod źródłowy do <b>kodu pośredniego</b>, który następnie jest tłumaczony do kodu maszynowego.</p>
+<p>Nie ma potrzeby zatem martwić się o kompilację kodu, gdyż nie ma takiej potrzeby. Kod pośredni natomiast sprawia, że ten sam kod źródłowy może działać na wielu platformach, gdyż kod źródłowy jest tłumaczony na kod pośredni <i>w sposób zależny od platformy</i></p>
+<h2> Jest językiem imperatywnym </h2>
+<p>Języki możemy podzielić również na:
+<ul>
+<li>Deklaratywne</li>
+<li>Imperatywne</li>
+</ul></p>
+<p>Języki deklaratywne polegają na przedstawieniu warunków, które musi przedstawiać końcowe rozwiązanie. Brak jest opisu sekwencji kroków potrzebnych do otrzymania tego rezultatu.</p>
+<p>Języki imperatywne - wręcz przeciwnie, opisywana jest sekwencja kroków, które należy podjąć by osiągnąć zamierzany rezultat. Warunki rezultatu końcowego nie są opisywane.</p>
+<h2> Jest językiem obiektowym </h2>
+<p>Języki programowania można również podzielić na:</p>
+<ul>
+    <li> Strukturalne </li>
+    <li> Obiektowe </li>
+</ul>
+<p>Programowanie strukturalne - zakłada rozdzielenie funkcjonalności na moduły (podprogramy). Komunikują się one ze sobą przez interfejsy. Z założenia bloki kody mają <b> jedno wejście </b> i wiele wyjść. Wykonują wyrażenia w określonej kolejności i korzystają z kontroli przepływu (if, else, for, while, break, continue).</p>
+<p>Programowanie obiektowe - zakłada reprezentację kodu w postaci obiektów i przypisanie im działań (metod), które mogą wykonywać pewne operacje oraz nadanie im atrybutów/właności.</p>
+<h1>Dlaczego Python?</h1>
+<h2>Poprawna odpowiedź: Potęga bibliotek</h2>
+<p>Python ma niepodważalne zalety w postaci <b>oszczędności kodu, łatwości zrozumienia, automatycznego zarządzania pamięcią, przenoszalności i czytelności</b>. Dlatego też został wybrany przez ogromną liczbę programistów i deweloperów blibliotek.</p>
+<p>Deweloperzy bibliotek napisali odpowiednie narzędzia, które umożliwiają wykonywanie wszystkiego co potrafią konkurencyjne języki. Dzięki temu, Python to świetne narzędzie <b>do wszystkiego</b></p>
 </section>
 <section id="python-kiedy-nie">
 <h2>Python - Kiedy nie?<a class="headerlink" href="#python-kiedy-nie" title="Permalink to this heading">#</a></h2>
@@ -501,6 +548,16 @@ $ python argparse.py 3.14159
 <p>Pracując nad analizą danych, tworzeniem skryptów czy programów, potrzebujemy narzędzi, które pozwolą nam swobodnie posługiwać się danym językiem, sprawnie operować zmiennymi i procesem, zwizualizować dane itd.</p>
 <p>Skrypt możemy napisać w najprostszym edytorze tekstu t.jk. notatnik czy Notepad++</p>
 <p>Istnieją notomiast aplikacje dedykowane do pracy z kodem - tzw. IDE - zintegrowane środowisko programistyczne (Integrated Development Environment)</p>
+<h1>Co to jest IDE?</h1>
+<p>Integrated Development Environment to środowisko programistyczne, które służy do tworzenia, modyfikowania i testowania oprogramowania/ kodu źródłowego. Wiele firm oferuje różne środowiska, zarówno darmowe, jak również zaawanosowane płatne wersje.</p>
+<p>IDE umozliwia między innymi:</p>
+<ul>
+    <li>Szybką i wygodną edycję kodu</li>
+    <li>Debugowanie kodu (śledzenie wartości zmiennych, zatrzymywanie kodu w dowolnym miejscu)</li>
+    <li>Podpowiedzi nazw funkcji i zmiennych</li>
+    <li>Dynamiczne sprawdzanie składni</li>
+</ul>
+<p>Python domyślnie instaluje proste środowisko <b>IDLE</b>, które nie ma zbyt wielu funkcjonalności.</p>
 </section>
 <section id="jupyter">
 <h2>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h2>
@@ -588,8 +645,19 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 <hr class="docutils" />
 <ul class="simple">
 <li><p>Funkcje Pythona wywołujemy poprzez schemat: nazwa(atrybut1,atrybut2)</p></li>
-<li><p>Niemal każdy obiekt w Pythonie ma “podpięte” “swoje” “funkcje” nazwane metodami</p></li>
+<li><p>Niemal każdy obiekt (a tak naprawdę klasa) w Pythonie ma “podpięte” “swoje” “funkcje” nazwane metodami</p></li>
 </ul>
+<h1>Funkcje</h1>
+<p>Funcje mają strukturę (syntax) następującej postaci:</p>
+<p><i><b>nazwa</b>(parametr_1,parametr_2,…,parametr_n)</i></p>
+<p>Wyróżniamy <b>funkcje wbudowane</b> i <b> funkcje zdefiniowane przez użytkownika</b>.</p>
+<p>Funkcje wbudowane są dostepne poprzez wywołanie ich nazwy wprost w kodzie (dostępne tu: <a class="reference external" href="https://docs.python.org/2/library/functions.html">https://docs.python.org/2/library/functions.html</a>). Przykładem takiej funkcji jest <b>print()</b></p>
+<p>Funkcje definiowane przez użytkownika pozwalają na utworzenie nowej funkcjonalności (zajmiemy się nimi później)</p>
+<h1> Metody </h1>
+<p>Python jest językiem programowania <b> obiektowego </b>. Oznacza to, że wszystko w nim jest <b>obietem</b>, który ma swoje właściwości, takie jak atrybuty i metody (o tym dokładniej w dalszej części wykładów).</p>
+<p>Metody wywoływane są zatem na <b>obiektach</b>. Ich syntax to:
+<i><b>nazwa_obiektu</b>.nazwa_metody(parametr_1,parametr_2,…,parametr_n)</i></p>
+<p>Istnieje w języku kilka wbudowanych obiektów, które posiadają wbudowane metody. Przykładem wbudowanych obiektów są typy danych.</p>
 </section>
 <section id="metody-a-atrybuty">
 <h2>Metody a atrybuty<a class="headerlink" href="#metody-a-atrybuty" title="Permalink to this heading">#</a></h2>
@@ -597,6 +665,36 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 <ul class="simple">
 <li><p>Obiekty w Pythonie zazwyczaj posiadają zarówno atrybuty (inne obiekty Pythona przechowywane “wewnątrz” obiektu) oraz metody (funkcje związane z obiektem, które mogą mieć dostęp do wewnętrznych danych obiektu).</p></li>
 </ul>
+<h1>Klasy</h1>
+Żeby zrozumieć istotę działania metod i ich różność od funkcji oraz atrybutów, przyjrzyjmy się czym jest obiekt.
+<p>Obiekt to <b>wszystko</b> co napiszemy w Pythonie. To zarówno klasy jak i funkcje.</p>
+<p>Spotkamy się z metodami przypisanymi do klas. Klasa to bardzo ważny element języków obiektowych.</p>
+<h2>Czym zatem jest klasa?</h2>
+<p><b>Klasa</b> to <i>abstrakcja</i> pewnego obiektu. Oznacza to uogólnieniony opis pewnego elementu, który zdefiniowany jest przez taką klasę poprzez określenie jego typowych <b>cech (atrybutów) i operacji (metod), które można na nim wykonać</b>. Tą samą strukturą opisujemy elementy świata rzeczywistego.</p>
+<p>Przykład obrazujący:</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki</li>
+    <li>Sos</li>
+</ul>
+<p>Oraz metody:</p>
+<ul>
+    <li>Jedz</li>
+    <li>Polej oliwą</li>
+    <li>Wyrzuć (nie używać!)</li>
+</ul><h1>Instancja</h1>
+<p>To praktyczna realizacja klasy.</p>
+<p>Kontynuując przykład obrazujący:</p>
+<p>Piekąc pizzę nadajemy jej atrybuty - składniki (pieczarki, ser) i sos (pomidorowy). Wtedy otrzymujemy <b> instancję</b> klasy pizza w postaci <i>pizzy funghi</i>.</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki = [pieczarki, ser]</li>
+    <li>Sos = pomidorowy</li>
+</ul>
+<p>Teraz możemy wywołać metodę na naszej instancji, która zdefiniowana już jest w klasie:</p>
+<p>pizza_funghi.jedz()</p>
 </section>
 <section id="importy">
 <h2>Importy<a class="headerlink" href="#importy" title="Permalink to this heading">#</a></h2>
@@ -691,7 +789,7 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 <section id="dokumentowanie-funkcji-modulow">
 <h2>Dokumentowanie funkcji/modułów<a class="headerlink" href="#dokumentowanie-funkcji-modulow" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">says</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prints what the animals name is and what sound it makes.</span>
+    <span class="sd">&quot;&quot;&quot;Prints what the animals name is and what sound it makes.</span>
 
 <span class="sd">    If the argument `sound` isn&#39;t passed in, the default Animal</span>
 <span class="sd">    sound is used.</span>
@@ -709,7 +807,7 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 <span class="sd">    &quot;&quot;&quot;</span>
     
 <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple function that says hello...&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;A simple function that says hello...&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, is it me you&#39;re looking for?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -774,10 +872,10 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dostateczny
-Basia  -&gt;  dostateczny plus
-Józek  -&gt;  dostateczny plus
-Marek  -&gt;  dostateczny
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dostateczny plus
+Basia  -&gt;  dostateczny
+Józek  -&gt;  dostateczny
+Marek  -&gt;  dobry plus
 </pre></div>
 </div>
 </div>
@@ -803,10 +901,10 @@ Marek  -&gt;  dostateczny
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dostateczny
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dobry
 Basia  -&gt;  dobry
-Józek  -&gt;  niedostateczny
-Marek  -&gt;  dobry
+Józek  -&gt;  dobry
+Marek  -&gt;  niedostateczny
 </pre></div>
 </div>
 </div>
@@ -839,11 +937,10 @@ Marek  -&gt;  dobry
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Mod0.html"
@@ -863,10 +960,7 @@ Marek  -&gt;  dobry
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -972,8 +1066,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

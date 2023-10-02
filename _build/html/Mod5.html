@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Moduł 5 - Macierze &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,8 +49,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -105,6 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -204,6 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="Mod8.html">Moduł 8 - Pisanie skryptów konsolowych</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod8_cw.html">Moduł 8 - Ćwiczenia</a></li>
 </ul>
 
@@ -313,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -324,7 +335,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -451,7 +462,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.9 ms ± 2.09 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>201 ms ± 2.24 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -463,7 +474,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>976 µs ± 36.3 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.31 ms ± 133 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -598,14 +609,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.23042070e-307, 4.67296746e-307, 1.69121096e-306,
-        5.11794149e-307],
-       [1.42413555e-306, 1.78019082e-306, 1.37960147e-306,
-        1.33511562e-306],
-       [2.22518251e-306, 1.33511969e-306, 1.78022342e-306,
-        1.05700345e-307],
-       [1.69118108e-306, 8.06632139e-308, 1.20160711e-306,
-        1.69119330e-306]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.20193136e-312, 4.59481051e-322, 0.00000000e+000,
+        0.00000000e+000],
+       [1.89146896e-307, 1.16095484e-028, 4.23580040e-153,
+        1.39804329e-076],
+       [5.41401900e+241, 4.61966982e+281, 3.76312488e+233,
+        9.16526748e+242],
+       [4.61966982e+281, 1.04918330e-153, 9.78750380e+199,
+        6.97843734e+252]])
 </pre></div>
 </div>
 </div>
@@ -621,8 +632,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.07402618 0.02218463 0.58868684 0.45990543]
-[-0.65615635 -0.74262896 -1.43296773  0.88023294]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.37836448 0.67175783 0.04294519 0.92718934]
+[ 1.49451704  0.68306848 -0.79909503  0.01157528]
 </pre></div>
 </div>
 </div>
@@ -643,15 +654,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1037., 1011.,  955., 1019., 1017., 1011., 1021.,  959.,  998.,
-         972.]),
- array([4.80307446e-05, 1.00041565e-01, 2.00035099e-01, 3.00028633e-01,
-        4.00022167e-01, 5.00015701e-01, 6.00009235e-01, 7.00002769e-01,
-        7.99996303e-01, 8.99989838e-01, 9.99983372e-01]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1004., 1009.,  982.,  972., 1043.,  992.,  977., 1044.,  991.,
+         986.]),
+ array([3.45714822e-05, 1.00022339e-01, 2.00010107e-01, 2.99997875e-01,
+        3.99985643e-01, 4.99973411e-01, 5.99961179e-01, 6.99948947e-01,
+        7.99936715e-01, 8.99924483e-01, 9.99912251e-01]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/ab27d5909a26595a1a45e5ef760adaad3593e2266a3ecf38b944dc891cf7a339.png" src="_images/ab27d5909a26595a1a45e5ef760adaad3593e2266a3ecf38b944dc891cf7a339.png" />
+<img alt="_images/0e5c784c3da59328141bdc04bac30664183e2ee9c4446ed52b43b01988b42bfe.png" src="_images/0e5c784c3da59328141bdc04bac30664183e2ee9c4446ed52b43b01988b42bfe.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -662,15 +673,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  10.,   99.,  511., 1537., 2649., 2728., 1693.,  608.,  142.,
-          23.]),
- array([-3.75094582, -3.012675  , -2.27440419, -1.53613338, -0.79786256,
-        -0.05959175,  0.67867906,  1.41694987,  2.15522069,  2.8934915 ,
-         3.63176231]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([   6.,   36.,  329., 1204., 2659., 3018., 1945.,  664.,  126.,
+          13.]),
+ array([-4.16768101, -3.37192139, -2.57616177, -1.78040215, -0.98464253,
+        -0.18888291,  0.60687671,  1.40263633,  2.19839595,  2.99415558,
+         3.7899152 ]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/59bf389530739315f82899d2afa39f0da437cce29ad120e0759de0665ed523b0.png" src="_images/59bf389530739315f82899d2afa39f0da437cce29ad120e0759de0665ed523b0.png" />
+<img alt="_images/7175e245c26de048b8f653c508d283a788c70537b994657d0f622c1caf089b8d.png" src="_images/7175e245c26de048b8f653c508d283a788c70537b994657d0f622c1caf089b8d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -681,8 +692,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 8.2764873  19.95271601 45.13462248 10.32481303 43.01951708 41.05688198
- 42.94043909 48.48558832 55.04785432 28.66676167]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20.70107993 32.04762335 13.70633568 20.9081358   5.92222648 44.33780645
+ 10.51755276 15.61494341 32.41547516 40.5478526 ]
 </pre></div>
 </div>
 </div>
@@ -843,12 +854,12 @@ zwłaszcza w przypadku dużych zbiorów danych, dobrze jest wiedzieć, że ma si
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.82 0.64 0.6 ]
- [0.28 0.38 0.99]
- [0.87 0.73 0.46]]
-0.38342845675773873
-[0.28 0.38 0.99]
-[0.82 0.28 0.87]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.79 0.03 0.72]
+ [0.34 0.12 0.21]
+ [0.96 0.44 0.11]]
+0.11922133979486638
+[0.34 0.12 0.21]
+[0.79 0.34 0.96]
 </pre></div>
 </div>
 </div>
@@ -976,12 +987,12 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12  2 18  9  5 16 17 12 16  5 18 20 11 12  1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7  4  3  4 11 11  8 14 10 16  1  1  2  9 16]
 ---
-[ True False  True  True False False False  True False False  True False
+[False False  True False False False False False False False False False
  False  True False]
 ---
-[12 18  9 12 18 12]
+[3 9]
 </pre></div>
 </div>
 </div>
@@ -996,8 +1007,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10 17  8 11 13 19 16  4  8 10  2 15  9 10  5]
-[10 17 -1 -1 -1 -1 -1 -1  8 10  2 15  9 10  5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1  9 13  7 14  2  2 16  9  8 18 11  2  1 16]
+[ 1  9 -1 -1 -1 -1 -1 -1  9  8 18 11  2  1 16]
 </pre></div>
 </div>
 </div>
@@ -1063,13 +1074,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.67,  0.8 , -0.72,  1.5 ],
-       [ 2.05, -0.1 ,  2.13, -0.16],
-       [-0.59,  0.68, -1.38, -1.19],
-       [ 0.07,  1.12,  0.36,  1.3 ],
-       [ 1.86,  0.02,  1.19, -1.76],
-       [ 0.69,  0.55,  0.27,  0.56],
-       [-1.12, -0.01,  0.6 ,  0.25]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.23,  0.6 ,  0.9 , -0.37],
+       [ 0.18, -0.16, -0.86, -0.35],
+       [-1.64, -0.27, -1.72, -0.07],
+       [ 0.99,  1.71,  0.91,  0.59],
+       [-0.08, -1.83,  0.12, -0.62],
+       [ 1.29, -1.13,  1.52, -0.43],
+       [-1.33,  0.2 ,  0.09,  0.61]])
 </pre></div>
 </div>
 </div>
@@ -1081,13 +1092,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False,  True, False],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True, False, False,  True],
+       [False,  True,  True,  True],
+       [ True,  True,  True,  True],
+       [False, False, False, False],
+       [ True,  True, False,  True],
        [False,  True, False,  True],
-       [ True, False,  True,  True],
-       [False, False, False, False],
-       [False, False, False,  True],
-       [False, False, False, False],
-       [ True,  True, False, False]])
+       [ True, False, False, False]])
 </pre></div>
 </div>
 </div>
@@ -1099,7 +1110,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.72, -0.1 , -0.16, -0.59, -1.38, -1.19, -1.76, -1.12, -0.01])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.23, -0.37, -0.16, -0.86, -0.35, -1.64, -0.27, -1.72, -0.07,
+       -0.08, -1.83, -0.62, -1.13, -0.43, -1.33])
 </pre></div>
 </div>
 </div>
@@ -1112,13 +1124,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.67, 0.8 ,  nan, 1.5 ],
-       [2.05,  nan, 2.13,  nan],
-       [ nan, 0.68,  nan,  nan],
-       [0.07, 1.12, 0.36, 1.3 ],
-       [1.86, 0.02, 1.19,  nan],
-       [0.69, 0.55, 0.27, 0.56],
-       [ nan,  nan, 0.6 , 0.25]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan, 0.6 , 0.9 ,  nan],
+       [0.18,  nan,  nan,  nan],
+       [ nan,  nan,  nan,  nan],
+       [0.99, 1.71, 0.91, 0.59],
+       [ nan,  nan, 0.12,  nan],
+       [1.29,  nan, 1.52,  nan],
+       [ nan, 0.2 , 0.09, 0.61]])
 </pre></div>
 </div>
 </div>
@@ -1147,7 +1159,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="nn">Input In [43],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;numpy.ndarray&#39; and &#39;int&#39;
@@ -2172,11 +2184,10 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Mod4_cw.html"
@@ -2196,10 +2207,7 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2295,8 +2303,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
