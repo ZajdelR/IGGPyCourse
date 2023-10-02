@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Moduł 8 - Pisanie skryptów konsolowych &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,8 +49,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -105,6 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -314,10 +324,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -325,7 +335,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -466,28 +476,59 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./tmp/Mod8Data\file1.csv
-Successfully created dataframe for file1.csv with shape (3, 4)
-./tmp/Mod8Data\file2.csv
-Successfully created dataframe for file2.csv with shape (3, 4)
-./tmp/Mod8Data\file3.csv
-Successfully created dataframe for file3.csv with shape (3, 4)
-./tmp/Mod8Data\file4.csv
-Successfully created dataframe for file4.csv with shape (3, 4)
-(12, 4)
-   Col0  Col1  Col2 ticker
-0     0     1     2  file1
-1   321   321   415  file1
-2   432   321   324  file1
-0     0     1     2  file2
-1   321   321   415  file2
-2   432   321   324  file2
-0     0     1     2  file3
-1   321   321   415  file3
-2   432   321   324  file3
-0     0     1     2  file4
-1   321   321   415  file4
-2   432   321   324  file4
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 27&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Successfully created dataframe for </span><span class="si">{</span><span class="n">stock</span><span class="si">}</span><span class="s1"> with shape </span><span class="si">{</span><span class="n">temp_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="c1"># concatenate our list of dataframes into one!</span>
+<span class="ne">---&gt; </span><span class="mi">27</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">li</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\util\_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:347,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;objs&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="n">objs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">NDFrame</span><span class="p">]</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">NDFrame</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Series</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd">     Concatenate pandas objects along a particular axis with optional set logic</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd">     along the other axes.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     ValueError: Indexes have overlapping values: [&#39;a&#39;]</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">347</span>     <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>         <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>         <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:404,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">404</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs</span><span class="p">))</span>
+
+<span class="ne">ValueError</span>: No objects to concatenate
 </pre></div>
 </div>
 </div>
@@ -558,7 +599,7 @@ Successfully created dataframe for file3.csv with shape (3, 4)
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">args_count</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One argument expected, got </span><span class="si">{</span><span class="n">args_count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;One argument expected, got </span><span class="si">{</span><span class="n">args_count</span> <span class="o">-</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">args_count</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You must specify the target directory&quot;</span><span class="p">)</span>
@@ -576,7 +617,7 @@ Successfully created dataframe for file3.csv with shape (3, 4)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ./tmp/sysarv_example.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ./tmp/sysarv_example.py
 </pre></div>
 </div>
 </div>
@@ -644,7 +685,7 @@ Jako przykł<code class="docutils literal notranslate"><span class="pre">ad</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ./tmp/argparse_example.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ./tmp/argparse_example.py
 </pre></div>
 </div>
 </div>
@@ -735,7 +776,7 @@ W przy<code class="docutils literal notranslate"><span class="pre">path</span></
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ./tmp/argparse_example_v2.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ./tmp/argparse_example_v2.py
 </pre></div>
 </div>
 </div>
@@ -794,7 +835,7 @@ titles.csv
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting ./tmp/argparse_divide.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ./tmp/argparse_divide.py
 </pre></div>
 </div>
 </div>
@@ -883,19 +924,19 @@ argparse_divide.py: error: argument --divisor: invalid int value: &#39;two&#39;
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">SystemExit</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:2863,</span> in <span class="ni">InteractiveShell.safe_execfile</span><span class="nt">(self, fname, exit_ignore, raise_exceptions, shell_futures, *where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2862</span>     <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">where</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">))[:</span><span class="mi">2</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">2863</span>     <span class="n">py3compat</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2864</span>         <span class="n">fname</span><span class="p">,</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2865</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compile</span> <span class="k">if</span> <span class="n">shell_futures</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2866</span> <span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">status</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2867</span>     <span class="c1"># If the call was made with 0 or None exit status (sys.exit(0)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2868</span>     <span class="c1"># or sys.exit() ), don&#39;t bother showing a traceback, as both of</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\interactiveshell.py:2881,</span> in <span class="ni">InteractiveShell.safe_execfile</span><span class="nt">(self, fname, exit_ignore, raise_exceptions, shell_futures, *where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2880</span>     <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">where</span> <span class="o">+</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">))[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">2881</span>     <span class="n">py3compat</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2882</span>         <span class="n">fname</span><span class="p">,</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2883</span>         <span class="bp">self</span><span class="o">.</span><span class="n">compile</span> <span class="k">if</span> <span class="n">shell_futures</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2884</span> <span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">status</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2885</span>     <span class="c1"># If the call was made with 0 or None exit status (sys.exit(0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2886</span>     <span class="c1"># or sys.exit() ), don&#39;t bother showing a traceback, as both of</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2874</span>     <span class="c1"># For other exit status, we show the exception unless</span>
-<span class="g g-Whitespace">   </span><span class="mi">2875</span>     <span class="c1"># explicitly silenced, but only in short form.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2892</span>     <span class="c1"># For other exit status, we show the exception unless</span>
+<span class="g g-Whitespace">   </span><span class="mi">2893</span>     <span class="c1"># explicitly silenced, but only in short form.</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\utils\py3compat.py:55,</span> in <span class="ni">execfile</span><span class="nt">(fname, glob, loc, compiler)</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\utils\py3compat.py:55,</span> in <span class="ni">execfile</span><span class="nt">(fname, glob, loc, compiler)</span>
 <span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="n">compiler</span> <span class="o">=</span> <span class="n">compiler</span> <span class="ow">or</span> <span class="nb">compile</span>
 <span class="ne">---&gt; </span><span class="mi">55</span> <span class="n">exec</span><span class="p">(</span><span class="n">compiler</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
 
@@ -927,115 +968,117 @@ argparse_divide.py: error: argument --divisor: invalid int value: &#39;two&#39;
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;./tmp/argparse_divide.py --dividend 42 --divisor &quot;two&quot;&#39;</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:2414,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2412</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2413</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2414</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2416</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2417</span> <span class="c1"># when using magics with decodator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2418</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2419</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\interactiveshell.py:2432,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2430</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2431</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2432</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2434</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2436</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2437</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\magics\execution.py:834,</span> in <span class="ni">ExecutionMagics.run</span><span class="nt">(self, parameter_s, runner, file_finder)</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_run_with_timing</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">nruns</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">832</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">833</span>             <span class="c1"># regular execution</span>
-<span class="ne">--&gt; </span><span class="mi">834</span>             <span class="n">run</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">836</span> <span class="k">if</span> <span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">837</span>     <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__name__save</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\magics\execution.py:849,</span> in <span class="ni">ExecutionMagics.run</span><span class="nt">(self, parameter_s, runner, file_finder)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_run_with_timing</span><span class="p">(</span><span class="n">run</span><span class="p">,</span> <span class="n">nruns</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>             <span class="c1"># regular execution</span>
+<span class="ne">--&gt; </span><span class="mi">849</span>             <span class="n">run</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="k">if</span> <span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="n">opts</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">user_ns</span><span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__name__save</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\magics\execution.py:819,</span> in <span class="ni">ExecutionMagics.run.&lt;locals&gt;.run</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">819</span>     <span class="n">runner</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">prog_ns</span><span class="p">,</span> <span class="n">prog_ns</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span>             <span class="n">exit_ignore</span><span class="o">=</span><span class="n">exit_ignore</span><span class="p">)</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\magics\execution.py:834,</span> in <span class="ni">ExecutionMagics.run.&lt;locals&gt;.run</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">833</span> <span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">834</span>     <span class="n">runner</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">prog_ns</span><span class="p">,</span> <span class="n">prog_ns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span>             <span class="n">exit_ignore</span><span class="o">=</span><span class="n">exit_ignore</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:2880,</span> in <span class="ni">InteractiveShell.safe_execfile</span><span class="nt">(self, fname, exit_ignore, raise_exceptions, shell_futures, *where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2878</span>             <span class="k">raise</span>
-<span class="g g-Whitespace">   </span><span class="mi">2879</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">exit_ignore</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2880</span>             <span class="bp">self</span><span class="o">.</span><span class="n">showtraceback</span><span class="p">(</span><span class="n">exception_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2881</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2882</span>     <span class="k">if</span> <span class="n">raise_exceptions</span><span class="p">:</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\interactiveshell.py:2898,</span> in <span class="ni">InteractiveShell.safe_execfile</span><span class="nt">(self, fname, exit_ignore, raise_exceptions, shell_futures, *where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2896</span>             <span class="k">raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">2897</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">exit_ignore</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2898</span>             <span class="bp">self</span><span class="o">.</span><span class="n">showtraceback</span><span class="p">(</span><span class="n">exception_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2899</span> <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2900</span>     <span class="k">if</span> <span class="n">raise_exceptions</span><span class="p">:</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:2092,</span> in <span class="ni">InteractiveShell.showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2089</span> <span class="k">if</span> <span class="n">exception_only</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2090</span>     <span class="n">stb</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;An exception has occurred, use %tb to see &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2091</span>            <span class="s1">&#39;the full traceback.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">2092</span>     <span class="n">stb</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">InteractiveTB</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2093</span>                                                      <span class="n">value</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2094</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2095</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2096</span>         <span class="c1"># Exception classes can customise their traceback - we</span>
-<span class="g g-Whitespace">   </span><span class="mi">2097</span>         <span class="c1"># use this in IPython.parallel for exceptions occurring</span>
-<span class="g g-Whitespace">   </span><span class="mi">2098</span>         <span class="c1"># in the engines. This should return a list of strings.</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\interactiveshell.py:2097,</span> in <span class="ni">InteractiveShell.showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2094</span> <span class="k">if</span> <span class="n">exception_only</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2095</span>     <span class="n">stb</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;An exception has occurred, use %tb to see &#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2096</span>            <span class="s1">&#39;the full traceback.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">2097</span>     <span class="n">stb</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">InteractiveTB</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2098</span>                                                      <span class="n">value</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2099</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2101</span>     <span class="k">def</span> <span class="nf">contains_exceptiongroup</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:644,</span> in <span class="ni">ListTB.get_exception_only</span><span class="nt">(self, etype, value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span> <span class="k">def</span> <span class="nf">get_exception_only</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Only print the exception type and message, without a traceback.</span>
-<span class="g g-Whitespace">    </span><span class="mi">638</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span><span class="sd">     Parameters</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:710,</span> in <span class="ni">ListTB.get_exception_only</span><span class="nt">(self, etype, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">def</span> <span class="nf">get_exception_only</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="sd">&quot;&quot;&quot;Only print the exception type and message, without a traceback.</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span><span class="sd">     Parameters</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span><span class="sd">     value : exception value</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">644</span>     <span class="k">return</span> <span class="n">ListTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span><span class="sd">     value : exception value</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">710</span>     <span class="k">return</span> <span class="n">ListTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:511,</span> in <span class="ni">ListTB.structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="n">chained_exc_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">exception</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span>     <span class="n">chained_exceptions_tb_offset</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="n">out_list</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">511</span>         <span class="bp">self</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span>             <span class="n">etype</span><span class="p">,</span> <span class="n">evalue</span><span class="p">,</span> <span class="p">(</span><span class="n">etb</span><span class="p">,</span> <span class="n">chained_exc_ids</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">513</span>             <span class="n">chained_exceptions_tb_offset</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">514</span>         <span class="o">+</span> <span class="n">chained_exception_message</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span>         <span class="o">+</span> <span class="n">out_list</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="k">return</span> <span class="n">out_list</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:568,</span> in <span class="ni">ListTB.structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>     <span class="n">chained_exc_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">exception</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>     <span class="n">chained_exceptions_tb_offset</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span>     <span class="n">out_list</span> <span class="o">=</span> <span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">568</span>         <span class="bp">self</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>             <span class="n">etype</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>             <span class="n">evalue</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span>             <span class="p">(</span><span class="n">etb</span><span class="p">,</span> <span class="n">chained_exc_ids</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span>             <span class="n">chained_exceptions_tb_offset</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span>             <span class="n">context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>         <span class="o">+</span> <span class="n">chained_exception_message</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="o">+</span> <span class="n">out_list</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span> <span class="k">return</span> <span class="n">out_list</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:1310,</span> in <span class="ni">AutoFormattedTB.structured_traceback</span><span class="nt">(self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1308</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1309</span>     <span class="bp">self</span><span class="o">.</span><span class="n">tb</span> <span class="o">=</span> <span class="n">tb</span>
-<span class="ne">-&gt; </span><span class="mi">1310</span> <span class="k">return</span> <span class="n">FormattedTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1311</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">)</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:1435,</span> in <span class="ni">AutoFormattedTB.structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1434</span>     <span class="bp">self</span><span class="o">.</span><span class="n">tb</span> <span class="o">=</span> <span class="n">etb</span>
+<span class="ne">-&gt; </span><span class="mi">1435</span> <span class="k">return</span> <span class="n">FormattedTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1436</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">evalue</span><span class="p">,</span> <span class="n">etb</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span>
+<span class="g g-Whitespace">   </span><span class="mi">1437</span> <span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:1199,</span> in <span class="ni">FormattedTB.structured_traceback</span><span class="nt">(self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1196</span> <span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span>
-<span class="g g-Whitespace">   </span><span class="mi">1197</span> <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose_modes</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1198</span>     <span class="c1"># Verbose modes need a full traceback</span>
-<span class="ne">-&gt; </span><span class="mi">1199</span>     <span class="k">return</span> <span class="n">VerboseTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span>
-<span class="g g-Whitespace">   </span><span class="mi">1201</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="k">return</span> <span class="n">ListTB</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:1326,</span> in <span class="ni">FormattedTB.structured_traceback</span><span class="nt">(self, etype, value, tb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1323</span> <span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span>
+<span class="g g-Whitespace">   </span><span class="mi">1324</span> <span class="k">if</span> <span class="n">mode</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose_modes</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1325</span>     <span class="c1"># Verbose modes need a full traceback</span>
+<span class="ne">-&gt; </span><span class="mi">1326</span>     <span class="k">return</span> <span class="n">VerboseTB</span><span class="o">.</span><span class="n">structured_traceback</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1327</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span>
+<span class="g g-Whitespace">   </span><span class="mi">1328</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1329</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;Minimal&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1330</span>     <span class="k">return</span> <span class="n">ListTB</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:1052,</span> in <span class="ni">VerboseTB.structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, number_of_lines_of_context)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1043</span> <span class="k">def</span> <span class="nf">structured_traceback</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1044</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1045</span>     <span class="n">etype</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:1173,</span> in <span class="ni">VerboseTB.structured_traceback</span><span class="nt">(self, etype, evalue, etb, tb_offset, number_of_lines_of_context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span> <span class="k">def</span> <span class="nf">structured_traceback</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1165</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1166</span>     <span class="n">etype</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>     <span class="n">number_of_lines_of_context</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1050</span> <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return a nice text document describing the traceback.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1052</span>     <span class="n">formatted_exception</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_exception_as_a_whole</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">evalue</span><span class="p">,</span> <span class="n">etb</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1053</span>                                                            <span class="n">tb_offset</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1055</span>     <span class="n">colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span>  <span class="c1"># just a shorthand + quicker name lookup</span>
-<span class="g g-Whitespace">   </span><span class="mi">1056</span>     <span class="n">colorsnormal</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">Normal</span>  <span class="c1"># used a lot</span>
+<span class="g g-Whitespace">   </span><span class="mi">1170</span>     <span class="n">number_of_lines_of_context</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span> <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span>     <span class="sd">&quot;&quot;&quot;Return a nice text document describing the traceback.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1173</span>     <span class="n">formatted_exception</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_exception_as_a_whole</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">evalue</span><span class="p">,</span> <span class="n">etb</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1174</span>                                                            <span class="n">tb_offset</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="n">colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span>  <span class="c1"># just a shorthand + quicker name lookup</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>     <span class="n">colorsnormal</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">Normal</span>  <span class="c1"># used a lot</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:953,</span> in <span class="ni">VerboseTB.format_exception_as_a_whole</span><span class="nt">(self, etype, evalue, etb, number_of_lines_of_context, tb_offset)</span>
-<span class="g g-Whitespace">    </span><span class="mi">950</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tb_offset</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_header</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">long_header</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">952</span> <span class="n">records</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">953</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_records</span><span class="p">(</span><span class="n">etb</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">)</span> <span class="k">if</span> <span class="n">etb</span> <span class="k">else</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">954</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">957</span> <span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:1063,</span> in <span class="ni">VerboseTB.format_exception_as_a_whole</span><span class="nt">(self, etype, evalue, etb, number_of_lines_of_context, tb_offset)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1060</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tb_offset</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1061</span> <span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_header</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">etype</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">long_header</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1062</span> <span class="n">records</span> <span class="o">=</span> <span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">1063</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_records</span><span class="p">(</span><span class="n">etb</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">,</span> <span class="n">tb_offset</span><span class="p">)</span> <span class="k">if</span> <span class="n">etb</span> <span class="k">else</span> <span class="p">[]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1064</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1066</span> <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1067</span> <span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\IPython\core\ultratb.py:1021,</span> in <span class="ni">VerboseTB.get_records</span><span class="nt">(self, etb, number_of_lines_of_context, tb_offset)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1019</span> <span class="k">while</span> <span class="n">cf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1021</span>         <span class="n">source_file</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsourcefile</span><span class="p">(</span><span class="n">etb</span><span class="o">.</span><span class="n">tb_frame</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>         <span class="n">lines</span><span class="p">,</span> <span class="n">first</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsourcelines</span><span class="p">(</span><span class="n">etb</span><span class="o">.</span><span class="n">tb_frame</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span>     <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+<span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:1131,</span> in <span class="ni">VerboseTB.get_records</span><span class="nt">(self, etb, number_of_lines_of_context, tb_offset)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1129</span> <span class="k">while</span> <span class="n">cf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1130</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1131</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmodule</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">tb_frame</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="k">if</span> <span class="n">mod</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>             <span class="n">mod_name</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="vm">__name__</span>
 
 <span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;tb_frame&#39;
 </pre></div>
@@ -1418,7 +1461,7 @@ size.py: error: argument --size: invalid choice: &#39;A&#39; (choose from &#39;S
 
 <span class="nn">File E:\MATERIALY\SZKOLENIE_PYTHON\ElemProgVenv\Lib\site-packages\IPython\core\ultratb.py:710,</span> in <span class="ni">ListTB.get_exception_only</span><span class="nt">(self, etype, value)</span>
 <span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">def</span> <span class="nf">get_exception_only</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">etype</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Only print the exception type and message, without a traceback.</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="sd">&quot;&quot;&quot;Only print the exception type and message, without a traceback.</span>
 <span class="g g-Whitespace">    </span><span class="mi">704</span><span class="sd"> </span>
 <span class="g g-Whitespace">    </span><span class="mi">705</span><span class="sd">     Parameters</span>
 <span class="sd">   (...)</span>
@@ -1465,7 +1508,7 @@ size.py: error: argument --size: invalid choice: &#39;A&#39; (choose from &#39;S
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1170</span>     <span class="n">number_of_lines_of_context</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1171</span> <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return a nice text document describing the traceback.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span>     <span class="sd">&quot;&quot;&quot;Return a nice text document describing the traceback.&quot;&quot;&quot;</span>
 <span class="ne">-&gt; </span><span class="mi">1173</span>     <span class="n">formatted_exception</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">format_exception_as_a_whole</span><span class="p">(</span><span class="n">etype</span><span class="p">,</span> <span class="n">evalue</span><span class="p">,</span> <span class="n">etb</span><span class="p">,</span> <span class="n">number_of_lines_of_context</span><span class="p">,</span>
 <span class="g g-Whitespace">   </span><span class="mi">1174</span>                                                            <span class="n">tb_offset</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="n">colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Colors</span>  <span class="c1"># just a shorthand + quicker name lookup</span>
@@ -1708,11 +1751,10 @@ Thanks for using ls! :)
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Mod7.html"
@@ -1732,10 +1774,7 @@ Thanks for using ls! :)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1808,8 +1847,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
