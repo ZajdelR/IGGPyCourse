@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Moduł 6 - Ćwiczenia &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,9 +49,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -106,15 +105,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -324,10 +314,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
@@ -335,7 +325,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -492,82 +482,57 @@ h3 {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">titles</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/titles.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">titles</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\util\_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py:680,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
-<span class="g g-Whitespace">    </span><span class="mi">677</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">678</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">680</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py:575,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">575</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py:933,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">933</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\io\parsers\readers.py:1217,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1213</span>     <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;rb&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1214</span> <span class="c1"># error: No overload variant of &quot;get_handle&quot; matches argument types</span>
-<span class="g g-Whitespace">   </span><span class="mi">1215</span> <span class="c1"># &quot;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1216</span> <span class="c1"># , &quot;str&quot;, &quot;bool&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1217</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>  <span class="c1"># type: ignore[call-overload]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1218</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1219</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1220</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1226</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1227</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\io\common.py:789,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">785</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">786</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">789</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">794</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">795</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">797</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;data/titles.csv&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sweet &amp; Vicious</td>
+      <td>2015.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Someday I Suppose</td>
+      <td>2005.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Gravity and Grace</td>
+      <td>2012.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>O Sabor do Pecado</td>
+      <td>1967.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>New in Town</td>
+      <td>2017.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,28 +652,28 @@ h3 {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Kantarou tsukiyo-uta</td>
-      <td>1952</td>
+      <td>Sweet &amp; Vicious</td>
+      <td>2015.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Maynila</td>
-      <td>1946</td>
+      <td>Someday I Suppose</td>
+      <td>2005.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>The Sonora Kid</td>
-      <td>1927</td>
+      <td>Gravity and Grace</td>
+      <td>2012.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Shelet al mohtalin</td>
-      <td>1972</td>
+      <td>O Sabor do Pecado</td>
+      <td>1967.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Love in Jungle</td>
-      <td>1970</td>
+      <td>New in Town</td>
+      <td>2017.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -716,33 +681,33 @@ h3 {
       <td>...</td>
     </tr>
     <tr>
-      <th>226008</th>
-      <td>Cluny Brown</td>
-      <td>1946</td>
+      <th>224774</th>
+      <td>The Angelheads</td>
+      <td>2014.0</td>
     </tr>
     <tr>
-      <th>226009</th>
-      <td>Sherlock Holmes</td>
-      <td>1932</td>
+      <th>224775</th>
+      <td>Urban Jungle Harlem</td>
+      <td>1994.0</td>
     </tr>
     <tr>
-      <th>226010</th>
-      <td>Telepathic Telephones</td>
-      <td>2014</td>
+      <th>224776</th>
+      <td>Smekh i gore u Bela morya</td>
+      <td>1987.0</td>
     </tr>
     <tr>
-      <th>226011</th>
-      <td>The Sandwich Man</td>
-      <td>1966</td>
+      <th>224777</th>
+      <td>Hot News</td>
+      <td>1928.0</td>
     </tr>
     <tr>
-      <th>226012</th>
-      <td>Pratidhwani</td>
-      <td>1971</td>
+      <th>224778</th>
+      <td>Kuvyrok chere</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>226013 rows × 2 columns</p>
+<p>224779 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -777,28 +742,28 @@ h3 {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Kantarou tsukiyo-uta</td>
-      <td>1952</td>
+      <td>Sweet &amp; Vicious</td>
+      <td>2015.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Maynila</td>
-      <td>1946</td>
+      <td>Someday I Suppose</td>
+      <td>2005.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>The Sonora Kid</td>
-      <td>1927</td>
+      <td>Gravity and Grace</td>
+      <td>2012.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Shelet al mohtalin</td>
-      <td>1972</td>
+      <td>O Sabor do Pecado</td>
+      <td>1967.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Love in Jungle</td>
-      <td>1970</td>
+      <td>New in Town</td>
+      <td>2017.0</td>
     </tr>
   </tbody>
 </table>
@@ -837,53 +802,53 @@ h3 {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Kantarou tsukiyo-uta</td>
-      <td>1952</td>
+      <td>Sweet &amp; Vicious</td>
+      <td>2015.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Maynila</td>
-      <td>1946</td>
+      <td>Someday I Suppose</td>
+      <td>2005.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>The Sonora Kid</td>
-      <td>1927</td>
+      <td>Gravity and Grace</td>
+      <td>2012.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Shelet al mohtalin</td>
-      <td>1972</td>
+      <td>O Sabor do Pecado</td>
+      <td>1967.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Love in Jungle</td>
-      <td>1970</td>
+      <td>New in Town</td>
+      <td>2017.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>My Liedjie van Verlange</td>
-      <td>1975</td>
+      <td>Land Gold Women</td>
+      <td>2011.0</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>The Banker</td>
-      <td>1989</td>
+      <td>Ashk-e sarma</td>
+      <td>2004.0</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>Lo spirito del serchio</td>
-      <td>2009</td>
+      <td>Lieve jongens</td>
+      <td>1980.0</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Blinky Bill the Movie</td>
-      <td>2015</td>
+      <td>Day for Night</td>
+      <td>2017.0</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>L'elisir d'amore</td>
-      <td>1947</td>
+      <td>Loving Memory</td>
+      <td>1971.0</td>
     </tr>
   </tbody>
 </table>
@@ -928,48 +893,48 @@ h3 {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Kantarou tsukiyo-uta</td>
-      <td>1952</td>
+      <td>Sweet &amp; Vicious</td>
+      <td>2015.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Maynila</td>
-      <td>1946</td>
+      <td>Someday I Suppose</td>
+      <td>2005.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>The Sonora Kid</td>
-      <td>1927</td>
+      <td>Gravity and Grace</td>
+      <td>2012.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Shelet al mohtalin</td>
-      <td>1972</td>
+      <td>O Sabor do Pecado</td>
+      <td>1967.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Love in Jungle</td>
-      <td>1970</td>
+      <td>New in Town</td>
+      <td>2017.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>My Liedjie van Verlange</td>
-      <td>1975</td>
+      <td>Land Gold Women</td>
+      <td>2011.0</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>Lo spirito del serchio</td>
-      <td>2009</td>
+      <th>6</th>
+      <td>Ashk-e sarma</td>
+      <td>2004.0</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Blinky Bill the Movie</td>
-      <td>2015</td>
+      <td>Day for Night</td>
+      <td>2017.0</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>L'elisir d'amore</td>
-      <td>1947</td>
+      <td>Loving Memory</td>
+      <td>1971.0</td>
     </tr>
   </tbody>
 </table>
@@ -1013,84 +978,84 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>35518</th>
+      <th>1795</th>
       <td>Macbeth</td>
-      <td>1916</td>
+      <td>1913.0</td>
     </tr>
     <tr>
-      <th>36282</th>
+      <th>12626</th>
       <td>Macbeth</td>
-      <td>1998</td>
+      <td>2017.0</td>
     </tr>
     <tr>
-      <th>36719</th>
+      <th>16929</th>
       <td>Macbeth</td>
-      <td>2018</td>
+      <td>1987.0</td>
     </tr>
     <tr>
-      <th>59273</th>
+      <th>17527</th>
       <td>Macbeth</td>
-      <td>2006</td>
+      <td>1916.0</td>
     </tr>
     <tr>
-      <th>64811</th>
+      <th>29663</th>
       <td>Macbeth</td>
-      <td>2003</td>
+      <td>2013.0</td>
     </tr>
     <tr>
-      <th>65040</th>
+      <th>37108</th>
       <td>Macbeth</td>
-      <td>1948</td>
+      <td>2004.0</td>
     </tr>
     <tr>
-      <th>70980</th>
+      <th>51650</th>
       <td>Macbeth</td>
-      <td>2012</td>
+      <td>2009.0</td>
     </tr>
     <tr>
-      <th>110789</th>
+      <th>58641</th>
       <td>Macbeth</td>
-      <td>2009</td>
+      <td>2018.0</td>
     </tr>
     <tr>
-      <th>112226</th>
+      <th>69536</th>
       <td>Macbeth</td>
-      <td>2013</td>
+      <td>1997.0</td>
     </tr>
     <tr>
-      <th>165826</th>
+      <th>87830</th>
       <td>Macbeth</td>
-      <td>1997</td>
+      <td>2014.0</td>
     </tr>
     <tr>
-      <th>188292</th>
+      <th>93310</th>
       <td>Macbeth</td>
-      <td>2014</td>
+      <td>2006.0</td>
     </tr>
     <tr>
-      <th>191930</th>
+      <th>114062</th>
       <td>Macbeth</td>
-      <td>1913</td>
+      <td>2015.0</td>
     </tr>
     <tr>
-      <th>193906</th>
+      <th>120245</th>
       <td>Macbeth</td>
-      <td>2017</td>
+      <td>2003.0</td>
     </tr>
     <tr>
-      <th>207237</th>
+      <th>150051</th>
       <td>Macbeth</td>
-      <td>2004</td>
+      <td>2012.0</td>
     </tr>
     <tr>
-      <th>208333</th>
+      <th>180744</th>
       <td>Macbeth</td>
-      <td>1987</td>
+      <td>1948.0</td>
     </tr>
     <tr>
-      <th>213113</th>
+      <th>219251</th>
       <td>Macbeth</td>
-      <td>2015</td>
+      <td>1998.0</td>
     </tr>
   </tbody>
 </table>
@@ -1127,84 +1092,84 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>191930</th>
+      <th>1795</th>
       <td>Macbeth</td>
-      <td>1913</td>
+      <td>1913.0</td>
     </tr>
     <tr>
-      <th>35518</th>
+      <th>17527</th>
       <td>Macbeth</td>
-      <td>1916</td>
+      <td>1916.0</td>
     </tr>
     <tr>
-      <th>65040</th>
+      <th>180744</th>
       <td>Macbeth</td>
-      <td>1948</td>
+      <td>1948.0</td>
     </tr>
     <tr>
-      <th>208333</th>
+      <th>16929</th>
       <td>Macbeth</td>
-      <td>1987</td>
+      <td>1987.0</td>
     </tr>
     <tr>
-      <th>165826</th>
+      <th>69536</th>
       <td>Macbeth</td>
-      <td>1997</td>
+      <td>1997.0</td>
     </tr>
     <tr>
-      <th>36282</th>
+      <th>219251</th>
       <td>Macbeth</td>
-      <td>1998</td>
+      <td>1998.0</td>
     </tr>
     <tr>
-      <th>64811</th>
+      <th>120245</th>
       <td>Macbeth</td>
-      <td>2003</td>
+      <td>2003.0</td>
     </tr>
     <tr>
-      <th>207237</th>
+      <th>37108</th>
       <td>Macbeth</td>
-      <td>2004</td>
+      <td>2004.0</td>
     </tr>
     <tr>
-      <th>59273</th>
+      <th>93310</th>
       <td>Macbeth</td>
-      <td>2006</td>
+      <td>2006.0</td>
     </tr>
     <tr>
-      <th>110789</th>
+      <th>51650</th>
       <td>Macbeth</td>
-      <td>2009</td>
+      <td>2009.0</td>
     </tr>
     <tr>
-      <th>70980</th>
+      <th>150051</th>
       <td>Macbeth</td>
-      <td>2012</td>
+      <td>2012.0</td>
     </tr>
     <tr>
-      <th>112226</th>
+      <th>29663</th>
       <td>Macbeth</td>
-      <td>2013</td>
+      <td>2013.0</td>
     </tr>
     <tr>
-      <th>188292</th>
+      <th>87830</th>
       <td>Macbeth</td>
-      <td>2014</td>
+      <td>2014.0</td>
     </tr>
     <tr>
-      <th>213113</th>
+      <th>114062</th>
       <td>Macbeth</td>
-      <td>2015</td>
+      <td>2015.0</td>
     </tr>
     <tr>
-      <th>193906</th>
+      <th>12626</th>
       <td>Macbeth</td>
-      <td>2017</td>
+      <td>2017.0</td>
     </tr>
     <tr>
-      <th>36719</th>
+      <th>58641</th>
       <td>Macbeth</td>
-      <td>2018</td>
+      <td>2018.0</td>
     </tr>
   </tbody>
 </table>
@@ -1287,7 +1252,7 @@ h3 {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>226013
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>224779
 </pre></div>
 </div>
 </div>
@@ -1326,14 +1291,14 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>71835</th>
+      <th>179969</th>
       <td>Miss Jerry</td>
-      <td>1894</td>
+      <td>1894.0</td>
     </tr>
     <tr>
-      <th>136315</th>
+      <th>24888</th>
       <td>The Startled Lover</td>
-      <td>1898</td>
+      <td>1898.0</td>
     </tr>
   </tbody>
 </table>
@@ -1370,14 +1335,14 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>71835</th>
+      <th>179969</th>
       <td>Miss Jerry</td>
-      <td>1894</td>
+      <td>1894.0</td>
     </tr>
     <tr>
-      <th>136315</th>
+      <th>24888</th>
       <td>The Startled Lover</td>
-      <td>1898</td>
+      <td>1898.0</td>
     </tr>
   </tbody>
 </table>
@@ -1435,9 +1400,9 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>154133</th>
+      <th>178981</th>
       <td>Hamlet</td>
-      <td>1910</td>
+      <td>1910.0</td>
     </tr>
   </tbody>
 </table>
@@ -1497,7 +1462,7 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>90228</th>
+      <th>89438</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Michael (III) August</td>
@@ -1506,7 +1471,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>136913</th>
+      <th>135702</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Peter Basham</td>
@@ -1515,7 +1480,7 @@ h3 {
       <td>44.0</td>
     </tr>
     <tr>
-      <th>168897</th>
+      <th>167392</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Tom Berenger</td>
@@ -1524,7 +1489,7 @@ h3 {
       <td>8.0</td>
     </tr>
     <tr>
-      <th>181725</th>
+      <th>180101</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Ken Bhan</td>
@@ -1533,7 +1498,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>238644</th>
+      <th>236543</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Virgile Bramly</td>
@@ -1551,7 +1516,7 @@ h3 {
       <td>...</td>
     </tr>
     <tr>
-      <th>3084390</th>
+      <th>3047086</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Ellen Page</td>
@@ -1560,7 +1525,7 @@ h3 {
       <td>3.0</td>
     </tr>
     <tr>
-      <th>3136148</th>
+      <th>3097753</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Nicole Pulliam</td>
@@ -1569,7 +1534,7 @@ h3 {
       <td>43.0</td>
     </tr>
     <tr>
-      <th>3161648</th>
+      <th>3122687</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Lisa (II) Reynolds</td>
@@ -1578,7 +1543,7 @@ h3 {
       <td>48.0</td>
     </tr>
     <tr>
-      <th>3168008</th>
+      <th>3128892</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Talulah Riley</td>
@@ -1587,7 +1552,7 @@ h3 {
       <td>25.0</td>
     </tr>
     <tr>
-      <th>3393649</th>
+      <th>3349533</th>
       <td>Inception</td>
       <td>2010</td>
       <td>Shannon Welles</td>
@@ -1671,7 +1636,7 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>23933</th>
+      <th>23737</th>
       <td>Theeb</td>
       <td>2014</td>
       <td>Hassan Mutlag Al-Maraiyeh</td>
@@ -1680,7 +1645,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>32992</th>
+      <th>32733</th>
       <td>My Time to Die</td>
       <td>2014</td>
       <td>Vincent H. Alexander</td>
@@ -1689,7 +1654,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>42785</th>
+      <th>42423</th>
       <td>Hickok</td>
       <td>2017</td>
       <td>Terral Altom</td>
@@ -1698,7 +1663,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>61880</th>
+      <th>61309</th>
       <td>Get Mean</td>
       <td>1975</td>
       <td>Tony Anthony</td>
@@ -1707,7 +1672,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>61882</th>
+      <th>61311</th>
       <td>Lo straniero di silenzio</td>
       <td>1968</td>
       <td>Tony Anthony</td>
@@ -1725,7 +1690,7 @@ h3 {
       <td>...</td>
     </tr>
     <tr>
-      <th>2921021</th>
+      <th>2887360</th>
       <td>The Stranger</td>
       <td>1995</td>
       <td>Kathy Long</td>
@@ -1734,7 +1699,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>2933723</th>
+      <th>2899739</th>
       <td>Ever Since Eve</td>
       <td>1921</td>
       <td>Ethel Lynne</td>
@@ -1743,7 +1708,7 @@ h3 {
       <td>7.0</td>
     </tr>
     <tr>
-      <th>3101273</th>
+      <th>3063631</th>
       <td>Weitertanzen</td>
       <td>2008</td>
       <td>Rosa Maria Paz</td>
@@ -1752,7 +1717,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3246470</th>
+      <th>3205578</th>
       <td>Motherland</td>
       <td>1927</td>
       <td>Dorinea Shirley</td>
@@ -1761,7 +1726,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>3407463</th>
+      <th>3362999</th>
       <td>The Seventh</td>
       <td>2017</td>
       <td>Kerry (II) Willison-Parry</td>
@@ -1771,7 +1736,7 @@ h3 {
     </tr>
   </tbody>
 </table>
-<p>170 rows × 6 columns</p>
+<p>165 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1781,7 +1746,7 @@ h3 {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>170
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>165
 </pre></div>
 </div>
 </div>
@@ -1795,7 +1760,7 @@ h3 {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>160
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>159
 </pre></div>
 </div>
 </div>
@@ -1840,7 +1805,7 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>797410</th>
+      <th>790335</th>
       <td>About a Boy</td>
       <td>2002</td>
       <td>Hugh Grant</td>
@@ -1849,7 +1814,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797411</th>
+      <th>790336</th>
       <td>American Dreamz</td>
       <td>2006</td>
       <td>Hugh Grant</td>
@@ -1858,7 +1823,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797412</th>
+      <th>790337</th>
       <td>An Awfully Big Adventure</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -1867,7 +1832,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797413</th>
+      <th>790338</th>
       <td>Bitter Moon</td>
       <td>1992</td>
       <td>Hugh Grant</td>
@@ -1876,7 +1841,7 @@ h3 {
       <td>3.0</td>
     </tr>
     <tr>
-      <th>797414</th>
+      <th>790339</th>
       <td>Bridget Jones's Diary</td>
       <td>2001</td>
       <td>Hugh Grant</td>
@@ -1885,7 +1850,7 @@ h3 {
       <td>8.0</td>
     </tr>
     <tr>
-      <th>797415</th>
+      <th>790340</th>
       <td>Bridget Jones: The Edge of Reason</td>
       <td>2004</td>
       <td>Hugh Grant</td>
@@ -1894,7 +1859,7 @@ h3 {
       <td>14.0</td>
     </tr>
     <tr>
-      <th>797416</th>
+      <th>790341</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1903,7 +1868,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797417</th>
+      <th>790342</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1912,7 +1877,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797418</th>
+      <th>790343</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1921,7 +1886,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797419</th>
+      <th>790344</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1930,7 +1895,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797420</th>
+      <th>790345</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1939,7 +1904,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797421</th>
+      <th>790346</th>
       <td>Cloud Atlas</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -1948,7 +1913,7 @@ h3 {
       <td>13.0</td>
     </tr>
     <tr>
-      <th>797422</th>
+      <th>790347</th>
       <td>Did You Hear About the Morgans?</td>
       <td>2009</td>
       <td>Hugh Grant</td>
@@ -1957,7 +1922,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797423</th>
+      <th>790348</th>
       <td>Extreme Measures</td>
       <td>1996</td>
       <td>Hugh Grant</td>
@@ -1966,7 +1931,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797424</th>
+      <th>790349</th>
       <td>Florence Foster Jenkins</td>
       <td>2016</td>
       <td>Hugh Grant</td>
@@ -1975,7 +1940,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797425</th>
+      <th>790350</th>
       <td>Four Weddings and a Funeral</td>
       <td>1994</td>
       <td>Hugh Grant</td>
@@ -1984,7 +1949,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797426</th>
+      <th>790351</th>
       <td>I'm Still Here</td>
       <td>2010</td>
       <td>Hugh Grant</td>
@@ -1993,7 +1958,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>797427</th>
+      <th>790352</th>
       <td>Impromptu</td>
       <td>1991</td>
       <td>Hugh Grant</td>
@@ -2002,7 +1967,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797428</th>
+      <th>790353</th>
       <td>La nuit Bengali</td>
       <td>1988</td>
       <td>Hugh Grant</td>
@@ -2011,7 +1976,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797429</th>
+      <th>790354</th>
       <td>Love Actually</td>
       <td>2003</td>
       <td>Hugh Grant</td>
@@ -2020,7 +1985,7 @@ h3 {
       <td>16.0</td>
     </tr>
     <tr>
-      <th>797430</th>
+      <th>790355</th>
       <td>Maurice</td>
       <td>1987</td>
       <td>Hugh Grant</td>
@@ -2029,7 +1994,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797431</th>
+      <th>790356</th>
       <td>Mickey Blue Eyes</td>
       <td>1999</td>
       <td>Hugh Grant</td>
@@ -2038,7 +2003,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797432</th>
+      <th>790357</th>
       <td>Music and Lyrics</td>
       <td>2007</td>
       <td>Hugh Grant</td>
@@ -2047,7 +2012,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797433</th>
+      <th>790358</th>
       <td>Night Train to Venice</td>
       <td>1993</td>
       <td>Hugh Grant</td>
@@ -2056,7 +2021,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797434</th>
+      <th>790359</th>
       <td>Nine Months</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -2065,7 +2030,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797435</th>
+      <th>790360</th>
       <td>Notting Hill</td>
       <td>1999</td>
       <td>Hugh Grant</td>
@@ -2074,7 +2039,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797436</th>
+      <th>790361</th>
       <td>Paddington 2</td>
       <td>2017</td>
       <td>Hugh Grant</td>
@@ -2083,7 +2048,7 @@ h3 {
       <td>NaN</td>
     </tr>
     <tr>
-      <th>797437</th>
+      <th>790362</th>
       <td>Privileged</td>
       <td>1982</td>
       <td>Hugh Grant</td>
@@ -2092,7 +2057,7 @@ h3 {
       <td>3.0</td>
     </tr>
     <tr>
-      <th>797438</th>
+      <th>790363</th>
       <td>Restoration</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -2101,7 +2066,7 @@ h3 {
       <td>7.0</td>
     </tr>
     <tr>
-      <th>797439</th>
+      <th>790364</th>
       <td>Sense and Sensibility</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -2110,7 +2075,7 @@ h3 {
       <td>7.0</td>
     </tr>
     <tr>
-      <th>797440</th>
+      <th>790365</th>
       <td>Small Time Crooks</td>
       <td>2000</td>
       <td>Hugh Grant</td>
@@ -2119,7 +2084,7 @@ h3 {
       <td>26.0</td>
     </tr>
     <tr>
-      <th>797441</th>
+      <th>790366</th>
       <td>The Big Man</td>
       <td>1990</td>
       <td>Hugh Grant</td>
@@ -2128,7 +2093,7 @@ h3 {
       <td>23.0</td>
     </tr>
     <tr>
-      <th>797442</th>
+      <th>790367</th>
       <td>The Dawning</td>
       <td>1988</td>
       <td>Hugh Grant</td>
@@ -2137,7 +2102,7 @@ h3 {
       <td>6.0</td>
     </tr>
     <tr>
-      <th>797443</th>
+      <th>790368</th>
       <td>The Englishman Who Went Up a Hill But Came Dow...</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -2146,7 +2111,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797444</th>
+      <th>790369</th>
       <td>The Man from U.N.C.L.E.</td>
       <td>2015</td>
       <td>Hugh Grant</td>
@@ -2155,7 +2120,7 @@ h3 {
       <td>7.0</td>
     </tr>
     <tr>
-      <th>797445</th>
+      <th>790370</th>
       <td>The Pirates! In an Adventure with Scientists!</td>
       <td>2012</td>
       <td>Hugh Grant</td>
@@ -2164,7 +2129,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797446</th>
+      <th>790371</th>
       <td>The Remains of the Day</td>
       <td>1993</td>
       <td>Hugh Grant</td>
@@ -2173,7 +2138,7 @@ h3 {
       <td>15.0</td>
     </tr>
     <tr>
-      <th>797447</th>
+      <th>790372</th>
       <td>The Rewrite</td>
       <td>2014</td>
       <td>Hugh Grant</td>
@@ -2182,7 +2147,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797448</th>
+      <th>790373</th>
       <td>Two Weeks Notice</td>
       <td>2002</td>
       <td>Hugh Grant</td>
@@ -2191,7 +2156,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797449</th>
+      <th>790374</th>
       <td>White Mischief</td>
       <td>1987</td>
       <td>Hugh Grant</td>
@@ -2246,7 +2211,7 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>797427</th>
+      <th>790352</th>
       <td>Impromptu</td>
       <td>1991</td>
       <td>Hugh Grant</td>
@@ -2255,7 +2220,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797412</th>
+      <th>790337</th>
       <td>An Awfully Big Adventure</td>
       <td>1995</td>
       <td>Hugh Grant</td>
@@ -2264,7 +2229,7 @@ h3 {
       <td>2.0</td>
     </tr>
     <tr>
-      <th>797435</th>
+      <th>790360</th>
       <td>Notting Hill</td>
       <td>1999</td>
       <td>Hugh Grant</td>
@@ -2319,7 +2284,7 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>797410</th>
+      <th>790335</th>
       <td>About a Boy</td>
       <td>2002</td>
       <td>Hugh Grant</td>
@@ -2328,7 +2293,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797411</th>
+      <th>790336</th>
       <td>American Dreamz</td>
       <td>2006</td>
       <td>Hugh Grant</td>
@@ -2337,7 +2302,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797432</th>
+      <th>790357</th>
       <td>Music and Lyrics</td>
       <td>2007</td>
       <td>Hugh Grant</td>
@@ -2346,7 +2311,7 @@ h3 {
       <td>1.0</td>
     </tr>
     <tr>
-      <th>797422</th>
+      <th>790347</th>
       <td>Did You Hear About the Morgans?</td>
       <td>2009</td>
       <td>Hugh Grant</td>
@@ -2393,29 +2358,29 @@ h3 {
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>The Sonora Kid</td>
-      <td>1927</td>
+      <th>12</th>
+      <td>The House of Rothschild</td>
+      <td>1934.0</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>The Banker</td>
-      <td>1989</td>
+      <th>30</th>
+      <td>The Man from Hell's River</td>
+      <td>1922.0</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>The Naked Cell</td>
-      <td>1988</td>
+      <th>40</th>
+      <td>The Leavenworth Case</td>
+      <td>1923.0</td>
     </tr>
     <tr>
-      <th>23</th>
-      <td>The Reason Why</td>
-      <td>1918</td>
+      <th>48</th>
+      <td>The Wedding Date</td>
+      <td>2005.0</td>
     </tr>
     <tr>
-      <th>24</th>
-      <td>The Flirting Widow</td>
-      <td>1930</td>
+      <th>75</th>
+      <td>The Ghost Goes Wild</td>
+      <td>1947.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2423,33 +2388,33 @@ h3 {
       <td>...</td>
     </tr>
     <tr>
-      <th>225980</th>
-      <td>The Operative</td>
-      <td>2000</td>
+      <th>224659</th>
+      <td>The Secret Code</td>
+      <td>1942.0</td>
     </tr>
     <tr>
-      <th>225984</th>
-      <td>The African Nazi</td>
-      <td>2013</td>
+      <th>224692</th>
+      <td>The Making of Maddalena</td>
+      <td>1916.0</td>
     </tr>
     <tr>
-      <th>225989</th>
-      <td>The Script: Beyond the Reality</td>
-      <td>2011</td>
+      <th>224711</th>
+      <td>The Golden Claw</td>
+      <td>1915.0</td>
     </tr>
     <tr>
-      <th>225994</th>
-      <td>The Christ Slayer</td>
-      <td>2018</td>
+      <th>224756</th>
+      <td>The Suicide</td>
+      <td>1996.0</td>
     </tr>
     <tr>
-      <th>226011</th>
-      <td>The Sandwich Man</td>
-      <td>1966</td>
+      <th>224774</th>
+      <td>The Angelheads</td>
+      <td>2014.0</td>
     </tr>
   </tbody>
 </table>
-<p>21486 rows × 2 columns</p>
+<p>21296 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -2459,18 +2424,18 @@ h3 {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2017    9888
-2016    8198
-2015    7564
-2014    7159
-2013    6896
-        ... 
-1894       1
-1903       1
-2026       1
-1898       1
-1899       1
-Name: year, Length: 128, dtype: int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2017.0    9888
+2016.0    8198
+2015.0    7563
+2014.0    7159
+2013.0    6895
+          ... 
+1905.0       2
+1898.0       1
+1903.0       1
+1899.0       1
+1894.0       1
+Name: year, Length: 119, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -2482,10 +2447,10 @@ Name: year, Length: 128, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/1da5f18abbd2b7ad8005d048e1094ef88fff523609004eef62bc64f69af74b3f.png" src="_images/1da5f18abbd2b7ad8005d048e1094ef88fff523609004eef62bc64f69af74b3f.png" />
+<img alt="_images/8e4f72a54ba0860ad8b4777815e6c59f3c54114394d0c6ecc27278aa14799b7f.png" src="_images/8e4f72a54ba0860ad8b4777815e6c59f3c54114394d0c6ecc27278aa14799b7f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2495,10 +2460,10 @@ Name: year, Length: 128, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/7f59e2ef8d311f21cea70f2f8a6a1426505b893be91c80c3dcddd43cedb98990.png" src="_images/7f59e2ef8d311f21cea70f2f8a6a1426505b893be91c80c3dcddd43cedb98990.png" />
+<img alt="_images/40f1e47c8aeb98ab800b8016f85b7fd468dea58d15570132a51027f9569878bd.png" src="_images/40f1e47c8aeb98ab800b8016f85b7fd468dea58d15570132a51027f9569878bd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2516,10 +2481,10 @@ Name: year, Length: 128, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;, ylabel=&#39;n&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;, ylabel=&#39;n&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/f6a69cb7f7627850fa4cfe201b25e13ce605ba02450533e5587d6f481eea2259.png" src="_images/f6a69cb7f7627850fa4cfe201b25e13ce605ba02450533e5587d6f481eea2259.png" />
+<img alt="_images/88cd4847aa0eb9a6f65aa8b74d924b7ba8be29d02c3c876dec86aee8d39e15c0.png" src="_images/88cd4847aa0eb9a6f65aa8b74d924b7ba8be29d02c3c876dec86aee8d39e15c0.png" />
 </div>
 </div>
 </section>
@@ -2536,11 +2501,11 @@ Name: year, Length: 128, dtype: int64
 Carmen                  17
 Macbeth                 16
 The Outsider            12
-The Three Musketeers    11
-Maya                    11
-Othello                 11
-Temptation              11
 Freedom                 11
+Temptation              11
+Maya                    11
+The Three Musketeers    11
+Othello                 11
 Kismet                  10
 Name: title, dtype: int64
 </pre></div>
@@ -2559,9 +2524,9 @@ Name: title, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1937    1217
-1938    1161
-1936    1153
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1937.0    1217
+1938.0    1161
+1936.0    1153
 Name: year, dtype: int64
 </pre></div>
 </div>
@@ -2578,10 +2543,10 @@ Name: year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/2246994ecce11634fc139d00542689d1fca26e7968d3b335d2b521a0b9720363.png" src="_images/2246994ecce11634fc139d00542689d1fca26e7968d3b335d2b521a0b9720363.png" />
+<img alt="_images/96d10a0727bee543c86b3ad7cd468caec4950c0b661dfabd6bed63ea76b83c0a.png" src="_images/96d10a0727bee543c86b3ad7cd468caec4950c0b661dfabd6bed63ea76b83c0a.png" />
 </div>
 </div>
 </section>
@@ -2597,12 +2562,18 @@ Name: year, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cast</span><span class="o">.</span><span class="n">character</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cast&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Himself        19418
+Dancer         11937
+Extra          10715
+Reporter        7739
+Doctor          6917
+Party Guest     6744
+Student         6486
+Policeman       6409
+Bartender       6228
+Minor Role      6203
+Herself         6112
+Name: character, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -2653,16 +2624,16 @@ Name: name, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Patron in Frisky Rabbit         16
-Patron in the Coffee House       9
 Patron in Chinese Restaurant     9
+Patron in the Coffee House       8
 Patron in Billiard Parlor        5
-Patron in Bar                    4
-Patron in cabaret                3
 Patron in restaurant             3
-Patron in Restaurant             3
+Patron in cabaret                3
 Patron in Club                   3
-Patron in Coffee Shop            2
-dtype: int64
+Patron in Restaurant             3
+Patron in Bar                    3
+Patron in Audience               2
+Name: character, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -2682,10 +2653,10 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;, ylabel=&#39;n&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;, ylabel=&#39;n&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b44a076beae301ec2c16c0fd18c3995da3623a6a6067409ff8e18b09e394f176.png" src="_images/b44a076beae301ec2c16c0fd18c3995da3623a6a6067409ff8e18b09e394f176.png" />
+<img alt="_images/9092908314f1099ab90d6d60f860d199fad768d434938db5b7822df57f464796.png" src="_images/9092908314f1099ab90d6d60f860d199fad768d434938db5b7822df57f464796.png" />
 </div>
 </div>
 </section>
@@ -2717,7 +2688,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3442902
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3397720
 </pre></div>
 </div>
 </div>
@@ -2730,7 +2701,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 178 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 182 ms
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -2761,7 +2732,7 @@ dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>1547</th>
+      <th>1533</th>
       <td>Hamlet</td>
       <td>1996</td>
       <td>Riz Abbasi</td>
@@ -2770,7 +2741,7 @@ dtype: int64
       <td>1.0</td>
     </tr>
     <tr>
-      <th>7145</th>
+      <th>7084</th>
       <td>Hamlet</td>
       <td>1921</td>
       <td>Fritz Achterberg</td>
@@ -2779,7 +2750,7 @@ dtype: int64
       <td>9.0</td>
     </tr>
     <tr>
-      <th>10751</th>
+      <th>10664</th>
       <td>Hamlet</td>
       <td>2009</td>
       <td>Hayden Adams</td>
@@ -2788,7 +2759,7 @@ dtype: int64
       <td>7.0</td>
     </tr>
     <tr>
-      <th>10752</th>
+      <th>10665</th>
       <td>Hamlet</td>
       <td>2009</td>
       <td>Hayden Adams</td>
@@ -2797,7 +2768,7 @@ dtype: int64
       <td>7.0</td>
     </tr>
     <tr>
-      <th>13251</th>
+      <th>13144</th>
       <td>Hamlet</td>
       <td>1913</td>
       <td>Eric Adeney</td>
@@ -2815,7 +2786,7 @@ dtype: int64
       <td>...</td>
     </tr>
     <tr>
-      <th>3341231</th>
+      <th>3298171</th>
       <td>Hamlet</td>
       <td>1969</td>
       <td>Jennifer Tudor</td>
@@ -2824,7 +2795,7 @@ dtype: int64
       <td>23.0</td>
     </tr>
     <tr>
-      <th>3363189</th>
+      <th>3319683</th>
       <td>Hamlet</td>
       <td>2000</td>
       <td>Diane Venora</td>
@@ -2833,7 +2804,7 @@ dtype: int64
       <td>3.0</td>
     </tr>
     <tr>
-      <th>3391416</th>
+      <th>3347349</th>
       <td>Hamlet</td>
       <td>1996</td>
       <td>Perdita Weeks</td>
@@ -2842,7 +2813,7 @@ dtype: int64
       <td>44.0</td>
     </tr>
     <tr>
-      <th>3395743</th>
+      <th>3351577</th>
       <td>Hamlet</td>
       <td>2015</td>
       <td>Katie (II) West</td>
@@ -2851,7 +2822,7 @@ dtype: int64
       <td>7.0</td>
     </tr>
     <tr>
-      <th>3411264</th>
+      <th>3366701</th>
       <td>Hamlet</td>
       <td>1996</td>
       <td>Kate Winslet</td>
@@ -2879,7 +2850,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 70.5 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 970 ms
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3025,7 +2996,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 660 µs
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wall time: 848 ms
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -3064,42 +3035,42 @@ dtype: int64
   <tbody>
     <tr>
       <th>Hamlet</th>
-      <td>2000</td>
-      <td>Sinead Dolan</td>
-      <td>actress</td>
-      <td>Special Guest Appearance</td>
-      <td>22.0</td>
-    </tr>
-    <tr>
-      <th>Hamlet</th>
-      <td>2015</td>
-      <td>Ben Stott</td>
+      <td>1976</td>
+      <td>Vladek Sheybal</td>
       <td>actor</td>
-      <td>Osric</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>Hamlet</th>
-      <td>1996</td>
-      <td>Frank (II) Morgan</td>
-      <td>actor</td>
-      <td>Pyrrhus</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Hamlet</th>
-      <td>1913</td>
-      <td>J.H. Barnes</td>
-      <td>actor</td>
-      <td>Polonius</td>
+      <td>1st Player</td>
       <td>4.0</td>
     </tr>
     <tr>
       <th>Hamlet</th>
-      <td>2017</td>
-      <td>Russell (IV) Shaw</td>
+      <td>1976</td>
+      <td>Vladek Sheybal</td>
       <td>actor</td>
-      <td>Horatio</td>
+      <td>Player Queen</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Hamlet</th>
+      <td>1913</td>
+      <td>Olive Richardson</td>
+      <td>actress</td>
+      <td>Player Queen</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Hamlet</th>
+      <td>1996</td>
+      <td>Jimi Mistry</td>
+      <td>actor</td>
+      <td>Sailor Two</td>
+      <td>34.0</td>
+    </tr>
+    <tr>
+      <th>Hamlet</th>
+      <td>1964</td>
+      <td>Barnard Hughes</td>
+      <td>actor</td>
+      <td>Priest</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -3112,43 +3083,43 @@ dtype: int64
     </tr>
     <tr>
       <th>Hamlet</th>
-      <td>2015</td>
-      <td>John Shrapnel</td>
+      <td>1990</td>
+      <td>Dave Duffy</td>
       <td>actor</td>
-      <td>Claudius</td>
-      <td>2.0</td>
+      <td>Francisco</td>
+      <td>15.0</td>
     </tr>
     <tr>
       <th>Hamlet</th>
-      <td>1990</td>
-      <td>Stephen Dillane</td>
-      <td>actor</td>
-      <td>Horatio</td>
-      <td>7.0</td>
-    </tr>
-    <tr>
-      <th>Hamlet</th>
-      <td>1990</td>
-      <td>Barrie Holland</td>
-      <td>actor</td>
-      <td>Palace Nobleman</td>
-      <td>NaN</td>
+      <td>2000</td>
+      <td>Kelly Sebastian</td>
+      <td>actress</td>
+      <td>Secretary</td>
+      <td>39.0</td>
     </tr>
     <tr>
       <th>Hamlet</th>
       <td>1913</td>
-      <td>S.A. Cookson</td>
+      <td>George Hayes</td>
       <td>actor</td>
-      <td>Horatio</td>
-      <td>3.0</td>
+      <td>Osric</td>
+      <td>10.0</td>
     </tr>
     <tr>
       <th>Hamlet</th>
-      <td>1954</td>
-      <td>Jankidas</td>
+      <td>1996</td>
+      <td>Kenneth W Caravan</td>
       <td>actor</td>
-      <td>Osric</td>
+      <td>Laertes Mob</td>
       <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Hamlet</th>
+      <td>1976</td>
+      <td>Quentin Crisp</td>
+      <td>actor</td>
+      <td>Polonius</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
@@ -4053,10 +4024,10 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/75e892344ff6969e6552bbb4182965b898954af9804477118174a37f6ecf5316.png" src="_images/75e892344ff6969e6552bbb4182965b898954af9804477118174a37f6ecf5316.png" />
+<img alt="_images/a8d10f03d82e8183a2d65a5dc5978128b36748685f99ccbd7dc856c88be6da02.png" src="_images/a8d10f03d82e8183a2d65a5dc5978128b36748685f99ccbd7dc856c88be6da02.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4177,26 +4148,26 @@ Name: n, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year  type   
-1950  actor      603
-      actress    267
-1951  actor      626
-      actress    272
-1952  actor      590
-      actress    282
-1953  actor      629
+1950  actor      622
+      actress    287
+1951  actor      640
       actress    283
-1954  actor      620
-      actress    298
-1955  actor      602
-      actress    263
-1956  actor      609
-      actress    284
-1957  actor      703
+1952  actor      605
+      actress    300
+1953  actor      648
+      actress    305
+1954  actor      616
+      actress    311
+1955  actor      634
       actress    281
-1958  actor      695
-      actress    273
-1959  actor      672
-      actress    286
+1956  actor      651
+      actress    304
+1957  actor      700
+      actress    303
+1958  actor      674
+      actress    292
+1959  actor      692
+      actress    319
 dtype: int64
 </pre></div>
 </div>
@@ -4257,17 +4228,6 @@ Name: n, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">cast</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">### Wymień każdą z postaci, którą Frank Oz zagrał przynajmniej dwa razy.</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cast</span>
-
-<span class="ne">NameError</span>: name &#39;cast&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -4564,17 +4524,267 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cast</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">[(</span><span class="n">c</span><span class="o">.</span><span class="n">character</span> <span class="o">==</span> <span class="s1">&#39;Superman&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">character</span> <span class="o">==</span> <span class="s1">&#39;Batman&#39;</span><span class="p">)]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;character&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cast&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>character</th>
+      <th>Batman</th>
+      <th>Superman</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1938</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1940</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1943</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1948</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1949</th>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1951</th>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1953</th>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1954</th>
+      <td>0.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1955</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1965</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1966</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1967</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1973</th>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>4.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>5.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>5.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>4.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>12.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>9.0</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4603,10 +4813,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/707fde3341047697ca6276dbd16fcb17bff10845bee254f710e56f8fb4b3e89d.png" src="_images/707fde3341047697ca6276dbd16fcb17bff10845bee254f710e56f8fb4b3e89d.png" />
+<img alt="_images/a7feecc70029f60d02b4cf375d19267d4dedca0182af1fe92ca07d456be65d8d.png" src="_images/a7feecc70029f60d02b4cf375d19267d4dedca0182af1fe92ca07d456be65d8d.png" />
 </div>
 </div>
 </section>
@@ -4651,10 +4861,10 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;year&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/bdd47565ba63024bfaab249202879e33c3e82a6f3784dbb29260dd263b9f1a16.png" src="_images/bdd47565ba63024bfaab249202879e33c3e82a6f3784dbb29260dd263b9f1a16.png" />
+<img alt="_images/730ec3145e481ccbbfdaba476d63b3a8b34f47e47c3ebb194da11d9719486b29.png" src="_images/730ec3145e481ccbbfdaba476d63b3a8b34f47e47c3ebb194da11d9719486b29.png" />
 </div>
 </div>
 </section>
@@ -5324,6 +5534,10 @@ Name: date, Length: 443486, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\UPWr\AppData\Local\Temp\ipykernel_3876\2998336772.py:1: FutureWarning: In a future version of pandas all arguments of DataFrame.pivot will be keyword-only.
+  r.pivot(&#39;title&#39;,&#39;country&#39;,&#39;date&#39;)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -5805,10 +6019,10 @@ Name: date, Length: 443486, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/e042bec4649d3d403f8aa86629419ac8d362940237f756bf9da436672743cd5e.png" src="_images/e042bec4649d3d403f8aa86629419ac8d362940237f756bf9da436672743cd5e.png" />
+<img alt="_images/49bdabdc194fc9085a90e9a391106deaf0a3f59d2c819833bfb30ee0ff28fff3.png" src="_images/49bdabdc194fc9085a90e9a391106deaf0a3f59d2c819833bfb30ee0ff28fff3.png" />
 </div>
 </div>
 </section>
@@ -5859,10 +6073,11 @@ Name: date, Length: 443486, dtype: int64
 
               
               
-              
-              
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Mod6.html"
@@ -5882,7 +6097,10 @@ Name: date, Length: 443486, dtype: int64
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -5997,8 +6215,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
