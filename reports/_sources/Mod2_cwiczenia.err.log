@@ -24,7 +24,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 print("Ala powiedziała: "Mam kota." ...") # cudzysłów kończy literał
 ------------------
 
-[1;36m  File [1;32m"C:\Users\UPWr\AppData\Local\Temp\ipykernel_10364\2391583789.py"[1;36m, line [1;32m1[0m
+[1;36m  File [1;32m"C:\Users\UPWr\AppData\Local\Temp\ipykernel_23944\2391583789.py"[1;36m, line [1;32m1[0m
 [1;33m    print("Ala powiedziała: "Mam kota." ...") # cudzysłów kończy literał[0m
 [1;37m          ^[0m
 [1;31mSyntaxError[0m[1;31m:[0m invalid syntax. Perhaps you forgot a comma?
