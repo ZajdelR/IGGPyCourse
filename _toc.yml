@@ -10,9 +10,9 @@ chapters:
 - file: Mod2_cw
 - file: Mod3
 - file: Mod3_cw
-#- file: Mod4
+- file: Mod4
 #- file: Mod4_cw
-#- file: Mod5
+- file: Mod5
 #- file: Mod5_cw
 #- file: Mod6
 #- file: Mod6_cw
