@@ -13,8 +13,8 @@ chapters:
 - file: Mod4
 - file: Mod4_cw
 - file: Mod5
-#- file: Mod5_cw
-#- file: Mod6
+- file: Mod5_cw
+- file: Mod6
 #- file: Mod6_cw
 #- file: Mod7
 #- file: Mod8
