@@ -7,9 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Moduł 5 - Macierze - 2024/2025 &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+    <title>Moduł 5 - Macierze &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,8 +49,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -93,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Mod5';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Moduł 4 - Funkcje i typy mapujące" href="Mod4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -104,6 +104,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -180,20 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="Mod0.html">
-                    Wprowadzenie - 2024/2025
+                    Wprowadzenie
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2024/2025</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduł 5 - Macierze - 2024/2025</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python</a></li>
 
 </ul>
 
@@ -303,10 +304,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -314,7 +315,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -331,7 +332,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Moduł 5 - Macierze - 2024/2025</h1>
+    <h1>Moduł 5 - Macierze</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -341,7 +342,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 5 - Macierze - 2024/2025</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 5 - Macierze</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#macierze">Macierze</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#po-co-mi-macierze-przeciez-sa-typy-sekwencyjne">Po co mi macierze przecież są typy sekwencyjne ?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-gdyby-macierzy-nie-bylo">Co gdyby macierzy nie było ?</a></li>
@@ -359,7 +360,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexowanie-logiczne">Indexowanie logiczne</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poszukiwanie-wartosci-w-macierzy">Poszukiwanie wartosci w macierzy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacje-na-macierzach">Operacje na macierzach</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-multiplication-is-not-matrix-multiplication">Array multiplication is not matrix multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-multiplication-in-not-matrix-multiplication">Array multiplication in not matrix multiplication</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje">Funkcje</a></li>
@@ -387,8 +388,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <img src="./src/header.png"><hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="modul-5-macierze-2024-2025">
-<h1>Moduł 5 - Macierze - 2024/2025<a class="headerlink" href="#modul-5-macierze-2024-2025" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="modul-5-macierze">
+<h1>Moduł 5 - Macierze<a class="headerlink" href="#modul-5-macierze" title="Permalink to this heading">#</a></h1>
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="macierze">
@@ -441,7 +442,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>83 ms ± 1.31 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>316 ms ± 55.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -453,7 +454,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2 ms ± 10.9 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.33 ms ± 105 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -588,14 +589,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.23042070e-307, 3.56043053e-307, 1.60219306e-306,
-        7.56571288e-307],
-       [7.56587584e-307, 1.37961302e-306, 1.05699242e-307,
-        8.01097889e-307],
-       [1.78020169e-306, 7.56601165e-307, 1.02359984e-306,
-        1.33510679e-306],
-       [2.22522597e-306, 2.22523140e-306, 1.24611945e-306,
-        1.42410974e-306]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.26230818e-311, 1.26232705e-311, 1.26232700e-311,
+        1.26230859e-311],
+       [1.26233744e-311, 1.26233740e-311, 1.26232698e-311,
+        1.26230874e-311],
+       [1.26232698e-311, 1.26232698e-311, 1.26230874e-311,
+        1.26232702e-311],
+       [1.26232703e-311, 1.26232700e-311, 1.26232701e-311,
+        1.26230859e-311]])
 </pre></div>
 </div>
 </div>
@@ -611,8 +612,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.72638173 0.30419971 0.78644066 0.66242527]
-[ 0.90120163  1.74063142 -0.59599649  2.1459858 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.1274473  0.48071893 0.23640599 0.76910443]
+[ 0.72382202  2.86978331  0.12896581 -0.40090338]
 </pre></div>
 </div>
 </div>
@@ -633,15 +634,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1049., 1012.,  994.,  965.,  980.,  965., 1054.,  976., 1021.,
-         984.]),
- array([2.91658249e-05, 1.00020011e-01, 2.00010857e-01, 3.00001702e-01,
-        3.99992548e-01, 4.99983393e-01, 5.99974239e-01, 6.99965084e-01,
-        7.99955930e-01, 8.99946775e-01, 9.99937621e-01]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 949., 1021.,  954.,  979., 1036.,  990., 1005., 1001., 1066.,
+         999.]),
+ array([3.40857162e-04, 1.00238784e-01, 2.00136711e-01, 3.00034637e-01,
+        3.99932564e-01, 4.99830491e-01, 5.99728417e-01, 6.99626344e-01,
+        7.99524271e-01, 8.99422198e-01, 9.99320124e-01]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/b22eba567459a45c888d2cc683bb47158c5770ea01edd8febf3b9eaad7026f70.png" src="_images/b22eba567459a45c888d2cc683bb47158c5770ea01edd8febf3b9eaad7026f70.png" />
+<img alt="_images/3e323fbf8a56c69163f8f298792b814eddc91ad20f37008f697a09b092764233.png" src="_images/3e323fbf8a56c69163f8f298792b814eddc91ad20f37008f697a09b092764233.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -652,15 +653,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([   9.,   81.,  464., 1403., 2655., 2825., 1803.,  607.,  131.,
-          22.]),
- array([-3.85776561, -3.10529235, -2.35281909, -1.60034583, -0.84787257,
-        -0.0953993 ,  0.65707396,  1.40954722,  2.16202048,  2.91449374,
-         3.666967  ]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  13.,  101.,  552., 1575., 2712., 2680., 1600.,  617.,  132.,
+          18.]),
+ array([-3.71360127, -2.97418321, -2.23476514, -1.49534708, -0.75592902,
+        -0.01651095,  0.72290711,  1.46232518,  2.20174324,  2.9411613 ,
+         3.68057937]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/69f78629e22a4103d88118a0cf462bb28068a91248ac391e842aa8ab707b253c.png" src="_images/69f78629e22a4103d88118a0cf462bb28068a91248ac391e842aa8ab707b253c.png" />
+<img alt="_images/6d6f6fac120fbab7b6d822c0b20b65531012fda534cfd05838147221e89aaca2.png" src="_images/6d6f6fac120fbab7b6d822c0b20b65531012fda534cfd05838147221e89aaca2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,8 +672,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17.90483011 31.73150137  4.03599117 16.53576472 43.97186932 26.84269118
- 33.48635475 35.8107876  39.18887822 45.8401597 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[38.47635142  8.7012267  60.27492519 53.02984803 42.96893038  3.09737701
+ 37.94391218 40.84128589 65.43604807 21.70832345]
 </pre></div>
 </div>
 </div>
@@ -833,12 +834,12 @@ zwłaszcza w przypadku dużych zbiorów danych, dobrze jest wiedzieć, że ma si
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.23 0.16 0.47]
- [0.63 0.06 0.79]
- [0.63 0.36 0.65]]
-0.05854569759393957
-[0.63 0.06 0.79]
-[0.23 0.63 0.63]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.22 0.62 0.48]
+ [0.36 0.99 0.26]
+ [0.57 0.33 0.36]]
+0.9891719960653435
+[0.36 0.99 0.26]
+[0.22 0.36 0.57]
 </pre></div>
 </div>
 </div>
@@ -966,12 +967,12 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10 16 10 19  7  5  6  5 18  6 14  9  4  7  3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 4 11 14 20  4 17 19  1 12 18 10 10  2  0  4]
 ---
-[False False False False False False  True False  True  True False  True
- False False  True]
+[False False False False False False False False  True  True False False
+ False  True False]
 ---
-[ 6 18  6  9  3]
+[12 18  0]
 </pre></div>
 </div>
 </div>
@@ -986,8 +987,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11 16  9 10 13 16  4 17 10  6 18 19  6 13  3]
-[11 16 -1 -1 -1 -1 -1 -1 10  6 18 19  6 13  3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 3  5 15 11 15  8 10 10 12 20  0  5  3 19 17]
+[ 3  5 -1 -1 -1 -1 -1 -1 12 20  0  5  3 19 17]
 </pre></div>
 </div>
 </div>
@@ -1053,13 +1054,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.47,  0.1 , -0.12,  0.38],
-       [ 2.05,  0.04,  0.83, -1.51],
-       [-1.57,  1.93,  0.23,  0.97],
-       [-1.5 , -0.43,  1.09, -0.35],
-       [-0.31, -1.46, -0.56,  0.64],
-       [ 1.  , -2.19,  2.15,  0.88],
-       [ 1.61,  1.3 ,  0.19,  0.62]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.39, -0.22, -0.39,  0.5 ],
+       [-0.54, -0.53,  0.58, -0.54],
+       [-1.48, -0.29, -1.34,  0.67],
+       [ 0.82,  0.34,  1.65,  1.37],
+       [-0.3 , -0.55,  1.26,  0.5 ],
+       [ 0.66, -0.8 , -1.18,  1.89],
+       [ 0.13, -0.41, -0.85, -0.3 ]])
 </pre></div>
 </div>
 </div>
@@ -1071,13 +1072,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True, False,  True, False],
-       [False, False, False,  True],
-       [ True, False, False, False],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True,  True,  True, False],
        [ True,  True, False,  True],
        [ True,  True,  True, False],
-       [False,  True, False, False],
-       [False, False, False, False]])
+       [False, False, False, False],
+       [ True,  True, False, False],
+       [False,  True,  True, False],
+       [False,  True,  True,  True]])
 </pre></div>
 </div>
 </div>
@@ -1089,8 +1090,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.47, -0.12, -1.51, -1.57, -1.5 , -0.43, -0.35, -0.31, -1.46,
-       -0.56, -2.19])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.39, -0.22, -0.39, -0.54, -0.53, -0.54, -1.48, -0.29, -1.34,
+       -0.3 , -0.55, -0.8 , -1.18, -0.41, -0.85, -0.3 ])
 </pre></div>
 </div>
 </div>
@@ -1103,13 +1104,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan, 0.1 ,  nan, 0.38],
-       [2.05, 0.04, 0.83,  nan],
-       [ nan, 1.93, 0.23, 0.97],
-       [ nan,  nan, 1.09,  nan],
-       [ nan,  nan,  nan, 0.64],
-       [1.  ,  nan, 2.15, 0.88],
-       [1.61, 1.3 , 0.19, 0.62]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan,  nan,  nan, 0.5 ],
+       [ nan,  nan, 0.58,  nan],
+       [ nan,  nan,  nan, 0.67],
+       [0.82, 0.34, 1.65, 1.37],
+       [ nan,  nan, 1.26, 0.5 ],
+       [0.66,  nan,  nan, 1.89],
+       [0.13,  nan,  nan,  nan]])
 </pre></div>
 </div>
 </div>
@@ -1137,11 +1138,11 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_9104\3109630888.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [43],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="ne">TypeError</span>: &#39;&gt;&#39; not supported between instances of &#39;numpy.ndarray&#39; and &#39;int&#39;
+<span class="ne">UFuncTypeError</span>: ufunc &#39;greater&#39; did not contain a loop with signature matching types (&lt;class &#39;numpy.dtypes.StrDType&#39;&gt;, &lt;class &#39;numpy.dtypes.Int32DType&#39;&gt;) -&gt; &lt;class &#39;numpy.dtypes.BoolDType&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1262,8 +1263,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 </div>
-<section id="array-multiplication-is-not-matrix-multiplication">
-<h3>Array multiplication is not matrix multiplication<a class="headerlink" href="#array-multiplication-is-not-matrix-multiplication" title="Permalink to this heading">#</a></h3>
+<section id="array-multiplication-in-not-matrix-multiplication">
+<h3>Array multiplication in not matrix multiplication<a class="headerlink" href="#array-multiplication-in-not-matrix-multiplication" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
@@ -2163,25 +2164,12 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Mod4.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Moduł 4 - Funkcje i typy mapujące</p>
-      </div>
-    </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2196,7 +2184,7 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 5 - Macierze - 2024/2025</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 5 - Macierze</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#macierze">Macierze</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#po-co-mi-macierze-przeciez-sa-typy-sekwencyjne">Po co mi macierze przecież są typy sekwencyjne ?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-gdyby-macierzy-nie-bylo">Co gdyby macierzy nie było ?</a></li>
@@ -2214,7 +2202,7 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexowanie-logiczne">Indexowanie logiczne</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poszukiwanie-wartosci-w-macierzy">Poszukiwanie wartosci w macierzy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacje-na-macierzach">Operacje na macierzach</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-multiplication-is-not-matrix-multiplication">Array multiplication is not matrix multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-multiplication-in-not-matrix-multiplication">Array multiplication in not matrix multiplication</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje">Funkcje</a></li>
@@ -2277,8 +2265,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Moduł 8 - Wizualizacje z matplotlibem &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -49,8 +49,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -105,6 +106,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -188,24 +198,6 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod6.html">Moduł 6 - Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod6_cw.html">Moduł 6 - Ćwiczenia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../Mod8.html">Moduł 8 - Pisanie skryptów konsolowych</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod8_cw.html">Moduł 8 - Ćwiczenia</a></li>
 </ul>
 
     </div>
@@ -314,10 +306,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -325,7 +317,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -579,7 +571,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(4.0, -0.4, &#39;Made with http://matplotlib.org&#39;)
 </pre></div>
 </div>
-<img alt="../_images/c41f4afcc14ef390221270f4c8c6b61cae568add4d995e18d5f1377899eb683f.png" src="../_images/c41f4afcc14ef390221270f4c8c6b61cae568add4d995e18d5f1377899eb683f.png" />
+<img alt="../_images/709257fe8ae7b975e4820bcc55bfa4d422274a2bfb108370ac212b74c6043250.png" src="../_images/709257fe8ae7b975e4820bcc55bfa4d422274a2bfb108370ac212b74c6043250.png" />
 </div>
 </div>
 </section>
@@ -660,7 +652,7 @@ W notatniku IPython, masz również możliwość osadzenia grafiki bezpośrednio
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a7d50c43ae710f394cc1acfbfabee2d71e354c4c24fbf1530ba829fa9225462c.png" src="../_images/a7d50c43ae710f394cc1acfbfabee2d71e354c4c24fbf1530ba829fa9225462c.png" />
+<img alt="../_images/b37e692700d8202723c094bc2a61055042a5a373332b651c8ca0c93685425eb8.png" src="../_images/b37e692700d8202723c094bc2a61055042a5a373332b651c8ca0c93685425eb8.png" />
 </div>
 </div>
 </section>
@@ -680,7 +672,7 @@ Na przykład, aby zapisać poprzednią figurę jako plik PNG, można uruchomić 
 <p>Mamy teraz w bieżącym katalogu roboczym plik o nazwie <code class="docutils literal notranslate"><span class="pre">my_figure.png</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-lh<span class="w"> </span>my_figure.png
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls -lh my_figure.png
 </pre></div>
 </div>
 </div>
@@ -700,7 +692,7 @@ operable program or batch file.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/39cd0d0dd283aba40552fee38392b21a27aa639954d919bacb00ee3d1c8aa24e.png" src="../_images/39cd0d0dd283aba40552fee38392b21a27aa639954d919bacb00ee3d1c8aa24e.png" />
+<img alt="../_images/e93ff0ed073b543e6f9059f44b695a8acef9d63bbd8c2f51bc9d584396477025.png" src="../_images/e93ff0ed073b543e6f9059f44b695a8acef9d63bbd8c2f51bc9d584396477025.png" />
 </div>
 </div>
 <p>W <code class="docutils literal notranslate"><span class="pre">savefig()</span></code>, format pliku jest wnioskowany z rozszerzenia podanej nazwy pliku.
@@ -757,7 +749,7 @@ Na przykład, poniższy kod będzie prawdopodobnie wyglądał dość znajomo dla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ee78aa4b4578e6ea2b96a1bc6452f9eb39e43328a5ebe0e7e4b3c885e9e2386.png" src="../_images/1ee78aa4b4578e6ea2b96a1bc6452f9eb39e43328a5ebe0e7e4b3c885e9e2386.png" />
+<img alt="../_images/d41ab5746efc1f791d66c93adf27f43c2d371390b8b293a39b848d4d031876dc.png" src="../_images/d41ab5746efc1f791d66c93adf27f43c2d371390b8b293a39b848d4d031876dc.png" />
 </div>
 </div>
 <p>Ważne jest by zauważyć, że ten interfejs jest <em>stateczny</em>: śledzi “bieżącą” figurę i osie, które są miejscem gdzie wszystkie komendy <code class="docutils literal notranslate"><span class="pre">plt</span></code> są stosowane.
@@ -785,7 +777,7 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ee78aa4b4578e6ea2b96a1bc6452f9eb39e43328a5ebe0e7e4b3c885e9e2386.png" src="../_images/1ee78aa4b4578e6ea2b96a1bc6452f9eb39e43328a5ebe0e7e4b3c885e9e2386.png" />
+<img alt="../_images/d41ab5746efc1f791d66c93adf27f43c2d371390b8b293a39b848d4d031876dc.png" src="../_images/d41ab5746efc1f791d66c93adf27f43c2d371390b8b293a39b848d4d031876dc.png" />
 </div>
 </div>
 </section>
@@ -804,8 +796,50 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\UPWr\AppData\Local\Temp\ipykernel_24032\3518078781.py:3: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as &#39;seaborn-v0_8-&lt;style&gt;&#39;. Alternatively, directly use the seaborn API instead.
-  plt.style.use(&#39;seaborn-whitegrid&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\matplotlib\style\core.py:137,</span> in <span class="ni">use</span><span class="nt">(style)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="n">style</span> <span class="o">=</span> <span class="n">_rc_params_in_file</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\matplotlib\__init__.py:893,</span> in <span class="ni">_rc_params_in_file</span><span class="nt">(fname, transform, fail_on_error)</span>
+<span class="g g-Whitespace">    </span><span class="mi">892</span> <span class="n">rc_temp</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">893</span> <span class="k">with</span> <span class="n">_open_file_or_url</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>     <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\contextlib.py:119,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\matplotlib\__init__.py:870,</span> in <span class="ni">_open_file_or_url</span><span class="nt">(fname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span> <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">870</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">yield</span> <span class="n">f</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;seaborn-whitegrid&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-whitegrid&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\matplotlib\style\core.py:139,</span> in <span class="ni">use</span><span class="nt">(style)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="n">style</span> <span class="o">=</span> <span class="n">_rc_params_in_file</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>         <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">style</span><span class="si">!r}</span><span class="s2"> is not a valid package style, path of style &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>             <span class="sa">f</span><span class="s2">&quot;file, URL of style file, or library style name (library &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>             <span class="sa">f</span><span class="s2">&quot;styles are listed in `style.available`)&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="n">filtered</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nn">    144 for k</span> in <span class="ni">style:  # don&#39;t trigger RcParams.__getitem__</span><span class="nt">(&#39;backend&#39;)</span>
+
+<span class="ne">OSError</span>: &#39;seaborn-whitegrid&#39; is not a valid package style, path of style file, URL of style file, or library style name (library styles are listed in `style.available`)
 </pre></div>
 </div>
 </div>
@@ -820,7 +854,7 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c545ff2a7b59d55339ebdfdf08834c89f89b15c3e97f7d30e1926615349b3c6f.png" src="../_images/c545ff2a7b59d55339ebdfdf08834c89f89b15c3e97f7d30e1926615349b3c6f.png" />
+<img alt="../_images/6cffb2f6cc66164fa2cb2f30844b6ab27c81e0bc97b84b49ea94d93559ad6955.png" src="../_images/6cffb2f6cc66164fa2cb2f30844b6ab27c81e0bc97b84b49ea94d93559ad6955.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -830,7 +864,7 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c545ff2a7b59d55339ebdfdf08834c89f89b15c3e97f7d30e1926615349b3c6f.png" src="../_images/c545ff2a7b59d55339ebdfdf08834c89f89b15c3e97f7d30e1926615349b3c6f.png" />
+<img alt="../_images/6cffb2f6cc66164fa2cb2f30844b6ab27c81e0bc97b84b49ea94d93559ad6955.png" src="../_images/6cffb2f6cc66164fa2cb2f30844b6ab27c81e0bc97b84b49ea94d93559ad6955.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -843,7 +877,7 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e5a036d32ff0be7aac91ff53574725b97fae037ea99686e6c0971e828477168.png" src="../_images/2e5a036d32ff0be7aac91ff53574725b97fae037ea99686e6c0971e828477168.png" />
+<img alt="../_images/ca7f5ab2a6c1744746e1da092652b53dbd29dae7382ee83ba6fcbebe9688aa4d.png" src="../_images/ca7f5ab2a6c1744746e1da092652b53dbd29dae7382ee83ba6fcbebe9688aa4d.png" />
 </div>
 </div>
 <p>Jeśli chcemy stworzyć jedną figurę z wieloma liniami, możemy po prostu wywołać funkcję <code class="docutils literal notranslate"><span class="pre">plot</span></code> wielokrotnie:</p>
@@ -856,7 +890,7 @@ Aby odtworzyć poprzedni wątek przy użyciu tego stylu plotowania, możesz wyko
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b25a63955ce04f397757fe53148e434c40c91ad4fc7aed21cd5303971902aca8.png" src="../_images/b25a63955ce04f397757fe53148e434c40c91ad4fc7aed21cd5303971902aca8.png" />
+<img alt="../_images/7771990ff8de130551c2522232a32330986d9e4b19fdd80724add17a419791c9.png" src="../_images/7771990ff8de130551c2522232a32330986d9e4b19fdd80724add17a419791c9.png" />
 </div>
 </div>
 <section id="dostosowywanie-wykresu-kolory-i-style-linii">
@@ -877,7 +911,7 @@ Kolor może być określony na wiele sposobów:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a672c10fb58022047ff555064e6282bf233327969ce37499682f3bf165774cc7.png" src="../_images/a672c10fb58022047ff555064e6282bf233327969ce37499682f3bf165774cc7.png" />
+<img alt="../_images/cfb856a3a739fe5347ac6a571977a7349accbbd240731d6c27f18c1258d53472.png" src="../_images/cfb856a3a739fe5347ac6a571977a7349accbbd240731d6c27f18c1258d53472.png" />
 </div>
 </div>
 <p>Jeśli nie podano koloru, Matplotlib automatycznie przejdzie przez zestaw domyślnych kolorów dla wielu linii.</p>
@@ -898,7 +932,7 @@ Kolor może być określony na wiele sposobów:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/39f5168f750a6e7e4d8522630fcc18bbe4820ec59ca495e664728f420b6c84f8.png" src="../_images/39f5168f750a6e7e4d8522630fcc18bbe4820ec59ca495e664728f420b6c84f8.png" />
+<img alt="../_images/b8b3672c4789ddabac7d763cb945d4004a169329c2991c698f66d5e8b474e4d3.png" src="../_images/b8b3672c4789ddabac7d763cb945d4004a169329c2991c698f66d5e8b474e4d3.png" />
 </div>
 </div>
 <p>Jeśli chcesz być wyjątkowo zwięzły, te kody <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> i <code class="docutils literal notranslate"><span class="pre">color</span></code> mogą być połączone w jeden nie-kluczowy argument do funkcji <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>:</p>
@@ -912,7 +946,7 @@ Kolor może być określony na wiele sposobów:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/87a5a60bb6263ff5f00380dc6b8d11f464745e5e8873d4245bdc17a9a602871f.png" src="../_images/87a5a60bb6263ff5f00380dc6b8d11f464745e5e8873d4245bdc17a9a602871f.png" />
+<img alt="../_images/d8ef080ac2117343ba1eea36d41a56da7bbdf8d2e3f8c342f8422e653f7ec957.png" src="../_images/d8ef080ac2117343ba1eea36d41a56da7bbdf8d2e3f8c342f8422e653f7ec957.png" />
 </div>
 </div>
 <p>Te jednoznakowe kody kolorów odzwierciedlają standardowe skróty w systemach kolorów RGB (Red/Green/Blue) i CMYK (Cyan/Magenta/Yellow/blacK), powszechnie używanych w cyfrowej grafice kolorowej.</p>
@@ -1067,7 +1101,7 @@ class list(object)
  |  __hash__ = None
 </pre></div>
 </div>
-<img alt="../_images/3696fd9fcd4408687e003ba9f83c23272b49c89cfbed82000e601aba996491f5.png" src="../_images/3696fd9fcd4408687e003ba9f83c23272b49c89cfbed82000e601aba996491f5.png" />
+<img alt="../_images/5613e12251f71ca5f46290c3a43d110412dc04fc78ce556b175de87939299f30.png" src="../_images/5613e12251f71ca5f46290c3a43d110412dc04fc78ce556b175de87939299f30.png" />
 </div>
 </div>
 </section>
@@ -1085,7 +1119,7 @@ class list(object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9fcf52a6451e9bf2e4c67f74c30f1602b197b771b0d446ec856987d717fdf2f7.png" src="../_images/9fcf52a6451e9bf2e4c67f74c30f1602b197b771b0d446ec856987d717fdf2f7.png" />
+<img alt="../_images/c0dd89b66e20da9a86e41f716aba3b382591a112338f6856011999b47169a711.png" src="../_images/c0dd89b66e20da9a86e41f716aba3b382591a112338f6856011999b47169a711.png" />
 </div>
 </div>
 <p>Jeśli z jakiegoś powodu chcesz, aby któraś z osi była wyświetlana odwrotnie, możesz po prostu odwrócić kolejność argumentów:</p>
@@ -1099,7 +1133,7 @@ class list(object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8d583f2b2dba21182684e4434524a5dd757542c8836150b087390ba16940baa1.png" src="../_images/8d583f2b2dba21182684e4434524a5dd757542c8836150b087390ba16940baa1.png" />
+<img alt="../_images/3387ea71080862e47d9a25f32fb7d2607cffe237353dca65bc396c68810683eb.png" src="../_images/3387ea71080862e47d9a25f32fb7d2607cffe237353dca65bc396c68810683eb.png" />
 </div>
 </div>
 <p>Metoda <code class="docutils literal notranslate"><span class="pre">plt.axis()</span></code> pozwalając robić takie rzeczy jak automatyczne zacieśnianie granic wokół bieżącego zakresu wykresu:</p>
@@ -1111,7 +1145,7 @@ class list(object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c9ecbf96fd42de870bcfcb2db63008650349e8d0f34224e58d8a29464f3162ca.png" src="../_images/c9ecbf96fd42de870bcfcb2db63008650349e8d0f34224e58d8a29464f3162ca.png" />
+<img alt="../_images/c7b46b4449e788bf31a57993f6772da2fc871652b9091497793da78f876e995e.png" src="../_images/c7b46b4449e788bf31a57993f6772da2fc871652b9091497793da78f876e995e.png" />
 </div>
 </div>
 <p>Pozwala nawet na specyfikacje wyższego poziomu, takie jak zapewnienie równego współczynnika proporcji, aby na twoim ekranie jedna jednostka w <code class="docutils literal notranslate"><span class="pre">x</span></code> jest równa jednej jednostce w <code class="docutils literal notranslate"><span class="pre">y</span></code>:</p>
@@ -1123,7 +1157,7 @@ class list(object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/14161167c8f0c580afbab5f2c4f78c7de22c76647f06c386a99a5aeff442deed.png" src="../_images/14161167c8f0c580afbab5f2c4f78c7de22c76647f06c386a99a5aeff442deed.png" />
+<img alt="../_images/25d430c9a5e6efe188e546aaf031bf39cb9c726241ce73bcd721c303809f037b.png" src="../_images/25d430c9a5e6efe188e546aaf031bf39cb9c726241ce73bcd721c303809f037b.png" />
 </div>
 </div>
 </section>
@@ -1140,7 +1174,7 @@ class list(object)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45e07859a4a1c3991a7b3cef7d31b37a946b147b11265b1928c9a0a62d2de939.png" src="../_images/45e07859a4a1c3991a7b3cef7d31b37a946b147b11265b1928c9a0a62d2de939.png" />
+<img alt="../_images/cb1e5769d6c1bec93ca5a3753baa0c24120454855b2b785e07b7a5f555654fb4.png" src="../_images/cb1e5769d6c1bec93ca5a3753baa0c24120454855b2b785e07b7a5f555654fb4.png" />
 </div>
 </div>
 <p>Pozycja, rozmiar i styl tych etykiet mogą być dostosowane za pomocą opcjonalnych argumentów funkcji.
@@ -1160,7 +1194,7 @@ Chociaż istnieje kilka ważnych sposobów użycia, uważam, że najłatwiej jes
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f05e91e745301866bfe54e966f7fc7165a35272effa7ed9bbc9d34a73084d665.png" src="../_images/f05e91e745301866bfe54e966f7fc7165a35272effa7ed9bbc9d34a73084d665.png" />
+<img alt="../_images/93334fafb7d6c76682af18ce9028ad1f9c424001681970d231fb66a2a117a330.png" src="../_images/93334fafb7d6c76682af18ce9028ad1f9c424001681970d231fb66a2a117a330.png" />
 </div>
 </div>
 <p>Jak widać, funkcja <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> śledzi styl i kolor linii, i dopasowuje je do właściwej etykiety.
@@ -1178,10 +1212,10 @@ Na przykład możemy określić lokalizację i wyłączyć obramowanie:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e7439d9590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x28fb9e4c970&gt;
 </pre></div>
 </div>
-<img alt="../_images/887865bac0a8e22c12f2ddd3d49bcf263ef2d2e319403db662d681b91783bfe1.png" src="../_images/887865bac0a8e22c12f2ddd3d49bcf263ef2d2e319403db662d681b91783bfe1.png" />
+<img alt="../_images/17d286b04bbf1707efc03dc62941faa78846ebff1457e923a52e9c3bae40506f.png" src="../_images/17d286b04bbf1707efc03dc62941faa78846ebff1457e923a52e9c3bae40506f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1195,10 +1229,10 @@ Na przykład możemy określić lokalizację i wyłączyć obramowanie:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e7446f6490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x28fb9ff8c40&gt;
 </pre></div>
 </div>
-<img alt="../_images/216ea78f84e22887ea84aa03c577d42c9153abdbfa48c0c8db4b52b527cbe97f.png" src="../_images/216ea78f84e22887ea84aa03c577d42c9153abdbfa48c0c8db4b52b527cbe97f.png" />
+<img alt="../_images/2a892ddbc0ebd1bef67dab31b66c9eae5d6732ec7eff3b6913d9eb37ca11f5d7.png" src="../_images/2a892ddbc0ebd1bef67dab31b66c9eae5d6732ec7eff3b6913d9eb37ca11f5d7.png" />
 </div>
 </div>
 </section>
@@ -1219,7 +1253,7 @@ Przekazanie którejkolwiek z nich do <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90113bca31dbebd0690ecab1ae8df219f0c51f485c0134a7af811a0d90af72e3.png" src="../_images/90113bca31dbebd0690ecab1ae8df219f0c51f485c0134a7af811a0d90af72e3.png" />
+<img alt="../_images/f4a56ab297d3689280061e1557e3d130dae53fd04072688a29d5b3649846eccf.png" src="../_images/f4a56ab297d3689280061e1557e3d130dae53fd04072688a29d5b3649846eccf.png" />
 </div>
 </div>
 <p>Ogólnie rzecz biorąc, w praktyce stwierdzam, że jaśniejsze jest użycie pierwszej metody, stosując etykiety do elementów, które chciałbyś pokazać na legendzie:</p>
@@ -1233,7 +1267,7 @@ Przekazanie którejkolwiek z nich do <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8668376893426e1fa06447eb61aed08d1f3c701a185badafa7bb8ea2e7c1a4cc.png" src="../_images/8668376893426e1fa06447eb61aed08d1f3c701a185badafa7bb8ea2e7c1a4cc.png" />
+<img alt="../_images/8573cb6b7e090086a7e1e2d50765386faa9162bf480988f766eef820736c2948.png" src="../_images/8573cb6b7e090086a7e1e2d50765386faa9162bf480988f766eef820736c2948.png" />
 </div>
 </div>
 <p>Zauważ, że domyślnie legenda ignoruje wszystkie elementy bez ustawionego atrybutu <code class="docutils literal notranslate"><span class="pre">label</span></code>.</p>
@@ -1262,7 +1296,7 @@ W celu przejścia między funkcjami w stylu MATLAB-a a metodami obiektowymi, nal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/460c2816c3d2b58a59eb0c495a49cef34a3edcfe17980dc21adca036cff74a87.png" src="../_images/460c2816c3d2b58a59eb0c495a49cef34a3edcfe17980dc21adca036cff74a87.png" />
+<img alt="../_images/076b1980fae1bce2031642434bdbc4566203b81d144dc2aa4330e1a2c1e6a4c0.png" src="../_images/076b1980fae1bce2031642434bdbc4566203b81d144dc2aa4330e1a2c1e6a4c0.png" />
 </div>
 </div>
 </section>
@@ -1279,7 +1313,7 @@ W celu przejścia między funkcjami w stylu MATLAB-a a metodami obiektowymi, nal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4b1d4fc3524bc346d8c207477f485327154462ab67a178ae09d931c78b103033.png" src="../_images/4b1d4fc3524bc346d8c207477f485327154462ab67a178ae09d931c78b103033.png" />
+<img alt="../_images/ce4cbc3b409328f59f60928d682b9514dc64cffb36a4581cb309d3c59a637a61.png" src="../_images/ce4cbc3b409328f59f60928d682b9514dc64cffb36a4581cb309d3c59a637a61.png" />
 </div>
 </div>
 <p>Trzecim argumentem w wywołaniu funkcji jest znak, który reprezentuje typ symbolu użytego do wykreślenia. Podobnie jak można określić opcje takie jak <code class="docutils literal notranslate"><span class="pre">'-'</span></code>, <code class="docutils literal notranslate"><span class="pre">'--'</span></code>, aby kontrolować styl linii, styl markerów ma swój własny zestaw krótkich kodów łańcuchowych. Pełną listę dostępnych symboli można zobaczyć w dokumentacji <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>, lub w dokumentacji online Matplotliba. Większość możliwości jest dość intuicyjna, a my pokażemy tutaj kilka bardziej popularnych:</p>
@@ -1295,7 +1329,7 @@ W celu przejścia między funkcjami w stylu MATLAB-a a metodami obiektowymi, nal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b3386ad38345da7f73167316cea1dd3a8360282833b5374a96278455941e887.png" src="../_images/1b3386ad38345da7f73167316cea1dd3a8360282833b5374a96278455941e887.png" />
+<img alt="../_images/914bf3c0a639a6a0374145d9aebbb2f410d87c7c98a9d6becd9fdb82592bf895.png" src="../_images/914bf3c0a639a6a0374145d9aebbb2f410d87c7c98a9d6becd9fdb82592bf895.png" />
 </div>
 </div>
 <p>Aby uzyskać jeszcze więcej możliwości, te kody znaków mogą być używane razem z kodami linii i kolorów do wykreślania punktów wraz z łączącą je linią:</p>
@@ -1306,7 +1340,7 @@ W celu przejścia między funkcjami w stylu MATLAB-a a metodami obiektowymi, nal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1f6c777210e97d83552768e553d7ddfbfb06e3e4837204af430538d1b35f5dc7.png" src="../_images/1f6c777210e97d83552768e553d7ddfbfb06e3e4837204af430538d1b35f5dc7.png" />
+<img alt="../_images/c07282b1384d2778cd6ce3d997fcb61176bbf6bff382dd15b189769b1fb05a21.png" src="../_images/c07282b1384d2778cd6ce3d997fcb61176bbf6bff382dd15b189769b1fb05a21.png" />
 </div>
 </div>
 <p>Dodatkowe argumenty słowa kluczowego do <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> określają szeroki zakres właściwości linii i markerów:</p>
@@ -1322,7 +1356,7 @@ W celu przejścia między funkcjami w stylu MATLAB-a a metodami obiektowymi, nal
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02d05b3872f5c2884c5cf5d28e5f7e49c0d3907d1125ccdf45b0779501af36df.png" src="../_images/02d05b3872f5c2884c5cf5d28e5f7e49c0d3907d1125ccdf45b0779501af36df.png" />
+<img alt="../_images/2d36e0427581011b53f33328d12b63eaf29dca090d5ae027852dc5d42a0ecd7d.png" src="../_images/2d36e0427581011b53f33328d12b63eaf29dca090d5ae027852dc5d42a0ecd7d.png" />
 </div>
 </div>
 <p>Ten rodzaj elastyczności funkcji <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> pozwala na szeroki wachlarz możliwych opcji wizualizacji.
@@ -1338,7 +1372,7 @@ Pełny opis dostępnych opcji znajduje się w dokumentacji <code class="docutils
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cf334e9b43a0103688b3db4b5a6080d14e4302a4ee23c3ed0c5cfe1f427ba81f.png" src="../_images/cf334e9b43a0103688b3db4b5a6080d14e4302a4ee23c3ed0c5cfe1f427ba81f.png" />
+<img alt="../_images/cdfc3c530cb0ad4480929c2c8829b134b4998146287fa37c4ef92a92363f1569.png" src="../_images/cdfc3c530cb0ad4480929c2c8829b134b4998146287fa37c4ef92a92363f1569.png" />
 </div>
 </div>
 <p>Podstawową różnicą <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code> od <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> jest to, że może być używany do tworzenia wykresów rozproszenia, gdzie właściwości każdego punktu (rozmiar, kolor powierzchni, kolor krawędzi, itp.) mogą być indywidualnie kontrolowane lub mapowane na dane.</p>
@@ -1359,7 +1393,7 @@ Aby lepiej zobaczyć nakładające się wyniki, użyjemy również słowa kluczo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b209fbf13886d85e31d20280d181de8376d384371cebe9494b380654935429c.png" src="../_images/0b209fbf13886d85e31d20280d181de8376d384371cebe9494b380654935429c.png" />
+<img alt="../_images/7c6b80c4239a4181938a8d830bcf6ed4b867d4bb2129bf2f77bded6aa40354c6.png" src="../_images/7c6b80c4239a4181938a8d830bcf6ed4b867d4bb2129bf2f77bded6aa40354c6.png" />
 </div>
 </div>
 <p>Zauważ, że argument kolor jest automatycznie mapowany na skalę kolorów (pokazaną tutaj przez komendę <code class="docutils literal notranslate"><span class="pre">colorbar()</span></code>), a argument rozmiar jest podawany w pikselach.
@@ -1379,7 +1413,7 @@ W ten sposób, kolor i rozmiar punktów może być użyty do przekazania informa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4830e8ae5fa076f8132d955f88550dfcf9534bf7e02b1441757cb7c0f5bdb30.png" src="../_images/e4830e8ae5fa076f8132d955f88550dfcf9534bf7e02b1441757cb7c0f5bdb30.png" />
+<img alt="../_images/e67047d48fa25f00b0dc3a4ed9604bba6edf1a30a5f41f5e0229711006ce9ace.png" src="../_images/e67047d48fa25f00b0dc3a4ed9604bba6edf1a30a5f41f5e0229711006ce9ace.png" />
 </div>
 </div>
 </section>
@@ -1397,7 +1431,7 @@ W ten sposób, kolor i rozmiar punktów może być użyty do przekazania informa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3acf8a26a19e499258f70888fbb810519336ac23ac0510b064e1154bcb37fc33.png" src="../_images/3acf8a26a19e499258f70888fbb810519336ac23ac0510b064e1154bcb37fc33.png" />
+<img alt="../_images/37f85d8cb74c9a8a574a9f172a26c37284f3cfc020a1013ed0d383b7fa73eb02.png" src="../_images/37f85d8cb74c9a8a574a9f172a26c37284f3cfc020a1013ed0d383b7fa73eb02.png" />
 </div>
 </div>
 <p>Tutaj <code class="docutils literal notranslate"><span class="pre">fmt</span></code> jest kodem formatu kontrolującym wygląd linii i punktów, i ma taką samą składnię jak skrót używany w <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>.</p>
@@ -1412,7 +1446,7 @@ W ten sposób, kolor i rozmiar punktów może być użyty do przekazania informa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4136746b664379d70fcdd2a9bf139128243238937bff958bd6f3f01556df8b3.png" src="../_images/e4136746b664379d70fcdd2a9bf139128243238937bff958bd6f3f01556df8b3.png" />
+<img alt="../_images/57013b9c2ef7ba7f3a47e67dd3ee109ad8ba251e2538e9fec6f0f3362db9a10e.png" src="../_images/57013b9c2ef7ba7f3a47e67dd3ee109ad8ba251e2538e9fec6f0f3362db9a10e.png" />
 </div>
 </div>
 <p>Oprócz tych opcji, możesz także określić poziome paski błędów (<code class="docutils literal notranslate"><span class="pre">xerr</span></code>), jednostronne paski błędów i wiele innych wariantów.
@@ -1452,7 +1486,7 @@ Prawdopodobnie najprostszym sposobem przygotowania takich danych jest użycie fu
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6affe5176bd33e1ab3a9aedba4878b4d62839843fde1ff0479e9f15967fa018a.png" src="../_images/6affe5176bd33e1ab3a9aedba4878b4d62839843fde1ff0479e9f15967fa018a.png" />
+<img alt="../_images/ee63fd21a17bb97dc310d7e77ef7cd7e2279ad3c2ce6f154b31e6baa3edd5bc7.png" src="../_images/ee63fd21a17bb97dc310d7e77ef7cd7e2279ad3c2ce6f154b31e6baa3edd5bc7.png" />
 </div>
 </div>
 <p>Zauważ, że domyślnie, gdy używany jest jeden kolor, wartości ujemne reprezentowane są przez linie przerywane, a wartości dodatnie przez linie ciągłe.
@@ -1465,7 +1499,7 @@ Tutaj określimy również, że chcemy, aby narysowanych zostało więcej linii 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a470648af60a53e284b06a778cbf76c93c50a8480090b2b67cd3ddf1c18f3ff7.png" src="../_images/a470648af60a53e284b06a778cbf76c93c50a8480090b2b67cd3ddf1c18f3ff7.png" />
+<img alt="../_images/8fb6bb8a39b9102ae0eff6f1ee760d51fb30275ba998f20331ba8172d0f99c49.png" src="../_images/8fb6bb8a39b9102ae0eff6f1ee760d51fb30275ba998f20331ba8172d0f99c49.png" />
 </div>
 </div>
 <p>Tutaj wybraliśmy kolormapę <code class="docutils literal notranslate"><span class="pre">RdGy</span></code> (skrót od <em>Red-Gray</em>), która jest dobrym wyborem dla wyśrodkowanych danych.
@@ -1484,7 +1518,7 @@ Możemy to zmienić przełączając się na wypełniony wykres konturowy za pomo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe0dcc85d6aa05526ed0b4b321b4ebe074e314bef9d5e54ab558eeff1aee6921.png" src="../_images/fe0dcc85d6aa05526ed0b4b321b4ebe074e314bef9d5e54ab558eeff1aee6921.png" />
+<img alt="../_images/8801e7f119caa3599619692a8c5a4d5391379e0f0e28fe4a997b0bb08a6b10f9.png" src="../_images/8801e7f119caa3599619692a8c5a4d5391379e0f0e28fe4a997b0bb08a6b10f9.png" />
 </div>
 </div>
 <p>Kolorowy pasek sprawia, że jasne jest, że czarne regiony to “szczyty”, podczas gdy czerwone regiony to “doliny”.</p>
@@ -1501,10 +1535,10 @@ Lepszym sposobem na poradzenie sobie z tym jest użycie funkcji <code class="doc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1e74805e190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x28fb7fc01f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/d3deaa86ea867d83e0b657c0b7a514b13fd68ffd6faba406af28775b1019af36.png" src="../_images/d3deaa86ea867d83e0b657c0b7a514b13fd68ffd6faba406af28775b1019af36.png" />
+<img alt="../_images/d276f1ac5367a84c8fb964616e252d9859da6b91224667886799bd52fea8f0ca.png" src="../_images/d276f1ac5367a84c8fb964616e252d9859da6b91224667886799bd52fea8f0ca.png" />
 </div>
 </div>
 <p>Czasami może być użyteczne połączenie konturów i obrazów.
@@ -1521,7 +1555,7 @@ Na przykład, tutaj użyjemy częściowo przezroczystego obrazu tła (z przezroc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/979134cb4adfe876bf34abc171f82eb12192a2fc67fa9e9478443b9ca9556a53.png" src="../_images/979134cb4adfe876bf34abc171f82eb12192a2fc67fa9e9478443b9ca9556a53.png" />
+<img alt="../_images/f32f54d60d07928b9a106165dff2572426b49b0e4f3e4b6955b2f0ad563e1099.png" src="../_images/f32f54d60d07928b9a106165dff2572426b49b0e4f3e4b6955b2f0ad563e1099.png" />
 </div>
 </div>
 </section>
@@ -1540,12 +1574,6 @@ Na przykład, tutaj użyjemy częściowo przezroczystego obrazu tła (z przezroc
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\UPWr\AppData\Local\Temp\ipykernel_24032\1860642311.py:4: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as &#39;seaborn-v0_8-&lt;style&gt;&#39;. Alternatively, directly use the seaborn API instead.
-  plt.style.use(&#39;seaborn-white&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1554,7 +1582,7 @@ Na przykład, tutaj użyjemy częściowo przezroczystego obrazu tła (z przezroc
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2671734fddec23fe0be461205b2ade382b1d6b87b09569b88fee34822be22efa.png" src="../_images/2671734fddec23fe0be461205b2ade382b1d6b87b09569b88fee34822be22efa.png" />
+<img alt="../_images/bcff24da636b1924accbd8927e44dc5abee3a5620c5deffb78fef1d8b1ec6190.png" src="../_images/bcff24da636b1924accbd8927e44dc5abee3a5620c5deffb78fef1d8b1ec6190.png" />
 </div>
 </div>
 <p>Funkcja <code class="docutils literal notranslate"><span class="pre">hist()</span></code> posiada wiele opcji pozwalających dostroić zarówno obliczenia, jak i sposób wyświetlania;
@@ -1569,7 +1597,7 @@ oto przykład bardziej dostosowanego histogramu:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d0305c6960bcb16d5adc85a0fb56946768d91264dd8622de04b645148f1bdcbd.png" src="../_images/d0305c6960bcb16d5adc85a0fb56946768d91264dd8622de04b645148f1bdcbd.png" />
+<img alt="../_images/59be39d5bb8a82890ab83e640f2915ecadbdff2b6ada1838818e2fcecddc2931.png" src="../_images/59be39d5bb8a82890ab83e640f2915ecadbdff2b6ada1838818e2fcecddc2931.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code> docstring ma więcej informacji na temat innych dostępnych opcji dostosowywania.
@@ -1589,7 +1617,7 @@ Uważam, że ta kombinacja <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b049d3d06d18a75758f0d3a05ff309155338fbf515fb10f20d61ebf8604b108.png" src="../_images/0b049d3d06d18a75758f0d3a05ff309155338fbf515fb10f20d61ebf8604b108.png" />
+<img alt="../_images/3ba80ff9bb13176f769e0b533d729cd3a8e5131dbf8b70ec150897fdd90ee07e.png" src="../_images/3ba80ff9bb13176f769e0b533d729cd3a8e5131dbf8b70ec150897fdd90ee07e.png" />
 </div>
 </div>
 <p>Jeśli chciałbyś po prostu obliczyć histogram (czyli policzyć liczbę punktów w danym binie) i nie wyświetlać go, dostępna jest funkcja <code class="docutils literal notranslate"><span class="pre">np.histogram()</span></code>:</p>
@@ -1630,7 +1658,7 @@ Zaczniemy od zdefiniowania pewnych danych - tablicy <code class="docutils litera
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6e405842e6d231d2fbab6da4a4097064ffb5bfe883be476f4fcd4dcccb0fdfde.png" src="../_images/6e405842e6d231d2fbab6da4a4097064ffb5bfe883be476f4fcd4dcccb0fdfde.png" />
+<img alt="../_images/c73da4afdcdfcb9c4c1ed2f7a23ace2b450cfa330199f42cfe941e4d59d64dee.png" src="../_images/c73da4afdcdfcb9c4c1ed2f7a23ace2b450cfa330199f42cfe941e4d59d64dee.png" />
 </div>
 </div>
 <p>Tak jak w przypadku <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.hist2d</span></code> ma wiele dodatkowych opcji do dostrojenia wykresu i binowania, które są ładnie opisane w docstringu funkcji.
@@ -1655,7 +1683,7 @@ W tym celu Matplotlib udostępnia procedurę <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11fa950a1a8ee8ab286cd21c3123fedc52de232bf433dbbec13b0c2143189b9f.png" src="../_images/11fa950a1a8ee8ab286cd21c3123fedc52de232bf433dbbec13b0c2143189b9f.png" />
+<img alt="../_images/706b9d26851d243d496ea38c5af662f0fa2dcea0d4be6552b7d90ab81642535a.png" src="../_images/706b9d26851d243d496ea38c5af662f0fa2dcea0d4be6552b7d90ab81642535a.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plt.hexbin</span></code> ma wiele ciekawych opcji, w tym możliwość określenia wag dla każdego punktu, oraz zmiany danych wyjściowych w każdym binie na dowolny agregat NumPy (średnia wag, odchylenie standardowe wag, itp.).</p>
@@ -1676,7 +1704,7 @@ Liczby te reprezentują <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/60d6818641870612d37333e8f0b484d3ebf563c3f3cd20f5010c24dbc6b9f172.png" src="../_images/60d6818641870612d37333e8f0b484d3ebf563c3f3cd20f5010c24dbc6b9f172.png" />
+<img alt="../_images/931b5588ad3c26d6b0931b9a31b843009c48748a68d28bcf42726bde5c6b7156.png" src="../_images/931b5588ad3c26d6b0931b9a31b843009c48748a68d28bcf42726bde5c6b7156.png" />
 </div>
 </div>
 </section>
@@ -1691,7 +1719,7 @@ Liczby te reprezentują <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4dbbd1bea4ee9485e2f95ae26cbd45308f7867b65e1335d2d616a648df372594.png" src="../_images/4dbbd1bea4ee9485e2f95ae26cbd45308f7867b65e1335d2d616a648df372594.png" />
+<img alt="../_images/8c54a12e0c4c336dad966a07aeba2ab1868a25e3eaa2e010321c3b58b0543598.png" src="../_images/8c54a12e0c4c336dad966a07aeba2ab1868a25e3eaa2e010321c3b58b0543598.png" />
 </div>
 </div>
 <p>Zauważ, że poprzez określenie <code class="docutils literal notranslate"><span class="pre">sharex</span></code> i <code class="docutils literal notranslate"><span class="pre">sharey</span></code>, automatycznie usunęliśmy wewnętrzne etykiety na siatce, aby uczynić wykres czystszym.</p>
@@ -1708,7 +1736,7 @@ Liczby te reprezentują <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71ce6c4c1c26c6f36ea8cd6ed375c4e785c2e3af475e0fc0a306a4f33cbd1c95.png" src="../_images/71ce6c4c1c26c6f36ea8cd6ed375c4e785c2e3af475e0fc0a306a4f33cbd1c95.png" />
+<img alt="../_images/c892cbda47a02f134d4c65b833a0a5d32f2c6d9b800ca5b8a31bc3994b698718.png" src="../_images/c892cbda47a02f134d4c65b833a0a5d32f2c6d9b800ca5b8a31bc3994b698718.png" />
 </div>
 </div>
 </section>
@@ -1735,7 +1763,7 @@ Na przykład, gridspec dla siatki dwóch wierszy i trzech kolumn o pewnej okreś
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7a3b861a3777bb1ec31e4e148add5e2af12f6c3ed94ee8c2d07c66252e16150c.png" src="../_images/7a3b861a3777bb1ec31e4e148add5e2af12f6c3ed94ee8c2d07c66252e16150c.png" />
+<img alt="../_images/bbad10a372c5979da5e2cdb4d53a4ab85ca3233357f64e34284ad366414dd545.png" src="../_images/bbad10a372c5979da5e2cdb4d53a4ab85ca3233357f64e34284ad366414dd545.png" />
 </div>
 </div>
 <p>Ten rodzaj elastycznego wyrównywania siatki ma szeroki zakres zastosowań.
@@ -1769,7 +1797,7 @@ Najczęściej używam go podczas tworzenia wieloosiowych wykresów histogramów,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd1beee4c143ecadceeda87d1e2cbe7276ed207df57c12d1efa10bd59d874a6d.png" src="../_images/bd1beee4c143ecadceeda87d1e2cbe7276ed207df57c12d1efa10bd59d874a6d.png" />
+<img alt="../_images/f42c6752fc8817b3b8d848d63095a0c9c1a651f5fc38bc8692ce42411450635a.png" src="../_images/f42c6752fc8817b3b8d848d63095a0c9c1a651f5fc38bc8692ce42411450635a.png" />
 </div>
 </div>
 </section>
@@ -1798,7 +1826,7 @@ Najczęściej używam go podczas tworzenia wieloosiowych wykresów histogramów,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dbfc892a2b0b85a957097e91dbb2b69572a8768cf1bac64a7dfb052324551d16.png" src="../_images/dbfc892a2b0b85a957097e91dbb2b69572a8768cf1bac64a7dfb052324551d16.png" />
+<img alt="../_images/913c26b96ca0256ee29cb6492898e01a544d5bc3b20bd16853a0199663078c2a.png" src="../_images/913c26b96ca0256ee29cb6492898e01a544d5bc3b20bd16853a0199663078c2a.png" />
 </div>
 </div>
 <p>Widzimy tutaj, że każde większe zaznaczenie pokazuje duży znacznik i etykietę, podczas gdy każdy mniejszy znacznik pokazuje się bez etykiety.</p>
@@ -1818,7 +1846,7 @@ Można to zrobić za pomocą <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/315a6d388b1285c5389750dff551b179681bdad7bb0f467df4fea7025f2035eb.png" src="../_images/315a6d388b1285c5389750dff551b179681bdad7bb0f467df4fea7025f2035eb.png" />
+<img alt="../_images/c7138f16910bcebd0cc03a6ca508ba081802060190eca6ffe8092a78f666e746.png" src="../_images/c7138f16910bcebd0cc03a6ca508ba081802060190eca6ffe8092a78f666e746.png" />
 </div>
 </div>
 <p>Zauważ, że usunęliśmy etykiety (ale zachowaliśmy kleszcze/linie siatki) z osi x oraz usunęliśmy znaczniki (a więc także etykiety) z osi y.</p>
@@ -1842,7 +1870,10 @@ Na przykład, rozważmy poniższy rysunek:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/92fa231966d84b27d652e7f8089085fac60a0a5143034ebdbc976fb86ae749cd.png" src="../_images/92fa231966d84b27d652e7f8089085fac60a0a5143034ebdbc976fb86ae749cd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloading Olivetti faces from https://ndownloader.figshare.com/files/5976027 to C:\Users\Radosław.Zajdel\scikit_learn_data
+</pre></div>
+</div>
+<img alt="../_images/04b115f78827d2f2d24bb261494019cae191cc1f6ce83c1c74253ae66064a80b.png" src="../_images/04b115f78827d2f2d24bb261494019cae191cc1f6ce83c1c74253ae66064a80b.png" />
 </div>
 </div>
 <p>Zauważ, że każdy obraz ma swoją własną oś, a my ustawiliśmy lokalizatory na null, ponieważ wartości tick (w tym przypadku liczba pikseli) nie przekazują istotnych informacji dla tej konkretnej wizualizacji.</p>
@@ -1858,7 +1889,7 @@ Na przykład, rozważmy poniższy rysunek:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/431bab6a7b08d241fd159cfb76e4823b1bf8a568387aec895916d95114ad8771.png" src="../_images/431bab6a7b08d241fd159cfb76e4823b1bf8a568387aec895916d95114ad8771.png" />
+<img alt="../_images/93dd5bf2a84f256f16a362d83eb502068a00635a31d53aefe534521422757f0e.png" src="../_images/93dd5bf2a84f256f16a362d83eb502068a00635a31d53aefe534521422757f0e.png" />
 </div>
 </div>
 <p>Szczególnie w przypadku osi x, etykiety prawie się pokrywają i sprawiają, że są dość trudne do rozszyfrowania.
@@ -1875,7 +1906,7 @@ Biorąc pod uwagę tę maksymalną liczbę, Matplotlib użyje wewnętrznej logik
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/996f1d444c9422a749f9c7f57c3745ff38238db84f9c5bd4d0b4647c691609a7.png" src="../_images/996f1d444c9422a749f9c7f57c3745ff38238db84f9c5bd4d0b4647c691609a7.png" />
+<img alt="../_images/f7076a011636a10e00325f349000d9e8ad5a6257fcf77eeb028d7b68a0dcefce.png" src="../_images/f7076a011636a10e00325f349000d9e8ad5a6257fcf77eeb028d7b68a0dcefce.png" />
 </div>
 </div>
 <p>Dzięki temu wszystko jest znacznie czystsze. Jeśli chcesz mieć jeszcze większą kontrolę nad położeniem regularnie rozmieszczonych znaczników, możesz również użyć <code class="docutils literal notranslate"><span class="pre">plt.MultipleLocator</span></code></p>
@@ -1901,7 +1932,7 @@ Rozważmy ten wykres sinusa i cosinusa:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae3d46cd2afd1a4c7b002c139cb69d095c94af51684f18841e4ed6d6c77cdcb1.png" src="../_images/ae3d46cd2afd1a4c7b002c139cb69d095c94af51684f18841e4ed6d6c77cdcb1.png" />
+<img alt="../_images/492c06b9da9364146c924d8ca03ed0340ba719551cb8ff0052aa2f304126b425.png" src="../_images/492c06b9da9364146c924d8ca03ed0340ba719551cb8ff0052aa2f304126b425.png" />
 </div>
 </div>
 <p>Jest kilka zmian, które moglibyśmy wprowadzić. Po pierwsze, bardziej naturalne dla tych danych jest rozmieszczenie kleszczy i linii siatki w wielokrotnościach <span class="math notranslate nohighlight">\(pi\)</span>. Możemy to zrobić ustawiając <code class="docutils literal notranslate"><span class="pre">MultipleLocator</span></code>, który umiejscawia znaczniki w wielokrotności podanej przez użytkownika liczby. Dla porządku dodamy zarówno główne, jak i mniejsze punkty w wielokrotnościach <span class="math notranslate nohighlight">\(pi/4\)</span>:</p>
@@ -1914,7 +1945,7 @@ Rozważmy ten wykres sinusa i cosinusa:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a8a217b7ed0d3490dee80bcb012cc234529e8302d117a66828e56c2eea27519.png" src="../_images/3a8a217b7ed0d3490dee80bcb012cc234529e8302d117a66828e56c2eea27519.png" />
+<img alt="../_images/9a5d9e1ee07d15690e515e3b1536fcec0dd5fe044500a91a55d31586133ebaad.png" src="../_images/9a5d9e1ee07d15690e515e3b1536fcec0dd5fe044500a91a55d31586133ebaad.png" />
 </div>
 </div>
 <p>Ale teraz te etykiety wyglądają trochę głupio: widzimy, że są one wielokrotnościami <span class="math notranslate nohighlight">\(pi\)</span>, ale reprezentacja dziesiętna nie przekazuje tego od razu.
@@ -1941,7 +1972,7 @@ Aby to naprawić, możemy zmienić formatownik zaznaczeń. Nie ma wbudowanego fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4d5785746d43c77c206e2731b7ef38709e10ddfd3d3b1bd86fb75bdf35f3cf91.png" src="../_images/4d5785746d43c77c206e2731b7ef38709e10ddfd3d3b1bd86fb75bdf35f3cf91.png" />
+<img alt="../_images/b82179c136caad749d9d324306f85105f8401cf174d91e227da48f0ffd24e61d.png" src="../_images/b82179c136caad749d9d324306f85105f8401cf174d91e227da48f0ffd24e61d.png" />
 </div>
 </div>
 <p>To jest o wiele lepsze! Zauważ, że wykorzystaliśmy wsparcie Matplotliba dla LaTeX, określone przez zamknięcie łańcucha w znakach dolara. Jest to bardzo wygodne przy wyświetlaniu symboli matematycznych i formuł: w tym przypadku, <code class="docutils literal notranslate"><span class="pre">&quot;$pi$&quot;</span></code> jest renderowane jako grecki znak <span class="math notranslate nohighlight">\(pi\)</span>.</p>
@@ -1952,7 +1983,7 @@ Aby to naprawić, możemy zmienić formatownik zaznaczeń. Nie ma wbudowanego fo
 <p>Wspomnieliśmy o kilku dostępnych formaterach i lokalizatorach.</p>
 <p>Zakończymy ten rozdział, krótko wymieniając wszystkie wbudowane opcje lokalizatorów i formatyzatorów. Więcej informacji na temat każdej z nich można znaleźć w dokumentacji lub w dokumentacji online Matplotliba.
 Każda z poniższych opcji jest dostępna w przestrzeni nazw <code class="docutils literal notranslate"><span class="pre">plt</span></code>:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Klasa lokalizatora</p></th>
 <th class="head"><p>Opis</p></th>
@@ -1988,7 +2019,7 @@ Każda z poniższych opcji jest dostępna w przestrzeni nazw <code class="docuti
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Klasa Formatter</p></th>
 <th class="head"><p>Opis</p></th>
@@ -2046,16 +2077,12 @@ Każda z poniższych opcji jest dostępna w przestrzeni nazw <code class="docuti
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2168,8 +2195,8 @@ By Radosław Zajdel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
