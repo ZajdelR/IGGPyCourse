@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "C:\Users\UPWr\AppData\Roaming\Python\Python311\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+x = eval(input(prompt="Podaj liczbe:"))
+if x > 3:
+    print(str(x)+" jest większe od 3")
+elif x == 3:
+    print(str(x)+" jest równe 3")
+else:
+    print(str(x)+" jest mniejsze od 3")
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp\ipykernel_9708\302393625.py[0m in [0;36m<cell line: 0>[1;34m()[0m
+[1;32m----> 1[1;33m [0mx[0m [1;33m=[0m [0meval[0m[1;33m([0m[0minput[0m[1;33m([0m[0mprompt[0m[1;33m=[0m[1;34m"Podaj liczbe:"[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m [1;32mif[0m [0mx[0m [1;33m>[0m [1;36m3[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      3[0m     [0mprint[0m[1;33m([0m[0mstr[0m[1;33m([0m[0mx[0m[1;33m)[0m[1;33m+[0m[1;34m" jest większe od 3"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m [1;32melif[0m [0mx[0m [1;33m==[0m [1;36m3[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      5[0m     [0mprint[0m[1;33m([0m[0mstr[0m[1;33m([0m[0mx[0m[1;33m)[0m[1;33m+[0m[1;34m" jest równe 3"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\AppData\Roaming\Python\Python311\site-packages\ipykernel\kernelbase.py[0m in [0;36mraw_input[1;34m(self, prompt)[0m
+[0;32m   1199[0m         [1;32mif[0m [1;32mnot[0m [0mself[0m[1;33m.[0m[0m_allow_stdin[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1200[0m             [0mmsg[0m [1;33m=[0m [1;34m"raw_input was called, but this frontend does not support input requests."[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 1201[1;33m             [1;32mraise[0m [0mStdinNotImplementedError[0m[1;33m([0m[0mmsg[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   1202[0m         return self._input_request(
+[0;32m   1203[0m             [0mstr[0m[1;33m([0m[0mprompt[0m[1;33m)[0m[1;33m,[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+
