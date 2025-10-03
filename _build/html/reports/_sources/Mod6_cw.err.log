@@ -1,23 +1,19 @@
 Traceback (most recent call last):
-  File "C:\Users\UPWr\AppData\Roaming\Python\Python311\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\kamil\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "C:\ProgramData\Anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
     return future.result()
-           ^^^^^^^^^^^^^^^
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -28,10 +24,10 @@ HTML('<style>{}</style>'.format(css))
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp\ipykernel_7600\1025830227.py[0m in [0;36m<cell line: 0>[1;34m()[0m
-[0;32m      1[0m [1;32mfrom[0m [0mIPython[0m[1;33m.[0m[0mcore[0m[1;33m.[0m[0mdisplay[0m [1;32mimport[0m [0mHTML[0m[1;33m[0m[1;33m[0m[0m
-[1;32m----> 2[1;33m [0mcss[0m [1;33m=[0m [0mopen[0m[1;33m([0m[1;34m'style-table.css'[0m[1;33m)[0m[1;33m.[0m[0mread[0m[1;33m([0m[1;33m)[0m [1;33m+[0m [0mopen[0m[1;33m([0m[1;34m'style-notebook.css'[0m[1;33m)[0m[1;33m.[0m[0mread[0m[1;33m([0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      3[0m [0mHTML[0m[1;33m([0m[1;34m'<style>{}</style>'[0m[1;33m.[0m[0mformat[0m[1;33m([0m[0mcss[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+Input [1;32mIn [2][0m, in [0;36m<cell line: 2>[1;34m()[0m
+[0;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mIPython[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdisplay[39;00m [38;5;28;01mimport[39;00m HTML
+[1;32m----> 2[0m css [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mstyle-table.css[39;49m[38;5;124;43m'[39;49m[43m)[49m[38;5;241m.[39mread() [38;5;241m+[39m [38;5;28mopen[39m([38;5;124m'[39m[38;5;124mstyle-notebook.css[39m[38;5;124m'[39m)[38;5;241m.[39mread()
+[0;32m      3[0m HTML([38;5;124m'[39m[38;5;124m<style>[39m[38;5;132;01m{}[39;00m[38;5;124m</style>[39m[38;5;124m'[39m[38;5;241m.[39mformat(css))
 
 [1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'style-table.css'
 FileNotFoundError: [Errno 2] No such file or directory: 'style-table.css'
