@@ -3,3 +3,6 @@
 
 format: jb-book
 root: Mod0
+chapters:
+- file: Mod1
+- file: Mod1_cw
