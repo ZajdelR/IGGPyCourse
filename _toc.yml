@@ -6,3 +6,5 @@ root: Mod0
 chapters:
 - file: Mod1
 - file: Mod1_cw
+- file: Mod2
+- file: Mod2_cw

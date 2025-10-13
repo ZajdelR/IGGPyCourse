@@ -201,6 +201,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
 </ul>
 
     </div>
@@ -549,6 +551,18 @@ $ python argparse.py 3.14159
 <hr class="docutils" />
 <p>Jupyter notebook to bardzo lekki i webowy edytor kodu. Pozwala na tworzenie interaktywnych arkuszy mogących zawierać kod wykonywalny, opisy, tabele, wykresy i wiele innych danych, które służyć mogą nam między innymi do prezentacji wyników naszych prac. &lt;– Te wykłady tworzone sa w oprogramowaniu Jupyter Notebook / Jupyter-Book</p>
 <p>Jupyter Notebook pozwala na wykonywanie fragmentów kodu w komórkach notatnika oraz zapisanie wyników obliczeń czy wizualizacji danych. Dzięki temu całość znajduje się w jednym pliku i możemy łatwo prześledzić cały proces. &lt;– Zachęcam do używania Jupytera do wykonywania ćwiczeń i list zadań.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="google-colab">
 <h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
@@ -621,7 +635,38 @@ zainstaluje pakiet biopython. Komendę tę należy wykonać w oknie Anaconda Pro
 <section id="wszystko-jest-obiektem">
 <h2>Wszystko jest obiektem<a class="headerlink" href="#wszystko-jest-obiektem" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<img src="./src/Semantyka.png"><ul class="simple">
+<img src="./src/Semantyka.png"><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Tekst Tekst&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tekst Tekst
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="s2">&quot;W&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Wekst Wekst&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
 <li><p>W Pythonie wszystkie jest obiektem. Wszystko z czego korzystamy istnieje w swoim własnym pudełku, które określane jest jako obiekt Pythona. Każdy obiekt ma przypisaną klasę, swoje metody, określone działanie funkcji, i atrybuty. W parktyce czyni do język bardzo elastycznym i spójnym. Im wcześniej sie to zrozumie tym łatwiej wejść na kolejne poziomy umiejętności programowania.</p></li>
 </ul>
 </section>
@@ -857,10 +902,10 @@ Ma cechy (atrybuty):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dostateczny plus
-Basia  -&gt;  niedostateczny
-Józek  -&gt;  bardzo dobry
-Marek  -&gt;  dostateczny
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  bardzo dobry
+Basia  -&gt;  bardzo dobry
+Józek  -&gt;  dobry plus
+Marek  -&gt;  bardzo dobry
 </pre></div>
 </div>
 </div>
@@ -888,7 +933,7 @@ Marek  -&gt;  dostateczny
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dobry
 Basia  -&gt;  niedostateczny
-Józek  -&gt;  dostateczny
+Józek  -&gt;  niedostateczny
 Marek  -&gt;  niedostateczny
 </pre></div>
 </div>
