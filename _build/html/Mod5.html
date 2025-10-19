@@ -201,6 +201,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
 </ul>
 
     </div>
@@ -447,7 +449,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>252 ms ± 17.6 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230 ms ± 4.65 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -459,7 +461,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.06 ms ± 33.4 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 ms ± 35.3 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -594,14 +596,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.21197248e-312, 4.19955799e-322, 0.00000000e+000,
-        0.00000000e+000],
-       [1.89146896e-307, 1.16095484e-028, 7.49232572e+247,
-        1.45583950e-094],
-       [4.81412819e+199, 7.52736900e+252, 9.34634030e+218,
-        2.24655732e-057],
-       [2.59027915e-144, 4.82412328e+228, 1.04718130e-142,
-        3.67150140e+228]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
 </pre></div>
 </div>
 </div>
@@ -617,8 +615,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.85168133 0.55058171 0.27722256 0.58163581]
-[-1.04112899  0.63184066 -0.06984819  0.67066704]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.78731624 0.64908217 0.49897289 0.08746797]
+[-0.5986032  -0.9204418   0.51552861  0.4715398 ]
 </pre></div>
 </div>
 </div>
@@ -639,15 +637,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1011., 1039.,  959., 1020.,  957., 1030., 1027.,  997.,  968.,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 908., 1024., 1019.,  990., 1030., 1030., 1002.,  997., 1008.,
          992.]),
- array([7.32384611e-05, 1.00052756e-01, 2.00032274e-01, 3.00011792e-01,
-        3.99991310e-01, 4.99970828e-01, 5.99950345e-01, 6.99929863e-01,
-        7.99909381e-01, 8.99888899e-01, 9.99868417e-01]),
+ array([3.40434010e-04, 1.00292598e-01, 2.00244763e-01, 3.00196927e-01,
+        4.00149091e-01, 5.00101255e-01, 6.00053420e-01, 7.00005584e-01,
+        7.99957748e-01, 8.99909912e-01, 9.99862077e-01]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/7198e3efc2c9a91b5c2858657c11dba1d409694d2c019ff5d0c4a5e7fec949de.png" src="_images/7198e3efc2c9a91b5c2858657c11dba1d409694d2c019ff5d0c4a5e7fec949de.png" />
+<img alt="_images/53a54f4e91d3f524c002eaf6ab7fefe90e6044bdd79f7a3436c557f2306c9d11.png" src="_images/53a54f4e91d3f524c002eaf6ab7fefe90e6044bdd79f7a3436c557f2306c9d11.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -658,15 +656,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([   3.,  104.,  523., 1658., 2865., 2766., 1534.,  456.,   81.,
-          10.]),
- array([-3.86627215, -3.08702491, -2.30777766, -1.52853042, -0.74928318,
-         0.02996407,  0.80921131,  1.58845855,  2.3677058 ,  3.14695304,
-         3.92620028]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  23.,  146.,  666., 1699., 2692., 2666., 1468.,  508.,  126.,
+           6.]),
+ array([-3.57540848, -2.84818719, -2.1209659 , -1.39374462, -0.66652333,
+         0.06069796,  0.78791925,  1.51514053,  2.24236182,  2.96958311,
+         3.6968044 ]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="_images/83d92012371801acfff12c26b2616334cfecc0448101f883f0f4f9b711701210.png" src="_images/83d92012371801acfff12c26b2616334cfecc0448101f883f0f4f9b711701210.png" />
+<img alt="_images/083d0cd1433d8ae2e88050babb8202cada9d6828a5aadf84ff7937841624f0a7.png" src="_images/083d0cd1433d8ae2e88050babb8202cada9d6828a5aadf84ff7937841624f0a7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -677,8 +675,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.83883297 19.37971444  9.1870332  16.48914709 22.01843898 43.36978847
- 10.36455734 18.13948936 40.19498431 19.13984719]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15.17526832 10.17038128 12.05837081 62.34422209 14.01477665 52.65784541
+ 46.58561399 39.706453   60.81521039 56.0990803 ]
 </pre></div>
 </div>
 </div>
@@ -839,12 +837,12 @@ zwłaszcza w przypadku dużych zbiorów danych, dobrze jest wiedzieć, że ma si
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.18 0.5  0.12]
- [0.43 0.94 0.71]
- [0.07 0.89 0.17]]
-0.9441953145265971
-[0.43 0.94 0.71]
-[0.18 0.43 0.07]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.89 0.94 0.54]
+ [0.08 0.63 0.25]
+ [0.62 0.13 0.73]]
+0.6329618573148078
+[0.08 0.63 0.25]
+[0.89 0.08 0.62]
 </pre></div>
 </div>
 </div>
@@ -972,12 +970,12 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19 20  0  7 11  2 15  6 10 14  6 13 13 18  4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1  6  4 17 10  8  1 17 14 20  8  8  2 10  5]
 ---
-[False False  True False False False  True  True False False  True False
- False  True False]
+[False  True False False False False False False False False False False
+ False False False]
 ---
-[ 0 15  6  6 18]
+[6]
 </pre></div>
 </div>
 </div>
@@ -992,8 +990,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10  5  4 20  5 19 14 19  9 11  4 11  4  4  8]
-[10  5 -1 -1 -1 -1 -1 -1  9 11  4 11  4  4  8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9  9 18 12  2  6  5  3 10  2 16 19  1 13 13]
+[ 9  9 -1 -1 -1 -1 -1 -1 10  2 16 19  1 13 13]
 </pre></div>
 </div>
 </div>
@@ -1059,13 +1057,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.07,  0.39, -0.69,  2.3 ],
-       [-0.08,  0.03, -2.1 ,  0.48],
-       [ 1.81, -1.92,  1.54,  0.78],
-       [ 0.33,  0.5 ,  0.17,  0.19],
-       [ 1.51,  1.17,  0.64, -0.58],
-       [ 1.25,  0.43, -1.79,  0.28],
-       [ 0.47,  1.39,  1.17,  0.32]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.22, -0.39, -0.38, -0.07],
+       [ 1.29, -0.58, -0.32, -0.08],
+       [ 1.08, -0.67, -1.56, -0.88],
+       [ 0.77,  0.2 ,  0.05, -0.91],
+       [-0.1 , -1.  , -1.41, -0.86],
+       [ 0.89, -0.63,  0.97,  0.25],
+       [ 1.36, -0.63, -2.53, -1.08]])
 </pre></div>
 </div>
 </div>
@@ -1077,13 +1075,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True, False,  True, False],
-       [ True, False,  True, False],
-       [False,  True, False, False],
-       [False, False, False, False],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True,  True,  True,  True],
+       [False,  True,  True,  True],
+       [False,  True,  True,  True],
        [False, False, False,  True],
-       [False, False,  True, False],
-       [False, False, False, False]])
+       [ True,  True,  True,  True],
+       [False,  True, False, False],
+       [False,  True,  True,  True]])
 </pre></div>
 </div>
 </div>
@@ -1095,7 +1093,9 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.07, -0.69, -0.08, -2.1 , -1.92, -0.58, -1.79])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.22, -0.39, -0.38, -0.07, -0.58, -0.32, -0.08, -0.67, -1.56,
+       -0.88, -0.91, -0.1 , -1.  , -1.41, -0.86, -0.63, -0.63, -2.53,
+       -1.08])
 </pre></div>
 </div>
 </div>
@@ -1108,13 +1108,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan, 0.39,  nan, 2.3 ],
-       [ nan, 0.03,  nan, 0.48],
-       [1.81,  nan, 1.54, 0.78],
-       [0.33, 0.5 , 0.17, 0.19],
-       [1.51, 1.17, 0.64,  nan],
-       [1.25, 0.43,  nan, 0.28],
-       [0.47, 1.39, 1.17, 0.32]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan,  nan,  nan,  nan],
+       [1.29,  nan,  nan,  nan],
+       [1.08,  nan,  nan,  nan],
+       [0.77, 0.2 , 0.05,  nan],
+       [ nan,  nan,  nan,  nan],
+       [0.89,  nan, 0.97, 0.25],
+       [1.36,  nan,  nan,  nan]])
 </pre></div>
 </div>
 </div>
