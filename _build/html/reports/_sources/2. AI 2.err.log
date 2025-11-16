@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\kamil\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\ProgramData\Anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+counter = 0
+for x in data:
+    if x == 1:
+        counter += 1
+print(counter/number_of_datapoints)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [3][0m, in [0;36m<cell line: 5>[1;34m()[0m
+[0;32m      3[0m     [38;5;28;01mif[39;00m x [38;5;241m==[39m [38;5;241m1[39m:
+[0;32m      4[0m         counter [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[1;32m----> 5[0m [38;5;28mprint[39m(counter[38;5;241m/[39m[43mnumber_of_datapoints[49m)
+
+[1;31mNameError[0m: name 'number_of_datapoints' is not defined
+NameError: name 'number_of_datapoints' is not defined
+

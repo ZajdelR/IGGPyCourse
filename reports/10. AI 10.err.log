@@ -1,0 +1,95 @@
+Traceback (most recent call last):
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saeid Haji-Aghajany\AppData\Roaming\Python\Python311\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Saeid Haji-Aghajany\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import folium
+
+# Define locations with their latitude and longitude
+locations = {
+    "Factory": (37.7749, -122.4194),  # San Francisco
+    "Warehouse 1": (37.8044, -122.2711),  # Oakland
+    "Warehouse 2": (37.6879, -122.4702),  # Daly City
+    "Retailer 1": (37.7749, -122.4892),  # West San Francisco
+    "Retailer 2": (37.7328, -122.5054)   # South San Francisco
+}
+
+# Define routes with distances (edges in the graph)
+routes = [
+    ("Factory", "Warehouse 1", 10),
+    ("Factory", "Warehouse 2", 15),
+    ("Warehouse 1", "Retailer 1", 8),
+    ("Warehouse 1", "Retailer 2", 12),
+    ("Warehouse 2", "Retailer 1", 10),
+    ("Warehouse 2", "Retailer 2", 5)
+]
+
+# Define optimized route (e.g., AI-determined shortest path)
+optimized_route = ["Factory", "Warehouse 2", "Retailer 2"]
+
+# Initialize a folium map centered around the Factory
+map_center = locations["Factory"]
+supply_chain_map = folium.Map(location=map_center, zoom_start=12)
+
+# Add all locations as markers
+for location, coords in locations.items():
+    folium.Marker(
+        location=coords,
+        popup=f"<b>{location}</b>",
+        tooltip=location
+    ).add_to(supply_chain_map)
+
+# Draw all routes
+for start, end, distance in routes:
+    folium.PolyLine(
+        [locations[start], locations[end]],
+        color="gray",
+        weight=2,
+        tooltip=f"{start} to {end}: {distance} km"
+    ).add_to(supply_chain_map)
+
+# Highlight the optimized route
+for i in range(len(optimized_route) - 1):
+    folium.PolyLine(
+        [locations[optimized_route[i]], locations[optimized_route[i + 1]]],
+        color="red",
+        weight=4,
+        tooltip=f"Optimized: {optimized_route[i]} to {optimized_route[i + 1]}"
+    ).add_to(supply_chain_map)
+
+# Display the map
+supply_chain_map.save("route_optimization_map.html")
+supply_chain_map
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[4], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mfolium[39;00m
+[0;32m      3[0m [38;5;66;03m# Define locations with their latitude and longitude[39;00m
+[0;32m      4[0m locations [38;5;241m=[39m {
+[0;32m      5[0m     [38;5;124m"[39m[38;5;124mFactory[39m[38;5;124m"[39m: ([38;5;241m37.7749[39m, [38;5;241m-[39m[38;5;241m122.4194[39m),  [38;5;66;03m# San Francisco[39;00m
+[0;32m      6[0m     [38;5;124m"[39m[38;5;124mWarehouse 1[39m[38;5;124m"[39m: ([38;5;241m37.8044[39m, [38;5;241m-[39m[38;5;241m122.2711[39m),  [38;5;66;03m# Oakland[39;00m
+[1;32m   (...)[0m
+[0;32m      9[0m     [38;5;124m"[39m[38;5;124mRetailer 2[39m[38;5;124m"[39m: ([38;5;241m37.7328[39m, [38;5;241m-[39m[38;5;241m122.5054[39m)   [38;5;66;03m# South San Francisco[39;00m
+[0;32m     10[0m }
+
+[1;31mModuleNotFoundError[0m: No module named 'folium'
+

@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "C:\Users\kamil\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\ProgramData\Anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def my_function():
+    print("Hello, AI!")
+my_function()
+    
+
+
+
+def countdown(start):
+    while start >= 0:
+        print(start)
+        start -= 1
+countdown(5) 
+
+
+
+    
+def factorial(n):
+    if n < 0:
+        return "Factorial is not defined for negative numbers."
+    result = 1
+    while n > 1:
+        result *= n
+        n -= 1
+    return result
+print(f"The average of the entered numbers is: {factorial(5)}")
+
+
+
+
+
+def calculate_average():
+    total = 0
+    count = 0
+    while True:
+        user_input = input("Enter a number to include in the average (or 'done' to finish): ")
+        if user_input.lower() == 'done':
+            break
+        try:
+            number = float(user_input)
+            total += number
+            count += 1
+        except ValueError:
+            print("Invalid input. Please enter a numeric value.")
+    
+    if count == 0:
+        return "No numbers were entered."
+    
+    average = total / count
+    return f"The average of the entered numbers is: {average}"
+print(calculate_average())
+
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 50>[1;34m()[0m
+[0;32m     48[0m     average [38;5;241m=[39m total [38;5;241m/[39m count
+[0;32m     49[0m     [38;5;28;01mreturn[39;00m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mThe average of the entered numbers is: [39m[38;5;132;01m{[39;00maverage[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m---> 50[0m [38;5;28mprint[39m([43mcalculate_average[49m[43m([49m[43m)[49m)
+
+Input [1;32mIn [1][0m, in [0;36mcalculate_average[1;34m()[0m
+[0;32m     33[0m count [38;5;241m=[39m [38;5;241m0[39m
+[0;32m     34[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m---> 35[0m     user_input [38;5;241m=[39m [38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mEnter a number to include in the average (or [39;49m[38;5;124;43m'[39;49m[38;5;124;43mdone[39;49m[38;5;124;43m'[39;49m[38;5;124;43m to finish): [39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m     36[0m     [38;5;28;01mif[39;00m user_input[38;5;241m.[39mlower() [38;5;241m==[39m [38;5;124m'[39m[38;5;124mdone[39m[38;5;124m'[39m:
+[0;32m     37[0m         [38;5;28;01mbreak[39;00m
+
+File [1;32mC:\ProgramData\Anaconda3\lib\site-packages\ipykernel\kernelbase.py:1072[0m, in [0;36mKernel.raw_input[1;34m(self, prompt)[0m
+[0;32m   1065[0m [38;5;124;03m"""Forward raw_input to frontends[39;00m
+[0;32m   1066[0m 
+[0;32m   1067[0m [38;5;124;03mRaises[39;00m
+[0;32m   1068[0m [38;5;124;03m------[39;00m
+[0;32m   1069[0m [38;5;124;03mStdinNotImplementedError if active frontend doesn't support stdin.[39;00m
+[0;32m   1070[0m [38;5;124;03m"""[39;00m
+[0;32m   1071[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[1;32m-> 1072[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(
+[0;32m   1073[0m         [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[0;32m   1074[0m     )
+[0;32m   1075[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[0;32m   1076[0m     [38;5;28mstr[39m(prompt),
+[0;32m   1077[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[0;32m   1078[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[0;32m   1079[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[0;32m   1080[0m )
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+
