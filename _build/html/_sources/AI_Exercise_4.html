@@ -1,0 +1,1165 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 4: Python Knowledge Repetition &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js"></script>
+    <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/AI_Exercise_4';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Mod0.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/_sources/AI_Exercise_4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 4: Python Knowledge Repetition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-of-data-structures-in-python">Key Concepts of Data Structures in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-data-structures">Primitive Data Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-primitive-data-structures">Non-Primitive Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-data-structures">Built-in Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-data-structures">User Defined Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#trees">Trees</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">Graphs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-object-oriented-programming-oop">What is Object-Oriented Programming (OOP)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-principles-of-oop">The main principles of OOP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class">Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-objects">Creating Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications-of-oop">Specifications of OOP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-4-python-knowledge-repetition">
+<h1>Exercise 4: Python Knowledge Repetition<a class="headerlink" href="#exercise-4-python-knowledge-repetition" title="Permalink to this heading">#</a></h1>
+<section id="data-structure">
+<h2>Data structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h2>
+<img src='img/data_str.png' width=700/><section id="key-concepts-of-data-structures-in-python">
+<h3>Key Concepts of Data Structures in Python<a class="headerlink" href="#key-concepts-of-data-structures-in-python" title="Permalink to this heading">#</a></h3>
+<p><span style="color: orange; font-size: 18px;">Efficiency:</span>
+Data structures are optimized for different tasks, allowing you to efficiently access, insert, delete, or modify elements.</p>
+<p><span style="color: orange; font-size: 18px;">Organization:</span>
+They help to organize data logically for processing and analysis.</p>
+<p><span style="color: orange; font-size: 18px;">Manipulation:</span>
+Data structures allow manipulation of data using various operations (e.g., sorting, indexing).</p>
+</section>
+<section id="primitive-data-structures">
+<h3>Primitive Data Structures<a class="headerlink" href="#primitive-data-structures" title="Permalink to this heading">#</a></h3>
+<p>Primitive data structures are the basic building blocks for data manipulation and are typically provided by the programming language itself (int, float, str, and bool).</p>
+</section>
+<section id="non-primitive-data-structures">
+<h3>Non-Primitive Data Structures<a class="headerlink" href="#non-primitive-data-structures" title="Permalink to this heading">#</a></h3>
+<p>Non-primitive data structures are more complex and are built using primitive data types. They can store collections of data and allow for more sophisticated operations.</p>
+<section id="built-in-data-structures">
+<h4>Built-in Data Structures<a class="headerlink" href="#built-in-data-structures" title="Permalink to this heading">#</a></h4>
+<section id="lists">
+<h5>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">A list is an ordered, mutable collection of items. Lists can contain elements of different data types and can be modified (i.e., elements can be added, removed, or changed).</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a list</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+
+<span class="c1"># Accessing elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: &quot;apple&quot;</span>
+
+<span class="c1"># Modifying a list</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Output: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;orange&quot;]</span>
+
+<span class="c1"># Removing an item</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>  <span class="c1"># Output: [&quot;apple&quot;, &quot;cherry&quot;, &quot;orange&quot;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>apple
+[&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;, &#39;orange&#39;]
+[&#39;apple&#39;, &#39;cherry&#39;, &#39;orange&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tuples">
+<h5>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">Tuples are immutable, ordered collections. Once created, elements cannot be modified, making tuples useful for fixed data collections.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a tuple</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Engineer&quot;</span><span class="p">)</span>
+
+<span class="c1"># Accessing elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: &quot;John&quot;</span>
+
+<span class="c1"># Tuples are immutable</span>
+<span class="c1">#person[1] = 30  # This would raise an error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionaries">
+<h5>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">Dictionaries are mutable, unordered collections of key-value pairs. Each key must be unique, and it maps to a corresponding value.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a dictionary</span>
+<span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;major&quot;</span><span class="p">:</span> <span class="s2">&quot;Physics&quot;</span><span class="p">}</span>
+
+<span class="c1"># Accessing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>  <span class="c1"># Output: &quot;Alice&quot;</span>
+
+<span class="c1"># Adding or modifying a value</span>
+<span class="n">student</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>  <span class="c1"># Output: {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 23, &quot;major&quot;: &quot;Physics&quot;}</span>
+
+<span class="c1"># Removing an item</span>
+<span class="n">student</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;major&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>  <span class="c1"># Output: {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 23}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice
+{&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 23, &#39;major&#39;: &#39;Physics&#39;}
+{&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 23}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sets">
+<h5>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">Sets are unordered collections of unique elements. Sets are useful for membership testing and eliminating duplicate values.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a set</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1"># Output: {1, 2, 3, 4}</span>
+
+<span class="c1"># Adding an element</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1"># Output: {1, 2, 3, 4, 5}</span>
+
+<span class="c1"># Set operations: union, intersection</span>
+<span class="n">odd</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">even</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">odd</span> <span class="o">|</span> <span class="n">even</span><span class="p">)</span>  <span class="c1"># Output: {1, 2, 3, 4, 5, 6, 7, 8}  # Union</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">odd</span> <span class="o">&amp;</span> <span class="n">even</span><span class="p">)</span>  <span class="c1"># Output: set()  # Intersection</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4}
+{1, 2, 3, 4, 5}
+{1, 2, 3, 4, 5, 6, 7, 8}
+set()
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="user-defined-data-structures">
+<h4>User Defined Data Structures<a class="headerlink" href="#user-defined-data-structures" title="Permalink to this heading">#</a></h4>
+<section id="stacks">
+<h5>Stacks<a class="headerlink" href="#stacks" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">A stack is a LIFO (Last In First Out) data structure. Elements are added and removed from the top.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Push operation</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>  <span class="c1"># Output: [10, 20, 30]</span>
+
+<span class="c1"># Pop operation</span>
+<span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>  <span class="c1"># Output: [10, 20]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30]
+[10, 20]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="queues">
+<h5>Queues<a class="headerlink" href="#queues" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">A queue is a FIFO (First In First Out) data structure. Elements are added at the rear and removed from the front.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+<span class="c1"># Enqueue operation</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>  <span class="c1"># Output: deque([&#39;Alice&#39;, &#39;Bob&#39;])</span>
+
+<span class="c1"># Dequeue operation</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>  <span class="c1"># Output: deque([&#39;Bob&#39;])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>deque([&#39;Alice&#39;, &#39;Bob&#39;])
+deque([&#39;Bob&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="trees">
+<h5>Trees<a class="headerlink" href="#trees" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">A tree is a hierarchical data structure with a root node and child nodes. A binary tree is a common type where each node has at most two children.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tree representation as a nested dictionary</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Function to traverse the tree (Preorder traversal)</span>
+<span class="k">def</span> <span class="nf">traverse_tree</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>  <span class="c1"># Print the current node</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">{}):</span>
+        <span class="n">traverse_tree</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+<span class="c1"># Start traversal from root node &#39;A&#39;</span>
+<span class="n">traverse_tree</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+B
+C
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="graphs">
+<h5>Graphs<a class="headerlink" href="#graphs" title="Permalink to this heading">#</a></h5>
+<p><span style="color: orange; font-size: 18px;">A graph consists of nodes (vertices) and edges. It can be used to model relationships, such as social networks, paths, etc.</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graph representation as an adjacency list</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Depth First Search (DFS) function</span>
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+
+<span class="c1"># Perform DFS starting from node &#39;A&#39;</span>
+<span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+
+<span class="c1"># Output: A B D E F C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A B D E F C 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="what-is-object-oriented-programming-oop">
+<h2>What is Object-Oriented Programming (OOP)?<a class="headerlink" href="#what-is-object-oriented-programming-oop" title="Permalink to this heading">#</a></h2>
+<p>Object-oriented programming is a programming paradigm based on the concept of “objects,” which can contain data and code. OOP helps organize software design in a way that is more manageable and understandable.</p>
+</section>
+<section id="the-main-principles-of-oop">
+<h2>The main principles of OOP<a class="headerlink" href="#the-main-principles-of-oop" title="Permalink to this heading">#</a></h2>
+<p><span style="color: orange; font-size: 18px;">Encapsulation:</span> Bundling the data (attributes) and methods (functions) that operate on the data into a single unit called a class.</p>
+<p><span style="color: orange; font-size: 18px;">Abstraction:</span> Hiding the complex implementation details and showing only the necessary features of an object.</p>
+<p><span style="color: orange; font-size: 18px;">Inheritance:</span> Creating a new class based on an existing class, allowing code reuse and the creation of a hierarchical relationship.</p>
+<p><span style="color: orange; font-size: 18px;">Polymorphism:</span> Allowing different classes to be treated as instances of the same class through a common interface, enabling methods to be used interchangeably.</p>
+</section>
+<section id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this heading">#</a></h2>
+<p>A class is a user-defined blueprint or prototype from which objects are created. It allows grouping data (attributes) and methods (functions) into one logical unit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="c1"># Constructor method to initialize the object&#39;s attributes</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute for the dog&#39;s name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Attribute for the dog&#39;s age</span>
+
+    <span class="c1"># Method to make the dog bark</span>
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Woof!&quot;</span>
+
+    <span class="c1"># Method to get the dog&#39;s age in human years</span>
+    <span class="k">def</span> <span class="nf">age_in_human_years</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-objects">
+<h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this heading">#</a></h2>
+<p>An object is an instance of a class. You create an object by calling the class as if it were a function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create instances of the Dog class</span>
+<span class="n">dog1</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Buddy&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Accessing attributes and methods</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog1</span><span class="o">.</span><span class="n">bark</span><span class="p">())</span>  <span class="c1"># Output: Buddy says Woof!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog2</span><span class="o">.</span><span class="n">age_in_human_years</span><span class="p">())</span>  <span class="c1"># Output: 35</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buddy says Woof!
+35
+</pre></div>
+</div>
+</div>
+</div>
+<img src='img/classandobj.png' width=600/></section>
+<section id="specifications-of-oop">
+<h2>Specifications of OOP<a class="headerlink" href="#specifications-of-oop" title="Permalink to this heading">#</a></h2>
+<section id="encapsulation">
+<h3>Encapsulation<a class="headerlink" href="#encapsulation" title="Permalink to this heading">#</a></h3>
+<p>Encapsulation is one of the core principles of object-oriented programming, which involves restricting access to certain details of an object and exposing only the necessary parts through methods. This allows for better data protection and helps to keep the internal workings of a class hidden from the outside.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_holder</span><span class="p">,</span> <span class="n">initial_balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_holder</span> <span class="o">=</span> <span class="n">account_holder</span>  <span class="c1"># Public attribute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="n">initial_balance</span>       <span class="c1"># Private attribute (encapsulated)</span>
+
+    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">+=</span> <span class="n">amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Deposited: $</span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. New balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deposit amount must be positive.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">amount</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">-=</span> <span class="n">amount</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Withdrew: $</span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2">. Remaining balance: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__balance</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insufficient balance or invalid withdrawal amount.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span>  <span class="c1"># Method to access the private balance attribute</span>
+
+<span class="c1"># Creating an instance of BankAccount</span>
+<span class="n">account</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Accessing public attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Account Holder: </span><span class="si">{</span><span class="n">account</span><span class="o">.</span><span class="n">account_holder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Output: Account Holder: Alice</span>
+
+<span class="c1"># Using methods to manipulate balance</span>
+<span class="n">account</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>   <span class="c1"># Output: Deposited: $500. New balance: $1500.</span>
+<span class="n">account</span><span class="o">.</span><span class="n">withdraw</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># Output: Withdrew: $200. Remaining balance: $1300.</span>
+
+<span class="c1"># Using the method to get the balance</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current Balance: $</span><span class="si">{</span><span class="n">account</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Output: Current Balance: $1300.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Account Holder: Alice
+Deposited: $500. New balance: $1500.
+Withdrew: $200. Remaining balance: $1300.
+Current Balance: $1300
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="abstraction">
+<h3>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this heading">#</a></h3>
+<p>Abstraction involves hiding the complex implementation details of a class while exposing only the essential features that are relevant to the user. This allows programmers to interact with objects at a higher level, simplifying the interface and improving code readability and maintainability.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="c1"># Abstract class</span>
+<span class="k">class</span> <span class="nc">Vehicle</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="c1"># Concrete class inheriting from the abstract class</span>
+<span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Car engine started.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Car engine stopped.&quot;</span>
+
+<span class="c1"># Another concrete class</span>
+<span class="k">class</span> <span class="nc">Motorcycle</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">start_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Motorcycle engine started.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">stop_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Motorcycle engine stopped.&quot;</span>
+
+<span class="c1"># Client code</span>
+<span class="k">def</span> <span class="nf">vehicle_operations</span><span class="p">(</span><span class="n">vehicle</span><span class="p">:</span> <span class="n">Vehicle</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">start_engine</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">vehicle</span><span class="o">.</span><span class="n">stop_engine</span><span class="p">())</span>
+
+<span class="c1"># Creating instances</span>
+<span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="n">motorcycle</span> <span class="o">=</span> <span class="n">Motorcycle</span><span class="p">()</span>
+
+<span class="c1"># Performing operations</span>
+<span class="n">vehicle_operations</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+<span class="n">vehicle_operations</span><span class="p">(</span><span class="n">motorcycle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Car engine started.
+Car engine stopped.
+Motorcycle engine started.
+Motorcycle engine stopped.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">#</a></h3>
+<p>Inheritance allows one class (the child class) to inherit the attributes and methods of another class (the parent class).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parent class</span>
+<span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+
+    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Some sound&quot;</span>
+
+<span class="c1"># Child class that inherits from Animal</span>
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;Cat&quot;</span><span class="p">)</span>  <span class="c1"># Call the parent constructor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Meow!&quot;</span>
+
+<span class="c1"># Creating an object of the Cat class</span>
+<span class="n">cat1</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">(</span><span class="s2">&quot;Whiskers&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>  <span class="c1"># Output: Whiskers says Meow!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>       <span class="c1"># Output: Cat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Whiskers says Meow!
+Cat
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="polymorphism">
+<h3>Polymorphism<a class="headerlink" href="#polymorphism" title="Permalink to this heading">#</a></h3>
+<p>Polymorphism allows methods to be used interchangeably, even if they belong to different classes. This is typically achieved through method overriding.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Another child class</span>
+<span class="k">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;Bird&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">make_sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> says Chirp!&quot;</span>
+
+<span class="c1"># Creating objects of both classes</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat1</span><span class="p">,</span> <span class="n">Bird</span><span class="p">(</span><span class="s2">&quot;Tweety&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="o">.</span><span class="n">make_sound</span><span class="p">())</span>  <span class="c1"># Output: Whiskers says Meow! and Tweety says Chirp!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Whiskers says Meow!
+Tweety says Chirp!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class definition for a Student</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">major</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="n">major</span>
+
+    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">, Major: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">major</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># List to store multiple students</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;Biology&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;Physics&quot;</span><span class="p">),</span>
+    <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Mathematics&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># Print the details of each student</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Alice, Age: 20, Major: Biology
+Name: Bob, Age: 22, Major: Physics
+Name: Charlie, Age: 21, Major: Mathematics
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class definition for a Product</span>
+<span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="n">quantity</span>
+
+    <span class="k">def</span> <span class="nf">total_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span>
+
+<span class="c1"># Dictionary to store products</span>
+<span class="n">inventory</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;Apple&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;Banana&quot;</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span>
+    <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;Orange&quot;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1"># Print the total value of each product in the inventory</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">product</span> <span class="ow">in</span> <span class="n">inventory</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">: Total Value = $</span><span class="si">{</span><span class="n">product</span><span class="o">.</span><span class="n">total_value</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apple: Total Value = $50.00
+Banana: Total Value = $45.00
+Orange: Total Value = $80.00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class definition for a Book</span>
+<span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+
+    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Class definition for a Library</span>
+<span class="k">class</span> <span class="nc">Library</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># Using a set to store unique books</span>
+
+    <span class="k">def</span> <span class="nf">add_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">show_books</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+<span class="c1"># Create a library and add books</span>
+<span class="n">my_library</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">))</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s2">&quot;To Kill a Mockingbird&quot;</span><span class="p">,</span> <span class="s2">&quot;Harper Lee&quot;</span><span class="p">))</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s2">&quot;1984&quot;</span><span class="p">,</span> <span class="s2">&quot;George Orwell&quot;</span><span class="p">))</span>  <span class="c1"># Duplicate, won&#39;t be added</span>
+
+<span class="c1"># Show all unique books in the library</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Books in the Library:&quot;</span><span class="p">)</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Books in the Library:
+To Kill a Mockingbird by Harper Lee
+1984 by George Orwell
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts-of-data-structures-in-python">Key Concepts of Data Structures in Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primitive-data-structures">Primitive Data Structures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-primitive-data-structures">Non-Primitive Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-data-structures">Built-in Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-data-structures">User Defined Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#stacks">Stacks</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#queues">Queues</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#trees">Trees</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">Graphs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-object-oriented-programming-oop">What is Object-Oriented Programming (OOP)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-principles-of-oop">The main principles of OOP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class">Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-objects">Creating Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifications-of-oop">Specifications of OOP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphism">Polymorphism</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radosław Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

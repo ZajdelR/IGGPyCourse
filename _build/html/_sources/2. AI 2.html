@@ -1,0 +1,2314 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 2: Introduction to Machine Learning tasks and intuition &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js"></script>
+    <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/2. AI 2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Mod0.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/_sources/2. AI 2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 2: Introduction to Machine Learning tasks and intuition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-recap">Quick recap:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-defintion">Machine learning defintion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development-process">Model development process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning-algorithms">Types of machine learning algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-at-the-core-of-machine-learning">Probability: at the core of Machine Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-probability">What is probability?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">Random variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-probability">Other examples of probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions">Probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-marginal-and-conditional-probability">Joint, Marginal, and Conditional Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monty-hall-problem">Monty Hall problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-theory-in-ml">Probability theory in ML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-uncertainty">Modeling Uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-models">Probabilistic models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-knowledge">Prior knowledge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-uses-of-probability-theory-in-machine-learning">Other uses of probability theory in machine learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">Bayes’ Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-in-practice">Bayes’ Theorem in practice</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-introduction-to-machine-learning-tasks-and-intuition">
+<h1>Lecture 2: Introduction to Machine Learning tasks and intuition<a class="headerlink" href="#lecture-2-introduction-to-machine-learning-tasks-and-intuition" title="Permalink to this heading">#</a></h1>
+<section id="quick-recap">
+<h2>Quick recap:<a class="headerlink" href="#quick-recap" title="Permalink to this heading">#</a></h2>
+<p><b> The goal of AI is to build a being that reasons like a human. </b></p>
+<p>Altough in many tasks these algorithms already surpass human abilities, these are bad at generlising tasks, being trained to do single thing only. But, we are getting better.</p>
+<section id="machine-learning-defintion">
+<h3>Machine learning defintion<a class="headerlink" href="#machine-learning-defintion" title="Permalink to this heading">#</a></h3>
+<p>Machine learning is a model learning from experience E to perform task T evaluating its performance through a measure P.</p>
+</section>
+<section id="model-development-process">
+<h3>Model development process<a class="headerlink" href="#model-development-process" title="Permalink to this heading">#</a></h3>
+<p>The whole process of developing machine learning solutions is complex and involves multiple steps.</p>
+<img src='img/flow.jpg' width=550/></section>
+</section>
+<section id="types-of-machine-learning-algorithms">
+<h2>Types of machine learning algorithms<a class="headerlink" href="#types-of-machine-learning-algorithms" title="Permalink to this heading">#</a></h2>
+<img src='img/typesofml.jpg' />
+<section id="supervised-learning">
+<h3>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this heading">#</a></h3>
+<p>Definition: Learning from labeled data, where the input-output pairs are provided.
+Goal: Predict output values for new data.
+Types:</p>
+<ul class="simple">
+<li><p>Regression: Predict continuous outputs.
+Example: Predicting house prices.</p></li>
+<li><p>Classification: Predict categorical outputs.
+Example: Email spam detection.</p></li>
+</ul>
+</section>
+<section id="unsupervised-learning">
+<h3>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this heading">#</a></h3>
+<p>Definition: Learning from data that is not labeled, finding patterns or structure in the data.
+Goal: Group data points, reduce data dimensions, or discover associations.
+Types:</p>
+<ul>
+<li><p>Clustering: Group similar data points together.
+Example: Customer segmentation.</p></li>
+<li><p>Association: Find rules that describe large portions of the data.
+Example: Market basket analysis.</p></li>
+<li><p>Dimensionality Reduction: Limit the number of variables describing the data to minimum.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Example: Decide which variables are the most important to predict who will buy certain products in a shop.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="probability-at-the-core-of-machine-learning">
+<h2>Probability: at the core of Machine Learning<a class="headerlink" href="#probability-at-the-core-of-machine-learning" title="Permalink to this heading">#</a></h2>
+<section id="what-is-probability">
+<h3>What is probability?<a class="headerlink" href="#what-is-probability" title="Permalink to this heading">#</a></h3>
+<p>Probability is a way of measuring the likelihood of an event happening.
+It ranges between 0 (impossible event) and 1 (certain event).</p>
+<p>Probability of something happening half the times is 0.5 (or 50%, but we prefer the decimal expression).</p>
+</section>
+<section id="random-variable">
+<h3>Random variable<a class="headerlink" href="#random-variable" title="Permalink to this heading">#</a></h3>
+<p>A random variable is a variable that can take different values, each with a certain probability.</p>
+<p>For example: a dice roll. It can be either 1, 2, 3, 4, 5 or 6. The random variable X is the outcome of the roll, therefore</p>
+<p>P(X=x) = 1/6</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="o">/</span><span class="n">number_of_datapoints</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="o">/</span><span class="n">number_of_datapoints</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;number_of_datapoints&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_datapoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 0,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ 1,
+ 0,
+ 0,
+ 1,
+ 1,
+ 1,
+ 0,
+ 1,
+ 1,
+ 1,
+ ...]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 2, 3, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1"># Function to simulate dice rolls and plot the distribution</span>
+<span class="k">def</span> <span class="nf">plot_dice_rolls</span><span class="p">(</span><span class="n">num_rolls</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="c1"># Simulate dice rolls (values between 1 and 6)</span>
+    <span class="n">rolls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_rolls</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate the frequency of each outcome (1 to 6)</span>
+    <span class="n">counts</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">rolls</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the histogram</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">counts</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    
+    <span class="c1"># Plotting the theoretical uniform distribution line for comparison</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Theoretical Probability (1/6)&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Adding labels and title</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Distribution of Dice Rolls (n=</span><span class="si">{</span><span class="n">num_rolls</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Dice Face&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Creating an interactive slider for the number of dice rolls</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_dice_rolls</span><span class="p">,</span> 
+         <span class="n">num_rolls</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Number of Rolls&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e03f2263df154fd4ad8aa47cc8378fa2", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="other-examples-of-probability">
+<h3>Other examples of probability<a class="headerlink" href="#other-examples-of-probability" title="Permalink to this heading">#</a></h3>
+<p>We find probability to be useful in many examples, such as games.</p>
+<p>Probability of geting a pair in the poker: 42.26%</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Getting a three of a kind: 2.11%
+Full House: 0.144%
+Flush: 0.198%
+Full poker: 0.024%
+</pre></div>
+</div>
+<p>And the probability to winn the lottery (where you have to correctly guess 6 out of 49 numbers) is…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.special</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">binom</span><span class="p">(</span><span class="mi">49</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;P(x)=</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.10f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(x)=0.0000000715%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probability is <strong>why casino always wins</strong>. Let’s say we have a roulette</p>
+<img src='img/roulette.jpg' />
+<p>We have 37 fields, 18 red, 18 black, 1 green.</p>
+<p>Betting all on red:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">18</span><span class="o">/</span><span class="mi">37</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.64864864864865
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hence, the probability that casino wins:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">19</span><span class="o">/</span><span class="mi">37</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.35135135135135
+</pre></div>
+</div>
+</div>
+</div>
+<p>Casino use probability to earn money. <strong>Odds are always in the favor of casino.</strong></p>
+</section>
+<section id="probability-distributions">
+<h3>Probability distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this heading">#</a></h3>
+<p>A probability distribution tells us the probability of each possible outcome for a random variable.</p>
+<p>Example: Rolling a fair dice has a uniform distribution, where each outcome (1 to 6) is equally likely.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1"># Function to plot different distributions as bar plots based on user selection</span>
+<span class="k">def</span> <span class="nf">plot_distribution</span><span class="p">(</span><span class="n">distribution</span><span class="p">,</span> <span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="c1"># Choose the distribution to plot</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Normal&#39;</span><span class="p">:</span>
+        <span class="c1"># Generate random samples from a normal distribution</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="c1"># Plot histogram as bar plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Normal Distribution</span><span class="se">\n</span><span class="s1">Mean = </span><span class="si">{</span><span class="n">param1</span><span class="si">}</span><span class="s1">, Std Dev = </span><span class="si">{</span><span class="n">param2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Uniform&#39;</span><span class="p">:</span>
+        <span class="c1"># Generate random samples from a uniform distribution</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="c1"># Plot histogram as bar plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Uniform Distribution</span><span class="se">\n</span><span class="s1">Range = [</span><span class="si">{</span><span class="n">param1</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">param2</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Value&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Binomial&#39;</span><span class="p">:</span>
+        <span class="c1"># Generate random samples from a binomial distribution</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="c1"># Plot histogram as bar plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">param1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Binomial Distribution</span><span class="se">\n</span><span class="s1">Trials = </span><span class="si">{</span><span class="n">param1</span><span class="si">}</span><span class="s1">, Probability = </span><span class="si">{</span><span class="n">param2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Successes&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Poisson&#39;</span><span class="p">:</span>
+        <span class="c1"># Generate random samples from a Poisson distribution</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+        <span class="c1"># Plot histogram as bar plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Poisson Distribution</span><span class="se">\n</span><span class="s1">Lambda = </span><span class="si">{</span><span class="n">param1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Events&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+        
+    <span class="c1"># Show the plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Interactive widgets to switch between distributions and adjust parameters</span>
+<span class="n">distribution_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="s1">&#39;Uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;Binomial&#39;</span><span class="p">,</span> <span class="s1">&#39;Poisson&#39;</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Distribution&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Parameters for the different distributions</span>
+<span class="n">param1_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Param1&#39;</span><span class="p">)</span>
+<span class="n">param2_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Param2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Update the sliders based on the chosen distribution</span>
+<span class="k">def</span> <span class="nf">update_parameters</span><span class="p">(</span><span class="n">distribution</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Normal&#39;</span><span class="p">:</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Mean&#39;</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Std Dev&#39;</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="mf">0.1</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Uniform&#39;</span><span class="p">:</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Min&#39;</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Max&#39;</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Binomial&#39;</span><span class="p">:</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Trials&#39;</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Probability&#39;</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="mf">0.01</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s1">&#39;Poisson&#39;</span><span class="p">:</span>
+        <span class="n">param1_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Lambda&#39;</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Unused&#39;</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Not used in Poisson, but needed for the function</span>
+        <span class="n">param2_slider</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>  <span class="c1"># Hide the second parameter slider</span>
+
+<span class="c1"># Function to handle changes in distribution dropdown</span>
+<span class="k">def</span> <span class="nf">update_distribution</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">update_parameters</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">])</span>
+
+<span class="c1"># Link the update function to the dropdown change event</span>
+<span class="n">distribution_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_distribution</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+<span class="c1"># Display interactive plot with widgets</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_distribution</span><span class="p">,</span> 
+         <span class="n">distribution</span><span class="o">=</span><span class="n">distribution_dropdown</span><span class="p">,</span>
+         <span class="n">param1</span><span class="o">=</span><span class="n">param1_slider</span><span class="p">,</span>
+         <span class="n">param2</span><span class="o">=</span><span class="n">param2_slider</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c6b15588fc5e4351a9f652fa40453950", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="normal-distribution">
+<h3>Normal distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h3>
+<p>Normal distribution  (also called the Gaussian Distribution) is the most common distribution type. It describe a probability of random incident happening.</p>
+<p>The <strong>mean</strong> (average) defines the center of the distribution, while the <strong>standard deviation</strong> defines the spread or width of the curve.</p>
+<p>Many natural phenomena are Normally Distributed:</p>
+<ul class="simple">
+<li><p>Many real-world data sets follow a normal distribution, such as heights, test scores, or measurement errors.</p></li>
+<li><p>Machine learning often works with natural data, making the normal distribution an important assumption for many models.</p></li>
+</ul>
+<p>Central Limit Theorem (CLT):</p>
+<p>The Central Limit Theorem states that the sum or average of a large number of independent random variables, regardless of their original distribution, will be approximately normally distributed.</p>
+<p>Outlier Detection:</p>
+<p>When we try to identify if our data is <strong>correct</strong> and we <i>know</i> that data is normally distributed. We can use the distribution to asses if our data has incorrect measurments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1"># Function to calculate and plot the probability density function (PDF)</span>
+<span class="k">def</span> <span class="nf">plot_normal_distribution</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std_dev</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Generate a range of x values</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mean</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">std_dev</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate the PDF using the mean and standard deviation</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the distribution</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Normal Distribution</span><span class="se">\n</span><span class="s1">Mean = </span><span class="si">{</span><span class="n">mean</span><span class="si">}</span><span class="s1">, Std Dev = </span><span class="si">{</span><span class="n">std_dev</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    
+    <span class="c1"># Highlighting the area under the curve between -1 std and +1 std</span>
+    <span class="n">x_fill</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mean</span> <span class="o">-</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">std_dev</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">y_fill</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_fill</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std_dev</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_fill</span><span class="p">,</span> <span class="n">y_fill</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1 Std Dev Range&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Adding labels and title</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Probability Density Function (Normal Distribution)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Creating interactive sliders for mean and standard deviation</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_normal_distribution</span><span class="p">,</span> 
+         <span class="n">mean</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Mean&#39;</span><span class="p">),</span>
+         <span class="n">std_dev</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Std Dev&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c6333df0b73843c08883a630dedbed17", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+<section id="joint-marginal-and-conditional-probability">
+<h3>Joint, Marginal, and Conditional Probability<a class="headerlink" href="#joint-marginal-and-conditional-probability" title="Permalink to this heading">#</a></h3>
+<p>Joint probability is the probability that two events happen at the same time.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P(A∩B) is the probability that both A and B occur.
+</pre></div>
+</div>
+<p>For example, to get an answer on the test right picking it at random (let’s say there are four A, B, C, D) is P(x) = 1/4 = 25%</p>
+<p>To get two of them right at the same time is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.25
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get 50 questions right at the same time on random is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.25
+</pre></div>
+</div>
+</div>
+</div>
+<p>Marginal probability is the probability of the single event happening.</p>
+<p>Conditional Probability is the robability of an event occurring given that another event has occurred.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P(A∣B) is the probability of event A happening, given that B has occurred.
+</pre></div>
+</div>
+<p>Let’s say we have the sequence of symbols:</p>
+<p>[1 2 1 2 1 3]</p>
+<p>What is the probability that after 1, 2 will appear?</p>
+</section>
+<section id="monty-hall-problem">
+<h3>Monty Hall problem<a class="headerlink" href="#monty-hall-problem" title="Permalink to this heading">#</a></h3>
+<p>Given three gates a contenstant have to pick a gate. One of them have a car behind, other two hide goats behind them.</p>
+<p>What is the probability of selecting the right gate?</p>
+<p>1/3 - 1 of 3 three gates has the price.</p>
+<p>You pick a gate, say 1, nd the host, who knows what’s behind the doors, opens another door, say No. 3, which has a goat.</p>
+<p>You then are given a choice, do you want to stay or do you want to switch? What should you do?</p>
+<p>When the player first chooses a gate, there is 2/3 chance that the car is behind door <strong>NOT</strong> chosen. This probability stays the same, when other gate is opened.</p>
+<p>When wrong doors were revealed, you <em>learned</em> that this 2/3 chance lies on the other gate, gate No. 2., which you haven’t pick at the start.</p>
+<p><strong>It feels counterintuitive</strong>, because we feel that it does not matter which one we pick, there is always 1/3 chance we get the door right.</p>
+<p>But the host revaled the information that one of gates not choosen there is a goat. It changed the marginal probability into the conditional probability:</p>
+<p>Initially there is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P(Car behind Door 1) = 1/3
+P(Car behind Door 2) = 1/3
+P(Car behind Door 3) = 1/3
+</pre></div>
+</div>
+<p>But when the host opened the doors it switched the probabilities into:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> P(Car behind Door 1) = 1/3
+ P(Car behind Door 2|goat behind Door 3) = 2/3
+</pre></div>
+</div>
+<p><strong>New information updates probabilities</strong></p>
+<p>If you still don’t belive me, let’s simulate it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">monty_hall_simulation</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">switch</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">wins</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+        <span class="c1"># Randomly assign the car (1) and the goats (0) behind the doors</span>
+        <span class="n">doors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">doors</span><span class="p">)</span>
+        
+        <span class="c1"># Contestant makes a random choice</span>
+        <span class="n">initial_choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        
+        <span class="c1"># Host opens a door that has a goat (not the contestant&#39;s choice and not the car)</span>
+        <span class="n">available_doors</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">initial_choice</span> <span class="ow">and</span> <span class="n">doors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">host_opens</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">available_doors</span><span class="p">)</span>
+        
+        <span class="c1"># If the contestant switches, choose the remaining door</span>
+        <span class="k">if</span> <span class="n">switch</span><span class="p">:</span>
+            <span class="n">final_choice</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">initial_choice</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">host_opens</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">final_choice</span> <span class="o">=</span> <span class="n">initial_choice</span>
+        
+        <span class="c1"># Count wins</span>
+        <span class="k">if</span> <span class="n">doors</span><span class="p">[</span><span class="n">final_choice</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">wins</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">wins</span> <span class="o">/</span> <span class="n">trials</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="n">trials</span> <span class="o">=</span> <span class="mi">100_000</span>
+
+<span class="c1"># Simulate both strategies</span>
+<span class="n">win_rate_with_switch</span> <span class="o">=</span> <span class="n">monty_hall_simulation</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">switch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">win_rate_without_switch</span> <span class="o">=</span> <span class="n">monty_hall_simulation</span><span class="p">(</span><span class="n">trials</span><span class="p">,</span> <span class="n">switch</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Win rate when switching: </span><span class="si">{</span><span class="n">win_rate_with_switch</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Win rate when not switching: </span><span class="si">{</span><span class="n">win_rate_without_switch</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Win rate when switching: 66.66%
+Win rate when not switching: 33.47%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="probability-theory-in-ml">
+<h2>Probability theory in ML<a class="headerlink" href="#probability-theory-in-ml" title="Permalink to this heading">#</a></h2>
+<p>Probability theory plays a fundamental role in machine learning by providing a framework for modeling uncertainty and making predictions based on data. We can tell when something happens, if this happens with a higher probability.</p>
+<section id="modeling-uncertainty">
+<h3>Modeling Uncertainty<a class="headerlink" href="#modeling-uncertainty" title="Permalink to this heading">#</a></h3>
+<p>Machine learning often deals with uncertain outcomes, such as predicting whether an email is spam or not. Probability allows us to quantify this uncertainty. Models do not give a definite answer, instead they provide a probability score - e.g. 70% chance that the mail is spam</p>
+</section>
+<section id="probabilistic-models">
+<h3>Probabilistic models<a class="headerlink" href="#probabilistic-models" title="Permalink to this heading">#</a></h3>
+<p>Many machine learning models are probabilistic by nature, meaning they use probability distributions to make decisions.</p>
+</section>
+<section id="prior-knowledge">
+<h3>Prior knowledge<a class="headerlink" href="#prior-knowledge" title="Permalink to this heading">#</a></h3>
+<p>Models incorporate prior knowledge (experience E) to estimate the probability of something happening. This is how they “learn” to predict certain outcomes.</p>
+</section>
+<section id="other-uses-of-probability-theory-in-machine-learning">
+<h3>Other uses of probability theory in machine learning<a class="headerlink" href="#other-uses-of-probability-theory-in-machine-learning" title="Permalink to this heading">#</a></h3>
+<p>The concept of likelihood—a key probabilistic idea—is used to estimate the best parameters for a model and to optimise it.</p>
+</section>
+</section>
+<section id="bayes-theorem">
+<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h2>
+<p>We know that Steve is a very shy and tidy person. What is higher:</p>
+<ul class="simple">
+<li><p>Probability that he is a librarian?</p></li>
+<li><p>Probability that he is a farmer?</p></li>
+</ul>
+<p>We know that Linda is actively engaged in the feminist movement. What is more probable:</p>
+<ul class="simple">
+<li><p>Linda is a bank teller?</p></li>
+<li><p>Linda is a bank teller and is active in the feminist movements?</p></li>
+</ul>
+<p>Let’s see about Steve:</p>
+<p>We are given information that in the population there are 10 librarians and 200 farmers. What would you say now?</p>
+<p>And we got another piece of information:</p>
+<p>There is a 40% probability that librarian is shy and tidy, and 10% probability that farmer fits this description. What about now?</p>
+<section id="bayes-theorem-in-practice">
+<h3>Bayes’ Theorem in practice<a class="headerlink" href="#bayes-theorem-in-practice" title="Permalink to this heading">#</a></h3>
+<p>Bayes’ Theorem helps us find the probability of an event given prior knowledge of related conditions. It is a simple and yet powerful equation, used widely in machine learning. Below equation is used as a basis for multiple machine learning models:</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p>P(A∣B) is the posterior probability: the probability of event A occurring given that B is true.</p></li>
+<li><p>P(B∣A) is the likelihood: the probability of event B occurring given that A is true.</p></li>
+<li><p>P(A) is the prior probability: the initial probability of event A.</p></li>
+<li><p>P(B) is the marginal probability: the probability of event B occurring.</p></li>
+</ul>
+<p>Bayes’ theorem provides a way to reason about probabilities in machine learning, especially in situations where we have to deal with uncertainty.</p>
+<p>This is a very quick algorithm with a lot of predictive power, used for example to:</p>
+<ul class="simple">
+<li><p>Filter SPAM emails</p></li>
+<li><p>Updating model beliefs given new information</p></li>
+<li><p>In general in classification applications</p></li>
+</ul>
+<p>Going back to the example of Steve we know that</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P(A|B) - is librarian given that he is shy and tidy
+P(B|A) - is shy and tidy because he is a librarian
+P(B) - is shy and tidy
+P(A) - is librarian
+
+P(B|A) - 40% of shy and tidy are librarians
+P(B) - 10% of farmers is shy and tidy while 40% of librarians is shy and tidy
+P(A) - 10 out of 210 people are librarians
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#P(B|A) - is librarian because he is shy</span>
+
+<span class="n">PBA</span> <span class="o">=</span> <span class="mf">0.4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#P(A) - is librarian</span>
+<span class="n">PA</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="p">(</span><span class="mi">200</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.047619047619047616
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#P(~A) - is farmer</span>
+<span class="n">PnA</span> <span class="o">=</span> <span class="mi">200</span><span class="o">/</span><span class="p">(</span><span class="mi">200</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PnA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9523809523809523
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#P(B) - is shy (All shy people in the population)</span>
+<span class="n">PB</span> <span class="o">=</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">PA</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">PnA</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.11428571428571428
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#P(A|B) - is librarian given he is shy and tidy</span>
+
+<span class="n">PAB</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">PA</span><span class="p">)</span><span class="o">/</span><span class="n">PB</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PAB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.16666666666666669
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>There is only 16.7% probability that Steve is librarian!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1"># Function to calculate and visualize Bayes&#39; Theorem for the given scenario</span>
+<span class="k">def</span> <span class="nf">visualize_bayes_theorem</span><span class="p">(</span><span class="n">num_librarians</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num_farmers</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">prob_shy_librarian</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">prob_shy_farmer</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="c1"># Calculate the total number of people</span>
+    <span class="n">total_people</span> <span class="o">=</span> <span class="n">num_librarians</span> <span class="o">+</span> <span class="n">num_farmers</span>
+    
+    <span class="c1"># Calculate P(Librarian) and P(Farmer)</span>
+    <span class="n">P_librarian</span> <span class="o">=</span> <span class="n">num_librarians</span> <span class="o">/</span> <span class="n">total_people</span>
+    <span class="n">P_farmer</span> <span class="o">=</span> <span class="n">num_farmers</span> <span class="o">/</span> <span class="n">total_people</span>
+    
+    <span class="c1"># Calculate P(Shy|Librarian) and P(Shy|Farmer)</span>
+    <span class="n">P_shy_given_librarian</span> <span class="o">=</span> <span class="n">prob_shy_librarian</span>
+    <span class="n">P_shy_given_farmer</span> <span class="o">=</span> <span class="n">prob_shy_farmer</span>
+    
+    <span class="c1"># Calculate P(Shy) using the law of total probability</span>
+    <span class="n">P_shy</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_shy_given_librarian</span> <span class="o">*</span> <span class="n">P_librarian</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">P_shy_given_farmer</span> <span class="o">*</span> <span class="n">P_farmer</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate P(Librarian|Shy) using Bayes&#39; Theorem</span>
+    <span class="n">P_librarian_given_shy</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_shy_given_librarian</span> <span class="o">*</span> <span class="n">P_librarian</span><span class="p">)</span> <span class="o">/</span> <span class="n">P_shy</span>
+    
+    <span class="c1"># Plotting the results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="c1"># Bar plot showing probabilities</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Librarian&#39;</span><span class="p">,</span> <span class="s1">&#39;Farmer&#39;</span><span class="p">]</span>
+    <span class="n">base_rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_librarian</span><span class="p">,</span> <span class="n">P_farmer</span><span class="p">]</span>
+    <span class="n">shy_given_category</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_shy_given_librarian</span><span class="p">,</span> <span class="n">P_shy_given_farmer</span><span class="p">]</span>
+    <span class="n">posterior</span> <span class="o">=</span> <span class="p">[</span><span class="n">P_librarian_given_shy</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">P_librarian_given_shy</span><span class="p">]</span>
+    
+    <span class="c1"># Plotting base rates</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">base_rates</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Base Rates (P(Librarian), P(Farmer))&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Plotting conditional probabilities (P(Shy|Librarian) and P(Shy|Farmer))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">shy_given_category</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P(Shy|Librarian) and P(Shy|Farmer)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Plotting posterior probabilities (P(Librarian|Shy) and P(Farmer|Shy))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">posterior</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Posterior Probabilities (P(Librarian|Shy), P(Farmer|Shy))&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+<span class="c1">#     plt.tight_layout(2)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Interactive sliders and inputs</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">visualize_bayes_theorem</span><span class="p">,</span>
+         <span class="n">num_librarians</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Num Librarians&#39;</span><span class="p">),</span>
+         <span class="n">num_farmers</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Num Farmers&#39;</span><span class="p">),</span>
+         <span class="n">prob_shy_librarian</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;P(Shy|Librarian)&#39;</span><span class="p">),</span>
+         <span class="n">prob_shy_farmer</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;P(Shy|Farmer)&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "195937206b264c1aba9ad0cd472f233d", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-recap">Quick recap:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-defintion">Machine learning defintion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development-process">Model development process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning-algorithms">Types of machine learning algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-at-the-core-of-machine-learning">Probability: at the core of Machine Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-probability">What is probability?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">Random variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples-of-probability">Other examples of probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-distributions">Probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution">Normal distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-marginal-and-conditional-probability">Joint, Marginal, and Conditional Probability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monty-hall-problem">Monty Hall problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-theory-in-ml">Probability theory in ML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-uncertainty">Modeling Uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-models">Probabilistic models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prior-knowledge">Prior knowledge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-uses-of-probability-theory-in-machine-learning">Other uses of probability theory in machine learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">Bayes’ Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-in-practice">Bayes’ Theorem in practice</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radosław Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

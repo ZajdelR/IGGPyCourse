@@ -1,0 +1,1619 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 11: Introduction to clustering &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js"></script>
+    <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"36ce765fa1894c8caaf7339d222a7259": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0f59aa4fa6b74f8cb9e19f2c6cb3fc28": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_142257b2936e4fa7aeced5a62a521a93", "IPY_MODEL_d47286c7fe7646589331006f8e078c85", "IPY_MODEL_820de835dd3d4f0c8d014f1fee8c2af1"], "layout": "IPY_MODEL_36ce765fa1894c8caaf7339d222a7259"}}, "669eff1b66904cc1b48bbd6f11a7f078": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "737645f9e1ff4b90aedf345ea735d303": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "142257b2936e4fa7aeced5a62a521a93": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "std_dev", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_669eff1b66904cc1b48bbd6f11a7f078", "max": 4.0, "min": 0.1, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.4, "style": "IPY_MODEL_737645f9e1ff4b90aedf345ea735d303", "value": 0.6}}, "187ac64563cf46989995803a386df976": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "28f0ffee87224018a0fd8adf9534ef4e": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "d47286c7fe7646589331006f8e078c85": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "n_clusters", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_187ac64563cf46989995803a386df976", "max": 10, "min": 2, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_28f0ffee87224018a0fd8adf9534ef4e", "value": 4}}, "b7a9f3146b8e4531972ceb8de82f10e0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "820de835dd3d4f0c8d014f1fee8c2af1": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_b7a9f3146b8e4531972ceb8de82f10e0", "msg_id": "", "outputs": [{"output_type": "stream", "name": "stdout", "text": "Clustering Metrics:\n  Silhouette Score: 0.88\n  Davies-Bouldin Index: 0.17\n  Calinski-Harabasz Index: 9411.51\n"}, {"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 576x432 with 1 Axes>", "image/png": "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\n"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/11. AI 11';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Mod0.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/_sources/11. AI 11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 11: Introduction to clustering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-clustering">Introduction to Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-clustering">Applications of Clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-clustering-algorithms">Types of Clustering Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">1. <strong>K-Means Clustering</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">Cons:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">2. <strong>Hierarchical Clustering</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Cons:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise">3. <strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parameters">Key Parameters:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Cons:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-clustering-performance-ground-truth">Evaluating Clustering Performance - Ground Truth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusted-rand-index-ari">1. <strong>Adjusted Rand Index (ARI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-example">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalized-mutual-information-nmi">2. <strong>Normalized Mutual Information (NMI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-completeness-and-v-measure">3. <strong>Homogeneity, Completeness, and V-Measure</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-clustering-performance-no-ground-truth">Evaluating Clustering Performance - No Ground Truth</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#silhouette-score">1. <strong>Silhouette Score</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#davies-bouldin-index">2. <strong>Davies-Bouldin Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calinski-harabasz-index">3. <strong>Calinski-Harabasz Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-example-k-means-clustering-in-python">Hands-On Example: K-Means Clustering in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-synthetic-data">Generate synthetic data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-k-means">Apply K-Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-cluster-labels">Get cluster labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">Visualize</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-11-introduction-to-clustering">
+<h1>Lecture 11: Introduction to clustering<a class="headerlink" href="#lecture-11-introduction-to-clustering" title="Permalink to this heading">#</a></h1>
+<section id="introduction-to-clustering">
+<h2>Introduction to Clustering<a class="headerlink" href="#introduction-to-clustering" title="Permalink to this heading">#</a></h2>
+<p>Clustering is an unsupervised machine learning technique used to group similar data points into clusters based on their features. Unlike supervised learning, clustering does not rely on labeled data.</p>
+<p><strong>Unsupervised learning</strong></p>
+<section id="applications-of-clustering">
+<h3>Applications of Clustering<a class="headerlink" href="#applications-of-clustering" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Customer segmentation in marketing</p></li>
+<li><p>Image segmentation</p></li>
+<li><p>Document categorization</p></li>
+<li><p>Anomaly detection</p></li>
+<li><p>Biological data analysis (e.g., gene expression data)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y_true</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.60</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data Points&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Apply K-Means</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Get cluster labels</span>
+<span class="n">y_kmeans</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Plot the clusters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_kmeans</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the centroids</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centers</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">centers</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;K-Means Clustering&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/345a7c5e4c28fe262488f3c711d86691ae8a8a7dec8d6201cb762cd6a79b2335.png" src="../_images/345a7c5e4c28fe262488f3c711d86691ae8a8a7dec8d6201cb762cd6a79b2335.png" />
+<img alt="../_images/3a3e28fcb761c32688b2ac1a4739b74b51bff3a7994004544d58f51fa3f908ac.png" src="../_images/3a3e28fcb761c32688b2ac1a4739b74b51bff3a7994004544d58f51fa3f908ac.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="types-of-clustering-algorithms">
+<h2>Types of Clustering Algorithms<a class="headerlink" href="#types-of-clustering-algorithms" title="Permalink to this heading">#</a></h2>
+<section id="k-means-clustering">
+<h3>1. <strong>K-Means Clustering</strong><a class="headerlink" href="#k-means-clustering" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Partitions data into <strong>K clusters</strong>.</p></li>
+<li><p>Each cluster is represented by its centroid.</p></li>
+<li><p>Steps:</p>
+<ol class="arabic simple">
+<li><p>Initialize K centroids randomly.</p></li>
+<li><p>Assign each point to the nearest centroid.</p></li>
+<li><p>Update centroids by averaging points in each cluster.</p></li>
+<li><p>Repeat until centroids stabilize.</p></li>
+</ol>
+</li>
+</ul>
+<section id="pros">
+<h4>Pros:<a class="headerlink" href="#pros" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Simple and fast.</p></li>
+<li><p>Works well with spherical clusters.</p></li>
+</ul>
+</section>
+<section id="cons">
+<h4>Cons:<a class="headerlink" href="#cons" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Requires specifying K in advance.</p></li>
+<li><p>Sensitive to outliers.</p></li>
+</ul>
+<img src='img/kmean.gif' img/></section>
+</section>
+<section id="hierarchical-clustering">
+<h3>2. <strong>Hierarchical Clustering</strong><a class="headerlink" href="#hierarchical-clustering" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Builds a tree-like structure of clusters (dendrogram).</p></li>
+<li><p>Two types:</p>
+<ul>
+<li><p><strong>Agglomerative</strong>: Starts with individual points and merges clusters.</p></li>
+<li><p><strong>Divisive</strong>: Starts with one cluster and splits it recursively.</p></li>
+</ul>
+</li>
+</ul>
+<section id="id1">
+<h4>Pros:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>No need to specify the number of clusters in advance.</p></li>
+<li><p>Provides a hierarchy of clusters.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>Cons:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Computationally expensive for large datasets.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">import</span> <span class="n">dendrogram</span><span class="p">,</span> <span class="n">linkage</span><span class="p">,</span> <span class="n">fcluster</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Perform hierarchical clustering</span>
+<span class="n">linkage_matrix</span> <span class="o">=</span> <span class="n">linkage</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">)</span>  <span class="c1"># Ward&#39;s method minimizes variance within clusters</span>
+
+<span class="c1"># Plot dendrogram</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">dendrogram</span><span class="p">(</span><span class="n">linkage_matrix</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hierarchical Clustering Dendrogram&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Sample Index&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Distance&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Set a threshold to create flat clusters</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">clusters</span> <span class="o">=</span> <span class="n">fcluster</span><span class="p">(</span><span class="n">linkage_matrix</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;distance&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot clusters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">clusters</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Clusters Identified by Hierarchical Clustering&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ffbeb72b3b7580b4dc6b7bb9d5c3535b8db0fc1743787e36d564d4c12bfb17aa.png" src="../_images/ffbeb72b3b7580b4dc6b7bb9d5c3535b8db0fc1743787e36d564d4c12bfb17aa.png" />
+<img alt="../_images/b047e766a6ddf4fec75cfc615e3567325f98ad6bbd979ef87f144f7ab2a4fc6a.png" src="../_images/b047e766a6ddf4fec75cfc615e3567325f98ad6bbd979ef87f144f7ab2a4fc6a.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="dbscan-density-based-spatial-clustering-of-applications-with-noise">
+<h3>3. <strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong><a class="headerlink" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Groups points that are closely packed together based on density.</p></li>
+<li><p>Points in low-density regions are considered noise.</p></li>
+</ul>
+<section id="key-parameters">
+<h4>Key Parameters:<a class="headerlink" href="#key-parameters" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eps</span></code>: Maximum distance between points to be in the same cluster.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples</span></code>: Minimum number of points required to form a dense region.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>Pros:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Can find clusters of arbitrary shape.</p></li>
+<li><p>Robust to outliers.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h4>Cons:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Requires careful tuning of <code class="docutils literal notranslate"><span class="pre">eps</span></code> and <code class="docutils literal notranslate"><span class="pre">min_samples</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Apply DBSCAN</span>
+<span class="n">dbscan</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">dbscan</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">unique_labels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">))]</span>
+
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">unique_labels</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># Black used for noise</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">cluster_points</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span> <span class="o">==</span> <span class="n">label</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cluster_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cluster_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">color</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Cluster </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">label</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">else</span> <span class="s1">&#39;Noise&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;DBSCAN Clustering&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e2b9ec285286ab721d69608e00d88a2e09468660d3bfa278a4c6a3e8284048f5.png" src="../_images/e2b9ec285286ab721d69608e00d88a2e09468660d3bfa278a4c6a3e8284048f5.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="evaluating-clustering-performance-ground-truth">
+<h2>Evaluating Clustering Performance - Ground Truth<a class="headerlink" href="#evaluating-clustering-performance-ground-truth" title="Permalink to this heading">#</a></h2>
+<p>When evaluating clustering performance, some metrics require ground truth labels. These metrics measure how well the predicted clusters align with the true class labels. Below are some of the most important metrics with coding examples.</p>
+</section>
+<hr class="docutils" />
+<section id="adjusted-rand-index-ari">
+<h2>1. <strong>Adjusted Rand Index (ARI)</strong><a class="headerlink" href="#adjusted-rand-index-ari" title="Permalink to this heading">#</a></h2>
+<p>The Adjusted Rand Index measures the similarity between two data clusterings by considering all pairs of points and counting pairs that are correctly clustered. It is adjusted for chance and ranges from -1 (no agreement) to 1 (perfect agreement).</p>
+<section id="code-example">
+<h3>Code Example:<a class="headerlink" href="#code-example" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">adjusted_rand_score</span>
+
+<span class="c1"># Ground truth labels</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Predicted cluster labels</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Compute ARI</span>
+<span class="n">ari</span> <span class="o">=</span> <span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adjusted Rand Index: </span><span class="si">{</span><span class="n">ari</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="normalized-mutual-information-nmi">
+<h2>2. <strong>Normalized Mutual Information (NMI)</strong><a class="headerlink" href="#normalized-mutual-information-nmi" title="Permalink to this heading">#</a></h2>
+<p>Normalized Mutual Information evaluates the amount of information shared between the true labels and predicted clusters. It is normalized to range between 0 (no mutual information) and 1 (perfect correlation).</p>
+<section id="id5">
+<h3>Code Example:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">normalized_mutual_info_score</span>
+
+<span class="c1"># Ground truth labels</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Predicted cluster labels</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Compute NMI</span>
+<span class="n">nmi</span> <span class="o">=</span> <span class="n">normalized_mutual_info_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Normalized Mutual Information: </span><span class="si">{</span><span class="n">nmi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="homogeneity-completeness-and-v-measure">
+<h2>3. <strong>Homogeneity, Completeness, and V-Measure</strong><a class="headerlink" href="#homogeneity-completeness-and-v-measure" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Homogeneity</strong>: All clusters contain only points from a single class.</p></li>
+<li><p><strong>Completeness</strong>: All points from a given class are in the same cluster.</p></li>
+<li><p><strong>V-Measure</strong>: Harmonic mean of homogeneity and completeness.</p></li>
+</ul>
+<section id="id6">
+<h3>Code Example:<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">homogeneity_score</span><span class="p">,</span> <span class="n">completeness_score</span><span class="p">,</span> <span class="n">v_measure_score</span>
+
+<span class="c1"># Ground truth labels</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Predicted cluster labels</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Compute Homogeneity, Completeness, and V-Measure</span>
+<span class="n">homogeneity</span> <span class="o">=</span> <span class="n">homogeneity_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">completeness</span> <span class="o">=</span> <span class="n">completeness_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">v_measure</span> <span class="o">=</span> <span class="n">v_measure_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Homogeneity: </span><span class="si">{</span><span class="n">homogeneity</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completeness: </span><span class="si">{</span><span class="n">completeness</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;V-Measure: </span><span class="si">{</span><span class="n">v_measure</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>These metrics provide valuable insights into clustering performance when ground truth labels are available. While ARI and NMI are widely used for general purposes, Homogeneity, Completeness, and V-Measure offer more specific insights into cluster quality. Always choose the metric that aligns with your clustering goals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">adjusted_rand_score</span>
+
+<span class="c1"># Ground truth labels</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Predicted cluster labels</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Compute ARI</span>
+<span class="n">ari</span> <span class="o">=</span> <span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adjusted Rand Index: </span><span class="si">{</span><span class="n">ari</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjusted Rand Index: 1.00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">adjusted_rand_score</span><span class="p">,</span> <span class="n">normalized_mutual_info_score</span><span class="p">,</span> <span class="n">fowlkes_mallows_score</span><span class="p">,</span> <span class="n">homogeneity_score</span><span class="p">,</span> <span class="n">completeness_score</span><span class="p">,</span> <span class="n">v_measure_score</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y_true</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Correct clustering (based on ground truth)</span>
+<span class="n">y_correct</span> <span class="o">=</span> <span class="n">y_true</span>
+
+<span class="c1"># Incorrect clustering (user can modify this)</span>
+<span class="n">y_detected</span> <span class="o">=</span> <span class="n">y_true</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">y_detected</span><span class="p">[::</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_detected</span><span class="p">[::</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span>  <span class="c1"># Add some incorrect labels for demonstration</span>
+
+<span class="c1"># Define a function to calculate and display metrics</span>
+<span class="k">def</span> <span class="nf">calculate_metrics</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">):</span>
+    <span class="n">ari</span> <span class="o">=</span> <span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+    <span class="n">nmi</span> <span class="o">=</span> <span class="n">normalized_mutual_info_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+    <span class="n">homogeneity</span> <span class="o">=</span> <span class="n">homogeneity_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+    <span class="n">completeness</span> <span class="o">=</span> <span class="n">completeness_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+    <span class="n">v_measure</span> <span class="o">=</span> <span class="n">v_measure_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Metrics:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Adjusted Rand Index: </span><span class="si">{</span><span class="n">ari</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Normalized Mutual Information: </span><span class="si">{</span><span class="n">nmi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Homogeneity: </span><span class="si">{</span><span class="n">homogeneity</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Completeness: </span><span class="si">{</span><span class="n">completeness</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  V-Measure: </span><span class="si">{</span><span class="n">v_measure</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot the clusters</span>
+<span class="k">def</span> <span class="nf">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="c1"># Plot correct clustering</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Correct Clustering&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Plot detected clustering</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Detected Clustering&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Display initial results</span>
+<span class="n">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_correct</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+<span class="n">calculate_metrics</span><span class="p">(</span><span class="n">y_correct</span><span class="p">,</span> <span class="n">y_detected</span><span class="p">)</span>
+
+<span class="c1"># Allow user to modify detected labels</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Modify `y_detected` to see how metrics change.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/85ec7b3a2b746e490c924e9745b86bdfe25bf83cfd0208f3131e4bc2927987a5.png" src="../_images/85ec7b3a2b746e490c924e9745b86bdfe25bf83cfd0208f3131e4bc2927987a5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metrics:
+  Adjusted Rand Index: 0.73
+  Normalized Mutual Information: 0.71
+  Homogeneity: 0.71
+  Completeness: 0.71
+  V-Measure: 0.71
+
+Modify `y_detected` to see how metrics change.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluating-clustering-performance-no-ground-truth">
+<h2>Evaluating Clustering Performance - No Ground Truth<a class="headerlink" href="#evaluating-clustering-performance-no-ground-truth" title="Permalink to this heading">#</a></h2>
+<p>When ground truth labels are unavailable, clustering performance can still be evaluated using intrinsic metrics. These metrics measure the quality of clustering based on properties like cohesion (compactness of clusters) and separation (distance between clusters). Below are some of the most important metrics with coding examples.</p>
+<hr class="docutils" />
+<section id="silhouette-score">
+<h3>1. <strong>Silhouette Score</strong><a class="headerlink" href="#silhouette-score" title="Permalink to this heading">#</a></h3>
+<p>The Silhouette Score measures how similar a point is to its own cluster compared to other clusters. It ranges from -1 (poor clustering) to 1 (perfect clustering).</p>
+<section id="id7">
+<h4>Code Example:<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="c1"># Generate synthetic data</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Apply K-Means clustering</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="c1"># Compute Silhouette Score</span>
+<span class="n">sil_score</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Silhouette Score: </span><span class="si">{</span><span class="n">sil_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="davies-bouldin-index">
+<h3>2. <strong>Davies-Bouldin Index</strong><a class="headerlink" href="#davies-bouldin-index" title="Permalink to this heading">#</a></h3>
+<p>The Davies-Bouldin Index measures the average similarity ratio of each cluster with its most similar cluster. Lower values indicate better clustering.</p>
+<section id="id8">
+<h4>Code Example:<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">davies_bouldin_score</span>
+
+<span class="c1"># Compute Davies-Bouldin Index</span>
+<span class="n">db_score</span> <span class="o">=</span> <span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Davies-Bouldin Index: </span><span class="si">{</span><span class="n">db_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="calinski-harabasz-index">
+<h3>3. <strong>Calinski-Harabasz Index</strong><a class="headerlink" href="#calinski-harabasz-index" title="Permalink to this heading">#</a></h3>
+<p>The Calinski-Harabasz Index, also known as the Variance Ratio Criterion, evaluates clustering performance based on the ratio of between-cluster dispersion to within-cluster dispersion. Higher values indicate better clustering.</p>
+<section id="id9">
+<h4>Code Example:<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">calinski_harabasz_score</span>
+
+<span class="c1"># Compute Calinski-Harabasz Index</span>
+<span class="n">ch_score</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calinski-Harabasz Index: </span><span class="si">{</span><span class="n">ch_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id10">
+<h3>Summary<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p>These intrinsic metrics provide valuable insights into clustering quality when no ground truth labels are available. While the Silhouette Score and Davies-Bouldin Index focus on compactness and separation, the Calinski-Harabasz Index evaluates the balance of cluster variances. The Elbow Method helps identify the optimal number of clusters visually. Choose the metric that best aligns with your clustering goals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span><span class="p">,</span> <span class="n">davies_bouldin_score</span><span class="p">,</span> <span class="n">calinski_harabasz_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="c1"># Define a function for clustering and visualization</span>
+<span class="k">def</span> <span class="nf">clustering_example</span><span class="p">(</span><span class="n">std_dev</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="c1"># Generate synthetic data</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="n">std_dev</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="c1"># Perform clustering</span>
+    <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">n_clusters</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+
+    <span class="c1"># Compute clustering metrics</span>
+    <span class="n">sil_score</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+    <span class="n">db_score</span> <span class="o">=</span> <span class="n">davies_bouldin_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+    <span class="n">ch_score</span> <span class="o">=</span> <span class="n">calinski_harabasz_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+    <span class="c1"># Display metrics</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clustering Metrics:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Silhouette Score: </span><span class="si">{</span><span class="n">sil_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Davies-Bouldin Index: </span><span class="si">{</span><span class="n">db_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Calinski-Harabasz Index: </span><span class="si">{</span><span class="n">ch_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Visualize clustering</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Centroids&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;K-Means Clustering&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Create interactive widget</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">clustering_example</span><span class="p">,</span> <span class="n">std_dev</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="n">n_clusters</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0f59aa4fa6b74f8cb9e19f2c6cb3fc28"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.clustering_example(std_dev=0.6, n_clusters=4)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="hands-on-example-k-means-clustering-in-python">
+<h2>Hands-On Example: K-Means Clustering in Python<a class="headerlink" href="#hands-on-example-k-means-clustering-in-python" title="Permalink to this heading">#</a></h2>
+<section id="imports">
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generate-synthetic-data">
+<h3>Generate synthetic data<a class="headerlink" href="#generate-synthetic-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y_true</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.60</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data Points&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/345a7c5e4c28fe262488f3c711d86691ae8a8a7dec8d6201cb762cd6a79b2335.png" src="../_images/345a7c5e4c28fe262488f3c711d86691ae8a8a7dec8d6201cb762cd6a79b2335.png" />
+</div>
+</div>
+</section>
+<section id="apply-k-means">
+<h3>Apply K-Means<a class="headerlink" href="#apply-k-means" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=4)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KMeans</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KMeans(n_clusters=4)</pre></div> </div></div></div></div></div></div>
+</div>
+</section>
+<section id="get-cluster-labels">
+<h3>Get cluster labels<a class="headerlink" href="#get-cluster-labels" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_kmeans</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize">
+<h3>Visualize<a class="headerlink" href="#visualize" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the clusters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_kmeans</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the centroids</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centers</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">centers</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;K-Means Clustering&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2962c38bbc41bb6828415de478a0f0f6142dab839a4316bac64a7493eb1bccfc.png" src="../_images/2962c38bbc41bb6828415de478a0f0f6142dab839a4316bac64a7493eb1bccfc.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h2>Summary<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Clustering is an unsupervised learning technique used to group data points.</p></li>
+<li><p>Common algorithms include K-Means, Hierarchical Clustering, and DBSCAN.</p></li>
+<li><p>Use appropriate evaluation metrics to assess clustering performance.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html">Scikit-learn documentation on clustering</a></p></li>
+<li><p>“Pattern Recognition and Machine Learning” by Christopher M. Bishop.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-clustering">Introduction to Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-of-clustering">Applications of Clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-clustering-algorithms">Types of Clustering Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">1. <strong>K-Means Clustering</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pros">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cons">Cons:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">2. <strong>Hierarchical Clustering</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Cons:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-density-based-spatial-clustering-of-applications-with-noise">3. <strong>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parameters">Key Parameters:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Pros:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Cons:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-clustering-performance-ground-truth">Evaluating Clustering Performance - Ground Truth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusted-rand-index-ari">1. <strong>Adjusted Rand Index (ARI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-example">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalized-mutual-information-nmi">2. <strong>Normalized Mutual Information (NMI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-completeness-and-v-measure">3. <strong>Homogeneity, Completeness, and V-Measure</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-clustering-performance-no-ground-truth">Evaluating Clustering Performance - No Ground Truth</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#silhouette-score">1. <strong>Silhouette Score</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#davies-bouldin-index">2. <strong>Davies-Bouldin Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calinski-harabasz-index">3. <strong>Calinski-Harabasz Index</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Code Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-example-k-means-clustering-in-python">Hands-On Example: K-Means Clustering in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-synthetic-data">Generate synthetic data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-k-means">Apply K-Means</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-cluster-labels">Get cluster labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize">Visualize</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radosław Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

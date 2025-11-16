@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 7: Cross-validation method and meaning and Ethics in Machine Learning &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js"></script>
+    <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"d39474eba74b4ce1a43280d967c1592a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "5492a357de654d0ea8ea3bea0d45583b": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "c05f6cc5a22140e4bd2141d8d80cb7e8": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "Degree", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_d39474eba74b4ce1a43280d967c1592a", "max": 15, "min": 1, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_5492a357de654d0ea8ea3bea0d45583b", "value": 1}}, "1fbcf21731044cbc90b0e9a4816a706b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b0f022f568b447bc82397a377afa4d32": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_c05f6cc5a22140e4bd2141d8d80cb7e8", "IPY_MODEL_39b4baae22524db9a52feccc73975f6a"], "layout": "IPY_MODEL_1fbcf21731044cbc90b0e9a4816a706b"}}, "4da5172792d84d6faf8c0d74f6e1bc17": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "39b4baae22524db9a52feccc73975f6a": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_4da5172792d84d6faf8c0d74f6e1bc17", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 720x432 with 1 Axes>", "image/png": "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djKAq6IK859wzv1ffverwnxJVlu3bsWqVauwyy67oH79dfjtN872l9vhGDaVZRdvESmZJUuWIDIzsnr16u27W4gkm7D6hLUC0BlAGzObGpzam9nlPAXHjAHACspfATwLoHscxyMSV6VLl/YBGP+wqV79PJQqxb8xVsV1WyWRTDRo0CDsueee+Oabb/xlBWCSquJWmO+c+5wBYAHHMA13ZbzGIBIGJoGvueZMdO16KcqWPQabN49Bgwa1fACmonyR4uNHRp8+fXD33XfjpJNOwr/+9a+whySS/KsjRTIN+xTVrFkTZ599NmrXbokPPvjAbwAuIsWzefNm337ihRdewCWXXIKnn34aZcuy7FgkdWnbIpE44YpJFguzUP+MM87wNWMiUjxDhgzxARgzYc8995wCMEkLyoSJxNFhhx2Gr776Cn/99ZevGeN0SvaaFREpjG3btqFUqVI++8U+kccff3zYQxKJGWXCROKMBcTNmmUvjOnduzd69uzpP1hEJH9ffPEFDjnkEPz2228+EFMAJulGQZhIgjALtmLFCt/Q9ayzzsLatWvDHpJI0ho6dCjatGnjp/M3btwY9nBE4kJBmEiCcBryqaeewuOPP47Ro0fjqKOO8huAi8jfmCW+7bbbcMEFF+CII47A119/jcaNG4c9LJG4UBAmkvD2Fdf4IGz27Nlo1aqV/0tfRLI98MAD6NevH7p27eq3BNt1113DHpJI3KgwXyQEJ598sm80OX36dFSoUCHs4YiELrJo5corr0SdOnXQuXNnLWKRtKdMmEhI9t13X99HjLjnJP/yV+2LZKJ33nkHbdu2xfr161G1alVceOGFCsAkIygIE0kCc+fOxeDBg3HMMcf4lWAimYC98/r27YsOHTr4fVdXrlwZ9pBEEkpBmEgS6NWrF0aMGIGZM2eiadOmvsO+SLpvwN2+fXvceeedPvP12Wef+V0mRDKJgjCRJMGu+t9++y1q167tP5x++OGHsIckKWboUKBhQ6BUqexzXk5WXbp08TtKcDPuF198ERUrVgx7SCIJpyBMJInss88+fkn+yy+/jAMOOGD7nnnxlkof3pI7vmfdugHz57PIPfucl5PpvWTxfaTu8bHHHvO7SVx22WWq/5KMZfxPkUqaNWvmmC0QyQSTJ0/GOeec4/fKY+PKeH54r1v393WVKgGDBgGdOsXlISUOGDwz8MqpQQNg3jyEjlt3XXrppX418KuvvqrASzKGmU12zmVvm5KDMmEiSaxcuXL+1K5dO9x6661xyYr17r1jAEa8zOsldeTV9zcZ+gF/+umnOPjgg/Hee++hefPmYQ9HJGkoCBNJYgceeKDPhjGDcP/99/vmrr/++mvGfHhL4dWvX7TrE4F/NHC/VGZxd9ppJz/Vfv311ysLJhJQECaS5PjhxeLlt956ywdgrBdL9w9vKbp+/bKnkaPxMq8Py9KlS/H000/jkksu8X9MHHrooeENRiQJKQgTSRHc9Jsd9rmvHrE2ksv80/HDW4qO9Xus42MNGBNNPA+jro91xiNHjvR7QNaqVQszZszwNY2VK1dO7EBEUoCCMJEUwu1cypYtiy1btuDcc8/1KyhHjRqVFh/eUnJ8z1iEv21b9nmi38MFCxbgpJNOwplnnok333zTX6feXyJ5UxAmkoLKlCnjgy8GZewvxn32li9fnrIf3pLamP166aWX/B8FbLr65JNP+lW9IpI/BWEiKVy0P2nSJPTp08fvPckPQGYiRBLtuuuu881X+TM5bdo0vwl3KTadE5F86X+JSArj1CS3fWEwdvrpp/vMGOXXykKNWSUWWPMVabzKn72HH37Yt6Jo3Lhx2EMTSRkKwkTSwGGHHYannnrKL/3nBuB77bUXnn/+eT9NlGpd1SX5cY/To48+evsikdatW+OGG25A6dKlwx6aSEpRECaSZli0v+eee/reYsceeyx++umn7bepMauUxIYNG3zm9ZBDDsGsWbP89KOIFJ+CMJE0wwDsk08+wbPPPuvrc/hByW77zIqpMWtmisUU9Jdffon9998fffv2RceOHX0QduGFF8ZjuCIZQ0GYSBpiUTQzYT/++CM6derkm2ZyqlKNWTNPSaegI1Pau+22G6pUqYJx48bhlVdewe677x7fgYtkAG3gLZIhRdQMzO6++1vceedN2LbtMQAH+9u0WXd6K+7G3mvWrMF9992HuXPn+g23iZ8X2nJIpGi0gbdIhou0Czj44IWoVGk6gKYALkGdOr8rAEtzRZ2CZk3hM88841c53nvvvb4nXWS1rQIwkdhSECaSQTp06ICsrF9www3Xo1y5oVi2bG9kZd0X9rAkjooyBc1tsQ466CBcfvnlfoUt68DYhJWtUEQk9hSEiWSYXXbZxfd0Yr0Y+ztxqjJn3ydJH4XZG5RTj8Q+c6z7Gj58OD7//HO0bNkywaMVySwKwkQyeBUla3169erlL48YMQJ77703Bg0ahE2bNoU9PImR/PYGnTx5Mk455RQcc8wxvt5r11139Y1/ufejph5F4k9BmEiGi3zY1qpVy2dC/vOf/2DffffF4MGD8+28L6kj596g++8/1WdBmzVrhq+++srv88haMBFJLAVhIiFIxq2DWrVq5WuA3n//fVSvXh1du3bFqaeeGvawJMY++ugjNG3aFBMmTMDdd9/tVz/ecsstqvsSSacWFWY2GMApABY75w7I5fadAbzC+lAAZQA87Jx7oaD7VYsKSZe+TdGd65OtTQR/L7zzzjvbi/nXrl2LgQMH4rLLLkO1atXCHp4U8b1kYL1+/XqcddZZvu7vscce8xlPvZci4baoiGcQdjTrPQG8lEcQxkKUnZ1zPc2sBgDurVLTOZdvMYqCMMnUvk1hGjlypK8TYtE2P7yvuuoqNOCAJWkx2Bo2bJhfhMFVj8x0stheRDKgT5hzbiKAZfkdAqCKZRekVA6OVVGCpL1U3DrojDPOwHfffeeLuB999FE0atTI1xQxuyLJh20l6tWrhy5duvhVr0OGDPFbWYlIcgmzJuxJAPsBWMj2NACudc5lr5UXSWOpunUQN23makrWEHEvSqpYsaI/51Y2K1asSPm6uFTFQGv8+PFYuHDh9i2GjjjiCIwdO9ZnwbjHY6rXfOnnRdISpyPjdeLMC4Af8rjtbACPMlMHoDGAuQCq5nFsNwCcg/y2fv36TiSVvfKKc5Uq8Qf77xMv8/pUtGzZMle+fHlXoUIFd/7557tx48a5rVu3ZtRrEJZ58+a5vn37uoYNG/IXpevTp49LR/p5kVTG2CXPOCnEIOw9AEdFXR4P4P8Kus/DDjss7NdTpMT44dGggXNm2eep/mHy7bffuu7du7tq1ar5YKBBgwZu7NixeR7P5xz9gRo58XopGIPc9u3bOzPzr3e7du3c0KFD3bp161w60s+LpGsQFtcNvM2MQdi7eRTm/xfAn865O81sDwBTuLWdc25pfvepwnyR5LVhwwaMGjXK9xgbMGCA7zfGVgjsRdWxY0dfS0acUsrtVw8rRIMG/hKFq1Pfe+89TJkyBffff7+/rkePHn73A9Z9NeT8XBrTz4uksrBWR74GoDWA6gy2APQB4IsSnHNPm1ltAC+yR2QwJXk/EwQF3a+CMEklrFvp3Tu76J41X9wqJlnaUCTKHXfc4ftREZuDcpXlgAGnYNEi/m1mKbNCNNGWLVvmW0uMHj0a7777LtatW4eaNWv67aZ23pkdfuKPzXoXLFjgg+swLVgAbN36z+tLlwbq1g1jRCL/VKFCBdStW/cf9ZehBGHxoiBMUkUq9ANLlHnz5uHNN9/EG2+8Af7/3X33Rli9+lesX88gbBqAvVGpUqWMfG0i+Lt4xowZqF27tt8+6Nlnn0W3bt2w++67+8D13HPPxVFHHYXSjDwShIsw2JaEhf5hbmP011/ZbV2is17MjjFo32230IYlssP/37/++gurV6/2W8JFUxAmEoJU7AeWCIsWLfJB2Zw5LdGr11ZkZbEaYTWaNGmBc889FsceeyxatGiB8uXLI53xd+8vv/ziW0fw9Omnn+LPP//E008/7Xux8Rf67NmzffawFCOOEMyaNQtNmjRJin0kGYj9/jvAbU3LleNm4wrAJPn+TzNTvd9+bPzwNwVhIiFQHUvBtm7d6ttbfPzxxz4QYc0T2y3ceOONeOihh/w0GKfi/u///s/3vUqGYKC41qxZ4zfMLleuHFq2bImlS5eiRg32qYbPfjH45Onkk0/2047JgEFYzg8UESna/5n8gjBuFyQiccAasNwyYcneDyyROLV2wgkn+BOx19hnn322vYCfDWK5uTTtscceXB2NAw44AJdccokv+k92XJzwzTffYNq0aX6qkQEm9+NknRf352TftUMPPRT77LNPiQPMdKw/ZDawbdu2/us//vjD/7xEAle+rgxo88I/1tm09oknnsj3MdhPjXumlhQzmaeddpr/2WX9Hn9eb775Zt/guKDv4/PgOCTzKAgTiRN+COZWE8brJXfcyzB603AGXf/73//8B+5rr03C2LHfYcyYcRgypD36998XlSqN9Fkz1mBwhWDknB98LF7fsmWL/+COZQaNxeqRwlsGjAwUWTvFKVaec8VipDv966+/jqysLBx44IG+rosZvebNm2+/r3//+99xqT9k8M/LlMqBGGvRpk6d6r++8847UblyZf9+R/D9LVMm948xTuPyVJBYBGARrNlj5pY4bu4qwYbGkUAyryCMz0tBWGZSECYSJ5EPv3TLTiQSMwT8IP3pp2aYMqU7Nm/mtVvw55/ZQcZ11+3qAxsGP/zwY00VsZaKQdgjjzyC2267zRe3M4PCD7uddtrJLxCoWrWqz0h9+OGH/3jcJ5980gdujz/+uG+5wcwGVysuXrzYf+gzQxPJdHHBARcVRAJABlwRDMbyy9bECn/GooN94mVen8ift0Rk4y666CK/Co3BL/fDPO+883Dttdf6qWsGPC+88ILPkjK44b6Z/LlgAMdgeM6cOf6c7T2uueYaf3/8meBUMY/nccxQ/vDDD/4PgFdeecX/HIwZMwbXX3+9/9nhY/J+IsFWfjtMcGUwf5YYhL3zzju45557sGnTJh9cDh061G/7xRpA/qHAx+LPE7PBOY9jVk3Sk4IwkTjiB5CCrlgHGdm/tnj5lVeOwbx5x2w/jsHS/PnzUT+Y82WBPz88GTyxBosftsuXL9+ePeGUFQOynLg/JoMnfhCybo3Zrb322ssHczz5JotmPsh76qmn/Ad3btm2RARgybIfaSKzcWybwQwWg5dVq1b5jCTfU9YX9urVC8OHD//H97BgmkExV68xSLviiiv+0UqAgV1khSqDrS+++ML/EcCFEhMnTvSBdlGyl5xqZm0jHXnkkfj666/9z8lzzz2HBx98EP3798fll1++Q4aPP5+5HSfpSUGYiCS9wgYZzEhFF8UeffTR/pSXu+66y5/yctNNN/lTXtgTKBkkQ/1hIrNxrBOMtOpYuXKlb1jLlaYMXDhdnBsueOCKW54YSDNrmvP9Y1Y1ch0zWZxiZoDEOq9I2wEGYYPYS6UQohe+MXBkmxGuDmZwn7ONQVGPk/QQ5gbeIiJpvel5onDaj/WG0RJdf5jIbBynBSNuv/12v6qUU4ic8sursWx0yxMGcKwnK84xRcHMWuSPgquvvhpXXXWV31D9mWeeyXOchT1O0oOCMBFJemEFGZxiY783thvhOS8nk8j4OncGKlbM7pvFWVH2okt049uwAmVmwuqwaRi3YHmRm7DEFqcuWQPGrBgNGzasUN/3/fff+50irrzyyn+Mc8iQIduPYzNcTpFG5HWcpCcFYSKS9BhMMKhgcJGoICNS48RpPs4qRWqckiUQyzk+rhVYvx54+eXsZsCJrkUMK1BmG4hbb70VTZs2LXHmKjcs9h84cCBOPPFEX6zPoCmvbaNYm8ZxMHBj8MX2GJGVkSz65zQq74M1hBFcDTxy5Eg//cnvz+s4SU9q1ioikoI7HiRifEVt1pqOvcqICzpYG8bPSwZXe++9N6677rqwhyVp0KxVmTARkSRdcZhq42PAxQCQO0KEkY2LF+7jyUzV/vvv76cLuVpSJBa0OlJEJElXHKby+NIJs17KfEk8KBMmIpKkKw5TeXwiUjAFYSIiSbIYIJ3GJyIF03SkiEiK7niQ7OMTkfwpEyYiIiISAgVhIiKSlLhROlcl8lSzZk3fxDRymVv6xELr1q19X6/I/b711luIlalTp/rNvyO4Yfz9998fs/uX1KfpSBERSUq77babD2SITUyjN7omNmeNbMZeEkOHDvUbdccax86+lu3bt/eXO3To4E8iEcqEiYhIyrjoootw+eWX4/DDD/fd8hmcPfzww9tvP+CAA7ZvMfTKK6/4TbmZ4WJvr61btxb6MaIzYgz+6NNPP/WZs7PPPhtNmjRBp06dtm/S/b///Q9HHHEEDj74YP+Y7Cd2xx13+G2O+Pg857ZK3BeSOMY2bdrgoIMO8l31s4IGb3zsa665xt8XNw6PZWZOko8yYSIiUigMQHLq2LEjunfvjnXr1m3P+ERjUMHT0qVLffASjUFNcSxYsABffvml32SbQVhencsZ+HzxxRcoW7asHyMzXhdeeOE/jmUwxe2J6OOPPy5wU+4ZM2agdu3aaNWqlb9/Bl3nnnuuf7zmzZtj1apVqFSpEu666y6fCXvyySf/sbclN+ru0qWLPw0ePNgHXqNGjfK3LVq0CJ9//jl+/PFHnznL+bpJ+lAQJiIiKYV7KzIAyw+DqcmTJ/ugiNavX4/dd9+9xNORDLjq1q3rv2aGixkt7iVZq1at7Y9VtWrVAu/nq6++wogRI/zXnTt39lm9iNNPPx2lSpXCv/71L/z555+FGpekJgVhIiJSKPllrpj5ye92bkZd3MxXTjvttNP2r1kTto37JAU2bNjgzzlNyCzTfffdV+T7j75PnkcvAihfvvz2rxkIxmPT8OjHSLX9naVoVBMmIiIpq2HDhpgyZYr/mudz5871X7POivVUixcv9peXLVuG+bnt85THfTKLFlnRuHnz5nyP5+pKTiGyLoxWr17tg7MqVar4r3PDmq/XX399eybuqKOOKvRzlvShIExERFLWWWed5QMsbq7N2qt99tnHX8+pvHvuuQfHH3+8L34/7rjjfKBUGJdddhkmTJjgi+w5bRidectNuXLlfD0Y67z4PXwsZuSOPfZYzJw5c3thfrQBAwbghRde8GN7+eWX8fjjj5fgVZBUZamW6mzWrJljoaOIiMQXi9v322+/sIchktL/Z8xssnMu16JDZcJEREREQqAgTERERCQECsJEREREQqAgTERERCQECsJEREREQqAgTERERCQECsJERCRpsSs9+2xxY25uV8Q9KvMSvUF2onGz7nHjxhVpY/Do6/fcc0//PNlnrKD9KxOJLaG4r2UssCUWNy3n3prR7+3+++/vn3f//v132P0gTBMnTsShhx7qd0+Ifs+WLFmCE088MWaPoyBMRKSIhg5lV3WgVKnsc16W+ODG2lOnTsUPP/zgm6I+/fTTSEbcrLtdu3bF/v6HHnrIP8/HHnsMl19+eUzGtHXr1hLfB/fUfOKJJ2IynjFjxvhgK7K3ZsXgveWG6GPHjsX777+Pvn37JsVzr1+/vg/qzz///B2ur1Gjht8nlBu3J3UQZmaDzWyxmf2QzzGtzWyqmc0wswnxGouISKww4OrWDeAOOOx1zXNeViAWf9za59dff/Ud8rnJNbvNt2jRAt9///0Ox3GrIGaWItsNMfMSudy6dWv07NnTb8TN7vqfffaZP4Yd7i+++GIceOCBaNq0KT755BN/PT+I+Vjsgs/tjNiV/5FHHvHH8LE5lpxZLgZk3Myb2btu3boVaf/Hli1b4vfff98eSNx0003+vvhcn3nmGX89s0Xdu3dHkyZN/Ljat2+//bE5Rj4/ZnHefPNNfPTRR/4+eZmZxDVr1vjjbrnlFr+rAO/3xhtv9NfxeI6ZgdLRRx/tr+N+n6eccor/Oq/X/c4778Qll1ziX9tGjRrlGbRxe6bTTjst19t23313DBo0yL++fL3i+dy5JdUxxxyDww47DCeccEKuOynwvvi43Eg9J74GfC7Jngl7EUCeOTszqwZgIIAOzrn9AZwTx7GIiMRE795AzhkxXub1ac0sPqdC4l6MzJQwSOrTp48PghgE3Hvvvbjwwgt3OJZ7NjIgeO+99/xl7tF45plnomzZstvv65tvvvFZp0jm5amnnuLnEqZPn47XXnvNb/4d2QycWbgRI0b4vSF79+7tNyv/7rvv/Af8Sy+99I+xckqUx/L71q9fj3fffbfQz/ODDz7wH/L0/PPPY+edd/b3xdOzzz7r98bkWObNm+e3ROKWR9xaKdpuu+3m99FkZo5bN3GalJeZ1WIA+ddff2HkyJE+A8XX8LbbbtsePH744YeYNm2a3zMzp/xe9x9//NF/L19Xvqa57bfJ7BEDn7w0atTIB1/c7zNez53j4vZSDNwYjDF45HtaFLyvSPBeUmUQJ865iWbWMJ9DmOMb4ZzLCo7P3mVVRCSJZWUV7XopGQYxrBuKZMK6du2Kww8/HMOHD/fXscaIQUWkziji0ksvxYMPPugDGu7RyA/xCAZkxICAH+j0+eef+w9nYpalQYMG+Pnnn/1l7gHJwI4nBgannnqqv54BYc4sHDGLxsdm/VpkX8vI9+SFWZ9evXphwYIF2wMLZnJ4/5FMz8qVK/HLL7/4sTKzwyxNzZo1/fiinXvuuf7866+/9sFKq1at/OVNmzb5wJHPoUKFCv61ZJYrkunicczodezYcftrFI2Pm9frfvLJJ6N8+fL+xKzWn3/+ibp16+7w/Xwt+BoWxkdxeu4//fSTD46ZRSMGfZxeLAo+v4ULFyKpg7BC4C6rZc3sU/7hAuBx59xLeWTNugHoFpmnFREJC38FcQoyt+vTWkj7DEfqhoqKH74MsDidxg9aTrNFMFCIFIYzK1aQyPHED//IZX6d8/uZPeN0GQva69Wr56fqIhm1gmrCzj77bL+xN7MzzNJwWo6XOWWWs7YqP5ENx/n9DDaY2cuJGSsuAGCQwynA8ePH+3q7SZMm+QwiA1SOobCiX6O8XlcWuXM6MbcpPpozZ47/XgY58XruzHQyKM6ZQSsKvp/8uUz1wnwGgMxLngyAr/LtZsbA7B+cc4O4+SVPLIoTEQlLv35ApUo7XsfLvF4SgxmxSE0Og6zq1atvL/aOxukyFlaz1qso98kMWFZWFvbdd98ijy0ScHFMrEHKbTVkfjiVyUCFU3sMQP773/9un9rjuNauXesDTGakeBwzTnwNcsO6LU4Bso6O+L28D46LmSXWUz366KN++pFmz57ts4ycluRn7W+//Vas1z0vfD0ZaOVmyZIlfkECnz+nheP13DkGPlYkCOP9c1q2KHg/0UF9qmbCFgD4yzm3lq+PmU0EcDCfX4hjEhHJV6dO2ecsI+EUJDNgDMAi10v8RQrBWTjN+qwhQ4bkelynTp18vdO///3vAu+T2asrrrjCTzEyY8OC/OjsTmFVq1YNl112mf+Q5nQZC8uLggEIx8zpTK4YZDaPheXM7DAwGjVqFM466yyfxWJhPbNtvJ1TjDnxeD4PPv+NGzf661gnxSlBFsgzYOT9slYqMiXKKT9e17ZtW1+gP2HChCK/7nnhlCWDpsaNG+8w1bx582b/mnfu3BnXX3/99unkeDx3LsZgYMy2GwxEmbHr0aOHz45FYx3aGWecgeXLl+Odd97x9XCRYI3TzXwusWBFWbVR5DvPrgl71zn3j5DRzPYD8GSQBSvH7CiA85xzea6mpGbNmjmmeUVEJL5mzZqF/fbjr+rUxA/bt99+2xdwpxtmsypXruzrsrjSk1kfBn3JjKsQmZ1kcJnKz/3oo4/2P1e77LJLof7PmNlkzuQlNBNmZpyIbc2srJkx69WHNWC8zTn3tHNulpl9AIBVjezO9lxBAZiIiEhhsMieqykLqiFKVSymX7FihS84v/3225M+ACMWwDNLyGL+okxjJtNz51Qms3W5BWBJlwmLB2XCREQSI9UzYSKJVtRMmDrmi4iIiIRAQZiIiOQp1WZLRFLp/4qCMBERyRUberL4WYGYSP74f4T/V/h/JlVaVIiISBJjx3N2cGcxsojkjwFYzl0CCqIgTEREcsW9FrnxtYjEh6YjRUREREKgIExEREQkBArCREREREKQcs1azYwVovMT8FDVASxNwONI4ek9ST56T5KT3pfko/ckc9+XBs65GmkRhCWKmX2bV4dbCYfek+Sj9yQ56X1JPnpPkpOF/L5oOlJEREQkBArCREREREKgICxvg8IegPyD3pPko/ckOel9ST56T5LToDAfXDVhIiIiIiFQJkxEREQkBArCcjCzE83sJzP71cxuCXs84t+Temb2iZnNNLMZZnZt2GOSbGZW2sy+M7N3wx6L+Pejmpm9ZWY/mtksM2sZ9pjEvy/XBb+7fjCz18ysaLs8S0yY2WAzW8z3Ieq6Xc1srJn9EpzvggRSEJbjAwXAUwBOAvAvAP82M55LuLYAuME5x/eiBYAr9b4kDQbEs8IehGz3OIAPnHNNABys9yZ8ZlYHwDUAmjnnDgDAz5nzwh5XhnoRwIk5rmOy5WPn3N48Dy4njIKwHf0fgF+dc3Occ5sAvA7gtLAHlemcc4ucc1OCr1cHHyz8xSYhMrO6AE4G8FzYYxH/fuwM4GgAz/Myf4c551aEPS7xygCoaGY8rwRgYdgDykTOuYkAluW4mp/xQ4KveX56IsekIGxH/GD/LeryAn3YJxczawigKYBJYY9F8BiAmwFsC3sg4u0JgDuKvBBMET9nZjuFPahM55z7HcDDALIALAKw0jn3Udjjku324B/6wdd/8DISSEGYpAwzqwxgOIAezrlVYY8nk5nZKQAWO+cmhz0W2Y5ZlkMB/Nc5xz9U1iZ6akX+KagxOi0IkmsD2MnMLgh7XPJPLrtdREJbRigI2xH/YqkXdblucJ2EzMzKBgHYUOfciLDHI2gFoIOZzQum7duY2SthDyrDMXO/wDkXyRK/FQRlEq52AOY655Y45zYD4O+vI8IelGz3p5nV4hfB+WIkkIKwHf0PwN5mtqeZlQuKJ0eHPahMZ2YW1LnMcs49EvZ4xP/FeKtzrq5zrmHw/2S8c05/3YfIOceplN/MbN/gqrYAZoY8LMmehmxhZpWC32V8X7RgInnwM75L8DXP3050+loCzrktZnYVgA+DFSyDnXMzwh6X+KxLZwDTzWxqcF0v59yYkMclkmyuZrY4+CNyDoCLwx5QpmNmkm1DAEwJVnp/F3aX9kxlZq8BaA2gupkxc9wHwP0A3jCzrgDmA+iY0DGpY76IiIhI4mk6UkRERCQECsJEREREQqAgTERERCQECsJEREREQqAgTERERCQECsJEREREQqAgTESSlpltZW+4qFPDYtzH6Wb2r/iMMLvLtpm9G3x9ppl9HHXbkcG4y3CrJzO7K17jEJHUoyBMRJLZeufcIVEnbpNUVKcDKFIQxqCpCIdfD+BZfhFsqbXRzM4PttoaCKA7G0EDeA/AqeycXuRnICJpSUGYiKQUMzvMzCaY2WQz+zBq37fLzOx/ZjbNzIYH28Rwj74OAB4KMlJ7mdmnZtYs+B52zvaBnZldZGajzWw8gI/NjBstDzazb8zsOzPjJsy5OQvAB1GXuevGPQDu5FZozrkvozYH/hQANz8XEVEQJiJJrWLUVOTIILs0AMDZzrnDuLUYgH7BsSOcc82dcwcHe/N1DQIg7g13U5BJm13A4x0a3PcxAHoHe2L+H4Bjg0Bup+iDuc8sgOXOuY2R65xz3C5oWBCM9cxx/98COCpmr46IpDTtHSkiST8dGblgZgcA4Gls9l7Ifo/XRcHNB5gZM1DVAFQO9oAtqrHOuWXB18czi2ZmNwaXKwCon2PzZWbhlkTfgZlxTMcBWAOgAYClUTcvBlC7GOMSkTSkIExEUgkjrxnOuZa53PYi67+cc5yOvCjYqDc3W6JmARhYRVub47HOcs79lM941udyH9252TyA2wA8ZWYtg6nIyOPxe0RENB0pIimFAVENBja8wOlJM9s/uK0Ks2LBlGWnqO9ZHdwWwRowTmXS2fk8FjNpV1uQcjOzprkc8zOA7Ss2zaxmUKh/s3OOdWK/A7g06vh9APxQnCcuIulHQZiIpAzn3KYgcHqABfgApgJg8T3dDmASgC8A/Bj1ba+zJiwort8LwMMAruBlANXzebi7ATCg+97MZgSXc46HmbPZZtY4uOoRAA865yJTlD1YW2ZmuwaXjw1WSYqIwP7OkouISFGZ2RnMrDnnbivguD0AvOqca5u40YlIMlNNmIhICTjnuGpzt0IcyqL+GxIwJBFJEcqEiYiIiIRANWEiIiIiIVAQJiIiIhICBWEiIiIiIVAQJiIiIhICBWEiIiIiSLz/B55wnyTmcj+rAAAAAElFTkSuQmCC\n"}}, {"output_type": "stream", "name": "stdout", "text": "Degree: 1\nTraining MSE: 0.148\nTest MSE: 0.148\nTraining R\u00b2 Score: 0.008\nTest R\u00b2 Score: -0.023\n"}]}}, "e157a2de7cb24a2fa35cb26686c70a08": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ae0b6234008c4876acfe979585abb0b1": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "6e23fa412b514ed8b93ad24828766784": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "Exp Bias", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e157a2de7cb24a2fa35cb26686c70a08", "max": 1.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_ae0b6234008c4876acfe979585abb0b1", "value": 0.5}}, "98653d85d9ac4105b156a4377e6ce589": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3a98f95bef364daf910a0fa751fc5c8a": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "5ab77eec5ee94373b8f9a28745608f3f": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "Gender Bias", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_98653d85d9ac4105b156a4377e6ce589", "max": 2.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.1, "style": "IPY_MODEL_3a98f95bef364daf910a0fa751fc5c8a", "value": 0.5}}, "5b729a6947d84f00a3672c770d680f5a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "128d3b8965134478a3d354f0fec37023": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_6e23fa412b514ed8b93ad24828766784", "IPY_MODEL_5ab77eec5ee94373b8f9a28745608f3f", "IPY_MODEL_d01098bd55774c508ccda4d6cefb2a3a"], "layout": "IPY_MODEL_5b729a6947d84f00a3672c770d680f5a"}}, "90f786dd091b4668b180d2a7072df8de": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d01098bd55774c508ccda4d6cefb2a3a": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_90f786dd091b4668b180d2a7072df8de", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 720x432 with 1 Axes>", "image/png": "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WdogNLI5AIAGNK1zM4DCiv5IP0u7rS9I+zsN1voBAJBiWhAAACBDTAsCAABkiOAKAACgrDVX48eP9402iqOhAQAA8m3WrFnz09Up8htcRWA1c2asHAEAAJBvZhZLZfXCtCAAAECGCK4AAAAyRHAFAACQoVzVXPVlyZIlmjdvnl56KZbmQlWsvPLKWn/99TVq1Kh2DwUAgHIFVxFYjR49Oil2N7N2DwctEI1tn3766eSznzAhmoQDAFAcuZ8WjIzVmmuuSWBVIfFZx2dOthIAUES5D64CgVX18JkDAIqqEMEVAABAURBcNZhF2X///buuv/LKK1prrbW01157Dfi4K664YtD79PTYY491PeaMM87QYYcd1uf9Jk2apAULFmi4TjjhBH3/+98f8D5R9/SOd7xDq6++eq9x7LHHHtpqq620xRZb6HOf+5yWLl2abP/Sl76kf/7zn8MeFwAARVe64GrGDOnQQyP46DyP6yO12mqr6fbbb9eLL76YXP/HP/6h9dZbT81w0kkn6dOf/vSg97v44os1bty4XoXgy5Yty/SIvW9+85t9BmHnnnuubrnlluR9eeqpp3Teeecl2w8//HB997vfzWwMAAA06/u9WUoVXMUbfdxx0vz5UsQ+cR7Xs/gAIlP0l7/8Jbn829/+Vh/72Mfq9jtDO+ywg7bZZhu97W1v05w5c3o9/vnnn9fBBx+siRMnJvf705/+1Od+LrjggiQrVPPoo48m1zfZZBMdddRRXdvj6Mn58+frgQce0GabbaYDDjhAb3rTm/Twww/re9/7nt7ylrfozW9+s44//viux3zrW9/Spptuqp122qnPMfYVVMZ9I8jqacyYMV1ZvMWLF3fVSG244YZJxuvxxx8f9PkBAGj393szlCq4mj5dGjtWioTOcst1nsf12D5S++23n373u98lR7Ddeuut2n777btu23zzzXX11Vfrpptu0tSpU3XMMcf0enwENu985zuTQOzyyy/Xl7/85STgqjd37lytscYaWmmllbq23XzzzTrnnHN02223JecRPPV0zz336JBDDtEdd9yRBE1xPfYTj501a5auuuqq5DzGH9si63XDDTd0Pf6nP/1pchqq97znPVp77bWTVhl777131/Ztt91W//rXv4b8fAAAtPr7vZJ9roZi7tzOiLZeJFhi+0hFFiiyRJG1iixWvYULF2ry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zlxVUNQqfeMb39AjkakroJiSPPLII3sFVgAAFFW5CtorKnpTFVUc6Rh9rgAApe3FXTlkrgAAQKt7cZcawRUAAGhmL+7KIbgCAACJmAqM3tsZ9+KuHIKrBqy++urdrscyNrE4cfjpT3+qM888s8/HDXTbUMSSO9G+4PWvf73Gjh3btRRPtEzYaKONND/ythmK1g61Lu+NikaoPY/07PleAQDyLWqsovd2vSb04i49CtpHKNYP7Ev0servtqGqLZMTQU8svnzRRRcN6fExlhVW4KMGAAwsitejxqqWsYrAKnpxT5nS7pEVC5mrEYommRHw1LI3RxxxRLIQ8SmnnNLrtmjUOXHiRG266aZdCxVHs8199tknaRoaGartt9++zwzQQGJx5W233TZZyzA6vtfGFesB7rjjjsl5tDz4yEc+kqxVGKfoixViKZpaJmybbbbRs88+m2yPhp977723Nt98c33iE5/oaiIaax7G/WJfscjzyy+/3Gs80Xw0XmO81tp+AAD516Je3KVXuHTGrmfs2mvbPlvso0PecoheWPKCJp3du3P4gVsfmJzmvzBfe5+7d7fbrjjwioYadUbwURNL0dR3GK+3ePHiruCo1p28PoM0Y8aMZNHj6E0Va+395Cc/SXo8zZ49O1lAuX4/jRo/frxuvPHG5LkimPvFL36RbI/njOVrohfWxz/+cX3xi1/UTjvtpIceeihp3xBNOuP+06ZNS4KwCKhWXnnlruVqYhmcWKQ5bosgKYLGAw88MAmwIng64IADdNpppyUBZU10kT/++OOTRadjCjManEYwBgAohgikCKZGhsxVAyI4ufnmm7tOUyOM78e+++7b720f/vCHk/PttttODzzwQHI5gp/99tsvuRzr68VSN0PV1/OGCABrCyJHIBe1T7WlZxYtWpQEUxE4RRPPU089NVmsuTZ9GFmnWL4mFpuOx8TzzpkzRxMmTEgCqxALS1911VXdxnL99dcnWbroXxVL6wz0fgAAUEaFy1wNlGladdSqA94+ftXxDWWqRmK11Vbr97aVVlopOY9laiKLlZX+nrd+LMuWLUsWiK5lpmpibcNY1y+yaRFoXXLJJd2esxnjBQCgzMhctVkENOeee27XNN5tt93WlP3EAtBRm1UTGbhw3333JfVTUQ8WtVi1mq2+bLbZZkkG6957702u/+Y3v9Euu+zS7T5R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\n"}}]}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/7. AI 7';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Mod0.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/_sources/7. AI 7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 7: Cross-validation method and meaning and Ethics in Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture 7: Cross-validation method and meaning and Ethics in Machine Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting-and-overfitting-in-regression">Underfitting and Overfitting in Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting">Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting">Overfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-model">Choosing the Right Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-cross-validation">Applying Cross-Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#increasing-the-amount-of-data">Increasing the Amount of Data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-cross-validation-work">How does cross-validation work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-cross-validation">Why use cross-validation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics-in-machine-learning">Ethics in Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biased-example">Biased example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ethics-in-machine-learning-matter">Why Ethics in Machine Learning matter?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7-cross-validation-method-and-meaning-and-ethics-in-machine-learning">
+<h1>Lecture 7: Cross-validation method and meaning and Ethics in Machine Learning<a class="headerlink" href="#lecture-7-cross-validation-method-and-meaning-and-ethics-in-machine-learning" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="k">def</span> <span class="nf">sumv2</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">true</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">degrees</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">true</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">degrees</span><span class="p">)):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">degrees</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">(),</span> <span class="n">yticks</span><span class="o">=</span><span class="p">())</span>
+
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degrees</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                             <span class="n">include_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">poly_features</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">poly_features</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">poly_features</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">true</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Samples&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sum of errors:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">sumv2</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">poly_features</span><span class="p">),</span><span class="n">y</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1bdaba5bd455ac2bc1f3a3767f22706aacf9ea3bbcd6a3bf6213c59df76e039f.png" src="../_images/1bdaba5bd455ac2bc1f3a3767f22706aacf9ea3bbcd6a3bf6213c59df76e039f.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="underfitting-and-overfitting-in-regression">
+<h1>Underfitting and Overfitting in Regression<a class="headerlink" href="#underfitting-and-overfitting-in-regression" title="Permalink to this heading">#</a></h1>
+<section id="underfitting">
+<h2>Underfitting<a class="headerlink" href="#underfitting" title="Permalink to this heading">#</a></h2>
+<p>Underfitting occurs when the model is too simple to capture the patterns in the data. This usually happens when we use a model that lacks sufficient flexibility or complexity, such as a linear model for data with a nonlinear trend.</p>
+</section>
+<section id="overfitting">
+<h2>Overfitting<a class="headerlink" href="#overfitting" title="Permalink to this heading">#</a></h2>
+<p>Overfitting occurs when the model is too complex, causing it to capture not only the true patterns in the data but also the noise. This often happens with high-degree polynomial models or highly flexible algorithms applied to a limited dataset.
+Finding the Right Balance</p>
+<p>The goal is to find a model that is complex enough to capture the dependencies in the data, but not so complex that it becomes overfitted.</p>
+<p><em>Do you have any ideas on how to find the right model? Have we already discussed something that might help solve this problem?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="c1"># Generate synthetic data with a non-linear relationship</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Feature values between 0 and 10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Quadratic relationship with noise</span>
+
+<span class="c1"># Generate test data to evaluate generalization</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">X_test</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">X_test</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># True underlying function (without noise)</span>
+
+<span class="c1"># Function to plot polynomial regression and visualize overfitting and underfitting</span>
+<span class="k">def</span> <span class="nf">plot_overfitting_underfitting</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Polynomial transformation</span>
+    <span class="n">poly_features</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="n">degree</span><span class="p">)</span>
+    <span class="n">X_poly</span> <span class="o">=</span> <span class="n">poly_features</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">X_test_poly</span> <span class="o">=</span> <span class="n">poly_features</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    
+    <span class="c1"># Fit linear regression on the transformed polynomial features</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_poly</span><span class="p">)</span>
+    <span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_poly</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate performance metrics</span>
+    <span class="n">train_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+    <span class="n">test_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+    <span class="n">train_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+    <span class="n">test_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+    
+    <span class="c1"># Plotting the data and polynomial regression fit</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training Data&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True Function&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Polynomial Regression (Degree </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Polynomial Regression with Degree </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature (X)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Target (y)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Display metrics</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degree: </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training MSE: </span><span class="si">{</span><span class="n">train_mse</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test MSE: </span><span class="si">{</span><span class="n">test_mse</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training R² Score: </span><span class="si">{</span><span class="n">train_r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test R² Score: </span><span class="si">{</span><span class="n">test_r2</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Interactive slider for adjusting polynomial degree</span>
+<span class="n">degree_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Degree&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display the interactive plot</span>
+<span class="n">display</span><span class="p">(</span><span class="n">widgets</span><span class="o">.</span><span class="n">interactive</span><span class="p">(</span><span class="n">plot_overfitting_underfitting</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="n">degree_slider</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "b0f022f568b447bc82397a377afa4d32"}</script></div>
+</div>
+<p>To address the issue of underfitting and overfitting, several techniques can be applied:</p>
+</section>
+<section id="regularization">
+<h2>Regularization<a class="headerlink" href="#regularization" title="Permalink to this heading">#</a></h2>
+<p>What it is: Regularization adds a penalty for large coefficients in the model, which helps reduce the model’s complexity and avoid overfitting.</p>
+<p>Techniques: Ridge Regression and Lasso Regression are examples of regularized models that can help control the complexity of the model.</p>
+</section>
+<section id="choosing-the-right-model">
+<h2>Choosing the Right Model<a class="headerlink" href="#choosing-the-right-model" title="Permalink to this heading">#</a></h2>
+<p>What it means: Choosing too simple a model (e.g., linear regression for nonlinear data) can lead to underfitting, while choosing too complex a model (e.g., high-degree polynomial regression) can lead to overfitting.</p>
+<p>How to choose: Testing different models and evaluating their performance using metrics such as Mean Squared Error (MSE) or the R-squared coefficient can help find the right model for the data.</p>
+</section>
+<section id="applying-cross-validation">
+<h2>Applying Cross-Validation<a class="headerlink" href="#applying-cross-validation" title="Permalink to this heading">#</a></h2>
+<p>What it is: Cross-validation allows the model to be evaluated on different subsets of the data, providing more reliable results than a single split into training and test data.</p>
+<p>Benefits: It helps assess the model’s stability and can indicate if the model is prone to overfitting.</p>
+</section>
+<section id="increasing-the-amount-of-data">
+<h2>Increasing the Amount of Data<a class="headerlink" href="#increasing-the-amount-of-data" title="Permalink to this heading">#</a></h2>
+<p>Why: More data can help the model learn general patterns and be less prone to overfitting.</p>
+<p>How to do it: One can try to collect more data, enrich existing data, or apply techniques such as data augmentation in the context of image data.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="cross-validation">
+<h1>Cross-validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h1>
+<p>Cross-validation is a technique used in machine learning that allows for better model evaluation by dividing the data into multiple different sets:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Training set
+Validation set
+Test set
+</pre></div>
+</div>
+<p>This approach provides more reliable results than a single split into training and test datasets.</p>
+<p>The training set is used during the model training phase, i.e., during the fitting of the regression function.</p>
+<p>The validation set is used during the testing phase of the algorithm, i.e., during the preliminary evaluation of the algorithm.</p>
+<p>The test set is used only once for the final test and evaluation of the algorithm.</p>
+<section id="how-does-cross-validation-work">
+<h2>How does cross-validation work?<a class="headerlink" href="#how-does-cross-validation-work" title="Permalink to this heading">#</a></h2>
+<p>The most popular method is k-fold cross-validation. In this method:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Data splitting: The data is divided into k equal parts, called &quot;folds&quot; (usually k=5 or k=10).
+
+Training and testing: The model is trained k times, each time on a different subset of data. In each iteration, one part is used as the test set, and the remaining k−1 parts are used for training the model.
+
+Averaging the results: After k iterations, we obtain k results, which are then averaged to get the final measure of model quality (e.g., the average error or the R-squared coefficient).
+</pre></div>
+</div>
+</section>
+<section id="why-use-cross-validation">
+<h2>Why use cross-validation?<a class="headerlink" href="#why-use-cross-validation" title="Permalink to this heading">#</a></h2>
+<p>Cross-validation is useful because:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Reduces the risk of random error: Testing the model on different subsets of data allows for more stable and representative results.
+
+Helps detect overfitting: If the model performs well on training subsets but poorly on test subsets, this may indicate overfitting.
+
+Fully utilizes data: Every data point is used both for training and testing, which is especially important when working with small datasets.
+</pre></div>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>Supervised methods “learn” by understanding their errors (thus, learning from mistakes) – by looking at examples, they know how far off they are and what needs to be changed. This can be compared to a student’s learning process:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A student learns/studies by doing homework. After completing an assignment, the student checks the answer – if it’s correct, the knowledge is reinforced, and the student knows they did it right. If not, they correct themselves.
+
+The student then goes to a quiz. They’ve never seen these questions before and don&#39;t know the answers, at least not right away. If they do well, they know they are on the right track. If not, they need to go back home and study more.
+
+Finally, the student goes to the exam. They only have one chance. If they fail, the student will be expelled.
+</pre></div>
+</div>
+<img src='img/TVT.png' img/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span><span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">])</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">target</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="n">linear</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">poly_features</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+
+<span class="n">cross_validate</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">poly_features</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;r2&#39;</span><span class="p">,</span> <span class="n">return_train_score</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;fit_time&#39;: array([0.00099969, 0.00099945, 0.00100112, 0.00200534, 0.00099993]),
+ &#39;score_time&#39;: array([0.00100851, 0.00099969, 0.00099921, 0.        , 0.00099993]),
+ &#39;test_score&#39;: array([0.22810271, 0.38077928, 0.57293938, 0.427243  , 0.52299031]),
+ &#39;train_score&#39;: array([0.52790589, 0.51593303, 0.46079678, 0.49932072, 0.4762524 ])}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ethics-in-machine-learning">
+<h1>Ethics in Machine Learning<a class="headerlink" href="#ethics-in-machine-learning" title="Permalink to this heading">#</a></h1>
+<p>Machine learning has become an integral part of many modern technologies, including search engines, recommendation systems, healthcare, finance, and criminal justice. However, the power of machine learning also brings with it significant ethical concerns. Ethical issues in machine learning can involve fairness, accountability, transparency, and privacy.</p>
+<p>A common issue is discrimination, where an algorithm unfairly favors or penalizes a certain group due to biased training data. This occurs because historical biases in the data get encoded into the model, leading to outcomes that disadvantage certain populations.</p>
+<p><b> Idea of such an example? </b></p>
+<section id="biased-example">
+<h2>Biased example<a class="headerlink" href="#biased-example" title="Permalink to this heading">#</a></h2>
+<p>To illustrate how bias can manifest, let’s look at an interactive Python example where a simple machine learning model simulates decision-making, such as hiring, based on applicant features. In this simulation, a bias exists against certain groups, which we’ll visualize and discuss.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">FloatSlider</span>
+
+<span class="c1"># Simulate a hiring decision process</span>
+<span class="k">def</span> <span class="nf">hiring_simulation</span><span class="p">(</span><span class="n">experience_bias</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">gender_bias</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="c1"># Generate simulated data</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">experience</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Years of experience</span>
+    <span class="n">gender</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Gender</span>
+    <span class="n">gender_numeric</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Encode gender numerically</span>
+
+    <span class="c1"># Decision formula with biases</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">experience</span> <span class="o">*</span> <span class="n">experience_bias</span> <span class="o">+</span>
+        <span class="n">gender_numeric</span> <span class="o">*</span> <span class="n">gender_bias</span> <span class="o">+</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Random noise</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Threshold for hiring decision</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+
+    <span class="c1"># Make decisions</span>
+    <span class="n">hired</span> <span class="o">=</span> <span class="n">scores</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+
+    <span class="c1"># Plot the results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">g</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]):</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">gender</span> <span class="o">==</span> <span class="n">g</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+            <span class="n">experience</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2"> (hired: </span><span class="si">{</span><span class="n">hired</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hiring Threshold&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years of Experience&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Hiring Score&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hiring Simulation with Bias&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Interactive sliders for bias control</span>
+<span class="n">interact</span><span class="p">(</span>
+    <span class="n">hiring_simulation</span><span class="p">,</span>
+    <span class="n">experience_bias</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Exp Bias&#39;</span><span class="p">),</span>
+    <span class="n">gender_bias</span><span class="o">=</span><span class="n">FloatSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Gender Bias&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "128d3b8965134478a3d354f0fec37023"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.hiring_simulation(experience_bias=0.5, gender_bias=0.5)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Experience Bias: Controls how much weight is given to experience in the decision-making process.
+
+Gender Bias: Controls the bias in favor of males (1) or females (0).
+</pre></div>
+</div>
+<p>Ethics refers to the branch of philosophy concerned with what is morally right and wrong, good and bad, or just and unjust. It provides a framework for determining how individuals and organizations should act in various situations, considering the well-being of others, fairness, and the consequences of their actions.</p>
+<p>In the context of technology and machine learning, ethics involves the application of these moral principles to guide the design, development, deployment, and use of systems. It seeks to ensure that technologies are used responsibly and do not cause harm or reinforce inequality.</p>
+<p>Key Aspects of Ethics:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fairness: Avoiding discrimination or bias in decisions made by individuals or systems.
+
+Accountability: Being responsible for the outcomes of actions, whether intentional or accidental.
+
+Transparency: Ensuring that decisions and processes are clear, understandable, and explainable.
+
+Privacy: Protecting individuals&#39; personal data and respecting their rights to control their information.
+
+Integrity: Acting consistently with moral principles, even in the face of pressure to compromise.
+</pre></div>
+</div>
+<section id="why-ethics-in-machine-learning-matter">
+<h3>Why Ethics in Machine Learning matter?<a class="headerlink" href="#why-ethics-in-machine-learning-matter" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Protect individuals from harm (e.g., biased hiring systems, unfair loan rejections).
+
+Ensure equitable access to benefits and opportunities.
+
+Build trust in technologies by making them transparent and accountable.
+
+Avoid unintended consequences, such as amplifying societal inequalities.
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./_sources"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Lecture 7: Cross-validation method and meaning and Ethics in Machine Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting-and-overfitting-in-regression">Underfitting and Overfitting in Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#underfitting">Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting">Overfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-model">Choosing the Right Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-cross-validation">Applying Cross-Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#increasing-the-amount-of-data">Increasing the Amount of Data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-cross-validation-work">How does cross-validation work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-cross-validation">Why use cross-validation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics-in-machine-learning">Ethics in Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biased-example">Biased example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ethics-in-machine-learning-matter">Why Ethics in Machine Learning matter?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radosław Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
