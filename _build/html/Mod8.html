@@ -482,48 +482,36 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\util\_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:382,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">elif</span> <span class="n">copy</span> <span class="ow">and</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">382</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
 
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:347,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;objs&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="n">objs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">NDFrame</span><span class="p">]</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">NDFrame</span><span class="p">],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Series</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd">     Concatenate pandas objects along a particular axis with optional set logic</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd">     along the other axes.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     ValueError: Indexes have overlapping values: [&#39;a&#39;]</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>     <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>         <span class="n">objs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span>         <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:445,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="bp">self</span><span class="o">.</span><span class="n">verify_integrity</span> <span class="o">=</span> <span class="n">verify_integrity</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span>
+<span class="ne">--&gt; </span><span class="mi">445</span> <span class="n">objs</span><span class="p">,</span> <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_keys_and_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="c1"># figure out what our result ndim is going to be</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="n">ndims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ndims</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
 
-<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:404,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">404</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs</span><span class="p">))</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:507,</span> in <span class="ni">_Concatenator._clean_keys_and_objs</span><span class="nt">(self, objs, keys)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>     <span class="n">objs_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objs_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">507</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="n">objs_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs_list</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: No objects to concatenate
 </pre></div>
