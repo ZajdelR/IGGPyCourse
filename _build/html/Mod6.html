@@ -213,7 +213,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod5.html">Moduł 5 - Macierze</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduł 6 - Pandas</a></li>
@@ -551,7 +551,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30260\2868143558.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30596\2868143558.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   seria[0]
 </pre></div>
 </div>
@@ -582,10 +582,10 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b    3
-c    8
-d    5
-e    6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b    0
+c    1
+d    8
+e    4
 dtype: int32
 </pre></div>
 </div>
@@ -600,11 +600,11 @@ dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a     8
-b     6
-c    16
-d    10
-e    12
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    10
+b     0
+c     2
+d    16
+e     8
 dtype: int32
 </pre></div>
 </div>
@@ -617,11 +617,11 @@ dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    12
-b     9
-c    24
-d    15
-e    18
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    15
+b     0
+c     3
+d    24
+e    12
 dtype: int32
 </pre></div>
 </div>
@@ -16376,16 +16376,16 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   raz  dwa  trzy
-0    5   16   106
-1    3   10   102
-2    5   17   105
-3    6   17   105
-4    4   18   101
-5    3   18   102
-6    4   13   106
-7    5   11   103
-8    1   17   101
-9    3   19   100
+0    1   18   107
+1    4   10   102
+2    3   10   102
+3    9   18   105
+4    1   13   105
+5    0   16   107
+6    0   14   102
+7    7   19   100
+8    8   14   103
+9    7   19   107
 </pre></div>
 </div>
 </div>
@@ -16423,63 +16423,63 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>5</td>
-      <td>16</td>
-      <td>106</td>
+      <td>1</td>
+      <td>18</td>
+      <td>107</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
+      <td>4</td>
       <td>10</td>
       <td>102</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>5</td>
-      <td>17</td>
-      <td>105</td>
+      <td>3</td>
+      <td>10</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6</td>
-      <td>17</td>
+      <td>9</td>
+      <td>18</td>
       <td>105</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4</td>
-      <td>18</td>
-      <td>101</td>
+      <td>1</td>
+      <td>13</td>
+      <td>105</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>3</td>
-      <td>18</td>
-      <td>102</td>
+      <td>0</td>
+      <td>16</td>
+      <td>107</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>4</td>
-      <td>13</td>
-      <td>106</td>
+      <td>0</td>
+      <td>14</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>5</td>
-      <td>11</td>
-      <td>103</td>
+      <td>7</td>
+      <td>19</td>
+      <td>100</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>1</td>
-      <td>17</td>
-      <td>101</td>
+      <td>8</td>
+      <td>14</td>
+      <td>103</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>3</td>
+      <td>7</td>
       <td>19</td>
-      <td>100</td>
+      <td>107</td>
     </tr>
   </tbody>
 </table>
@@ -19355,27 +19355,27 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>a</th>
-      <td>-0.678215</td>
-      <td>0.851778</td>
+      <td>-0.777087</td>
+      <td>0.090528</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
     <tr>
       <th>d</th>
       <td>NaN</td>
-      <td>1.977543</td>
-      <td>0.368649</td>
+      <td>-2.508815</td>
+      <td>0.401777</td>
     </tr>
   </tbody>
 </table>
@@ -19416,27 +19416,27 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>a</th>
-      <td>-0.678215</td>
-      <td>0.851778</td>
+      <td>-0.777087</td>
+      <td>0.090528</td>
       <td>10.000000</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
     <tr>
       <th>d</th>
       <td>10.000000</td>
-      <td>1.977543</td>
-      <td>0.368649</td>
+      <td>-2.508815</td>
+      <td>0.401777</td>
     </tr>
   </tbody>
 </table>
@@ -19476,27 +19476,27 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>a</th>
-      <td>-0.678215</td>
-      <td>0.851778</td>
+      <td>-0.777087</td>
+      <td>0.090528</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
     <tr>
       <th>d</th>
       <td>NaN</td>
-      <td>1.977543</td>
-      <td>0.368649</td>
+      <td>-2.508815</td>
+      <td>0.401777</td>
     </tr>
   </tbody>
 </table>
@@ -19535,15 +19535,15 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
   </tbody>
 </table>
@@ -19582,27 +19582,27 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>a</th>
-      <td>-0.678215</td>
-      <td>0.851778</td>
+      <td>-0.777087</td>
+      <td>0.090528</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
     <tr>
       <th>d</th>
       <td>NaN</td>
-      <td>1.977543</td>
-      <td>0.368649</td>
+      <td>-2.508815</td>
+      <td>0.401777</td>
     </tr>
   </tbody>
 </table>
@@ -19641,27 +19641,27 @@ Name: Month, dtype: bool
   <tbody>
     <tr>
       <th>a</th>
-      <td>-0.678215</td>
-      <td>0.851778</td>
+      <td>-0.777087</td>
+      <td>0.090528</td>
       <td>1000000.000000</td>
     </tr>
     <tr>
       <th>b</th>
-      <td>1.714388</td>
-      <td>0.118378</td>
-      <td>-1.102902</td>
+      <td>0.053894</td>
+      <td>-1.204312</td>
+      <td>2.300133</td>
     </tr>
     <tr>
       <th>c</th>
-      <td>-0.864337</td>
-      <td>-0.551117</td>
-      <td>-0.915892</td>
+      <td>1.072294</td>
+      <td>0.276539</td>
+      <td>0.408272</td>
     </tr>
     <tr>
       <th>d</th>
       <td>1000000.000000</td>
-      <td>1.977543</td>
-      <td>0.368649</td>
+      <td>-2.508815</td>
+      <td>0.401777</td>
     </tr>
   </tbody>
 </table>
@@ -19881,9 +19881,9 @@ Name: Month, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one      0.057279
-two      0.599145
-three   -0.550048
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one      0.116367
+two     -0.836515
+three    1.036727
 dtype: float64
 </pre></div>
 </div>
@@ -19896,9 +19896,9 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one      1.438113
-two      1.082904
-three    0.801091
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one      0.926272
+two      1.294882
+three    1.094146
 dtype: float64
 </pre></div>
 </div>
@@ -19911,9 +19911,9 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one     -0.864337
-two     -0.551117
-three   -1.102902
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>one     -0.777087
+two     -2.508815
+three    0.401777
 dtype: float64
 </pre></div>
 </div>
@@ -21070,7 +21070,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001DA2E2CA610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001CA0D67BA00&gt;
 </pre></div>
 </div>
 </div>
@@ -22545,27 +22545,27 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          0         1
-0  0.807805 -0.443924
-1 -1.544120  0.412739
-2  0.577764 -0.611562
-3 -0.736700  1.135079
-4  1.735982 -1.038047
-5 -0.717582  1.678818
-6 -0.251365  1.236462
-7  0.565117 -2.216008
-8  1.335799  0.922673
-9 -0.281188  1.260035
+0  0.457848 -1.027356
+1  1.285397  1.228339
+2 -0.030732  1.089973
+3  2.022946  0.480185
+4 -0.092138 -0.096128
+5  0.738064  0.204303
+6  0.066032  1.479909
+7  0.924656 -0.080112
+8 -0.679045 -0.890487
+9 -0.640052 -0.957472
           0         1
-0  1.098812  0.833612
-1  0.404254 -0.644611
-2 -0.174794 -1.005686
-3 -0.594083  1.868547
-4  1.783344  0.892279
-5 -0.859939  1.469791
-6  0.768514 -0.472120
-7 -1.560815  0.551877
-8  0.613415 -1.173591
-9 -0.769022  1.638622
+0  1.800229  1.710359
+1  0.423036  1.104119
+2 -0.290894 -0.496502
+3 -1.146630  1.833954
+4 -1.054869  2.025028
+5 -1.381703  0.378046
+6  0.089314 -1.188354
+7 -1.865478  1.077155
+8 -0.641969  1.355060
+9 -0.472980 -0.804956
 </pre></div>
 </div>
 </div>
@@ -22615,73 +22615,73 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.807805</td>
-      <td>-0.443924</td>
-      <td>1.098812</td>
-      <td>0.833612</td>
+      <td>0.457848</td>
+      <td>-1.027356</td>
+      <td>1.800229</td>
+      <td>1.710359</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-1.544120</td>
-      <td>0.412739</td>
-      <td>0.404254</td>
-      <td>-0.644611</td>
+      <td>1.285397</td>
+      <td>1.228339</td>
+      <td>0.423036</td>
+      <td>1.104119</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.577764</td>
-      <td>-0.611562</td>
-      <td>-0.174794</td>
-      <td>-1.005686</td>
+      <td>-0.030732</td>
+      <td>1.089973</td>
+      <td>-0.290894</td>
+      <td>-0.496502</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-0.736700</td>
-      <td>1.135079</td>
-      <td>-0.594083</td>
-      <td>1.868547</td>
+      <td>2.022946</td>
+      <td>0.480185</td>
+      <td>-1.146630</td>
+      <td>1.833954</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1.735982</td>
-      <td>-1.038047</td>
-      <td>1.783344</td>
-      <td>0.892279</td>
+      <td>-0.092138</td>
+      <td>-0.096128</td>
+      <td>-1.054869</td>
+      <td>2.025028</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>-0.717582</td>
-      <td>1.678818</td>
-      <td>-0.859939</td>
-      <td>1.469791</td>
+      <td>0.738064</td>
+      <td>0.204303</td>
+      <td>-1.381703</td>
+      <td>0.378046</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>-0.251365</td>
-      <td>1.236462</td>
-      <td>0.768514</td>
-      <td>-0.472120</td>
+      <td>0.066032</td>
+      <td>1.479909</td>
+      <td>0.089314</td>
+      <td>-1.188354</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.565117</td>
-      <td>-2.216008</td>
-      <td>-1.560815</td>
-      <td>0.551877</td>
+      <td>0.924656</td>
+      <td>-0.080112</td>
+      <td>-1.865478</td>
+      <td>1.077155</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>1.335799</td>
-      <td>0.922673</td>
-      <td>0.613415</td>
-      <td>-1.173591</td>
+      <td>-0.679045</td>
+      <td>-0.890487</td>
+      <td>-0.641969</td>
+      <td>1.355060</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>-0.281188</td>
-      <td>1.260035</td>
-      <td>-0.769022</td>
-      <td>1.638622</td>
+      <td>-0.640052</td>
+      <td>-0.957472</td>
+      <td>-0.472980</td>
+      <td>-0.804956</td>
     </tr>
   </tbody>
 </table>
@@ -22697,21 +22697,21 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30260\3032524173.py:2: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30596\3032524173.py:2: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
   seria = pd.date_range(&#39;1/06/2019&#39;, periods=168, freq=&quot;1H&quot;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00    497
-2019-01-06 01:00:00    247
-2019-01-06 02:00:00     12
-2019-01-06 03:00:00    109
-2019-01-06 04:00:00    449
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00     66
+2019-01-06 01:00:00     18
+2019-01-06 02:00:00    224
+2019-01-06 03:00:00    228
+2019-01-06 04:00:00     28
                       ... 
-2019-01-12 19:00:00    187
-2019-01-12 20:00:00    117
-2019-01-12 21:00:00    376
-2019-01-12 22:00:00     11
-2019-01-12 23:00:00    443
+2019-01-12 19:00:00    213
+2019-01-12 20:00:00    494
+2019-01-12 21:00:00     49
+2019-01-12 22:00:00    150
+2019-01-12 23:00:00    270
 Freq: h, Length: 168, dtype: int32
 </pre></div>
 </div>
@@ -22724,31 +22724,31 @@ Freq: h, Length: 168, dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-10 00:00:00    135
-2019-01-10 01:00:00     81
-2019-01-10 02:00:00    317
-2019-01-10 03:00:00    162
-2019-01-10 04:00:00    438
-2019-01-10 05:00:00    195
-2019-01-10 06:00:00    315
-2019-01-10 07:00:00    330
-2019-01-10 08:00:00      7
-2019-01-10 09:00:00    149
-2019-01-10 10:00:00    419
-2019-01-10 11:00:00     29
-2019-01-10 12:00:00    198
-2019-01-10 13:00:00    239
-2019-01-10 14:00:00     81
-2019-01-10 15:00:00     51
-2019-01-10 16:00:00     33
-2019-01-10 17:00:00    469
-2019-01-10 18:00:00    193
-2019-01-10 19:00:00    435
-2019-01-10 20:00:00    416
-2019-01-10 21:00:00     77
-2019-01-10 22:00:00    421
-2019-01-10 23:00:00    472
-2019-01-11 00:00:00    419
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-10 00:00:00    419
+2019-01-10 01:00:00    366
+2019-01-10 02:00:00    301
+2019-01-10 03:00:00    499
+2019-01-10 04:00:00    443
+2019-01-10 05:00:00    236
+2019-01-10 06:00:00    492
+2019-01-10 07:00:00    465
+2019-01-10 08:00:00     69
+2019-01-10 09:00:00    153
+2019-01-10 10:00:00    144
+2019-01-10 11:00:00    141
+2019-01-10 12:00:00    269
+2019-01-10 13:00:00    427
+2019-01-10 14:00:00    126
+2019-01-10 15:00:00    339
+2019-01-10 16:00:00      2
+2019-01-10 17:00:00    304
+2019-01-10 18:00:00     21
+2019-01-10 19:00:00    217
+2019-01-10 20:00:00    324
+2019-01-10 21:00:00    395
+2019-01-10 22:00:00     62
+2019-01-10 23:00:00    116
+2019-01-11 00:00:00     60
 Freq: h, dtype: int32
 </pre></div>
 </div>
@@ -22761,30 +22761,30 @@ Freq: h, dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-10 00:00:00    135
-2019-01-10 01:00:00     81
-2019-01-10 02:00:00    317
-2019-01-10 03:00:00    162
-2019-01-10 04:00:00    438
-2019-01-10 05:00:00    195
-2019-01-10 06:00:00    315
-2019-01-10 07:00:00    330
-2019-01-10 08:00:00      7
-2019-01-10 09:00:00    149
-2019-01-10 10:00:00    419
-2019-01-10 11:00:00     29
-2019-01-10 12:00:00    198
-2019-01-10 13:00:00    239
-2019-01-10 14:00:00     81
-2019-01-10 15:00:00     51
-2019-01-10 16:00:00     33
-2019-01-10 17:00:00    469
-2019-01-10 18:00:00    193
-2019-01-10 19:00:00    435
-2019-01-10 20:00:00    416
-2019-01-10 21:00:00     77
-2019-01-10 22:00:00    421
-2019-01-10 23:00:00    472
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-10 00:00:00    419
+2019-01-10 01:00:00    366
+2019-01-10 02:00:00    301
+2019-01-10 03:00:00    499
+2019-01-10 04:00:00    443
+2019-01-10 05:00:00    236
+2019-01-10 06:00:00    492
+2019-01-10 07:00:00    465
+2019-01-10 08:00:00     69
+2019-01-10 09:00:00    153
+2019-01-10 10:00:00    144
+2019-01-10 11:00:00    141
+2019-01-10 12:00:00    269
+2019-01-10 13:00:00    427
+2019-01-10 14:00:00    126
+2019-01-10 15:00:00    339
+2019-01-10 16:00:00      2
+2019-01-10 17:00:00    304
+2019-01-10 18:00:00     21
+2019-01-10 19:00:00    217
+2019-01-10 20:00:00    324
+2019-01-10 21:00:00    395
+2019-01-10 22:00:00     62
+2019-01-10 23:00:00    116
 Freq: h, dtype: int32
 </pre></div>
 </div>
@@ -22797,21 +22797,21 @@ Freq: h, dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30260\2543900170.py:1: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30596\2543900170.py:1: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
   ts.resample(&#39;2H&#39;).mean()
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00    372.0
-2019-01-06 02:00:00     60.5
-2019-01-06 04:00:00    377.0
-2019-01-06 06:00:00     53.0
-2019-01-06 08:00:00    274.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00     42.0
+2019-01-06 02:00:00    226.0
+2019-01-06 04:00:00    133.5
+2019-01-06 06:00:00    443.0
+2019-01-06 08:00:00    254.0
                        ...  
-2019-01-12 14:00:00    163.0
-2019-01-12 16:00:00    238.0
-2019-01-12 18:00:00    265.0
-2019-01-12 20:00:00    246.5
-2019-01-12 22:00:00    227.0
+2019-01-12 14:00:00    172.0
+2019-01-12 16:00:00    203.5
+2019-01-12 18:00:00    350.0
+2019-01-12 20:00:00    271.5
+2019-01-12 22:00:00    210.0
 Freq: 2h, Length: 84, dtype: float64
 </pre></div>
 </div>
@@ -22824,21 +22824,21 @@ Freq: 2h, Length: 84, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30260\2280813142.py:1: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30596\2280813142.py:1: FutureWarning: &#39;H&#39; is deprecated and will be removed in a future version, please use &#39;h&#39; instead.
   ts.resample(&#39;0.5H&#39;).interpolate()
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00    497.0
-2019-01-06 00:30:00    372.0
-2019-01-06 01:00:00    247.0
-2019-01-06 01:30:00    129.5
-2019-01-06 02:00:00     12.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2019-01-06 00:00:00     66.0
+2019-01-06 00:30:00     42.0
+2019-01-06 01:00:00     18.0
+2019-01-06 01:30:00    121.0
+2019-01-06 02:00:00    224.0
                        ...  
-2019-01-12 21:00:00    376.0
-2019-01-12 21:30:00    193.5
-2019-01-12 22:00:00     11.0
-2019-01-12 22:30:00    227.0
-2019-01-12 23:00:00    443.0
+2019-01-12 21:00:00     49.0
+2019-01-12 21:30:00     99.5
+2019-01-12 22:00:00    150.0
+2019-01-12 22:30:00    210.0
+2019-01-12 23:00:00    270.0
 Freq: 30min, Length: 335, dtype: float64
 </pre></div>
 </div>
@@ -24211,7 +24211,7 @@ Date
 2022-05-31  262.803335  198.643331  147.326665
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30260\397118493.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_30596\397118493.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
   df_3Months = df.resample(rule=&#39;M&#39;).mean()[-3:]
 </pre></div>
 </div>

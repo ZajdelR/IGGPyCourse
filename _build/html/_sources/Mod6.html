@@ -211,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Mod6.html">Moduł 6 - Pandas</a></li>
@@ -596,7 +596,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_22724\2868143558.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\kamil\AppData\Local\Temp\ipykernel_2356\2868143558.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   seria[0]
 </pre></div>
 </div>
@@ -618,10 +618,10 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b    8
-c    1
-d    3
-e    0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b    3
+c    8
+d    0
+e    1
 dtype: int32
 </pre></div>
 </div>
@@ -639,11 +639,11 @@ dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a     4
-b    16
-c     2
-d     6
-e     0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    14
+b     6
+c    16
+d     0
+e     2
 dtype: int32
 </pre></div>
 </div>
@@ -656,11 +656,11 @@ dtype: int32
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a     6
-b    24
-c     3
-d     9
-e     0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a    21
+b     9
+c    24
+d     0
+e     3
 dtype: int32
 </pre></div>
 </div>
@@ -16443,63 +16443,63 @@ dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>12</td>
-      <td>100</td>
+      <td>3</td>
+      <td>14</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>19</td>
-      <td>106</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>6</td>
-      <td>13</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2</td>
-      <td>11</td>
-      <td>105</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2</td>
-      <td>10</td>
-      <td>108</td>
-    </tr>
-    <tr>
-      <th>5</th>
       <td>8</td>
-      <td>11</td>
-      <td>108</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2</td>
-      <td>18</td>
-      <td>106</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>9</td>
-      <td>13</td>
-      <td>108</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>9</td>
       <td>10</td>
       <td>107</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>2</th>
       <td>5</td>
-      <td>15</td>
+      <td>19</td>
+      <td>103</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>16</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9</td>
+      <td>14</td>
+      <td>108</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>11</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>14</td>
+      <td>109</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>17</td>
       <td>105</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4</td>
+      <td>11</td>
+      <td>102</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6</td>
+      <td>13</td>
+      <td>107</td>
     </tr>
   </tbody>
 </table>
