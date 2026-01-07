@@ -205,15 +205,21 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod6.html">Moduł 6 - Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod6_cw.html">Moduł 6 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
+
+
+
 </ul>
 
     </div>
@@ -4654,69 +4660,17 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">release_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/release_dates.csv&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                                       <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">release_dates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>title</th>
-      <th>year</th>
-      <th>country</th>
-      <th>date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>#73, Shaanthi Nivaasa</td>
-      <td>2007</td>
-      <td>India</td>
-      <td>2007-06-15</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>#BKKY</td>
-      <td>2016</td>
-      <td>Cambodia</td>
-      <td>2017-10-12</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>#Beings</td>
-      <td>2015</td>
-      <td>Romania</td>
-      <td>2015-01-29</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>#Captured</td>
-      <td>2017</td>
-      <td>USA</td>
-      <td>2017-09-05</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>#Ewankosau saranghaeyo</td>
-      <td>2015</td>
-      <td>Philippines</td>
-      <td>2015-01-21</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -205,15 +205,21 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="../Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../Mod5.html">Moduł 5 - Macierze - 2024/2025</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod6.html">Moduł 6 - Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod6_cw.html">Moduł 6 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
+
+
+
 </ul>
 
     </div>
@@ -407,22 +413,22 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            X           Y
-0    0.097351 -158.050618
-1   -0.669715   13.259403
-2   -0.445867  -13.014283
-3    0.113592   -7.714828
-4   -0.837206 -228.329526
+0   -0.484166   26.444896
+1    1.031375  107.047033
+2   -1.064499  -18.433776
+3   -1.831420  -52.625725
+4   -1.478113   -4.251827
 ..        ...         ...
-995  0.993925   61.519646
-996 -0.096834   14.466723
-997 -1.536301  -61.188070
-998 -0.995372 -143.431405
-999  0.628260   90.642025
+995 -0.257514  -31.999275
+996  0.043580  107.185367
+997 -1.358626   47.649179
+998  0.408526 -114.146167
+999 -1.702936  -68.180578
 
 [1000 rows x 2 columns]
 </pre></div>
 </div>
-<img alt="../_images/eb8020488b79539eaae76f29921887eedf186f7a4979101438c201aa2564a626.png" src="../_images/eb8020488b79539eaae76f29921887eedf186f7a4979101438c201aa2564a626.png" />
+<img alt="../_images/b5457e1fa3acc0b3fb3da62c9ca3bd90dfea6fb293077e5f73ad8d353d6aac24.png" src="../_images/b5457e1fa3acc0b3fb3da62c9ca3bd90dfea6fb293077e5f73ad8d353d6aac24.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -532,7 +538,7 @@ Validation set size: 200
 Testing set size: 200
 </pre></div>
 </div>
-<img alt="../_images/709f39d0c155217e5d1eebb30d6caac48a41a286eecf40f62930382c66417333.png" src="../_images/709f39d0c155217e5d1eebb30d6caac48a41a286eecf40f62930382c66417333.png" />
+<img alt="../_images/42cbeeb7ee5501eb2b92b36282a3494080be674ac049eea3d23d439f1ae48bbf.png" src="../_images/42cbeeb7ee5501eb2b92b36282a3494080be674ac049eea3d23d439f1ae48bbf.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -579,7 +585,7 @@ Validation set size: 88
 Testing set size: 89
 </pre></div>
 </div>
-<img alt="../_images/43e6afae159f1c08c5e2ee77baeda5d9cfee5f2d3b5fc78190a325086c1c85ae.png" src="../_images/43e6afae159f1c08c5e2ee77baeda5d9cfee5f2d3b5fc78190a325086c1c85ae.png" />
+<img alt="../_images/da2a29a803c99dbbfc012e6b722d899eee56851cfa5ed7aa57783193deada228.png" src="../_images/da2a29a803c99dbbfc012e6b722d899eee56851cfa5ed7aa57783193deada228.png" />
 </div>
 </div>
 </section>
@@ -618,12 +624,12 @@ Testing set size: 89
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error (MSE): 3.7404519027738115
-Mean Absolute Error (MAE): 1.5994055125147815
-R² Score: 0.9573315282707759
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Squared Error (MSE): 4.412138629965415
+Mean Absolute Error (MAE): 1.6679674142756626
+R² Score: 0.9677848620689754
 </pre></div>
 </div>
-<img alt="../_images/9960df0c4e62cf22fc1307e5350b7a9984218be30803a344187e970ff53907d6.png" src="../_images/9960df0c4e62cf22fc1307e5350b7a9984218be30803a344187e970ff53907d6.png" />
+<img alt="../_images/acfd39727f175bd897fbbd888046698673f7127fe002d2ac8f93953eeae4dd08.png" src="../_images/acfd39727f175bd897fbbd888046698673f7127fe002d2ac8f93953eeae4dd08.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -664,12 +670,12 @@ R² Score: 0.9573315282707759
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metrics for Diabetes dataset with random predictions:
-Mean Squared Error (MSE): 835.290247612008
-Mean Absolute Error (MAE): 23.081401346211265
-R² Score: 0.859138876701095
+Mean Squared Error (MSE): 910.3474875395984
+Mean Absolute Error (MAE): 24.435714425493167
+R² Score: 0.8464814236084225
 </pre></div>
 </div>
-<img alt="../_images/901ebf85637ff9d4aa3a5d78ae1172a7f9f63e5c9dfd6cf333e71eaa01a8e6f1.png" src="../_images/901ebf85637ff9d4aa3a5d78ae1172a7f9f63e5c9dfd6cf333e71eaa01a8e6f1.png" />
+<img alt="../_images/dce202d198ffe8dc4f0bd00b3aba0b498df1fe6a698ebe443a28b2f212f6d43f.png" src="../_images/dce202d198ffe8dc4f0bd00b3aba0b498df1fe6a698ebe443a28b2f212f6d43f.png" />
 </div>
 </div>
 </section>
@@ -734,18 +740,17 @@ R² Score: 0.859138876701095
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Metrics:
-MSE: 2742.1688706541518
-MAE: 40.91410990708383
-R²: 0.8878011192573361
+MSE: 2441.4256523260724
+MAE: 38.275455248009955
+R²: 0.9167348590929177
+
+Test Metrics:
+MSE: 2625.0080578426496
+MAE: 40.589698292801934
+R²: 0.9170657989334114
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test Metrics:
-MSE: 2602.25471972687
-MAE: 41.05126976558356
-R²: 0.8839562272915225
-</pre></div>
-</div>
-<img alt="../_images/1d77a189b3ecb77eb82b2ef3a8cfbd58fe6d4d79a1a6cd9fe46ee4c600d2585e.png" src="../_images/1d77a189b3ecb77eb82b2ef3a8cfbd58fe6d4d79a1a6cd9fe46ee4c600d2585e.png" />
+<img alt="../_images/28fef25f6fa014d40e839e288db5848763d398c2faa2ab1ab86f5afba0cacd32.png" src="../_images/28fef25f6fa014d40e839e288db5848763d398c2faa2ab1ab86f5afba0cacd32.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -809,17 +814,17 @@ R²: 0.8839562272915225
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Validation Metrics:
-MSE: 2414.9837160368425
-MAE: 40.570797953386275
-R²: 0.5894794496454008
+MSE: 3852.8204594611902
+MAE: 50.997347304292404
+R²: 0.3611654283411625
 
 Test Metrics:
-MSE: 3874.2233381889105
-MAE: 48.551362656762784
-R²: 0.4456971684043105
+MSE: 3395.519176051856
+MAE: 45.82334028537811
+R²: 0.47141414266313675
 </pre></div>
 </div>
-<img alt="../_images/ed2ec31abe55b5e29715d745c0281254a9d39f56b262e539ccf52e4ea9df374b.png" src="../_images/ed2ec31abe55b5e29715d745c0281254a9d39f56b262e539ccf52e4ea9df374b.png" />
+<img alt="../_images/6f0d74c88c60648209e14a430e74d968179fd11a594de9807c5dfd4784f1eaf7.png" src="../_images/6f0d74c88c60648209e14a430e74d968179fd11a594de9807c5dfd4784f1eaf7.png" />
 </div>
 </div>
 </section>
