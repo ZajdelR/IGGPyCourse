@@ -99,8 +99,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Mod4_cw';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+<<<<<<< HEAD
     <link rel="next" title="Moduł 5 - Macierze" href="Mod5.html" />
     <link rel="prev" title="Moduł 4 - Funkcje i typy mapujące - 2024/2025" href="Mod4.html" />
+=======
+>>>>>>> main
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,6 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
+<<<<<<< HEAD
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
 
@@ -221,6 +225,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
 
 
+=======
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python</a></li>
+>>>>>>> main
 
 </ul>
 
@@ -368,30 +376,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<<<<<<< HEAD
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 4 - Ćwiczenia</a><ul class="visible nav section-nav flex-column">
+=======
+>>>>>>> main
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#przykladowe-dane">Przykładowe dane</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przyklad-uzycia-funkcji">Przykład użycia funkcji</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przyklad-dzialania-funkcji">Przykład działania funkcji:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -421,127 +420,58 @@ document.write(`
 <section id="zad-2">
 <h2>Zad 2<a class="headerlink" href="#zad-2" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>W oparciu o slownik:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;Anna&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">},</span>
-  <span class="s1">&#39;Jakub&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">75</span><span class="p">},</span>
-  <span class="s1">&#39;Marta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">95</span><span class="p">},</span>
-  <span class="s1">&#39;Piotr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+<p>Podaj klucz najmniejszej wartości w słowniku</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sampleDict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Physics&#39;</span><span class="p">:</span> <span class="mi">82</span><span class="p">,</span>
+  <span class="s1">&#39;Math&#39;</span><span class="p">:</span> <span class="mi">65</span><span class="p">,</span>
+  <span class="s1">&#39;history&#39;</span><span class="p">:</span> <span class="mi">75</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Znajdź nazwisko studenta o najwyższym wyniku.</p></li>
-<li><p>Wyświetl nazwiska studentów, których wiek jest poniżej 22 lat.</p></li>
-</ul>
 </section>
 <hr class="docutils" />
 <section id="zad-3">
 <h2>Zad 3<a class="headerlink" href="#zad-3" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Stwórz słownik reprezentujący bibliotekę, w którym kluczem jest <strong>ISBN</strong> książki, a wartością jest szczegółowy słownik zawierający informacje o książce.</p>
-<ol class="arabic simple">
-<li><p>Zapytaj użytkownika o dane książki:</p>
+<p>Stwórzmy słownik biblioteki, do którego dodawane będą książki:</p>
 <ul class="simple">
-<li><p><strong>ISBN</strong> - unikalny identyfikator książki</p></li>
-<li><p><strong>Tytuł książki</strong></p></li>
-<li><p><strong>Autor</strong></p></li>
-<li><p><strong>Rok wydania</strong></p></li>
+<li><p>Klucz to ISBN</p></li>
+<li><p>Wartość to nazwa książki</p></li>
+<li><p>Po każdej dodanej przez użytkownika książce, zapytaj czy chce dodać kolejną.</p></li>
+<li><p>Przerwij pętle na życzenie użytkownika (jeśli nie będzie chciał dodać kolejnej książki)</p></li>
 </ul>
-</li>
-<li><p>Dodaj książkę do słownika tylko wtedy, jeśli ISBN jest unikalny (sprawdź, czy taki ISBN już nie istnieje w słowniku).</p></li>
-<li><p>Po każdej dodanej książce:</p>
-<ul class="simple">
-<li><p>Wyświetl listę dotychczas dodanych książek w formacie:<br />
-<em>“ISBN: Tytuł (Autor, Rok wydania)”</em></p></li>
-<li><p>Zapytaj, czy użytkownik chce dodać kolejną książkę. Jeśli nie, zakończ program i wyświetl końcową listę książek.</p></li>
-</ul>
-</li>
-<li><p>Po zakończeniu, wyświetl licznik dodanych książek.</p></li>
-</ol>
 </section>
 <hr class="docutils" />
 <section id="zad-4">
 <h2>Zad 4<a class="headerlink" href="#zad-4" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Napisz funkcję, która na podstawie podanych argumentów: <strong>imię</strong>, <strong>PESEL</strong>, oraz <strong>stanowisko</strong>, dodaje kolejne osoby do słownika <code class="docutils literal notranslate"><span class="pre">ludzie</span></code>.</p>
-<ol class="arabic simple">
-<li><p><strong>Struktura słownika</strong>:</p>
-<ul class="simple">
-<li><p>Słownik <code class="docutils literal notranslate"><span class="pre">ludzie</span></code> przechowuje każdą osobę jako osobny wpis, gdzie kluczem jest numer PESEL, a wartością - słownik z informacjami o tej osobie.</p></li>
-</ul>
-</li>
-<li><p><strong>Informacje o osobie</strong>:</p>
-<ul class="simple">
-<li><p>Każda osoba jest reprezentowana przez słownik zawierający:</p>
-<ul>
-<li><p><strong>Imię</strong> - imię osoby (argument funkcji).</p></li>
-<li><p><strong>Wiek</strong> - wyliczany na podstawie numeru PESEL.</p></li>
-<li><p><strong>Stanowisko</strong> - argument funkcji; jeśli nie podano stanowiska, przyjmij domyślną wartość <strong>“Bezrobotny”</strong>.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Wyliczanie wieku</strong>:</p>
-<ul class="simple">
-<li><p>Funkcja powinna analizować numer PESEL, aby określić wiek osoby (zakładając aktualny rok).</p></li>
-</ul>
-</li>
-</ol>
+<p>Zaprogramuj funkcję, która na podstawie argumentów imię, pesel, stanowisko, doda do słownika ludzie, kolejne osoby. Każda kolejna osoba również powinna być słownikiem przechowującym informacje: imię, wiek (na podstawie numeru PESEL) i stanowisko. Jeżeli osoba nie wprowadzi wartości dla argumentu stanowisko, ustaw domyślną wartość „Bezrobotny”</p>
 </section>
 <hr class="docutils" />
 <section id="zad-5">
 <h2>Zad 5<a class="headerlink" href="#zad-5" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Napisz funkcję, która przyjmuje dowolną liczbę argumentów pozycyjnych (liczb), a następnie:</p>
-<ol class="arabic simple">
-<li><p>Zwraca różnicę pomiędzy największą i najmniejszą wartością spośród podanych argumentów.</p></li>
-<li><p>Jeśli użytkownik poda mniej niż dwa argumenty, funkcja powinna zwrócić <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-</ol>
+<p>Napisz funkcję, która pobiera dowolną ilość argumentów pozycyjnych, a następnie zwraca różnicę pomiędzy największą a najmniejszą wartością z podanych argumentów. Jeżeli użytkownik poda mniej niż dwa argumenty zwróć <i>None</i></p>
 </section>
 <hr class="docutils" />
 <section id="zad-6">
 <h2>Zad 6<a class="headerlink" href="#zad-6" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Zdefiniuj funkcję, która obliczy całkowity koszt koszyka zakupów na podstawie ilości produktów oraz ich cen jednostkowych. W zadaniu uwzględnij dodatkowe warunki:</p>
-<ol class="arabic simple">
-<li><p><strong>Dane wejściowe</strong>:</p>
-<ul class="simple">
-<li><p>Słownik <code class="docutils literal notranslate"><span class="pre">koszyk</span></code>, gdzie kluczem jest nazwa produktu, a wartością ilość tego produktu w koszyku.</p></li>
-<li><p>Słownik <code class="docutils literal notranslate"><span class="pre">ceny</span></code>, gdzie kluczem jest nazwa produktu, a wartością jego cena jednostkowa.</p></li>
-</ul>
-</li>
-<li><p><strong>Obliczenia</strong>:</p>
-<ul class="simple">
-<li><p>Funkcja powinna przeiterować przez produkty w koszyku i dla każdego z nich obliczyć koszt na podstawie ilości oraz ceny jednostkowej.</p></li>
-<li><p>Jeśli w koszyku jest produkt, którego cena nie jest zdefiniowana w słowniku <code class="docutils literal notranslate"><span class="pre">ceny</span></code>, funkcja powinna wyświetlić ostrzeżenie i pominąć ten produkt w obliczeniach.</p></li>
-</ul>
-</li>
-<li><p><strong>Dodatkowe warunki</strong>:</p>
-<ul class="simple">
-<li><p>Jeżeli koszyk zawiera produkt o ilości <code class="docutils literal notranslate"><span class="pre">0</span></code>, funkcja powinna go pominąć.</p></li>
-<li><p>Funkcja powinna uwzględniać zniżkę 10% na koszyk, jeśli całkowita cena przekroczy 100 zł.</p></li>
-<li><p>Funkcja powinna zwracać końcowy koszt koszyka oraz szczegółowy koszt dla każdego produktu.</p></li>
-</ul>
-</li>
-</ol>
+<p>Zdefiniuj funkcje która policzy cenę koszyka na podstawie cen jednostkowych i ilości towarów</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">koszyk</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;banany&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">&quot;jablka&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;pomarancze&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="s2">&quot;gruszki&quot;</span><span class="p">:</span> <span class="mi">15</span>
+<span class="p">}</span>
+<span class="n">ceny</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;banany&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;jablka&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;pomarancze&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="s2">&quot;gruszki&quot;</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="przykladowe-dane">
-<h1>Przykładowe dane<a class="headerlink" href="#przykladowe-dane" title="Permalink to this heading">#</a></h1>
-<p>koszyk = {
-“banany”: 6,
-“jablka”: 0,
-“pomarancze”: 32,
-“gruszki”: 15,
-“ananas”: 2  # brak ceny dla tego produktu
-}</p>
-<p>ceny = {
-“banany”: 4,
-“jablka”: 2,
-“pomarancze”: 1.5,
-“gruszki”: 3
-}</p>
 <hr class="docutils" />
 <section id="zad-7">
 <h2>Zad 7<a class="headerlink" href="#zad-7" title="Permalink to this heading">#</a></h2>
@@ -552,125 +482,50 @@ document.write(`
 <section id="zad-8">
 <h2>Zad 8<a class="headerlink" href="#zad-8" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Napisz funkcję, która przyjmuje dowolną liczbę argumentów pozycyjnych oraz kluczowych i wyświetla je w uporządkowany sposób.</p>
-<ol class="arabic">
-<li><p><strong>Argumenty pozycyjne</strong>:</p>
-<ul>
-<li><p>Funkcja powinna drukować każdy argument pozycyjny w formie listy, gdzie każdy element ma format:</p>
+<p>Napisz funkcję, która przyjmuje dowolną liczbę argumentów pozycyjnych oraz kluczowych.</p>
+<ul class="simple">
+<li><p>Niech funkcja drukuje argumenty pozycyjne w formie listy:</p></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 -&gt; wartość pierwszego argumentu
 2 -&gt; wartość drugiego argumentu
 …
 </pre></div>
 </div>
-</li>
+<ul class="simple">
+<li><p>Niech funkcja drukuje argumenty kluczowe w formie listy:</p></li>
 </ul>
-</li>
-<li><p><strong>Argumenty kluczowe</strong>:</p>
-<ul>
-<li><p>Funkcja powinna drukować każdy argument kluczowy w formie listy, gdzie każdy element ma format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nazwa (klucz) -&gt; wartość
-nazwa (klucz) -&gt; wartość
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nazwa (klucz) -&gt; wartość 
+nazwa (klucz)  -&gt; wartość
 …
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p><strong>Przekazywanie argumentów z listy i słownika</strong>:</p>
 <ul class="simple">
-<li><p>Utwórz listę oraz słownik z przykładowymi wartościami.</p></li>
-<li><p>Następnie przekaż elementy listy jako argumenty pozycyjne, a elementy słownika jako argumenty kluczowe do swojej funkcji.</p></li>
+<li><p>Stwórz listę oraz słownik</p></li>
+<li><p>Przekaż pojedyncze elementy listy jako kolejne argumenty pozycyjne, a słownik jako kolejne argumenty kluczowe swojej funkcji</p></li>
 </ul>
-</li>
-</ol>
-<section id="przyklad-uzycia-funkcji">
-<h3>Przykład użycia funkcji<a class="headerlink" href="#przyklad-uzycia-funkcji" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wyswietl_argumenty</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="c1"># Wyświetlanie argumentów pozycyjnych</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Wyświetlanie argumentów kluczowych</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> (klucz) -&gt; </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Przykładowe dane</span>
-<span class="n">lista_argumentow</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jabłko&quot;</span><span class="p">,</span> <span class="s2">&quot;banan&quot;</span><span class="p">,</span> <span class="s2">&quot;gruszka&quot;</span><span class="p">]</span>
-<span class="n">slownik_argumentow</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;kolor&quot;</span><span class="p">:</span> <span class="s2">&quot;czerwony&quot;</span><span class="p">,</span> <span class="s2">&quot;smak&quot;</span><span class="p">:</span> <span class="s2">&quot;słodki&quot;</span><span class="p">,</span> <span class="s2">&quot;waga&quot;</span><span class="p">:</span> <span class="s2">&quot;lekka&quot;</span><span class="p">}</span>
-
-<span class="c1"># Przekazanie listy jako argumentów pozycyjnych i słownika jako argumentów kluczowych</span>
-<span class="n">wyswietl_argumenty</span><span class="p">(</span><span class="o">*</span><span class="n">lista_argumentow</span><span class="p">,</span> <span class="o">**</span><span class="n">slownik_argumentow</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
 </section>
 <hr class="docutils" />
 <section id="zad-9">
 <h2>Zad 9<a class="headerlink" href="#zad-9" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Napisz funkcję, która przyjmuje liczbę całkowitą <code class="docutils literal notranslate"><span class="pre">n</span></code> i zwraca słownik, w którym:</p>
-<ul class="simple">
-<li><p>Kluczami są liczby całkowite od <code class="docutils literal notranslate"><span class="pre">1</span></code> do <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
-<li><p>Wartościami są listy zawierające wszystkie dzielniki danej liczby.</p></li>
-</ul>
-<section id="przyklad-dzialania-funkcji">
-<h3>Przykład działania funkcji:<a class="headerlink" href="#przyklad-dzialania-funkcji" title="Permalink to this heading">#</a></h3>
-<p>Dla <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code>, słownik powinien wyglądać tak:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-    <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-    <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-    <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-    <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
+<p>Napisz funkcję, która jako argument przyjmuje liczbę n i zwraca słownik, którego kluczami są liczby całkowite od 1 do n, a wartościami listy ze wszystkimi dzielnikami danej liczby.</p>
 </section>
 <hr class="docutils" />
 <section id="zad-10">
 <h2>Zad 10<a class="headerlink" href="#zad-10" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Napisz funkcję, która przyjmuje dowolną liczbę słowników jako argumenty, a następnie łączy je w jeden słownik. Żaden element nie może zostać utracony. Jeśli klucze są zduplikowane, dodaj do nich przyrostek „_n”, gdzie <code class="docutils literal notranslate"><span class="pre">n</span></code> to numer powtórzenia klucza.</p>
-<ol class="arabic">
-<li><p><strong>Argumenty</strong>:</p>
-<ul class="simple">
-<li><p>Funkcja przyjmuje dowolną liczbę słowników, które będą łączone.</p></li>
-</ul>
-</li>
-<li><p><strong>Łączenie słowników</strong>:</p>
-<ul class="simple">
-<li><p>Jeśli klucz pojawia się więcej niż raz:</p>
-<ul>
-<li><p>Pierwsza wartość danego klucza pozostaje bez zmian.</p></li>
-<li><p>Kolejne powtórzenia klucza otrzymują przyrostek „_n”, gdzie <code class="docutils literal notranslate"><span class="pre">n</span></code> to numer powtórzenia klucza.</p></li>
-</ul>
-</li>
-<li><p>Wszystkie elementy z przekazanych słowników powinny być obecne w połączonym słowniku.</p></li>
-</ul>
-</li>
-<li><p><strong>Przykład użycia funkcji</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Kasia&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Basia&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Zosia&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Kasia&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">dict3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Kasia&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Zosia&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;Paweł&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<p>Stwórz funkcję, która przyjmuje dowolna ilość słowników jako argumenty, a następnie łączy je i zwraca jeden połączony słownik. Żaden element nie może zostać utracony. Do zduplikowanych kluczy dodaj przyrostek „_n”, gdzie n to numer powtórzenia.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dict1 = {‘Kasia’: 3, ‘Basia’: 3, ‘Zosia’: 10}
+dict2 = {‘Kasia’: 3}
+dict3 = {‘Kasia’: 6, ‘Zosia’: 8, ‘Paweł’: 4}
 
-<span class="n">polaczony_slownik</span> <span class="o">=</span> <span class="n">laczenie_slownikow</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">,</span> <span class="n">dict3</span><span class="p">)</span>
+polaczonySlownik = laczenieSlownikow(dict1,dict2,dict3)
 </pre></div>
 </div>
-<p>Oczekiwany wynik</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
- <span class="s1">&#39;Kasia&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;Basia&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;Zosia&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
- <span class="s1">&#39;Kasia_1&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
- <span class="s1">&#39;Kasia_2&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
- <span class="s1">&#39;Zosia_1&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
- <span class="s1">&#39;Paweł&#39;</span><span class="p">:</span> <span class="mi">4</span>
- <span class="p">}</span>
+<p>Oczekiwana wartość zmiennej polaczonySlownik</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{‘Kasia’: 3, ‘Basia’: 3, ‘Zosia’: 10, ‘Kasia_1’: 3, ‘Kasia_2’: 6, ‘Zosia_1’: 8, ‘Paweł’: 4}
 </pre></div>
 </div>
-</li>
-</ol>
 </section>
 </section>
 
@@ -704,6 +559,7 @@ nazwa (klucz) -&gt; wartość
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<<<<<<< HEAD
     <a class="left-prev"
        href="Mod4.html"
        title="previous page">
@@ -722,6 +578,8 @@ nazwa (klucz) -&gt; wartość
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+=======
+>>>>>>> main
 </div>
                 </footer>
               
@@ -737,30 +595,21 @@ nazwa (klucz) -&gt; wartość
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<<<<<<< HEAD
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 4 - Ćwiczenia</a><ul class="visible nav section-nav flex-column">
+=======
+>>>>>>> main
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1">Zad 1</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2">Zad 2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3">Zad 3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4">Zad 4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5">Zad 5</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6">Zad 6</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#przykladowe-dane">Przykładowe dane</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7">Zad 7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przyklad-uzycia-funkcji">Przykład użycia funkcji</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przyklad-dzialania-funkcji">Przykład działania funkcji:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8">Zad 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9">Zad 9</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10">Zad 10</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

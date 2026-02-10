@@ -5,6 +5,7 @@ format: jb-book
 root: Mod0
 chapters:
 - file: Mod1
+<<<<<<< HEAD
 - file: Mod1_cw
 - file: Mod2
 - file: Mod2_cw
@@ -18,3 +19,5 @@ chapters:
 - file: Mod6_cw
 - file: Mod7
 - file: Mod7_cw
+=======
+>>>>>>> main

@@ -201,6 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
 
+<<<<<<< HEAD
 <li class="toctree-l1"><a class="reference internal" href="../Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
 
 
@@ -220,6 +221,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+=======
+>>>>>>> main
 </ul>
 
     </div>
@@ -471,7 +474,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>191 ms ± 4.67 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+=======
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;[x**2 for x in L]&#39;</span><span class="p">)</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py:2294,</span> in <span class="ni">InteractiveShell.run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2292</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2293</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2294</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2295</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\magics\execution.py:1166,</span> in <span class="ni">ExecutionMagics.timeit</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1163</span>         <span class="k">if</span> <span class="n">time_number</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1164</span>             <span class="k">break</span>
+<span class="ne">-&gt; </span><span class="mi">1166</span> <span class="n">all_runs</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">repeat</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1167</span> <span class="n">best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
+<span class="g g-Whitespace">   </span><span class="mi">1168</span> <span class="n">worst</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\timeit.py:205,</span> in <span class="ni">Timer.repeat</span><span class="nt">(self, repeat, number)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeat</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\IPython\core\magics\execution.py:156,</span> in <span class="ni">Timer.timeit</span><span class="nt">(self, number)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">156</span>     <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="k">if</span> <span class="n">gcold</span><span class="p">:</span>
+
+<span class="nn">File &lt;magic-timeit&gt;:1,</span> in <span class="ni">inner</span><span class="nt">(_it, _timer)</span>
+
+<span class="nn">File &lt;magic-timeit&gt;:1,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -483,7 +526,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>864 µs ± 26.2 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.23 ms ± 492 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -618,6 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[            nan, 1.98816103e+241, 7.79924747e-167,
         1.14253428e+243],
        [1.28625718e+248, 5.32904054e+233, 3.38460822e+125,
@@ -626,6 +674,12 @@ document.write(`
         2.06478139e+161],
        [3.65956036e+257, 4.45700540e-225, 9.28824150e+242,
         3.99285253e+252]])
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -641,8 +695,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.72738252 0.41426442 0.59156027 0.96984098]
 [0.68720035 0.22637429 0.92017006 0.11218228]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.69918791 0.76674737 0.56631079 0.68757242]
+[-1.35047303  0.01390029  0.53706806  0.29504758]
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -663,6 +722,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 986.,  990.,  947., 1028., 1008., 1020.,  975., 1005., 1029.,
         1012.]),
  array([1.94686420e-04, 1.00162945e-01, 2.00131204e-01, 3.00099463e-01,
@@ -672,6 +732,17 @@ document.write(`
 </pre></div>
 </div>
 <img alt="../_images/b9f78461e3c070b0ec2799e6a99caaa442ce3bf7cf6ae5300dbcf37495a33969.png" src="../_images/b9f78461e3c070b0ec2799e6a99caaa442ce3bf7cf6ae5300dbcf37495a33969.png" />
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([1011., 1018., 1036.,  944.,  977., 1026.,  999., 1026.,  970.,
+         993.]),
+ array([2.04593634e-05, 1.00008616e-01, 1.99996773e-01, 2.99984930e-01,
+        3.99973087e-01, 4.99961244e-01, 5.99949401e-01, 6.99937558e-01,
+        7.99925715e-01, 8.99913872e-01, 9.99902029e-01]),
+ &lt;a list of 10 Patch objects&gt;)
+</pre></div>
+</div>
+<img alt="../_images/3797dd1884b7c0dc9863e8acf9c94fd5de8fca9303beb0dcb61e7e23a7f5e1ea.png" src="../_images/3797dd1884b7c0dc9863e8acf9c94fd5de8fca9303beb0dcb61e7e23a7f5e1ea.png" />
+>>>>>>> main
 </div>
 </div>
 <div class="cell docutils container">
@@ -682,6 +753,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([   5.,   72.,  407., 1413., 2744., 2899., 1791.,  565.,   95.,
            9.]),
  array([-4.06769645, -3.27330789, -2.47891933, -1.68453077, -0.89014221,
@@ -691,6 +763,17 @@ document.write(`
 </pre></div>
 </div>
 <img alt="../_images/87c0cf8336e926347a29616d788fcf7b62e6d416591badeca66c8be353cdb93c.png" src="../_images/87c0cf8336e926347a29616d788fcf7b62e6d416591badeca66c8be353cdb93c.png" />
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  14.,   90.,  523., 1584., 2828., 2723., 1604.,  540.,   89.,
+           5.]),
+ array([-3.892551  , -3.11780034, -2.34304968, -1.56829903, -0.79354837,
+        -0.01879771,  0.75595294,  1.5307036 ,  2.30545426,  3.08020491,
+         3.85495557]),
+ &lt;a list of 10 Patch objects&gt;)
+</pre></div>
+</div>
+<img alt="../_images/9e3c16d3c6f90db96768c7eb195e4426c71f8b57905f8b5a427b14a8fd80b0cc.png" src="../_images/9e3c16d3c6f90db96768c7eb195e4426c71f8b57905f8b5a427b14a8fd80b0cc.png" />
+>>>>>>> main
 </div>
 </div>
 <div class="cell docutils container">
@@ -701,8 +784,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.57387798  3.73963581  0.78943749  0.51533293  4.76208199 54.34696986
  56.40914715 18.76586047 64.7451384  42.0721466 ]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[63.37342638 49.27292759  8.2364452  60.07604335 41.34151822 54.26891872
+ 42.25640924 44.41877996 12.84692661 26.36236616]
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -863,12 +951,21 @@ zwłaszcza w przypadku dużych zbiorów danych, dobrze jest wiedzieć, że ma si
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.16 0.5  0.87]
  [0.45 0.69 0.66]
  [0.19 0.34 0.97]]
 0.6898822353577414
 [0.45 0.69 0.66]
 [0.16 0.45 0.19]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.28 0.13 0.07]
+ [0.93 0.33 0.98]
+ [0.43 0.99 0.6 ]]
+0.3328493954691897
+[0.93 0.33 0.98]
+[0.28 0.93 0.43]
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -996,12 +1093,21 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16 12  2 19  6 19 18  5  0 15 17  1 16 16  6]
 ---
 [False  True False False  True False  True False  True  True False False
  False False  True]
 ---
 [12  6 18  0 15  6]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0 17  4 11 10 10 16 12  6  8 13 19  2  9  0]
+---
+[ True False False False False False False  True  True False False False
+ False  True  True]
+---
+[ 0 12  6  9  0]
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1016,8 +1122,13 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 7  4 15  9 14  8 19 19  2  2 17 18  8  1 12]
 [ 7  4 -1 -1 -1 -1 -1 -1  2  2 17 18  8  1 12]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20  2  6  9 14 12 12  7 18 15 11 12 11  5  6]
+[20  2 -1 -1 -1 -1 -1 -1 18 15 11 12 11  5  6]
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1090,6 +1201,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.79,  0.21,  0.65,  1.61],
        [-1.24, -0.99,  0.11,  1.24],
        [-0.98, -0.56, -0.39,  0.35],
@@ -1097,6 +1209,15 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
        [-0.8 ,  0.8 , -0.22,  1.06],
        [-0.9 ,  1.04,  1.17,  2.65],
        [ 0.46,  0.1 , -0.06,  0.64]])
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.63461377,  2.79997272,  0.52964158, -0.7139301 ],
+       [-1.69059933, -0.75370888, -0.62253936, -0.32066169],
+       [ 0.37622847, -0.79509545,  1.05696347,  0.88457756],
+       [-0.46513289, -0.04583942, -1.03684369, -1.18344634],
+       [-0.18695265, -0.18320797, -1.32478278,  0.54318545],
+       [-0.38811111,  1.05005478, -1.61222351,  0.25421114],
+       [ 0.76803209, -0.85109783, -0.35772493,  0.70410307]])
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1108,6 +1229,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ True, False, False, False],
        [ True,  True, False, False],
        [ True,  True,  True, False],
@@ -1115,6 +1237,15 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
        [ True, False,  True, False],
        [ True, False, False, False],
        [False, False,  True, False]])
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[False, False, False,  True],
+       [ True,  True,  True,  True],
+       [False,  True, False, False],
+       [ True,  True,  True,  True],
+       [ True,  True,  True, False],
+       [ True, False,  True, False],
+       [False,  True,  True, False]])
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1129,8 +1260,15 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.79, -1.24, -0.99, -0.98, -0.56, -0.39, -0.52, -0.04, -0.8 ,
        -0.22, -0.9 , -0.06])
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.7139301 , -1.69059933, -0.75370888, -0.62253936, -0.32066169,
+       -0.79509545, -0.46513289, -0.04583942, -1.03684369, -1.18344634,
+       -0.18695265, -0.18320797, -1.32478278, -0.38811111, -1.61222351,
+       -0.85109783, -0.35772493])
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1143,6 +1281,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ nan, 0.21, 0.65, 1.61],
        [ nan,  nan, 0.11, 1.24],
        [ nan,  nan,  nan, 0.35],
@@ -1150,6 +1289,15 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
        [ nan, 0.8 ,  nan, 1.06],
        [ nan, 1.04, 1.17, 2.65],
        [0.46, 0.1 ,  nan, 0.64]])
+=======
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.63461377, 2.79997272, 0.52964158,        nan],
+       [       nan,        nan,        nan,        nan],
+       [0.37622847,        nan, 1.05696347, 0.88457756],
+       [       nan,        nan,        nan,        nan],
+       [       nan,        nan,        nan, 0.54318545],
+       [       nan, 1.05005478,        nan, 0.25421114],
+       [0.76803209,        nan,        nan, 0.70410307]])
+>>>>>>> main
 </pre></div>
 </div>
 </div>
@@ -1164,7 +1312,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -1175,6 +1323,7 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </pre></div>
 </div>
 </div>
+<<<<<<< HEAD
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">UFuncTypeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
@@ -1185,6 +1334,8 @@ Macierz A [[ 1.  1.  1.  1.  1.  1.  1.  1.  1.  1.]
 </pre></div>
 </div>
 </div>
+=======
+>>>>>>> main
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

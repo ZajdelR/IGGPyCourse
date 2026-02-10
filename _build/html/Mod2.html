@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Moduł 2 - Podstawowe typy danych - 2024/2025 &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+    <title>Moduł 2 - Podstawowe typy danych &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
   
   
   
@@ -101,8 +101,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Mod2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+<<<<<<< HEAD
     <link rel="next" title="Moduł 2 - Ćwiczenia" href="Mod2_cw.html" />
     <link rel="prev" title="Moduł 1 - Ćwiczenia - 2025/2026" href="Mod1_cw.html" />
+=======
+>>>>>>> main
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,6 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
+<<<<<<< HEAD
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
 
@@ -224,6 +228,11 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+=======
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python</a></li>
+
+>>>>>>> main
 </ul>
 
     </div>
@@ -360,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Moduł 2 - Podstawowe typy danych - 2024/2025</h1>
+    <h1>Moduł 2 - Podstawowe typy danych</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,7 +401,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krotka">Krotka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-vs-krotka">Lista vs Krotka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set">set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekwencyjne-typy-danych">Sekwencyjne typy danych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacje-na-sekwencjach">Operacje na sekwencjach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</a></li>
@@ -413,8 +421,8 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <img src="./src/header.png"><hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="modul-2-podstawowe-typy-danych-2024-2025">
-<h1>Moduł 2 - Podstawowe typy danych - 2024/2025<a class="headerlink" href="#modul-2-podstawowe-typy-danych-2024-2025" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="modul-2-podstawowe-typy-danych">
+<h1>Moduł 2 - Podstawowe typy danych<a class="headerlink" href="#modul-2-podstawowe-typy-danych" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>typ całkowity (<em>int</em>)</p></li>
@@ -1729,61 +1737,6 @@ class range(object)
 </div>
 </div>
 </section>
-<section id="set">
-<h2>set<a class="headerlink" href="#set" title="Permalink to this heading">#</a></h2>
-<hr class="docutils" />
-<p>Set (zbiór) w Pythonie to nieuporządkowana kolekcja unikalnych elementów. Zbiór działa podobnie do matematycznego pojęcia zbioru, w którym każdy element może wystąpić tylko raz, a jego kolejność nie jest istotna.</p>
-<p>Kluczowe cechy set:</p>
-<ul class="simple">
-<li><p>Brak duplikatów: Elementy w zbiorze są unikalne – jeśli dodasz duplikat, będzie on ignorowany.</p></li>
-<li><p>Nieuporządkowane: Zbiory nie gwarantują zachowania kolejności elementów.</p></li>
-<li><p>Mutowalne: Można modyfikować zbiory, dodając lub usuwając elementy.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zbior_pusty</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-
-<span class="c1"># Tworzenie zbioru z elementami</span>
-<span class="n">zbior</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zbior</span><span class="p">)</span>  <span class="c1"># Wynik: {1, 2, 3, 4, 5}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zbior</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">zbior</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zbior</span><span class="p">)</span>  <span class="c1"># Wynik: {1, 2, 3, 4}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zbior</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-<span class="n">zbior</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zbior</span><span class="p">)</span>  <span class="c1"># Wynik: {1, 2, 4}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 4}
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="sekwencyjne-typy-danych">
 <h2>Sekwencyjne typy danych<a class="headerlink" href="#sekwencyjne-typy-danych" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
@@ -1791,11 +1744,10 @@ class range(object)
 <li><p><em>list</em> - dynamiczny ciąg zmiennych dowolnego typu</p></li>
 <li><p><em>tuple</em> - niezmienniczy ciąg zmiennych dowolnego typu</p></li>
 <li><p><em>range</em> - niezmienniczy ciąg liczba całkowitych</p></li>
-<li><p><em>set</em> - dynamiczny ciąg unikalnych elementow</p></li>
 <li><p><em>str</em> - niezmienniczy ciąg znaków</p></li>
 <li><p>(dla kompletności) są jeszcze binarne sekwencyjne typy danych: <em>bytes</em>, <em>bytearray</em>, <em>memoryview</em></p></li>
 </ul>
-<img src="./src/list_tuple_set.png"></section>
+</section>
 <section id="operacje-na-sekwencjach">
 <h2>Operacje na sekwencjach<a class="headerlink" href="#operacje-na-sekwencjach" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
@@ -2365,6 +2317,7 @@ class range(object)
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<<<<<<< HEAD
     <a class="left-prev"
        href="Mod1_cw.html"
        title="previous page">
@@ -2383,6 +2336,8 @@ class range(object)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+=======
+>>>>>>> main
 </div>
                 </footer>
               
@@ -2420,7 +2375,6 @@ class range(object)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krotka">Krotka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-vs-krotka">Lista vs Krotka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set">set</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sekwencyjne-typy-danych">Sekwencyjne typy danych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operacje-na-sekwencjach">Operacje na sekwencjach</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-wbudowane-dla-sekwencji">Funkcje wbudowane dla sekwencji</a></li>

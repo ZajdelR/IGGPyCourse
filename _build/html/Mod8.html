@@ -199,6 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<<<<<<< HEAD
 <li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
@@ -220,6 +221,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+=======
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python</a></li>
+
+>>>>>>> main
 </ul>
 
     </div>
@@ -373,7 +378,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podstawy-argparse">Podstawy argparse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaawansowany-argparse">Zaawansowany argparse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dostosowywanie-wartosci-wejsciowych-w-argumentach-i-opcjach">Dostosowywanie wartości wejściowych w argumentach i opcjach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#przyjmowanie-wielu-wartosci-wejsciowych">Przyjmowanie wielu wartości wejściowych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podawanie-wartosci-domyslnych">Podawanie wartości domyślnych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#okreslanie-listy-dozwolonych-wartosci-wejsciowych">Określanie listy dozwolonych wartości wejściowych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dostarczanie-i-dostosowywanie-komunikatow-pomocy-w-argumentach-i-opcjach">Dostarczanie i dostosowywanie komunikatów pomocy w argumentach i opcjach</a></li>
@@ -415,7 +419,13 @@ document.write(`
 <p>Wzorzec symboli wieloznacznych wykorzystuje głównie dwa następujące specjalne metaznaki:</p>
 <ul class="simple">
 <li><p>? - reprezentuje pojedynczy (dokładnie jeden) znak, łącznie ze spacją</p></li>
-<li><p>* - reprezentuje wiele (zero lub więcej) znaków, łącznie ze spacją.</p></li>
+<li><ul>
+<li><ul>
+<li><p>reprezentuje wiele (zero lub więcej) znaków, łącznie ze spacją.</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p>Ta prosta i intuicyjna składnia jest ogólnie dobrze znana użytkownikom, którzy mogą jej używać do wyszukiwania plików.</p>
 <p>Na przykład wzór <code class="docutils literal notranslate"><span class="pre">*day</span></code> pasuje do czegoś, po czym następuje day: np. Monday, Tuesday, Sunday.</p>
@@ -429,17 +439,13 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> - Lista wzorów oddzielona przecinkiem ,.</p></li>
 </ul>
 <p>Na przykład:</p>
-<p>Page <code class="docutils literal notranslate"><span class="pre">7[1-2]</span></code> pasuje <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">71</span></code> i <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">72</span></code> ale nie <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">73</span></code></p>
+<p>Page <code class="docutils literal notranslate"><span class="pre">7[1-2]</span></code> pasuje <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">71</span></code> i <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">72</span></code> ale nie <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">73</span></code> <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">73</span></code>naPage 73</p>
 <img src="./src/Mod8_wildcard3.png"><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">{71,72}</span></code> akceptuje Page 71 i Page 72 –&gt; nie zadziała w Powershell ls (Zadziała na czystym UNIXie)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">[!1][0-9]</span></code> nie pasuje Page 10, pasuje <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">20</span></code>, ale także pasuje <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">z2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">{71,72}</span></code> akceptuje Page 71 i Page 72</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">[!1][0-9]</span></code> nie pasuje Page 10, pasuje Page 20, ale także pasuje Page z2</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*Page</span> <span class="pre">{7[8-9],8[0-5]}*</span></code> dopasowuje dowolny tekst zawierający odniesienie Page 78-85, np. See Page 78/300 lub See Page 82/300, ale nie See Page 86/300</p></li>
 </ul>
-<img src="./src/Mod8_wildcard4.png"><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">{71,72}</span></code> akceptuje Page 71 i Page 72 –&gt; nie zadziała w Powershell ls</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Page71*,</span> <span class="pre">Page72*</span></code> &lt;– to zadziała na Powershell</p></li>
-</ul>
-</section>
+<img src="./src/Mod8_wildcard4.png"></section>
 <section id="glob">
 <h2>glob<a class="headerlink" href="#glob" title="Permalink to this heading">#</a></h2>
 <p>Możemy użyć globu do wyszukiwania określonego wzorca wśród plików, co jest bardziej przydatne, użyć symboli <code class="docutils literal notranslate"><span class="pre">Wildcards</span></code> do wyszukiwania plików, których nazwa pliku pasuje do określonego wzorca.</p>
@@ -488,6 +494,7 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
+<<<<<<< HEAD
 <span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:382,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
 <span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">elif</span> <span class="n">copy</span> <span class="ow">and</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
 <span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
@@ -518,6 +525,50 @@ document.write(`
 <span class="ne">--&gt; </span><span class="mi">507</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="n">objs_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs_list</span><span class="p">))</span>
+=======
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\util\_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:347,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="nd">@deprecate_nonkeyword_arguments</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_args</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;objs&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="n">objs</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">NDFrame</span><span class="p">]</span> <span class="o">|</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">NDFrame</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Series</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd">     Concatenate pandas objects along a particular axis with optional set logic</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd">     along the other axes.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="sd">     ValueError: Indexes have overlapping values: [&#39;a&#39;]</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">347</span>     <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>         <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>         <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>         <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+
+<span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\core\reshape\concat.py:404,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">404</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs</span><span class="p">))</span>
+>>>>>>> main
 
 <span class="ne">ValueError</span>: No objects to concatenate
 </pre></div>
@@ -648,8 +699,9 @@ titles.csv
 </section>
 <section id="podstawy-argparse">
 <h2>Podstawy argparse<a class="headerlink" href="#podstawy-argparse" title="Permalink to this heading">#</a></h2>
-<p>O wiele wygodniejszym sposobem tworzenia aplikacji CLI w Pythonie jest użycie modułu <code class="docutils literal notranslate"><span class="pre">argparse</span></code>, który znajduje się w standardowej bibliotece. Moduł ten został po raz pierwszy wydany w języku Python 3.2 i umożliwia szybkie tworzenie aplikacji CLI bez instalowania bibliotek innych firm, takich jak <code class="docutils literal notranslate"><span class="pre">Typer</span></code> lub <code class="docutils literal notranslate"><span class="pre">Click</span></code>.</p>
-<p>Jako przykaad możmyz użyć argparse, ab poprawić poprzedni skrypt:</p>
+<p>O wiele wygodniejszym sposobem tworzenia aplikacji CLI w Pythonie jest użycie modułu <code class="docutils literal notranslate"><span class="pre">argparse</span></code>, który znajduje się w standardowej bibliotece. Moduł ten został po raz pierwszy wydany w języku Python 3.2 i umożliwia szybkie tworzenie aplikacji CLI bez instalowania bibliotek innych firm, takich jak <code class="docutils literal notranslate"><span class="pre">Typer</span></code> lub <code class="docutils literal notranslate"><span class="pre">Click</span></code>.
+.w argumentów.
+Jako przykł<code class="docutils literal notranslate"><span class="pre">ad</span> <span class="pre">możes</span></code>z użyć argparse, abypoprzedni skrypt:ępującego kodu:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> &quot;./tmp/argparse_example.py&quot;
@@ -1075,15 +1127,13 @@ argparse_divide.py: error: argument --divisor: invalid int value: &#39;two&#39;
 </div>
 </div>
 </div>
-</section>
-<section id="przyjmowanie-wielu-wartosci-wejsciowych">
-<h2>Przyjmowanie wielu wartości wejściowych<a class="headerlink" href="#przyjmowanie-wielu-wartosci-wejsciowych" title="Permalink to this heading">#</a></h2>
-<p>Przyjmowanie wielu wartości w argumentach i opcjach może być wymagane w niektórych aplikacjach CLI. Domyślnie argparse zakłada, że będziesz oczekiwać pojedynczej wartości dla każdego argumentu lub opcji. Możesz zmodyfikować to zachowanie za pomocą argumentu nargs funkcji .add_argument().</p>
-<p>Argument na args informuje argparse, że podstawowy argument może przyjmować zero lub więcej wartości wejściowych w zależności od konkretnej wartości przypisanej do nargs. Jeśli chcesz, aby argument lub opcja akceptowała stałą liczbę wartości wejściowych, możesz ustawić nargs na liczbę całkowitą. Jeśli potrzebujesz bardziej elastycznych zachowań, nargs jest dla Ciebie rozwiązaniem, ponieważ akceptuje również następujące wartośc</p>
+<p>##Przyjmowanie wielu wartości wejściowych</p>
+<p>Przyjmowanie wielu wartości w argumentach i opcjach może być wymagane w niektórych aplikacjach CLI. Domyślnie argparse zakłada, że będziesz oczekiwać pojedynczej wartości dla każdego argumentu lub opcji. Możesz zmodyfikować to zachowanie za pomocą argumentu<code class="docutils literal notranslate"> <span class="pre">nagr</span></code>s funkcji .add_argument().</p>
+<p>Argume<code class="docutils literal notranslate"><span class="pre">nt</span> <span class="pre">na</span></code>rgs informu<code class="docutils literal notranslate"><span class="pre">je</span> <span class="pre">argpa</span></code>rse, że podstawowy argument może przyjmować zero lub więcej wartości wejściowych w zależności od konkretnej wartości przypisanej <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">na</span></code>rgs. Jeśli chcesz, aby argument lub opcja akceptowała stałą liczbę wartości wejściowych, możesz ustawić nargs na liczbę całkowitą. Jeśli potrzebujesz bardziej elastycznych zachowań, nargs jest dla Ciebie rozwiązaniem, ponieważ akceptuje również następujące wartoś</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> - Pojedyncza wartość, która może być opcjonalna</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> - Zero lub wiele wartości</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - Jedna lub wiele wartościci</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> - Jedna lub wiele wartościci:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1532,8 +1582,8 @@ size.py: error: argument --size: invalid choice: &#39;A&#39; (choose from &#39;S
 <section id="dostarczanie-i-dostosowywanie-komunikatow-pomocy-w-argumentach-i-opcjach">
 <h2>Dostarczanie i dostosowywanie komunikatów pomocy w argumentach i opcjach<a class="headerlink" href="#dostarczanie-i-dostosowywanie-komunikatow-pomocy-w-argumentach-i-opcjach" title="Permalink to this heading">#</a></h2>
 <hr class="docutils" />
-<p>Jak już wiesz, wspaniałą cechą argparse jest to, że generuje automatyczne komunikaty dotyczące użycia i pomocy dla twoich aplikacji. Dostęp do tych komunikatów można uzyskać za pomocą flagi -h lub –help, która jest domyślnie zawarta w każdym interfejsie wiersza polecenia argparse.</p>
-<p>Do tego momentu wiesz już, jak dodawać opisy i epilogi do swoich aplikacji. W tej sekcji będziesz kontynuować ulepszanie komunikatów pomocy i użytkowania aplikacji, udostępniając ulepszone komunikaty dla poszczególnych argumentów i opcji wiersza poleceń. Aby to zrobić, użyjesz argument <code class="docutils literal notranslate"><span class="pre">help</span></code> dla funkcjicji .add_argument().</p>
+<p>Jak już wiesz, wspaniałą cechą argparse jest to, że generuje automatyczne komunikaty dotyczące użycia i pomocy dla twoich aplikacji. Dostęp do tych komunikatów można uzyskać za pomocą flagi -h lub –help, która jest domyślnie zawarta w każdym interfejsie wiersza polecenia<code class="docutils literal notranslate"> <span class="pre">argpars</span></code>e.</p>
+<p>Do tego momentu wiesz już, jak dodawać opisy i epilogi do swoich aplikacji. W tej sekcji będziesz kontynuować ulepszanie komunikatów pomocy i użytkowania aplikacji, udostępniając ulepszone komunikaty dla poszczególnych argumentów i opcji wiersza poleceń. Aby to zrobić, użyjesz argumut<code class="docutils literal notranslate"><span class="pre">help</span></code> dla funkcjicji .add_argument().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tmp/argparse_example_v4.py
@@ -1770,7 +1820,6 @@ Thanks for using ls! :)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podstawy-argparse">Podstawy argparse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zaawansowany-argparse">Zaawansowany argparse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dostosowywanie-wartosci-wejsciowych-w-argumentach-i-opcjach">Dostosowywanie wartości wejściowych w argumentach i opcjach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#przyjmowanie-wielu-wartosci-wejsciowych">Przyjmowanie wielu wartości wejściowych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#podawanie-wartosci-domyslnych">Podawanie wartości domyślnych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#okreslanie-listy-dozwolonych-wartosci-wejsciowych">Określanie listy dozwolonych wartości wejściowych</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dostarczanie-i-dostosowywanie-komunikatow-pomocy-w-argumentach-i-opcjach">Dostarczanie i dostosowywanie komunikatów pomocy w argumentach i opcjach</a></li>
