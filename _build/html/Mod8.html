@@ -40,12 +40,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/vendor/fontawesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -76,6 +78,7 @@
     <script src="_static/language_data.js"></script>
     <script src="_static/searchtools.js"></script>
     <script src="_static/sphinx-thebe.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/underscore-1.13.1.js"></script>
     <script src="_static/underscore.js"></script>
@@ -83,6 +86,8 @@
     <script src="_static/scripts/bootstrap.js"></script>
     <script src="_static/scripts/pydata-sphinx-theme.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js"></script>
+    <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -194,8 +199,32 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<<<<<<< HEAD
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące - 2024/2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod5.html">Moduł 5 - Macierze</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod5_cw.html">Moduł 5 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod6.html">Moduł 6 - Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod6_cw.html">Moduł 6 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod7.html">Moduł 7 - Wizualizacje z matplotlibem</a></li>
+
+
+
+=======
 <li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python</a></li>
 
+>>>>>>> main
 </ul>
 
     </div>
@@ -465,6 +494,38 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
+<<<<<<< HEAD
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:382,</span> in <span class="ni">concat</span><span class="nt">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">elif</span> <span class="n">copy</span> <span class="ow">and</span> <span class="n">using_copy_on_write</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">copy</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">382</span> <span class="n">op</span> <span class="o">=</span> <span class="n">_Concatenator</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">objs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">ignore_index</span><span class="o">=</span><span class="n">ignore_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">keys</span><span class="o">=</span><span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">verify_integrity</span><span class="o">=</span><span class="n">verify_integrity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">395</span> <span class="k">return</span> <span class="n">op</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:445,</span> in <span class="ni">_Concatenator.__init__</span><span class="nt">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="bp">self</span><span class="o">.</span><span class="n">verify_integrity</span> <span class="o">=</span> <span class="n">verify_integrity</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span> <span class="o">=</span> <span class="n">copy</span>
+<span class="ne">--&gt; </span><span class="mi">445</span> <span class="n">objs</span><span class="p">,</span> <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_keys_and_objs</span><span class="p">(</span><span class="n">objs</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span> <span class="c1"># figure out what our result ndim is going to be</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="n">ndims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_ndims</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python39\site-packages\pandas\core\reshape\concat.py:507,</span> in <span class="ni">_Concatenator._clean_keys_and_objs</span><span class="nt">(self, objs, keys)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>     <span class="n">objs_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">objs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objs_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">507</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="n">objs_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs_list</span><span class="p">))</span>
+=======
 <span class="nn">File C:\ProgramData\Anaconda3\lib\site-packages\pandas\util\_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
@@ -507,6 +568,7 @@ document.write(`
 <span class="ne">--&gt; </span><span class="mi">404</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No objects to concatenate&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">407</span>     <span class="n">objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">com</span><span class="o">.</span><span class="n">not_none</span><span class="p">(</span><span class="o">*</span><span class="n">objs</span><span class="p">))</span>
+>>>>>>> main
 
 <span class="ne">ValueError</span>: No objects to concatenate
 </pre></div>

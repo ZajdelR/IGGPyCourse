@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_592ccce00932c0076ffae0244828c8ac {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_592ccce00932c0076ffae0244828c8ac" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_592ccce00932c0076ffae0244828c8ac = L.map(
+                "map_592ccce00932c0076ffae0244828c8ac",
+                {
+                    center: [37.7749, -122.4194],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_988af958f30f945926e4530f5fcf614d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_988af958f30f945926e4530f5fcf614d.addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            var marker_275ad2a7c411a5a7f8a942029db00eec = L.marker(
+                [37.7749, -122.4194],
+                {}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+        var popup_570de292723015bf1e20c0797bdf7cba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_521858b0d2acf9142c4ede92af4dd1bc = $(`<div id="html_521858b0d2acf9142c4ede92af4dd1bc" style="width: 100.0%; height: 100.0%;"><b>Factory</b></div>`)[0];
+                popup_570de292723015bf1e20c0797bdf7cba.setContent(html_521858b0d2acf9142c4ede92af4dd1bc);
+            
+        
+
+        marker_275ad2a7c411a5a7f8a942029db00eec.bindPopup(popup_570de292723015bf1e20c0797bdf7cba)
+        ;
+
+        
+    
+    
+            marker_275ad2a7c411a5a7f8a942029db00eec.bindTooltip(
+                `<div>
+                     Factory
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c0d364025f521cf156db18bd276077d2 = L.marker(
+                [37.8044, -122.2711],
+                {}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+        var popup_e1657da219b76be6b41e63a222ea278c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3b5b67886f11b391742340afb345630 = $(`<div id="html_c3b5b67886f11b391742340afb345630" style="width: 100.0%; height: 100.0%;"><b>Warehouse 1</b></div>`)[0];
+                popup_e1657da219b76be6b41e63a222ea278c.setContent(html_c3b5b67886f11b391742340afb345630);
+            
+        
+
+        marker_c0d364025f521cf156db18bd276077d2.bindPopup(popup_e1657da219b76be6b41e63a222ea278c)
+        ;
+
+        
+    
+    
+            marker_c0d364025f521cf156db18bd276077d2.bindTooltip(
+                `<div>
+                     Warehouse 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9a81260d71d68e8848ba14f523e8002 = L.marker(
+                [37.6879, -122.4702],
+                {}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+        var popup_7f13a545f3af00a19a3eba5e263c09bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_78a5b185301f47ace9792675e3e1f453 = $(`<div id="html_78a5b185301f47ace9792675e3e1f453" style="width: 100.0%; height: 100.0%;"><b>Warehouse 2</b></div>`)[0];
+                popup_7f13a545f3af00a19a3eba5e263c09bb.setContent(html_78a5b185301f47ace9792675e3e1f453);
+            
+        
+
+        marker_a9a81260d71d68e8848ba14f523e8002.bindPopup(popup_7f13a545f3af00a19a3eba5e263c09bb)
+        ;
+
+        
+    
+    
+            marker_a9a81260d71d68e8848ba14f523e8002.bindTooltip(
+                `<div>
+                     Warehouse 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bba02763ed549bf061240c5a8ce4f4f4 = L.marker(
+                [37.7749, -122.4892],
+                {}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+        var popup_40bd3d56ecc5da7f24c8938a36ec62af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_246d387812966e9e5952b74873451098 = $(`<div id="html_246d387812966e9e5952b74873451098" style="width: 100.0%; height: 100.0%;"><b>Retailer 1</b></div>`)[0];
+                popup_40bd3d56ecc5da7f24c8938a36ec62af.setContent(html_246d387812966e9e5952b74873451098);
+            
+        
+
+        marker_bba02763ed549bf061240c5a8ce4f4f4.bindPopup(popup_40bd3d56ecc5da7f24c8938a36ec62af)
+        ;
+
+        
+    
+    
+            marker_bba02763ed549bf061240c5a8ce4f4f4.bindTooltip(
+                `<div>
+                     Retailer 1
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9223b56cdb1cc4aef6ace496febba6e7 = L.marker(
+                [37.7328, -122.5054],
+                {}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+        var popup_e0781ca9a0569d04c456768466ecfd61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_21baa2e451a651253b714f0d442d5019 = $(`<div id="html_21baa2e451a651253b714f0d442d5019" style="width: 100.0%; height: 100.0%;"><b>Retailer 2</b></div>`)[0];
+                popup_e0781ca9a0569d04c456768466ecfd61.setContent(html_21baa2e451a651253b714f0d442d5019);
+            
+        
+
+        marker_9223b56cdb1cc4aef6ace496febba6e7.bindPopup(popup_e0781ca9a0569d04c456768466ecfd61)
+        ;
+
+        
+    
+    
+            marker_9223b56cdb1cc4aef6ace496febba6e7.bindTooltip(
+                `<div>
+                     Retailer 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d2713d50b6256deb8b02c775f9a5e568 = L.polyline(
+                [[37.7749, -122.4194], [37.8044, -122.2711]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_d2713d50b6256deb8b02c775f9a5e568.bindTooltip(
+                `<div>
+                     Factory to Warehouse 1: 10 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_934b68169b2dc2a02459ef02123fcf7e = L.polyline(
+                [[37.7749, -122.4194], [37.6879, -122.4702]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_934b68169b2dc2a02459ef02123fcf7e.bindTooltip(
+                `<div>
+                     Factory to Warehouse 2: 15 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f45c41b8cf45e3ab552e75422911ea2d = L.polyline(
+                [[37.8044, -122.2711], [37.7749, -122.4892]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_f45c41b8cf45e3ab552e75422911ea2d.bindTooltip(
+                `<div>
+                     Warehouse 1 to Retailer 1: 8 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_110338dfe82afae6768798a0fc5969e8 = L.polyline(
+                [[37.8044, -122.2711], [37.7328, -122.5054]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_110338dfe82afae6768798a0fc5969e8.bindTooltip(
+                `<div>
+                     Warehouse 1 to Retailer 2: 12 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_23385f117de79c7b4a80fb6b577b113f = L.polyline(
+                [[37.6879, -122.4702], [37.7749, -122.4892]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_23385f117de79c7b4a80fb6b577b113f.bindTooltip(
+                `<div>
+                     Warehouse 2 to Retailer 1: 10 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_1b23c75ea885af8e151f99a5d9643627 = L.polyline(
+                [[37.6879, -122.4702], [37.7328, -122.5054]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_1b23c75ea885af8e151f99a5d9643627.bindTooltip(
+                `<div>
+                     Warehouse 2 to Retailer 2: 5 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_cd38518c433376e179bc44d75a682fe0 = L.polyline(
+                [[37.7749, -122.4194], [37.6879, -122.4702]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_cd38518c433376e179bc44d75a682fe0.bindTooltip(
+                `<div>
+                     Optimized: Factory to Warehouse 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d563785792901092f79b513c5c26984b = L.polyline(
+                [[37.6879, -122.4702], [37.7328, -122.5054]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_592ccce00932c0076ffae0244828c8ac);
+        
+    
+            poly_line_d563785792901092f79b513c5c26984b.bindTooltip(
+                `<div>
+                     Optimized: Warehouse 2 to Retailer 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

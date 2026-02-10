@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "C:\Users\kamil\AppData\Roaming\Python\Python39\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\ProgramData\Anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Creating a simple neural network using TensorFlow to classify the Iris dataset
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+import tensorflow as tf
+
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target.reshape(-1, 1)
+
+# One-hot encode the target variable
+encoder = OneHotEncoder(sparse=False)
+y_onehot = encoder.fit_transform(y)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)
+
+# Create a simple neural network model
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(10, activation='relu', input_shape=(X_train.shape[1],)),
+    tf.keras.layers.Dense(3, activation='softmax')  # Output layer for 3 classes
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Train the model
+history = model.fit(X_train, y_train, epochs=10, batch_size=5, validation_split=0.2)
+
+# Evaluate the model
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f"Test Accuracy: {accuracy:.2f}")
+
+# Plot training history
+plt.plot(history.history['accuracy'], label='Training Accuracy')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.title('Model Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.show()
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mTypeError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [11][0m, in [0;36m<cell line: 16>[1;34m()[0m
+[0;32m     13[0m y [38;5;241m=[39m iris[38;5;241m.[39mtarget[38;5;241m.[39mreshape([38;5;241m-[39m[38;5;241m1[39m, [38;5;241m1[39m)
+[0;32m     15[0m [38;5;66;03m# One-hot encode the target variable[39;00m
+[1;32m---> 16[0m encoder [38;5;241m=[39m [43mOneHotEncoder[49m[43m([49m[43msparse[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m
+[0;32m     17[0m y_onehot [38;5;241m=[39m encoder[38;5;241m.[39mfit_transform(y)
+[0;32m     19[0m [38;5;66;03m# Split the data into training and testing sets[39;00m
+
+[1;31mTypeError[0m: __init__() got an unexpected keyword argument 'sparse'
+TypeError: __init__() got an unexpected keyword argument 'sparse'
+
