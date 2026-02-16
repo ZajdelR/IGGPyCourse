@@ -3,3 +3,5 @@ matplotlib
 numpy
 skyfield
 cartopy
+ghp-import
+notebook
