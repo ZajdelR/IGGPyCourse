@@ -1,0 +1,1276 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Moduł 1 - Środowisko Python - 2025/2026 &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Mod1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Moduł 1 - Ćwiczenia - 2025/2026" href="Mod1_cw.html" />
+    <link rel="prev" title="Wprowadzenie" href="Mod0.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Mod0.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Mod1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Moduł 1 - Środowisko Python - 2025/2026</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 1 - Środowisko Python - 2025/2026</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dlaczego-python">Dlaczego Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#najwazniejsze-cechy-jezyka">Najważniejsze cechy języka</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-oznacza-wysoki-poziom">Co oznacza “wysoki poziom”?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretowany-vs-kompilowany">Interpretowany vs. kompilowany</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programowanie-obiektowe-w-praktyce">Programowanie obiektowe w praktyce</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekosystem-bibliotek">Ekosystem bibliotek</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-kiedy-nie">Python - Kiedy nie?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tryb-interaktywny-konsola">Tryb interaktywny - konsola</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tryb-skryptowy">Tryb skryptowy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pisac-swoj-kod">Jak pisać swój kod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code">Visual Studio Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-wybrac">Co wybrać</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moj-komputer-nie-rozumie-pythona">Mój komputer nie rozumie Pythona</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-powershell-sciaga-polecen">Terminal / PowerShell – ściąga poleceń</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-srodowiska">Test środowiska</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#najczestsze-problemy-i-rozwiazania">Najczęstsze problemy i rozwiązania</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-a-metody">Funkcje a metody</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metody-a-atrybuty">Metody a atrybuty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importy">Importy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Importy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatory-binarne">Operatory binarne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu">Czytelność kodu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wciecia">Wcięcia</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze">Komentarze</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze-blokowe">Komentarze blokowe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze-w-tej-samej-linii-co-kod">Komentarze w tej samej linii co kod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentowanie-funkcji-modulow">Dokumentowanie funkcji/modułów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unikamy">Unikamy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niektorych-znakow">Niektórych znaków</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompatybilnosc-asci">Kompatybilność ASCI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nazwy-klas">Nazwy Klas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-i-nazwy-zmiennych">Funkcje i nazwy zmiennych</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argumnety-funkcji">Argumnety funkcji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stale">STAŁE</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu-poprawnie">Czytelność kodu - Poprawnie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu-niepoprawnie">Czytelność kodu - Niepoprawnie</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="_images/header.png" /></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="modul-1-srodowisko-python-2025-2026">
+<h1>Moduł 1 - Środowisko Python - 2025/2026<a class="headerlink" href="#modul-1-srodowisko-python-2025-2026" title="Permalink to this heading">#</a></h1>
+<p>Ten moduł otwiera kurs dla kierunku <em>Satellite and Space Data Engineering</em>. Skupiamy się na wyborze środowiska pracy, konfiguracji narzędzi oraz pierwszym uruchomieniu kodu, który będzie przetwarzał dane satelitarne i telemetryczne. Po ukończeniu modułu będziesz umiał przygotować komputer lokalny lub środowisko w chmurze do zadań takich jak pobieranie scen Sentinel, tworzenie modeli orbity czy analizę chmur punktów.</p>
+<section id="dlaczego-python">
+<h2>Dlaczego Python?<a class="headerlink" href="#dlaczego-python" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Python łączy prostą składnię z rozbudowanym ekosystemem bibliotek, dzięki czemu już w pierwszym tygodniu możesz pobrać dane z API, policzyć parametry orbity i przygotować wykresy. Ten moduł pokazuje, jak skonfigurować narzędzia, które wykorzystasz w dalszych częściach kursu.</p>
+<p>Najważniejsze atuty:</p>
+<ul class="simple">
+<li><p><strong>szybki start</strong> – interaktywny interpreter pozwala testować obliczenia orbitalne i prototypy filtrów danych;</p></li>
+<li><p><strong>bogate biblioteki</strong> – <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">satpy</span></code>, <code class="docutils literal notranslate"><span class="pre">sgp4</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproj</span></code> są dostępne w jednym środowisku;</p></li>
+<li><p><strong>przenośność</strong> – ten sam kod uruchomisz lokalnie, w Google Colab lub na serwerze misji.</p></li>
+</ul>
+<p>W kolejnych sekcjach skupimy się na tym, jak te cechy przełożyć na praktyczne workflow: tryby uruchamiania, wybór IDE i konfigurację środowiska.</p>
+<p><img alt="" src="_images/python-and-zope-an-introduction-may-2004-3-638.jpg" /></p>
+</section>
+<section id="najwazniejsze-cechy-jezyka">
+<h2>Najważniejsze cechy języka<a class="headerlink" href="#najwazniejsze-cechy-jezyka" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>wysoki poziom</strong> – skupiasz się na algorytmie i danych zamiast na zarządzaniu pamięcią;</p></li>
+<li><p><strong>interpretowany</strong> – możesz uruchomić fragment kodu od razu w konsoli lub notatniku;</p></li>
+<li><p><strong>wieloparadygmatowy</strong> – obsługuje styl imperatywny, funkcyjny i obiektowy;</p></li>
+<li><p><strong>bogata standardowa biblioteka</strong> – moduły do pracy z datami, plikami, siecią czy systemem operacyjnym są dostępne od ręki.</p></li>
+</ul>
+<p>Zapamiętaj te właściwości, bo wpływają na sposób, w jaki będziemy pisać i uruchamiać kod w dalszej części kursu.</p>
+<section id="co-oznacza-wysoki-poziom">
+<h3>Co oznacza “wysoki poziom”?<a class="headerlink" href="#co-oznacza-wysoki-poziom" title="Permalink to this heading">#</a></h3>
+<p>Nie musisz samodzielnie zarządzać pamięcią ani deklarować typów zmiennych jak w C/C++. Python dba o alokację i zwalnianie zasobów, dzięki czemu szybciej tworzysz prototypy (np. parser TLE czy konwerter współrzędnych).</p>
+</section>
+<section id="interpretowany-vs-kompilowany">
+<h3>Interpretowany vs. kompilowany<a class="headerlink" href="#interpretowany-vs-kompilowany" title="Permalink to this heading">#</a></h3>
+<p>W językach kompilowanych (C/C++) kod tłumaczysz do postaci binarnej przed uruchomieniem. W Pythonie interpreter czyta kod linia po linii i wykonuje go natychmiast. To ułatwia pracę w notatnikach i terminalu, ale oznacza, że warto pilnować jakości kodu (testy, czytelność), by uniknąć błędów w czasie wykonywania.</p>
+</section>
+<section id="programowanie-obiektowe-w-praktyce">
+<h3>Programowanie obiektowe w praktyce<a class="headerlink" href="#programowanie-obiektowe-w-praktyce" title="Permalink to this heading">#</a></h3>
+<p>Python obsługuje paradygmat obiektowy – wszystko jest instancją klasy, ma atrybuty i metody. Już w Module 5 zbudujesz własne klasy opisujące instrumenty czy zadania przetwarzania danych. Na razie zapamiętaj, że funkcje można wywoływać zarówno globalnie (<code class="docutils literal notranslate"><span class="pre">len(lista)</span></code>) jak i na obiektach (<code class="docutils literal notranslate"><span class="pre">lista.append(x)</span></code>).</p>
+<p><img alt="Semantyka kodu" src="_images/Semantyka.png" /></p>
+<p><em>Semantyka kodu</em> – pamiętaj, że przypisania, typy i operacje odnoszą się do obiektów wskazywanych przez nazwy. Ten schemat przyda się, gdy będziemy śledzić referencje w listach czy słownikach.</p>
+<p><img alt="Przypisanie w Pythonie" src="_images/Przypisanie.png" /></p>
+</section>
+</section>
+<section id="ekosystem-bibliotek">
+<h2>Ekosystem bibliotek<a class="headerlink" href="#ekosystem-bibliotek" title="Permalink to this heading">#</a></h2>
+<p>Python zyskał popularność dzięki potędze bibliotek: każde zadanie – od pobierania danych satelitarnych (<code class="docutils literal notranslate"><span class="pre">sentinelsat</span></code>), przez obróbkę rastrów (<code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">xarray</span></code>), po uczenie maszynowe (<code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, <code class="docutils literal notranslate"><span class="pre">torch</span></code>) – ma gotowe narzędzia. Instalując dystrybucję Anaconda/conda-forge otrzymujesz większość z nich jednym poleceniem. To dlatego Python jest naszym domyślnym językiem na kierunku.</p>
+</section>
+<section id="python-kiedy-nie">
+<h2>Python - Kiedy nie?<a class="headerlink" href="#python-kiedy-nie" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Podczas gdy Python jest świetnym środowiskiem w wielu skryptowych i analitycznych zastosowaniach, nie jest to zawsze najbardziej optymalne rozwiązanie.</p>
+<p>Uogólniając, Python nie sprawdzi się w:</p>
+<ul class="simple">
+<li><p>Aplikacjach o bardzo bardzo dużej złożoności obliczeniowej i strukturalnej</p></li>
+</ul>
+<p>Często języki kompilowane okażą się wydajniejsze niż Python np. Java, C++</p>
+<ul class="simple">
+<li><p>Pytanie co jest cenniejsze, czas programisty czy CPU?</p></li>
+</ul>
+</section>
+<section id="tryb-interaktywny-konsola">
+<h2>Tryb interaktywny - konsola<a class="headerlink" href="#tryb-interaktywny-konsola" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Gdy chcesz szybko sprawdzić fragment kodu (np. obliczyć nachylenie orbity z danych TLE albo przetestować parser pliku GeoJSON), uruchom interpreter w terminalu/PowerShellu.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+Python 3.11.8 |conda-forge| (main, Jan 12 2025, 10:11:00)
+[GCC 11.3.0] on linux
+&gt;&gt;&gt; satellites = {&quot;S2A&quot;: &quot;Sentinel-2A&quot;, &quot;S2B&quot;: &quot;Sentinel-2B&quot;, &quot;L8&quot;: &quot;Landsat 8&quot;}
+&gt;&gt;&gt; for code, name in satellites.items():
+...     print(f&quot;{code}: {name}&quot;)
+...
+S2A: Sentinel-2A
+S2B: Sentinel-2B
+L8: Landsat 8
+&gt;&gt;&gt; from math import radians, cos
+&gt;&gt;&gt; inclination = 98.62
+&gt;&gt;&gt; print(f&quot;cos(i) = {cos(radians(inclination)):.3f}&quot;)
+cos(i) = -0.155
+&gt;&gt;&gt; exit()
+</pre></div>
+</div>
+<p>To najszybszy sposób na testowanie funkcji i bibliotek (<code class="docutils literal notranslate"><span class="pre">sgp4</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproj</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>) zanim włączysz je do większego projektu.</p>
+</section>
+<section id="tryb-skryptowy">
+<h2>Tryb skryptowy<a class="headerlink" href="#tryb-skryptowy" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Gdy automatyzujesz zadania (np. cykliczne pobieranie scen Sentinel-2 lub raporty GNSS), zapisuj kod w pliku <code class="docutils literal notranslate"><span class="pre">.py</span></code> i uruchamiaj go jako skrypt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python fetch_scene.py --mission S2A --aoi data/polygons/wroclaw.geojson --date 2025-03-01
+Pobieram produkt S2A_MSIL2A_20250301T095021...
+Zapisano pliki w katalogu data/raw/S2A/2025-03-01
+</pre></div>
+</div>
+<p>W tym trybie korzystasz z argumentów wiersza poleceń, harmonogramów (np. <code class="docutils literal notranslate"><span class="pre">cron</span></code>, Harmonogram zadań Windows) i modułów takich jak <code class="docutils literal notranslate"><span class="pre">argparse</span></code>, co będzie kluczowe przy projektach w Modułach 8‑9.</p>
+<p><img alt="" src="_images/Mod1_skrypt1.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python skala_ocen.py 
+5.0 bardzo dobry
+4.5 dobry plus
+4.0 dobry
+3.5 dostateczny plus
+3.0 dostateczny
+2.0 niedostateczny
+</pre></div>
+</div>
+<p><img alt="" src="_images/Mod1_argparse.png" /></p>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python argparse.py
+usage: argparse_basic.py [-h] argument1
+argparse_basic.py: error: the following arguments are required: argument1
+
+$ python argparse.py &quot;Hello, world!&quot;
+Hello, world!
+
+$ python argparse.py 3.14159
+3.14159
+</pre></div>
+</div>
+</section>
+<section id="jak-pisac-swoj-kod">
+<h2>Jak pisać swój kod<a class="headerlink" href="#jak-pisac-swoj-kod" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Pracując nad analizą danych, tworzeniem skryptów czy programów, potrzebujemy narzędzi, które pozwolą nam swobodnie posługiwać się danym językiem, sprawnie operować zmiennymi i procesem, zwizualizować dane itd.</p>
+<p>Skrypt możemy napisać w najprostszym edytorze tekstu t.jk. notatnik czy Notepad++</p>
+<p>Istnieją notomiast aplikacje dedykowane do pracy z kodem - tzw. IDE - zintegrowane środowisko programistyczne (Integrated Development Environment)</p>
+<h1>Co to jest IDE?</h1>
+<p>Integrated Development Environment to środowisko programistyczne, które służy do tworzenia, modyfikowania i testowania oprogramowania/ kodu źródłowego. Wiele firm oferuje różne środowiska, zarówno darmowe, jak również zaawanosowane płatne wersje.</p>
+<p>IDE umozliwia między innymi:</p>
+<ul>
+    <li>Szybką i wygodną edycję kodu</li>
+    <li>Debugowanie kodu (śledzenie wartości zmiennych, zatrzymywanie kodu w dowolnym miejscu)</li>
+    <li>Podpowiedzi nazw funkcji i zmiennych</li>
+    <li>Dynamiczne sprawdzanie składni</li>
+</ul>
+<p>Python domyślnie instaluje proste środowisko <b>IDLE</b>, które nie ma zbyt wielu funkcjonalności.</p>
+</section>
+<section id="jupyter">
+<h2>Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Jupyter Notebook to lekkie, webowe środowisko, w którym powstają wszystkie moduły kursu. Każdy segment (Mod0‑Mod9) to osobny notatnik <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>, dzięki czemu masz komplet kodu, opisów i wyników w jednym pliku. W kontekście danych satelitarnych notatnik pozwala połączyć kod pobierający scenę z Copernicus Hub, opis metod przetwarzania oraz wizualizacje (np. mapy NDVI) w jednym miejscu.</p>
+<p>Zalecany workflow:</p>
+<ol class="arabic simple">
+<li><p>W repozytorium otwórz notatnik modułu (<code class="docutils literal notranslate"><span class="pre">Mod1.ipynb</span></code>) w Jupyter Lab (<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>).</p></li>
+<li><p>Uruchamiaj komórki po kolei, zapisując konfigurację środowiska i wyniki (np. wersje bibliotek <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>).</p></li>
+<li><p>Dodawaj komentarze/komórki Markdown, aby dokumentować decyzje z zadań (np. dlaczego dobrałeś konkretną projekcję).</p></li>
+</ol>
+<p>Ta forma świetnie sprawdza się przy eksploracji danych i przygotowaniu raportów misji.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="google-colab">
+<h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Google Colaboratory (“Colab”) to hostowany notatnik kompatybilny z Jupyterem. Możesz uruchamiać moduły bez instalacji lokalnej – otwierasz <code class="docutils literal notranslate"><span class="pre">ModX.ipynb</span></code> z repozytorium, zapisujesz jego kopię na Dysku Google i zaczynasz pracę.</p>
+<p>Dlaczego Colab przydaje się w zadaniach satelitarnych?</p>
+<ul class="simple">
+<li><p>szybki dostęp do GPU/TPU, gdy testujesz modele ML nad chmurami punktów lub klasyfikujesz obrazy;</p></li>
+<li><p>łatwe podłączanie danych z Google Drive lub zewnętrznych API (Copernicus, NASA Earthdata) – wystarczy zamontować katalog i używać <code class="docutils literal notranslate"><span class="pre">requests</span></code>/<code class="docutils literal notranslate"><span class="pre">earthengine-api</span></code>;</p></li>
+<li><p>łatwe współdzielenie wyników: wysyłasz link do notatnika z opisem eksperymentu.</p></li>
+</ul>
+<p>Pamiętaj, aby w pierwszej komórce instalować brakujące pakiety (<code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">rasterio</span> <span class="pre">geopandas</span> <span class="pre">sgp4</span></code>) i wskazać folder kursu na Dysku, aby mieć stały dostęp do danych.</p>
+</section>
+<section id="pycharm">
+<h2>PyCharm<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>PyCharm to pełnoprawne IDE, świetne gdy projekt rośnie: masz dziesiątki modułów, testy jednostkowe i integrację z systemem kontroli wersji. W kontekście inżynierii danych satelitarnych sprawdza się przy budowie większych pipeline’ów (np. aplikacji pobierającej dane GNSS i publikującej raporty). Community Edition wystarczy do naszych zadań.</p>
+<p>Przykładowy workflow:</p>
+<ol class="arabic simple">
+<li><p>Klonujesz repozytorium kursu i otwierasz je jako projekt w PyCharmie.</p></li>
+<li><p>Tworzysz środowisko <code class="docutils literal notranslate"><span class="pre">conda</span></code>/<code class="docutils literal notranslate"><span class="pre">venv</span></code> z pakietami (<code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">satpy</span></code>).</p></li>
+<li><p>Konfigurujesz konfiguracje uruchomieniowe (<code class="docutils literal notranslate"><span class="pre">Run/Debug</span> <span class="pre">Configurations</span></code>) dla skryptów konsolowych z Modułów 8‑9.</p></li>
+</ol>
+<p>Instalacja: <a class="reference external" href="https://www.jetbrains.com/pycharm/download/#section=windows">https://www.jetbrains.com/pycharm/download/#section=windows</a></p>
+<p><img alt="" src="https://origin2.cdn.componentsource.com/sites/default/files/styles/image_large/public/images/product_description/jetbrains/pycharm/img_484761.png?itok=fzUvDh7R" /></p>
+</section>
+<section id="visual-studio-code">
+<h2>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>VS Code to lekkie środowisko z rozbudowanym systemem wtyczek. Po zainstalowaniu rozszerzeń <em>Python</em> oraz <em>Jupyter</em> otrzymujesz autouzupełnianie, debugger i obsługę notatników w jednym oknie. VS Code dobrze współpracuje z <code class="docutils literal notranslate"><span class="pre">conda</span></code> i Git (wbudowany panel Source Control), a dzięki <em>Remote SSH</em> możesz łączyć się z serwerami obliczeniowymi misji i uruchamiać tamtejsze środowisko.</p>
+<p>Szybki start:</p>
+<ol class="arabic simple">
+<li><p>Zainstaluj VS Code i rozszerzenia Python + Jupyter.</p></li>
+<li><p>Otwórz katalog repozytorium kursu jako folder roboczy.</p></li>
+<li><p>Wybierz interpreter <code class="docutils literal notranslate"><span class="pre">igg-space</span></code> (Ctrl+Shift+P → <em>Python: Select Interpreter</em>).</p></li>
+<li><p>Twórz/otwieraj notatniki lub skrypty i korzystaj z wbudowanego terminala (<code class="docutils literal notranslate"><span class="pre">Ctrl+``)</span> <span class="pre">do</span> <span class="pre">uruchamiania</span> <span class="pre">poleceń</span> </code>conda<code class="docutils literal notranslate"><span class="pre">/</span></code>git`.</p></li>
+</ol>
+</section>
+<section id="spyder">
+<h2>Spyder<a class="headerlink" href="#spyder" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Spyder przypomina Matlab/RStudio – ma konsolę, edytor i podgląd zmiennych. Dzięki temu dobrze nadaje się do analizy danych przestrzennych i macierzy (NumPy) w czasie rzeczywistym. Możesz np. wczytać raster Sentinel-1, podejrzeć tablice w <code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">Explorer</span></code> i szybko modyfikować kod. Spyder jest częścią Anacondy, więc po instalacji dystrybucji masz go gotowego do pracy.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/spyder-ide/spyder/5.x/img_src/screenshot.png" /></p>
+</section>
+<section id="co-wybrac">
+<h2>Co wybrać<a class="headerlink" href="#co-wybrac" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>wybór narzędzia zależy od zadania: eksploracja danych i listy ćwiczeń → Jupyter/Google Colab, większe skrypty i projekty → PyCharm lub VS Code;</p></li>
+<li><p>rekomendacja kursowa: utrzymuj lokalne środowisko (Anaconda + Jupyter Lab) i równoległą kopię na Google Colab do pracy zdalnej;</p></li>
+<li><p>jeśli tworzysz pipeline do pobierania danych (Moduł 9), wygodniej jest w IDE (PyCharm/VS Code) z integracją Git;</p></li>
+<li><p>pamiętaj o spójności: trzymaj to samo środowisko pakietów (<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>) niezależnie od narzędzia.</p></li>
+</ul>
+</section>
+<section id="moj-komputer-nie-rozumie-pythona">
+<h2>Mój komputer nie rozumie Pythona<a class="headerlink" href="#moj-komputer-nie-rozumie-pythona" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Python to język programowania – aby komputer rozumiał pisane przez nas instrukcje, musimy zainstalować interpreter. Najbezpieczniej pobrać go z <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>, ale w praktyce szybciej skonfigurujesz środowisko korzystając z dystrybucji Anaconda lub Miniforge (conda-forge).</p>
+<p>Po instalacji sprawdź w terminalu/PowerShellu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Jeśli te polecenia zwracają numery wersji (np. 3.11.8), możesz przejść do tworzenia środowiska dla kursu.</p>
+<section id="anaconda">
+<h3>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading">#</a></h3>
+<p>Rdzeń języka plus standardowe biblioteki to dopiero początek. Anaconda/Miniforge dostarcza gotowy instalator Pythona wraz z pakietami naukowymi i menedżerem <code class="docutils literal notranslate"><span class="pre">conda</span></code>, który ułatwia instalację kolejnych bibliotek (np. GDAL, rasterio, satpy).</p>
+<ol class="arabic simple">
+<li><p>Pobierz instalator: <a class="reference external" href="https://www.anaconda.com/download">https://www.anaconda.com/download</a> lub <a class="github reference external" href="https://github.com/conda-forge/miniforge">conda-forge/miniforge</a></p></li>
+<li><p>Po instalacji w PowerShellu/terminalu utwórz dedykowane środowisko:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">igg</span><span class="o">-</span><span class="n">space</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.11</span> <span class="n">geopandas</span> <span class="n">rasterio</span> <span class="n">satpy</span> <span class="n">sgp4</span> <span class="n">numpy</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">igg</span><span class="o">-</span><span class="n">space</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Zainstaluj brakujące biblioteki przez <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> lub <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> (np. <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sentinelsat</span></code>).</p></li>
+</ol>
+<p>Składniki Anacondy obejmują <a class="reference external" href="http://m.in">m.in</a>. Jupyter Lab, Spydera, biblioteki NumPy/Pandas/Matplotlib – czyli wszystko, czego potrzebujemy w pierwszych modułach.</p>
+<p>Instalacja pakietów w Anacondzie (przykład):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">sentinelsat</span> <span class="n">geopandas</span>
+</pre></div>
+</div>
+<p>Komendę wykonaj w Anaconda Prompt / PowerShell (Windows) lub terminalu (macOS/Linux). Zwracaj uwagę na kanał <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>, bo zapewnia świeże wersje bibliotek naukowych.</p>
+<p>tip: włącz Anaconda Prompt jako administrator, gdy instalujesz pakiety wymagające dostępu do systemu (np. GDAL).</p>
+</section>
+<section id="terminal-powershell-sciaga-polecen">
+<h3>Terminal / PowerShell – ściąga poleceń<a class="headerlink" href="#terminal-powershell-sciaga-polecen" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cel</p></th>
+<th class="head"><p>macOS/Linux</p></th>
+<th class="head"><p>Windows PowerShell</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sprawdź katalog</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ls</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dir</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>zmień katalog</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folder</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">folder</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>pokaż bieżącą ścieżkę</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>utwórz katalog</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">dane</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">dane</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>aktywuj środowisko</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">igg-space</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">igg-space</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>lista środowisk</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>uruchom plik</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">skrypt.py</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">skrypt.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>start Jupyter Lab</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Te polecenia będziemy stosować w większości modułów, dlatego dobrze je znać lub mieć pod ręką.</p>
+</section>
+<section id="test-srodowiska">
+<h3>Test środowiska<a class="headerlink" href="#test-srodowiska" title="Permalink to this heading">#</a></h3>
+<p>Po aktywacji środowiska uruchom w terminalu:
+python - &lt;&lt;’PY’
+import rasterio, geopandas, sgp4
+print(‘rasterio’, rasterio.<strong>version</strong>)
+print(‘geopandas’, geopandas.<strong>version</strong>)
+from sgp4.api import Satrec
+print(‘SGP4 działa:’, isinstance(Satrec(), Satrec))
+PY</p>
+<p>Jeśli wszystkie biblioteki importują się poprawnie, możesz przejść do pracy z notatnikami. W razie błędów sprawdź, czy zainstalowałeś wersje pakietów z kanału <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
+</section>
+<section id="najczestsze-problemy-i-rozwiazania">
+<h3>Najczęstsze problemy i rozwiązania<a class="headerlink" href="#najczestsze-problemy-i-rozwiazania" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'osgeo'</span></code></strong> – zainstaluj biblioteki przestrzenne z kanału <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">gdal</span> <span class="pre">rasterio</span></code>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pip</span></code> i <code class="docutils literal notranslate"><span class="pre">conda</span></code> konfliktują</strong> – trzymaj się jednego narzędzia na środowisko; jeśli musisz użyć <code class="docutils literal notranslate"><span class="pre">pip</span></code>, rób to po instalacji pakietów <code class="docutils literal notranslate"><span class="pre">conda</span></code> i dodaj <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">pip</span></code>.</p></li>
+<li><p><strong>Brak komendy <code class="docutils literal notranslate"><span class="pre">python</span></code> w terminalu</strong> – upewnij się, że aktywowałeś środowisko (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">igg-space</span></code>) albo dodaj Pythona do zmiennej PATH podczas instalacji.</p></li>
+<li><p><strong>Błędy kompilacji przy instalacji pakietów</strong> – na Windowsie uruchom <em>Anaconda Prompt (Admin)</em>; na macOS/Linux doinstaluj narzędzia deweloperskie (<code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code>, <code class="docutils literal notranslate"><span class="pre">build-essential</span></code>).</p></li>
+</ul>
+<p>Zapisuj napotkane błędy – szybciej pomożemy Ci na zajęciach, jeśli pokażesz pełny komunikat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">satellite</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sentinel-2A&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;altitude_km&#39;</span><span class="p">:</span> <span class="mi">786</span><span class="p">,</span>
+    <span class="s1">&#39;instruments&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;MSI&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Typ obiektu:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">satellite</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Typ obiektu: &lt;class &#39;dict&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dostępne klucze:&#39;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">satellite</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dostępne klucze: [&#39;name&#39;, &#39;altitude_km&#39;, &#39;instruments&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Instrument główny:&#39;</span><span class="p">,</span> <span class="n">satellite</span><span class="p">[</span><span class="s1">&#39;instruments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument główny: MSI
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Satellite</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">altitude_km</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">inclination</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="n">s2a</span> <span class="o">=</span> <span class="n">Satellite</span><span class="p">(</span><span class="s1">&#39;Sentinel-2A&#39;</span><span class="p">,</span> <span class="mi">786</span><span class="p">,</span> <span class="mf">98.62</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Atrybuty obiektu:&#39;</span><span class="p">,</span> <span class="n">s2a</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Satellite(name=&#39;Sentinel-2A&#39;, altitude_km=786, inclination=98.62)
+Atrybuty obiektu: {&#39;name&#39;: &#39;Sentinel-2A&#39;, &#39;altitude_km&#39;: 786, &#39;inclination&#39;: 98.62}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;python w kosmosie&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python W Kosmosie
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;kosmosie&#39;</span><span class="p">,</span> <span class="s1">&#39;orbicie&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>python w orbicie
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="s2">&quot;W&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="s2">&quot;W&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>W Pythonie wszystkie jest obiektem. Wszystko z czego korzystamy istnieje w swoim własnym pudełku, które określane jest jako obiekt Pythona. Każdy obiekt ma przypisaną klasę, swoje metody, określone działanie funkcji, i atrybuty. W parktyce czyni do język bardzo elastycznym i spójnym. Im wcześniej sie to zrozumie tym łatwiej wejść na kolejne poziomy umiejętności programowania.</p></li>
+</ul>
+</section>
+</section>
+<section id="funkcje-a-metody">
+<h2>Funkcje a metody<a class="headerlink" href="#funkcje-a-metody" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Funkcje Pythona wywołujemy poprzez schemat: nazwa(atrybut1,atrybut2)</p></li>
+<li><p>Niemal każdy obiekt (a tak naprawdę klasa) w Pythonie ma “podpięte” “swoje” “funkcje” nazwane metodami</p></li>
+</ul>
+<h1>Funkcje</h1>
+<p>Funcje mają strukturę (syntax) następującej postaci:</p>
+<p><i><b>nazwa</b>(parametr_1,parametr_2,…,parametr_n)</i></p>
+<p>Wyróżniamy <b>funkcje wbudowane</b> i <b> funkcje zdefiniowane przez użytkownika</b>.</p>
+<p>Funkcje wbudowane są dostepne poprzez wywołanie ich nazwy wprost w kodzie (dostępne tu: <a class="reference external" href="https://docs.python.org/2/library/functions.html">https://docs.python.org/2/library/functions.html</a>). Przykładem takiej funkcji jest <b>print()</b></p>
+<p>Funkcje definiowane przez użytkownika pozwalają na utworzenie nowej funkcjonalności (zajmiemy się nimi później)</p>
+<h1> Metody </h1>
+<p>Python jest językiem programowania <b> obiektowego </b>. Oznacza to, że wszystko w nim jest <b>obietem</b>, który ma swoje właściwości, takie jak atrybuty i metody (o tym dokładniej w dalszej części wykładów).</p>
+<p>Metody wywoływane są zatem na <b>obiektach</b>. Ich syntax to:
+<i><b>nazwa_obiektu</b>.nazwa_metody(parametr_1,parametr_2,…,parametr_n)</i></p>
+<p>Istnieje w języku kilka wbudowanych obiektów, które posiadają wbudowane metody. Przykładem wbudowanych obiektów są typy danych.</p>
+</section>
+<section id="metody-a-atrybuty">
+<h2>Metody a atrybuty<a class="headerlink" href="#metody-a-atrybuty" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Obiekty w Pythonie zazwyczaj posiadają zarówno atrybuty (inne obiekty Pythona przechowywane “wewnątrz” obiektu) oraz metody (funkcje związane z obiektem, które mogą mieć dostęp do wewnętrznych danych obiektu).</p></li>
+</ul>
+<h1>Klasy</h1>
+Żeby zrozumieć istotę działania metod i ich różność od funkcji oraz atrybutów, przyjrzyjmy się czym jest obiekt.
+<p>Obiekt to <b>wszystko</b> co napiszemy w Pythonie. To zarówno klasy jak i funkcje.</p>
+<p>Spotkamy się z metodami przypisanymi do klas. Klasa to bardzo ważny element języków obiektowych.</p>
+<h2>Czym zatem jest klasa?</h2>
+<p><b>Klasa</b> to <i>abstrakcja</i> pewnego obiektu. Oznacza to uogólnieniony opis pewnego elementu, który zdefiniowany jest przez taką klasę poprzez określenie jego typowych <b>cech (atrybutów) i operacji (metod), które można na nim wykonać</b>. Tą samą strukturą opisujemy elementy świata rzeczywistego.</p>
+<p>Przykład obrazujący:</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki</li>
+    <li>Sos</li>
+</ul>
+<p>Oraz metody:</p>
+<ul>
+    <li>Jedz</li>
+    <li>Polej oliwą</li>
+    <li>Wyrzuć (nie używać!)</li>
+</ul><h1>Instancja</h1>
+<p>To praktyczna realizacja klasy.</p>
+<p>Kontynuując przykład obrazujący:</p>
+<p>Piekąc pizzę nadajemy jej atrybuty - składniki (pieczarki, ser) i sos (pomidorowy). Wtedy otrzymujemy <b> instancję</b> klasy pizza w postaci <i>pizzy funghi</i>.</p>
+<p><b>Pizza</b> to abstrakcyjna klasa, którą opisujemy pewien typ dania.
+Ma cechy (atrybuty):</p>
+<ul>
+    <li>Składniki = [pieczarki, ser]</li>
+    <li>Sos = pomidorowy</li>
+</ul>
+<p>Teraz możemy wywołać metodę na naszej instancji, która zdefiniowana już jest w klasie:</p>
+<p>pizza_funghi.jedz()</p>
+</section>
+<section id="importy">
+<h2>Importy<a class="headerlink" href="#importy" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Korzystając z “surowego” Pythona, użytkownik ma dostęp do ograniczonej funkcjonalności wbudowanych funkcji i typów danych.</p></li>
+<li><p>Zaawansowana funkcjonalność Pythona zamknięta jest w bibliotekach/modułach, które należy zaimportować, aby móc z nich skorzystać.</p></li>
+<li><p>W Pythonie moduł to zwyczajnie plik z rozszerzeniem .py zawierający odrobine kodu, który możemy wykorzystać (zbiór funkcji, zmiennych, klas)</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Importy<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przykłady:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sig</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">subprocesses</span><span class="w"> </span><span class="kn">import</span> <span class="n">blabla</span><span class="p">,</span> <span class="n">blabla2</span>
+</pre></div>
+</div>
+</section>
+<section id="operatory-binarne">
+<h2>Operatory binarne<a class="headerlink" href="#operatory-binarne" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">//</span> <span class="n">b</span> <span class="p">(</span><span class="n">usuwa</span> <span class="n">część</span> <span class="n">po</span> <span class="n">przecinku</span> <span class="o">-</span> <span class="n">floor</span><span class="o">-</span><span class="n">divide</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">**</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span> <span class="o">*=</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span> <span class="o">/=</span> <span class="n">b</span><span class="p">;</span> <span class="o">--&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>
+</pre></div>
+</div>
+</section>
+<section id="czytelnosc-kodu">
+<h2>Czytelność kodu<a class="headerlink" href="#czytelnosc-kodu" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>przejrzysty kod</p></li>
+<li><p>zrozumiałe nazwy zmiennych</p></li>
+<li><p>dzielenie linii nie boli</p></li>
+<li><p>konsekwencja w konwencji</p></li>
+<li><p>najlepiej trzymać się standardu PEP 8: <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></p></li>
+<li><p>ale bez przesady - przede wszystkim kod ma być czytelny</p></li>
+</ul>
+</section>
+<section id="wciecia">
+<h2>Wcięcia<a class="headerlink" href="#wciecia" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Każdy nowy poziom kodu powinien być od siebie oddzielony przez 4 spacje</p></li>
+<li><p>Tabulatory nie są zakazane ale należy używać ich konsystentnie w strukturze kodu</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="komentarze">
+<h1>Komentarze<a class="headerlink" href="#komentarze" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Komentarze które zaburzają klarowność kodu są gorsze niż brak komentarzy</p></li>
+<li><p>Uzywaj pełnych zdań gdy komentujesz kod</p></li>
+<li><p>Upewnij się, że twój komentarz jest zrozumiały dla każdego, któ kiedykolwiek miałby przeczytać kod</p></li>
+<li><p>Uzywaj języka angielskiego</p></li>
+</ul>
+<section id="komentarze-blokowe">
+<h2>Komentarze blokowe<a class="headerlink" href="#komentarze-blokowe" title="Permalink to this heading">#</a></h2>
+<p>Wplatane za pomocą znaku “#” na tym samym poziomie, do którego się odnoszą np:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># przez lenistwo prowadzącego oceny wystawiane losowo</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">lista_studentow</span><span class="p">:</span>
+    <span class="c1"># losowa ocena</span>
+    <span class="n">ocena</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">oceny_uwr</span><span class="p">))</span>
+    <span class="c1"># przypisanie oceny</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">oceny_uwr</span><span class="p">[</span><span class="n">ocena</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="komentarze-w-tej-samej-linii-co-kod">
+<h2>Komentarze w tej samej linii co kod<a class="headerlink" href="#komentarze-w-tej-samej-linii-co-kod" title="Permalink to this heading">#</a></h2>
+<p>Raczej unikamy</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c1"># Increment x</span>
+</pre></div>
+</div>
+<p>… chyba, że mają coś wnieść, wtedy nikt Ci tego nie zabroni</p>
+</section>
+<section id="dokumentowanie-funkcji-modulow">
+<h2>Dokumentowanie funkcji/modułów<a class="headerlink" href="#dokumentowanie-funkcji-modulow" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">says</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prints what the animals name is and what sound it makes.</span>
+
+<span class="sd">    If the argument `sound` isn&#39;t passed in, the default Animal</span>
+<span class="sd">    sound is used.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sound : str, optional</span>
+<span class="sd">        The sound the animal makes (default is None)</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedError</span>
+<span class="sd">        If no sound is set for the animal or passed in as a</span>
+<span class="sd">        parameter.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A simple function that says hello...&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, is it me you&#39;re looking for?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="unikamy">
+<h2>Unikamy<a class="headerlink" href="#unikamy" title="Permalink to this heading">#</a></h2>
+<section id="niektorych-znakow">
+<h3>Niektórych znaków<a class="headerlink" href="#niektorych-znakow" title="Permalink to this heading">#</a></h3>
+<p>Nie używaj liter ‘l’ (lowercase letter el), ‘O’ (uppercase letter oh), oraz ‘I’ (uppercase letter eye) jako nazwy zmiennych</p>
+<p>Te znaki są praktycznie nierozróżnialne w wielu fontach</p>
+</section>
+<section id="kompatybilnosc-asci">
+<h3>Kompatybilność ASCI<a class="headerlink" href="#kompatybilnosc-asci" title="Permalink to this heading">#</a></h3>
+<p>Mimo, że Python Ci na to pozwoli, nie używaj polskich znaków !</p>
+</section>
+<section id="nazwy-klas">
+<h3>Nazwy Klas<a class="headerlink" href="#nazwy-klas" title="Permalink to this heading">#</a></h3>
+<p>Używaj konwencji CapWords WspolrzedneStacji()</p>
+</section>
+<section id="funkcje-i-nazwy-zmiennych">
+<h3>Funkcje i nazwy zmiennych<a class="headerlink" href="#funkcje-i-nazwy-zmiennych" title="Permalink to this heading">#</a></h3>
+<p>lowercase, ze słowami oddzielonymi przez “_” to_jest_moja_funkcja()</p>
+<p>mixedCase raczej nie jest rekomendowany, ale ważne żeby być spójnym wewnątrz</p>
+</section>
+<section id="argumnety-funkcji">
+<h3>Argumnety funkcji<a class="headerlink" href="#argumnety-funkcji" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Uzywaj self jako pierwszego argumentu metody</p></li>
+<li><p>Uzywaj cls jako piewrszy argument klasy</p></li>
+</ul>
+</section>
+<section id="stale">
+<h3>STAŁE<a class="headerlink" href="#stale" title="Permalink to this heading">#</a></h3>
+<p>Używaj konwencji UPPER_CASE_WITH_UNDERSCORES: PI, TOTAL itd.</p>
+</section>
+</section>
+<section id="czytelnosc-kodu-poprawnie">
+<h2>Czytelność kodu - Poprawnie<a class="headerlink" href="#czytelnosc-kodu-poprawnie" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="c1"># skala ocen obowiązująca na Uniwersytecie Przyrodniczym we Wrocławiu</span>
+<span class="n">oceny_upwr</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">:</span> <span class="s2">&quot;niedostateczny&quot;</span><span class="p">,</span> 
+              <span class="mf">3.0</span><span class="p">:</span> <span class="s2">&quot;dostateczny&quot;</span><span class="p">,</span>
+              <span class="mf">3.5</span><span class="p">:</span> <span class="s2">&quot;dostateczny plus&quot;</span><span class="p">,</span> 
+              <span class="mf">4.0</span><span class="p">:</span> <span class="s2">&quot;dobry&quot;</span><span class="p">,</span>
+              <span class="mf">4.5</span><span class="p">:</span> <span class="s2">&quot;dobry plus&quot;</span><span class="p">,</span> 
+              <span class="mf">5.0</span><span class="p">:</span> <span class="s2">&quot;bardzo dobry&quot;</span><span class="p">}</span>
+
+<span class="c1"># lista studentów uczęszczających na zajęcia z Pythona</span>
+<span class="n">lista_studentow</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> <span class="s2">&quot;Józek&quot;</span><span class="p">,</span> <span class="s2">&quot;Marek&quot;</span><span class="p">]</span>
+
+<span class="c1"># przez lenistwo prowadzącego oceny wystawiane losowo</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">lista_studentow</span><span class="p">:</span>
+    <span class="c1"># losowa ocena</span>
+    <span class="n">ocena</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">oceny_upwr</span><span class="p">))</span>
+    <span class="c1"># przypisanie oceny</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">oceny_upwr</span><span class="p">[</span><span class="n">ocena</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  dobry plus
+Basia  -&gt;  dostateczny
+Józek  -&gt;  dostateczny plus
+Marek  -&gt;  dobry plus
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="czytelnosc-kodu-niepoprawnie">
+<h2>Czytelność kodu - Niepoprawnie<a class="headerlink" href="#czytelnosc-kodu-niepoprawnie" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">o</span> <span class="o">=</span> <span class="p">{</span><span class="mf">2.0</span><span class="p">:</span> <span class="s2">&quot;niedostateczny&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">:</span> <span class="s2">&quot;dostateczny&quot;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">:</span> <span class="s2">&quot;dostateczny plus&quot;</span><span class="p">,</span> 
+     <span class="mf">4.0</span><span class="p">:</span> <span class="s2">&quot;dobry&quot;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">:</span> <span class="s2">&quot;dobry plus&quot;</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">:</span> <span class="s2">&quot;bardzo dobry&quot;</span><span class="p">}</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Kasia&quot;</span><span class="p">,</span> 
+     <span class="s2">&quot;Basia&quot;</span><span class="p">,</span> 
+     <span class="s2">&quot;Józek&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Marek&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span> <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot; -&gt; &quot;</span><span class="p">,</span> <span class="n">o</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasia  -&gt;  bardzo dobry
+Basia  -&gt;  dobry
+Józek  -&gt;  dobry
+Marek  -&gt;  dobry
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Mod0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wprowadzenie</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Mod1_cw.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Moduł 1 - Ćwiczenia - 2025/2026</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduł 1 - Środowisko Python - 2025/2026</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dlaczego-python">Dlaczego Python?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#najwazniejsze-cechy-jezyka">Najważniejsze cechy języka</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#co-oznacza-wysoki-poziom">Co oznacza “wysoki poziom”?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretowany-vs-kompilowany">Interpretowany vs. kompilowany</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programowanie-obiektowe-w-praktyce">Programowanie obiektowe w praktyce</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekosystem-bibliotek">Ekosystem bibliotek</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-kiedy-nie">Python - Kiedy nie?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tryb-interaktywny-konsola">Tryb interaktywny - konsola</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tryb-skryptowy">Tryb skryptowy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pisac-swoj-kod">Jak pisać swój kod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-colab">Google Colab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code">Visual Studio Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spyder">Spyder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#co-wybrac">Co wybrać</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moj-komputer-nie-rozumie-pythona">Mój komputer nie rozumie Pythona</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-powershell-sciaga-polecen">Terminal / PowerShell – ściąga poleceń</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-srodowiska">Test środowiska</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#najczestsze-problemy-i-rozwiazania">Najczęstsze problemy i rozwiązania</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-a-metody">Funkcje a metody</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metody-a-atrybuty">Metody a atrybuty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importy">Importy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Importy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatory-binarne">Operatory binarne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu">Czytelność kodu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wciecia">Wcięcia</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze">Komentarze</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze-blokowe">Komentarze blokowe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komentarze-w-tej-samej-linii-co-kod">Komentarze w tej samej linii co kod</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentowanie-funkcji-modulow">Dokumentowanie funkcji/modułów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unikamy">Unikamy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niektorych-znakow">Niektórych znaków</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompatybilnosc-asci">Kompatybilność ASCI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nazwy-klas">Nazwy Klas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcje-i-nazwy-zmiennych">Funkcje i nazwy zmiennych</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#argumnety-funkcji">Argumnety funkcji</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stale">STAŁE</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu-poprawnie">Czytelność kodu - Poprawnie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#czytelnosc-kodu-niepoprawnie">Czytelność kodu - Niepoprawnie</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radoslaw Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

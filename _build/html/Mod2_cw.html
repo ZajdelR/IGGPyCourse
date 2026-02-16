@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Moduł 2 - Ćwiczenia &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Mod2_cw';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Moduł 3 - Kontrola przepływu" href="Mod3.html" />
+    <link rel="prev" title="Moduł 2 - Podstawowe typy danych" href="Mod2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Mod0.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Mod2_cw.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Moduł 2 - Ćwiczenia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cele-cwiczen">Cele ćwiczeń</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1-opis-sceny-z-f-stringiem">Zad 1 — Opis sceny z f-stringiem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2-porownanie-stalych-pi-i-tau">Zad 2 — Porównanie stałych <code class="docutils literal notranslate"><span class="pre">pi</span></code> i <code class="docutils literal notranslate"><span class="pre">tau</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3-parsowanie-metadanych-bez-funkcji">Zad 3 — Parsowanie metadanych bez funkcji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4-normalizacja-sciezki-z-replace">Zad 4 — Normalizacja ścieżki z <code class="docutils literal notranslate"><span class="pre">replace</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5-wieloliniowy-opis-parametrow">Zad 5 — Wieloliniowy opis parametrów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6-analiza-tekstu-sensora-bez-petli">Zad 6 — Analiza tekstu sensora bez pętli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7-parametry-nazwy-sceny">Zad 7 — Parametry nazwy sceny</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8-porzadkowanie-list-misji">Zad 8 — Porządkowanie list misji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9-krotka-stacji-i-formatowanie">Zad 9 — Krotka stacji i formatowanie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10-podsumowanie-zachmurzenia-z-wbudowanymi-funkcjami">Zad 10 — Podsumowanie zachmurzenia z wbudowanymi funkcjami</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11-sekwencja-minut-z-range">Zad 11 — Sekwencja minut z <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12-statystyka-temperatur-bez-petli">Zad 12 — Statystyka temperatur bez pętli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13-join-split-i-raport">Zad 13 — <code class="docutils literal notranslate"><span class="pre">join</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> i raport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14-prosta-analiza-tekstu">Zad 14 — Prosta analiza tekstu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15-walidacja-skladni-sceny-bez-instrukcji-warunkowych">Zad 15 — Walidacja składni sceny bez instrukcji warunkowych</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-16-porownanie-math-i-cmath">Zad 16 — Porównanie <code class="docutils literal notranslate"><span class="pre">math</span></code> i <code class="docutils literal notranslate"><span class="pre">cmath</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-17-konwersje-list-krotek-i-zbiorow">Zad 17 — Konwersje list/krotek i zbiorów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-18-raport-liczby-scen">Zad 18 — Raport liczby scen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-19-konwersja-wejscia-tekstowego">Zad 19 — Konwersja wejścia tekstowego</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-20-referencje-i-kopie-bez-petli">Zad 20 — Referencje i kopie bez pętli</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="_images/header.png" /></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="modul-2-cwiczenia">
+<h1>Moduł 2 - Ćwiczenia<a class="headerlink" href="#modul-2-cwiczenia" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="cele-cwiczen">
+<h2>Cele ćwiczeń<a class="headerlink" href="#cele-cwiczen" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>utrwalenie rzutowania wartości liczbowych i tekstowych;</p></li>
+<li><p>ćwiczenie operacji na napisach, listach, krotkach i zbiorach zgodnie z materiałem Modułu 2;</p></li>
+<li><p>przygotowanie krótkich transformacji danych bez pisania własnych funkcji, instrukcji warunkowych ani pętli.</p></li>
+</ul>
+<p>Poniżej znajdziesz 20 zadań – każde rozwiązujesz pojedynczym zbiorem operacji wykorzystujących wyłącznie poznane typy i funkcje wbudowane.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-1-opis-sceny-z-f-stringiem">
+<h2>Zad 1 — Opis sceny z f-stringiem<a class="headerlink" href="#zad-1-opis-sceny-z-f-stringiem" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zadeklaruj słownik <code class="docutils literal notranslate"><span class="pre">scene</span></code> zawierający pola <code class="docutils literal notranslate"><span class="pre">'mission'</span></code>, <code class="docutils literal notranslate"><span class="pre">'count'</span></code> (tekstowa liczba) i <code class="docutils literal notranslate"><span class="pre">'cloud'</span></code> (tekstowy procent). Użyj <code class="docutils literal notranslate"><span class="pre">int()</span></code> oraz <code class="docutils literal notranslate"><span class="pre">float()</span></code>, aby rzutować dane na typy liczbowe i przygotuj zapis <code class="docutils literal notranslate"><span class="pre">S2A</span> <span class="pre">-&gt;</span> <span class="pre">42</span> <span class="pre">obserwacji</span> <span class="pre">(12.30%</span> <span class="pre">chmur)</span></code> korzystając z f-stringa i specyfikatora <code class="docutils literal notranslate"><span class="pre">:.2%</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-2-porownanie-stalych-pi-i-tau">
+<h2>Zad 2 — Porównanie stałych <code class="docutils literal notranslate"><span class="pre">pi</span></code> i <code class="docutils literal notranslate"><span class="pre">tau</span></code><a class="headerlink" href="#zad-2-porownanie-stalych-pi-i-tau" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Skorzystaj z <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>, <code class="docutils literal notranslate"><span class="pre">math.tau</span></code> oraz własnych przybliżeń <code class="docutils literal notranslate"><span class="pre">pi_manual</span> <span class="pre">=</span> <span class="pre">3.14159265</span></code>, <code class="docutils literal notranslate"><span class="pre">tau_manual</span> <span class="pre">=</span> <span class="pre">6.28318</span></code>. Oblicz moduł różnicy (<code class="docutils literal notranslate"><span class="pre">abs</span></code>) i wypisz w jednej linii wyniki sformatowane jako <code class="docutils literal notranslate"><span class="pre">:.2e</span></code>, dodając także różnicę <code class="docutils literal notranslate"><span class="pre">math.tau</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">math.pi</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-3-parsowanie-metadanych-bez-funkcji">
+<h2>Zad 3 — Parsowanie metadanych bez funkcji<a class="headerlink" href="#zad-3-parsowanie-metadanych-bez-funkcji" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Mając <code class="docutils literal notranslate"><span class="pre">record</span> <span class="pre">=</span> <span class="pre">'ALT=786</span> <span class="pre">km;INCL=98.62</span> <span class="pre">deg;MISSION=S2A'</span></code>, użyj kolejnych <code class="docutils literal notranslate"><span class="pre">split(';')</span></code>, <code class="docutils literal notranslate"><span class="pre">split('=')</span></code> oraz wycinków tekstu, by przypisać wartości do zmiennych <code class="docutils literal notranslate"><span class="pre">alt</span></code>, <code class="docutils literal notranslate"><span class="pre">incl</span></code>, <code class="docutils literal notranslate"><span class="pre">mission</span></code>. Następnie wypisz komunikat <code class="docutils literal notranslate"><span class="pre">S2A</span> <span class="pre">ALT=786</span> <span class="pre">km</span> <span class="pre">INCL=98.62°</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-4-normalizacja-sciezki-z-replace">
+<h2>Zad 4 — Normalizacja ścieżki z <code class="docutils literal notranslate"><span class="pre">replace</span></code><a class="headerlink" href="#zad-4-normalizacja-sciezki-z-replace" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Dla <code class="docutils literal notranslate"><span class="pre">mission</span> <span class="pre">=</span> <span class="pre">'S2/A'</span></code>, <code class="docutils literal notranslate"><span class="pre">product</span> <span class="pre">=</span> <span class="pre">'L2A++'</span></code> oraz <code class="docutils literal notranslate"><span class="pre">date</span> <span class="pre">=</span> <span class="pre">'20250301'</span></code> podmień niedozwolone znaki przy pomocy <code class="docutils literal notranslate"><span class="pre">.replace('/',</span> <span class="pre">'_')</span></code> i <code class="docutils literal notranslate"><span class="pre">.replace('+',</span> <span class="pre">'_')</span></code>. Potnij datę na <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">day</span></code> i zbuduj ścieżkę <code class="docutils literal notranslate"><span class="pre">data/S2_A/2025/03/01/L2A__.safe</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-5-wieloliniowy-opis-parametrow">
+<h2>Zad 5 — Wieloliniowy opis parametrów<a class="headerlink" href="#zad-5-wieloliniowy-opis-parametrow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przygotuj napis w stylu dokumentacji funkcji (Markdown) korzystając z potrójnych cudzysłowów. Użyj <code class="docutils literal notranslate"><span class="pre">ljust</span></code>, aby ustawić kolumny <code class="docutils literal notranslate"><span class="pre">Parametr</span> <span class="pre">|</span> <span class="pre">Opis</span></code>, dodaj cytat (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), kod (``) i sekwencję <code class="docutils literal notranslate"> </code>/<code class="docutils literal notranslate"> </code>, wszystko bez tworzenia funkcji ani pętli.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-6-analiza-tekstu-sensora-bez-petli">
+<h2>Zad 6 — Analiza tekstu sensora bez pętli<a class="headerlink" href="#zad-6-analiza-tekstu-sensora-bez-petli" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Dla <code class="docutils literal notranslate"><span class="pre">sensor</span> <span class="pre">=</span> <span class="pre">'MultiSpectral</span> <span class="pre">Instrument</span> <span class="pre">MSI-L2A'</span></code> wykonaj operacje tekstowe: zamień na wielkie litery (<code class="docutils literal notranslate"><span class="pre">upper()</span></code>), policz wystąpienia <code class="docutils literal notranslate"><span class="pre">MSI</span></code> metodą <code class="docutils literal notranslate"><span class="pre">.count</span></code>, znajdź indeksy pierwszego i ostatniego <code class="docutils literal notranslate"><span class="pre">MSI</span></code> (<code class="docutils literal notranslate"><span class="pre">find</span></code>, <code class="docutils literal notranslate"><span class="pre">rfind</span></code>) oraz utwórz skrót <code class="docutils literal notranslate"><span class="pre">MSI_L2A</span></code> przez <code class="docutils literal notranslate"><span class="pre">replace('-',</span> <span class="pre">'</span> <span class="pre">')</span></code>, <code class="docutils literal notranslate"><span class="pre">split()</span></code> i składanie fragmentów. Wynik przedstaw w jednej wiadomości.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-7-parametry-nazwy-sceny">
+<h2>Zad 7 — Parametry nazwy sceny<a class="headerlink" href="#zad-7-parametry-nazwy-sceny" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Mając <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'S2A_20250301T101231_L2A'</span></code> wytnij osobno misję, datę i czas. Użyj <code class="docutils literal notranslate"><span class="pre">startswith</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code> oraz <code class="docutils literal notranslate"><span class="pre">str.isdigit()</span></code>, aby otrzymać booleany <code class="docutils literal notranslate"><span class="pre">mission_ok</span></code>, <code class="docutils literal notranslate"><span class="pre">date_ok</span></code>, <code class="docutils literal notranslate"><span class="pre">time_ok</span></code>, a następnie pokaż je w krótkim raporcie (bez instrukcji warunkowych).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-8-porzadkowanie-list-misji">
+<h2>Zad 8 — Porządkowanie list misji<a class="headerlink" href="#zad-8-porzadkowanie-list-misji" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Z listy <code class="docutils literal notranslate"><span class="pre">missions</span> <span class="pre">=</span> <span class="pre">['S2B',</span> <span class="pre">'L8',</span> <span class="pre">'S2A',</span> <span class="pre">'S2A']</span></code> przygotuj: posortowaną kopię (<code class="docutils literal notranslate"><span class="pre">sorted</span></code>), listę unikalnych misji zachowującą oryginalną kolejność (<code class="docutils literal notranslate"><span class="pre">dict.fromkeys</span></code>) oraz krotkę stworzoną na bazie posortowanej listy. Wszystkie wyniki wypisz.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-9-krotka-stacji-i-formatowanie">
+<h2>Zad 9 — Krotka stacji i formatowanie<a class="headerlink" href="#zad-9-krotka-stacji-i-formatowanie" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Rozpakuj <code class="docutils literal notranslate"><span class="pre">station</span> <span class="pre">=</span> <span class="pre">('WRO',</span> <span class="pre">(51.11,</span> <span class="pre">17.02),</span> <span class="pre">('GPS',</span> <span class="pre">'GLONASS'))</span></code> na nazwy, współrzędne i systemy. Zastosuj formatowanie do dwóch miejsc po przecinku i <code class="docutils literal notranslate"><span class="pre">',</span> <span class="pre">'.join</span></code> dla listy systemów, tworząc zdanie z opisem stacji.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-10-podsumowanie-zachmurzenia-z-wbudowanymi-funkcjami">
+<h2>Zad 10 — Podsumowanie zachmurzenia z wbudowanymi funkcjami<a class="headerlink" href="#zad-10-podsumowanie-zachmurzenia-z-wbudowanymi-funkcjami" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Dla listy <code class="docutils literal notranslate"><span class="pre">clouds</span> <span class="pre">=</span> <span class="pre">[0.12,</span> <span class="pre">0.65,</span> <span class="pre">0.18,</span> <span class="pre">0.72]</span></code> wyznacz <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, średnią (<code class="docutils literal notranslate"><span class="pre">sum/len</span></code>) oraz uporządkowaną listę rosnącą (<code class="docutils literal notranslate"><span class="pre">sorted</span></code>). Wyniki przedstaw w kilku liniach tekstu z procentami (<code class="docutils literal notranslate"><span class="pre">:.0%</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-11-sekwencja-minut-z-range">
+<h2>Zad 11 — Sekwencja minut z <code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#zad-11-sekwencja-minut-z-range" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Utwórz listę <code class="docutils literal notranslate"><span class="pre">minutes</span> <span class="pre">=</span> <span class="pre">list(range(0,</span> <span class="pre">60,</span> <span class="pre">7))</span></code>. Wyświetl całą listę, pierwsze trzy elementy (<code class="docutils literal notranslate"><span class="pre">minutes[:3]</span></code>), ostatnie trzy (<code class="docutils literal notranslate"><span class="pre">minutes[-3:]</span></code>) oraz wartości co 14 minut (<code class="docutils literal notranslate"><span class="pre">minutes[::2]</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-12-statystyka-temperatur-bez-petli">
+<h2>Zad 12 — Statystyka temperatur bez pętli<a class="headerlink" href="#zad-12-statystyka-temperatur-bez-petli" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Korzystając z <code class="docutils literal notranslate"><span class="pre">temps</span> <span class="pre">=</span> <span class="pre">[19.5,</span> <span class="pre">20.1,</span> <span class="pre">18.9,</span> <span class="pre">19.8]</span></code> policz średnią, medianę (na posortowanej liście) oraz różnice <code class="docutils literal notranslate"><span class="pre">temp</span> <span class="pre">-</span> <span class="pre">mean</span></code> dla każdego wpisu, zaokrąglone do dwóch miejsc. Zaprezentuj je w opisowych zmiennych lub liniach tekstu, bez pisania pętli.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-13-join-split-i-raport">
+<h2>Zad 13 — <code class="docutils literal notranslate"><span class="pre">join</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> i raport<a class="headerlink" href="#zad-13-join-split-i-raport" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Z krotki <code class="docutils literal notranslate"><span class="pre">('S2A',</span> <span class="pre">'2025',</span> <span class="pre">'03',</span> <span class="pre">'01',</span> <span class="pre">'L2A')</span></code> ułóż nazwę sceny przez <code class="docutils literal notranslate"><span class="pre">'-'.join(...)</span></code>. Następnie rozbij napis metodą <code class="docutils literal notranslate"><span class="pre">split</span></code> na pięć zmiennych i przygotuj zdanie <code class="docutils literal notranslate"><span class="pre">Misja</span> <span class="pre">S2A,</span> <span class="pre">data</span> <span class="pre">2025-03-01,</span> <span class="pre">poziom</span> <span class="pre">L2A</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-14-prosta-analiza-tekstu">
+<h2>Zad 14 — Prosta analiza tekstu<a class="headerlink" href="#zad-14-prosta-analiza-tekstu" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Biorąc fragment <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">=</span> <span class="pre">'Litwo!</span> <span class="pre">Ojczyzno</span> <span class="pre">moja,</span> <span class="pre">ty</span> <span class="pre">jesteś</span> <span class="pre">jak</span> <span class="pre">zdrowie.'</span></code> policz liczbę słów (<code class="docutils literal notranslate"><span class="pre">split</span></code>), liczbę znaków <code class="docutils literal notranslate"><span class="pre">a/A</span></code> (<code class="docutils literal notranslate"><span class="pre">lower().count('a')</span></code>), usuń przecinki (<code class="docutils literal notranslate"><span class="pre">replace</span></code>) i podmień słowo <code class="docutils literal notranslate"><span class="pre">Litwo</span></code> na <code class="docutils literal notranslate"><span class="pre">Polsko</span></code>. Wyniki wypisz w oddzielnych liniach.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-15-walidacja-skladni-sceny-bez-instrukcji-warunkowych">
+<h2>Zad 15 — Walidacja składni sceny bez instrukcji warunkowych<a class="headerlink" href="#zad-15-walidacja-skladni-sceny-bez-instrukcji-warunkowych" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Dla <code class="docutils literal notranslate"><span class="pre">scene</span> <span class="pre">=</span> <span class="pre">'S2A_20250301T101231_L2A'</span></code> przygotuj booleany: <code class="docutils literal notranslate"><span class="pre">mission_ok</span> <span class="pre">=</span> <span class="pre">scene.startswith('S2')</span></code>, <code class="docutils literal notranslate"><span class="pre">date_ok</span> <span class="pre">=</span> <span class="pre">scene[4:12].isdigit()</span></code>, <code class="docutils literal notranslate"><span class="pre">time_ok</span> <span class="pre">=</span> <span class="pre">scene[13:19].isdigit()</span></code>. Oblicz również <code class="docutils literal notranslate"><span class="pre">all_ok</span> <span class="pre">=</span> <span class="pre">mission_ok</span> <span class="pre">and</span> <span class="pre">date_ok</span> <span class="pre">and</span> <span class="pre">time_ok</span></code> i przedstaw cały zestaw informacji.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-16-porownanie-math-i-cmath">
+<h2>Zad 16 — Porównanie <code class="docutils literal notranslate"><span class="pre">math</span></code> i <code class="docutils literal notranslate"><span class="pre">cmath</span></code><a class="headerlink" href="#zad-16-porownanie-math-i-cmath" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Wykonaj obliczenia: <code class="docutils literal notranslate"><span class="pre">math.sqrt(9)</span></code>, <code class="docutils literal notranslate"><span class="pre">cmath.sqrt(-16)</span></code> oraz potęgowanie <code class="docutils literal notranslate"><span class="pre">math.pow(R,</span> <span class="pre">1.5)</span></code> i <code class="docutils literal notranslate"><span class="pre">(R)</span> <span class="pre">**</span> <span class="pre">1.5</span></code> dla <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">=</span> <span class="pre">6_371_000</span> <span class="pre">+</span> <span class="pre">786_000</span></code>. Wyniki zebrane w jednej tabelce tekstowej pokażą różnice typów.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-17-konwersje-list-krotek-i-zbiorow">
+<h2>Zad 17 — Konwersje list/krotek i zbiorów<a class="headerlink" href="#zad-17-konwersje-list-krotek-i-zbiorow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Z napisu <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">=</span> <span class="pre">'S2A,Sentinel-2A,MSI,MSI'</span></code> utwórz listę elementów (po <code class="docutils literal notranslate"><span class="pre">split(',')</span></code> i <code class="docutils literal notranslate"><span class="pre">strip()</span></code>), następnie zbiór (<code class="docutils literal notranslate"><span class="pre">set</span></code>) i posortowaną krotkę unikalnych wartości. Na koniec wypisz liczbę unikalnych elementów oraz listę z zachowaną kolejnością (<code class="docutils literal notranslate"><span class="pre">dict.fromkeys</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-18-raport-liczby-scen">
+<h2>Zad 18 — Raport liczby scen<a class="headerlink" href="#zad-18-raport-liczby-scen" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Mając <code class="docutils literal notranslate"><span class="pre">missions</span> <span class="pre">=</span> <span class="pre">('S2A',</span> <span class="pre">'S2B',</span> <span class="pre">'L8')</span></code> i <code class="docutils literal notranslate"><span class="pre">counts</span> <span class="pre">=</span> <span class="pre">(12,</span> <span class="pre">9,</span> <span class="pre">7)</span></code> ręcznie zbuduj krotkę par <code class="docutils literal notranslate"><span class="pre">(count,</span> <span class="pre">mission)</span></code>, posortuj ją malejąco (<code class="docutils literal notranslate"><span class="pre">sorted(...,</span> <span class="pre">reverse=True)</span></code>) i przygotuj raport tekstowy zawierający trzy wiersze oraz sumę scen (<code class="docutils literal notranslate"><span class="pre">sum(counts)</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-19-konwersja-wejscia-tekstowego">
+<h2>Zad 19 — Konwersja wejścia tekstowego<a class="headerlink" href="#zad-19-konwersja-wejscia-tekstowego" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Załóż, że użytkownik podał <code class="docutils literal notranslate"><span class="pre">raw</span> <span class="pre">=</span> <span class="pre">'5'</span></code>. Rzutuj tę wartość na <code class="docutils literal notranslate"><span class="pre">int</span></code>, podstaw do komunikatu <code class="docutils literal notranslate"><span class="pre">Przetwarzam</span> <span class="pre">5</span> <span class="pre">scen</span></code> i dodaj wariant z liczbą poprzedzoną zerami (<code class="docutils literal notranslate"><span class="pre">{count:02d}</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-20-referencje-i-kopie-bez-petli">
+<h2>Zad 20 — Referencje i kopie bez pętli<a class="headerlink" href="#zad-20-referencje-i-kopie-bez-petli" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Dla <code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">=</span> <span class="pre">[[10,</span> <span class="pre">20],</span> <span class="pre">[30,</span> <span class="pre">40]]</span></code> przygotuj referencję (<code class="docutils literal notranslate"><span class="pre">reference</span> <span class="pre">=</span> <span class="pre">coords</span></code>), płytką kopię (<code class="docutils literal notranslate"><span class="pre">list(coords)</span></code>) i głęboką kopię (<code class="docutils literal notranslate"><span class="pre">copy.deepcopy(coords)</span></code>). Po zmianie <code class="docutils literal notranslate"><span class="pre">coords[0][0]</span> <span class="pre">=</span> <span class="pre">999</span></code> wypisz identyfikatory <code class="docutils literal notranslate"><span class="pre">id(...)</span></code> każdej listy oraz ich elementów, aby pokazać różnice w kopiowaniu.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Mod2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Moduł 2 - Podstawowe typy danych</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Mod3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Moduł 3 - Kontrola przepływu</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cele-cwiczen">Cele ćwiczeń</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1-opis-sceny-z-f-stringiem">Zad 1 — Opis sceny z f-stringiem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2-porownanie-stalych-pi-i-tau">Zad 2 — Porównanie stałych <code class="docutils literal notranslate"><span class="pre">pi</span></code> i <code class="docutils literal notranslate"><span class="pre">tau</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3-parsowanie-metadanych-bez-funkcji">Zad 3 — Parsowanie metadanych bez funkcji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4-normalizacja-sciezki-z-replace">Zad 4 — Normalizacja ścieżki z <code class="docutils literal notranslate"><span class="pre">replace</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5-wieloliniowy-opis-parametrow">Zad 5 — Wieloliniowy opis parametrów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6-analiza-tekstu-sensora-bez-petli">Zad 6 — Analiza tekstu sensora bez pętli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7-parametry-nazwy-sceny">Zad 7 — Parametry nazwy sceny</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8-porzadkowanie-list-misji">Zad 8 — Porządkowanie list misji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9-krotka-stacji-i-formatowanie">Zad 9 — Krotka stacji i formatowanie</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10-podsumowanie-zachmurzenia-z-wbudowanymi-funkcjami">Zad 10 — Podsumowanie zachmurzenia z wbudowanymi funkcjami</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11-sekwencja-minut-z-range">Zad 11 — Sekwencja minut z <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12-statystyka-temperatur-bez-petli">Zad 12 — Statystyka temperatur bez pętli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13-join-split-i-raport">Zad 13 — <code class="docutils literal notranslate"><span class="pre">join</span></code>, <code class="docutils literal notranslate"><span class="pre">split</span></code> i raport</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14-prosta-analiza-tekstu">Zad 14 — Prosta analiza tekstu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15-walidacja-skladni-sceny-bez-instrukcji-warunkowych">Zad 15 — Walidacja składni sceny bez instrukcji warunkowych</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-16-porownanie-math-i-cmath">Zad 16 — Porównanie <code class="docutils literal notranslate"><span class="pre">math</span></code> i <code class="docutils literal notranslate"><span class="pre">cmath</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-17-konwersje-list-krotek-i-zbiorow">Zad 17 — Konwersje list/krotek i zbiorów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-18-raport-liczby-scen">Zad 18 — Raport liczby scen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-19-konwersja-wejscia-tekstowego">Zad 19 — Konwersja wejścia tekstowego</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-20-referencje-i-kopie-bez-petli">Zad 20 — Referencje i kopie bez pętli</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radoslaw Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

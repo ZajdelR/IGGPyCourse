@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Moduł 4 - Ćwiczenia &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Mod4_cw';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Moduł 4 - Funkcje i typy mapujące" href="Mod4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Mod0.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Mod0.html">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Moduł 4 - Ćwiczenia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Mod4_cw.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Moduł 4 - Ćwiczenia</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cele-cwiczen">Cele ćwiczeń</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1-laczenie-metadanych-sceny">Zad 1 — Łączenie metadanych sceny</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2-formatowanie-nazw-produktow">Zad 2 — Formatowanie nazw produktów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3-walidacja-parametrow">Zad 3 — Walidacja parametrów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4-docstring-w-stylu-numpy">Zad 4 — Docstring w stylu NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5-funkcja-z-args">Zad 5 — Funkcja z <code class="docutils literal notranslate"><span class="pre">*args</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6-funkcja-z-kwargs">Zad 6 — Funkcja z <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7-kombinacja-args-i-kwargs">Zad 7 — Kombinacja <code class="docutils literal notranslate"><span class="pre">*args</span></code> i <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8-funkcja-wewnetrzna">Zad 8 — Funkcja wewnętrzna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9-funkcje-jako-argumenty">Zad 9 — Funkcje jako argumenty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10-funkcja-zwracajaca-funkcje">Zad 10 — Funkcja zwracająca funkcję</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11-aktualizacja-slownika-parametrami-nazwanymi">Zad 11 — Aktualizacja słownika parametrami nazwanymi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12-rozne-rodzaje-bledow">Zad 12 — Różne rodzaje błędów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13-obsluga-keyerror">Zad 13 — Obsługa <code class="docutils literal notranslate"><span class="pre">KeyError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14-rejestrowanie-bledow">Zad 14 — Rejestrowanie błędów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15-generowanie-raportu">Zad 15 — Generowanie raportu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-16-funkcja-z-wieloma-docstringami">Zad 16 — Funkcja z wieloma docstringami</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-17-funkcje-rekurencyjne">Zad 17 — Funkcje rekurencyjne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-18-funkcja-przyjmujaca-slownik-konfiguracji">Zad 18 — Funkcja przyjmująca słownik konfiguracji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-19-funkcja-pomocnicza-z-enumerate">Zad 19 — Funkcja pomocnicza z <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-20-funkcja-testowa-z-klauzula-assert">Zad 20 — Funkcja testowa z klauzulą <code class="docutils literal notranslate"><span class="pre">assert</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="_images/header.png" /></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="modul-4-cwiczenia">
+<h1>Moduł 4 - Ćwiczenia<a class="headerlink" href="#modul-4-cwiczenia" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="cele-cwiczen">
+<h2>Cele ćwiczeń<a class="headerlink" href="#cele-cwiczen" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>uporządkować tworzenie i dokumentowanie funkcji operujących na danych satelitarnych;</p></li>
+<li><p>przećwiczyć przekazywanie argumentów pozycyjnych, nazwanych, <code class="docutils literal notranslate"><span class="pre">*args</span></code>/<code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> oraz wartości domyślnych;</p></li>
+<li><p>wykorzystać słowniki jako typ mapujący i tworzyć pomocnicze walidatory;</p></li>
+<li><p>praktykować pisanie i używanie docstringów oraz obsługi wyjątków w funkcjach.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="zad-1-laczenie-metadanych-sceny">
+<h2>Zad 1 — Łączenie metadanych sceny<a class="headerlink" href="#zad-1-laczenie-metadanych-sceny" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przygotuj funkcję <code class="docutils literal notranslate"><span class="pre">merge_scene(base,</span> <span class="pre">overrides=None)</span></code>, która przyjmuje słownik bazowy (np. <code class="docutils literal notranslate"><span class="pre">{'mission':</span> <span class="pre">'S2A',</span> <span class="pre">'cloud':</span> <span class="pre">0.2}</span></code>) oraz opcjonalny słownik nadpisujący pola. Funkcja ma zwracać nowy słownik bez modyfikowania oryginału. Przetestuj ją na przykładzie, w którym nadpisujesz <code class="docutils literal notranslate"><span class="pre">cloud</span></code> i dodajesz <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-2-formatowanie-nazw-produktow">
+<h2>Zad 2 — Formatowanie nazw produktów<a class="headerlink" href="#zad-2-formatowanie-nazw-produktow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję <code class="docutils literal notranslate"><span class="pre">build_product_name(mission,</span> <span class="pre">date,</span> <span class="pre">*,</span> <span class="pre">level='L2A',</span> <span class="pre">suffix='SAFE')</span></code>, która zwraca napis <code class="docutils literal notranslate"><span class="pre">MISJA_DATE_LEVEL.SUFFIX</span></code>. Pokaż wywołanie z wartościami domyślnymi oraz takie, w którym zmieniasz oba argumenty nazwane.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-3-walidacja-parametrow">
+<h2>Zad 3 — Walidacja parametrów<a class="headerlink" href="#zad-3-walidacja-parametrow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zdefiniuj funkcję <code class="docutils literal notranslate"><span class="pre">validate_scene(scene)</span></code>, która: (a) sprawdza czy w słowniku są klucze <code class="docutils literal notranslate"><span class="pre">mission</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">cloud</span></code>, (b) upewnia się, że <code class="docutils literal notranslate"><span class="pre">status</span></code> jest jednym z <code class="docutils literal notranslate"><span class="pre">{'READY','HOLD','ERROR'}</span></code>, (c) w razie braku danych podnosi <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, a w razie niepoprawnej wartości <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. Funkcja ma zwracać <code class="docutils literal notranslate"><span class="pre">True</span></code>, gdy wszystkie warunki są spełnione. Przetestuj przypadek poprawny i taki, który podnosi <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-4-docstring-w-stylu-numpy">
+<h2>Zad 4 — Docstring w stylu NumPy<a class="headerlink" href="#zad-4-docstring-w-stylu-numpy" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przepisz funkcję <code class="docutils literal notranslate"><span class="pre">validate_scene</span></code> z poprzedniego zadania, dodając docstring z sekcjami <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>, <code class="docutils literal notranslate"><span class="pre">Returns</span></code> i <code class="docutils literal notranslate"><span class="pre">Raises</span></code>. Wydrukuj <code class="docutils literal notranslate"><span class="pre">help(validate_scene)</span></code> aby pokazać rezultat.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-5-funkcja-z-args">
+<h2>Zad 5 — Funkcja z <code class="docutils literal notranslate"><span class="pre">*args</span></code><a class="headerlink" href="#zad-5-funkcja-z-args" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">total_download_size(*sizes):</span></code> zwracającą sumę MB pobrań. Jeśli użytkownik nie przekaże żadnej wartości, zwróć 0. Wywołaj funkcję dla <code class="docutils literal notranslate"><span class="pre">(650,</span> <span class="pre">780,</span> <span class="pre">540)</span></code> oraz bez argumentów.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-6-funkcja-z-kwargs">
+<h2>Zad 6 — Funkcja z <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code><a class="headerlink" href="#zad-6-funkcja-z-kwargs" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję <code class="docutils literal notranslate"><span class="pre">describe_observation(mission,</span> <span class="pre">**params)</span></code>, która drukuje misję oraz każdą przekazaną parę klucz-wartość (np. <code class="docutils literal notranslate"><span class="pre">cloud=0.18</span></code>). Skorzystaj z tej funkcji, przekazując parametry takie jak <code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">cloud</span></code>, <code class="docutils literal notranslate"><span class="pre">priority</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-7-kombinacja-args-i-kwargs">
+<h2>Zad 7 — Kombinacja <code class="docutils literal notranslate"><span class="pre">*args</span></code> i <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code><a class="headerlink" href="#zad-7-kombinacja-args-i-kwargs" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">log_event(event,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code>, która drukuje komunikat <code class="docutils literal notranslate"><span class="pre">EVENT</span> <span class="pre">-&gt;</span> <span class="pre">args</span> <span class="pre">-&gt;</span> <span class="pre">kwargs</span></code>. Pokaż wywołanie <code class="docutils literal notranslate"><span class="pre">log_event('download',</span> <span class="pre">'S2A',</span> <span class="pre">'2025-03-01',</span> <span class="pre">status='READY',</span> <span class="pre">retries=1)</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-8-funkcja-wewnetrzna">
+<h2>Zad 8 — Funkcja wewnętrzna<a class="headerlink" href="#zad-8-funkcja-wewnetrzna" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przygotuj funkcję <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">process_batch(scenes):</span></code>, która zawiera wewnętrzną funkcję <code class="docutils literal notranslate"><span class="pre">classify(scene)</span></code> zwracającą <code class="docutils literal notranslate"><span class="pre">'low'</span></code> lub <code class="docutils literal notranslate"><span class="pre">'high'</span></code> w zależności od pola <code class="docutils literal notranslate"><span class="pre">cloud</span></code>. Funkcja zewnętrzna ma zwracać słownik z kluczami <code class="docutils literal notranslate"><span class="pre">low</span></code>/<code class="docutils literal notranslate"><span class="pre">high</span></code> i listami misji przypisanymi do kategori. Pokaż wynik dla listy trzech scen.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-9-funkcje-jako-argumenty">
+<h2>Zad 9 — Funkcje jako argumenty<a class="headerlink" href="#zad-9-funkcje-jako-argumenty" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję <code class="docutils literal notranslate"><span class="pre">apply(scene,</span> <span class="pre">transform)</span></code>, która przyjmuje słownik sceny oraz funkcję transformującą (<code class="docutils literal notranslate"><span class="pre">transform(scene)</span> <span class="pre">-&gt;</span> <span class="pre">dict</span></code>). Wywołaj ją dwukrotnie z różnymi funkcjami lambda: jedna niech dodaje pole <code class="docutils literal notranslate"><span class="pre">tag='priority'</span></code>, druga niech zwiększa <code class="docutils literal notranslate"><span class="pre">cloud</span></code> o 0.05.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-10-funkcja-zwracajaca-funkcje">
+<h2>Zad 10 — Funkcja zwracająca funkcję<a class="headerlink" href="#zad-10-funkcja-zwracajaca-funkcje" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zaimplementuj <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">make_cloud_filter(max_cloud)</span></code>, która zwraca funkcję <code class="docutils literal notranslate"><span class="pre">predicate(scene)</span></code> zwracającą <code class="docutils literal notranslate"><span class="pre">True</span></code>, jeśli <code class="docutils literal notranslate"><span class="pre">scene['cloud']</span> <span class="pre">&lt;=</span> <span class="pre">max_cloud</span></code>. Użyj jej do odfiltrowania scen z listy.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-11-aktualizacja-slownika-parametrami-nazwanymi">
+<h2>Zad 11 — Aktualizacja słownika parametrami nazwanymi<a class="headerlink" href="#zad-11-aktualizacja-slownika-parametrami-nazwanymi" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję <code class="docutils literal notranslate"><span class="pre">update_config(config,</span> <span class="pre">/,</span> <span class="pre">**overrides)</span></code> (z argumentem pozycyjnym-only), która kopiuje słownik <code class="docutils literal notranslate"><span class="pre">config</span></code> i nadpisuje pola wg <code class="docutils literal notranslate"><span class="pre">overrides</span></code>. Pokaż działanie dla przykładu z parametrami instrumentu.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-12-rozne-rodzaje-bledow">
+<h2>Zad 12 — Różne rodzaje błędów<a class="headerlink" href="#zad-12-rozne-rodzaje-bledow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przygotuj funkcję <code class="docutils literal notranslate"><span class="pre">read_cloud(value)</span></code> zwracającą float. Jeśli <code class="docutils literal notranslate"><span class="pre">value</span></code> to napis <code class="docutils literal notranslate"><span class="pre">'n/a'</span></code> albo pusty ciąg, podnieś <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>. Jeśli to lista lub inny typ niekonwertowalny, przechwyć <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> w bloku <code class="docutils literal notranslate"><span class="pre">try</span></code> i przerzuć jako <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> z opisem ‘Unsupported type’. Następnie w pętli przetestuj wartości: <code class="docutils literal notranslate"><span class="pre">'0.12'</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">['x']</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-13-obsluga-keyerror">
+<h2>Zad 13 — Obsługa <code class="docutils literal notranslate"><span class="pre">KeyError</span></code><a class="headerlink" href="#zad-13-obsluga-keyerror" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję <code class="docutils literal notranslate"><span class="pre">get_or_default(mapping,</span> <span class="pre">key,</span> <span class="pre">default=None)</span></code> zwracającą <code class="docutils literal notranslate"><span class="pre">mapping[key]</span></code>. Jeśli klucza brakuje, wypisz ostrzeżenie i zwróć <code class="docutils literal notranslate"><span class="pre">default</span></code>. Pokaż działanie na przykładzie słownika <code class="docutils literal notranslate"><span class="pre">{'mission':</span> <span class="pre">'S2A'}</span></code> z kluczem <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-14-rejestrowanie-bledow">
+<h2>Zad 14 — Rejestrowanie błędów<a class="headerlink" href="#zad-14-rejestrowanie-bledow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Przygotuj funkcję <code class="docutils literal notranslate"><span class="pre">safe_plan(scene)</span></code> wykorzystującą <code class="docutils literal notranslate"><span class="pre">try/except</span></code> i wywołującą wcześniej stworzoną <code class="docutils literal notranslate"><span class="pre">plan_download</span></code>. Funkcja ma zwracać <code class="docutils literal notranslate"><span class="pre">(ok,</span> <span class="pre">message)</span></code> oraz dla wyjątków wypisywać komunikat <code class="docutils literal notranslate"><span class="pre">print('Błąd</span> <span class="pre">sceny:',</span> <span class="pre">err)</span></code>. Przetestuj ją na liście scen, z których jedna ma brak pola <code class="docutils literal notranslate"><span class="pre">cloud</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-15-generowanie-raportu">
+<h2>Zad 15 — Generowanie raportu<a class="headerlink" href="#zad-15-generowanie-raportu" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję <code class="docutils literal notranslate"><span class="pre">render_report(mission,</span> <span class="pre">*,</span> <span class="pre">temperature=None,</span> <span class="pre">wind=None)</span></code> zwracającą zformatowany tekst z liniami <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">klucz:</span> <span class="pre">wartość</span></code>. Parametry opcjonalne wypisuj tylko, gdy zostały przekazane. Pokaż dwa przykłady wywołania.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-16-funkcja-z-wieloma-docstringami">
+<h2>Zad 16 — Funkcja z wieloma docstringami<a class="headerlink" href="#zad-16-funkcja-z-wieloma-docstringami" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zaprojektuj funkcję <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">normalize(values,</span> <span class="pre">*,</span> <span class="pre">clamp=True)</span></code>, która przyjmuje listę liczb i skaluje je do zakresu 0-1. Jeśli <code class="docutils literal notranslate"><span class="pre">clamp=False</span></code>, nie ograniczaj wyników. Dodaj docstring z opisem parametrów i przykładami użycia (<code class="docutils literal notranslate"><span class="pre">Examples</span></code>).</p>
+</section>
+<hr class="docutils" />
+<section id="zad-17-funkcje-rekurencyjne">
+<h2>Zad 17 — Funkcje rekurencyjne<a class="headerlink" href="#zad-17-funkcje-rekurencyjne" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję rekurencyjną <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> z docstringiem, która obsługuje przypadek bazowy i podnosi <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dla <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>. Zaprezentuj działanie dla <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">5</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-18-funkcja-przyjmujaca-slownik-konfiguracji">
+<h2>Zad 18 — Funkcja przyjmująca słownik konfiguracji<a class="headerlink" href="#zad-18-funkcja-przyjmujaca-slownik-konfiguracji" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Zdefiniuj <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">configure_download(*,</span> <span class="pre">retries=3,</span> <span class="pre">**options)</span></code> zwracającą słownik z polami <code class="docutils literal notranslate"><span class="pre">retries</span></code> oraz wszystkimi <code class="docutils literal notranslate"><span class="pre">options</span></code>. W przykładzie przekaż <code class="docutils literal notranslate"><span class="pre">timeout=60</span></code>, <code class="docutils literal notranslate"><span class="pre">verify=True</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-19-funkcja-pomocnicza-z-enumerate">
+<h2>Zad 19 — Funkcja pomocnicza z <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#zad-19-funkcja-pomocnicza-z-enumerate" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Stwórz funkcję <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">print_pipeline(steps)</span></code>, która używa <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> do wypisania kolejnych kroków (np. ‘1. Pobierz dane’). Dodaj docstring informujący o oczekiwanym formacie wejścia.</p>
+</section>
+<hr class="docutils" />
+<section id="zad-20-funkcja-testowa-z-klauzula-assert">
+<h2>Zad 20 — Funkcja testowa z klauzulą <code class="docutils literal notranslate"><span class="pre">assert</span></code><a class="headerlink" href="#zad-20-funkcja-testowa-z-klauzula-assert" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Napisz funkcję <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">assert_ready(scene)</span></code>, która używa <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">scene['status']</span> <span class="pre">==</span> <span class="pre">'READY',</span> <span class="pre">'...'</span></code> do weryfikacji statusu. Użyj jej w pętli dla listy scen i przechwyć <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>, by wypisać komunikat o scenie niespełniającej warunków.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Mod4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Moduł 4 - Funkcje i typy mapujące</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cele-cwiczen">Cele ćwiczeń</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-1-laczenie-metadanych-sceny">Zad 1 — Łączenie metadanych sceny</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-2-formatowanie-nazw-produktow">Zad 2 — Formatowanie nazw produktów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-3-walidacja-parametrow">Zad 3 — Walidacja parametrów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-4-docstring-w-stylu-numpy">Zad 4 — Docstring w stylu NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-5-funkcja-z-args">Zad 5 — Funkcja z <code class="docutils literal notranslate"><span class="pre">*args</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-6-funkcja-z-kwargs">Zad 6 — Funkcja z <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-7-kombinacja-args-i-kwargs">Zad 7 — Kombinacja <code class="docutils literal notranslate"><span class="pre">*args</span></code> i <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-8-funkcja-wewnetrzna">Zad 8 — Funkcja wewnętrzna</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-9-funkcje-jako-argumenty">Zad 9 — Funkcje jako argumenty</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-10-funkcja-zwracajaca-funkcje">Zad 10 — Funkcja zwracająca funkcję</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-11-aktualizacja-slownika-parametrami-nazwanymi">Zad 11 — Aktualizacja słownika parametrami nazwanymi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-12-rozne-rodzaje-bledow">Zad 12 — Różne rodzaje błędów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-13-obsluga-keyerror">Zad 13 — Obsługa <code class="docutils literal notranslate"><span class="pre">KeyError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-14-rejestrowanie-bledow">Zad 14 — Rejestrowanie błędów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-15-generowanie-raportu">Zad 15 — Generowanie raportu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-16-funkcja-z-wieloma-docstringami">Zad 16 — Funkcja z wieloma docstringami</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-17-funkcje-rekurencyjne">Zad 17 — Funkcje rekurencyjne</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-18-funkcja-przyjmujaca-slownik-konfiguracji">Zad 18 — Funkcja przyjmująca słownik konfiguracji</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-19-funkcja-pomocnicza-z-enumerate">Zad 19 — Funkcja pomocnicza z <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zad-20-funkcja-testowa-z-klauzula-assert">Zad 20 — Funkcja testowa z klauzulą <code class="docutils literal notranslate"><span class="pre">assert</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radoslaw Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

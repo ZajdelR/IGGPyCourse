@@ -1,0 +1,856 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Wprowadzenie &#8212; Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Mod0';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Moduł 1 - Środowisko Python - 2025/2026" href="Mod1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Course; Institute of Geodesy and Geoinformatics; Wroclaw University of Environemntal and Life Sciences - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Wprowadzenie
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Mod1.html">Moduł 1 - Środowisko Python - 2025/2026</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Mod1_cw.html">Moduł 1 - Ćwiczenia - 2025/2026</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mod2.html">Moduł 2 - Podstawowe typy danych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod2_cw.html">Moduł 2 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3.html">Moduł 3 - Kontrola przepływu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod3_cw.html">Moduł 3 - Ćwiczenia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4.html">Moduł 4 - Funkcje i typy mapujące</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mod4_cw.html">Moduł 4 - Ćwiczenia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Mod0.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Wprowadzenie</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wprowadzenie</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pobrac-notatniki-z-jupyter-book">Jak pobrać notatniki z Jupyter Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szybki-przyklad">Szybki przykład</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wizualizacja-przelotu">Wizualizacja przelotu</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zespol">Zespół</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jaki-jest-cel-tego-kursu">Jaki jest cel tego kursu?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-pracy-i-program">System pracy i program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zasady">Zasady</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punktacja-i-przeliczenia">Punktacja i przeliczenia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przygotowanie-do-cwiczen">Przygotowanie do ćwiczeń</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolokwium-i-zaliczenie">Kolokwium i zaliczenie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materialy-do-wykladow">Materiały do wykładów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-na-rynku-pracy">Python na rynku pracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-czytac-wykres-tiobe">Jak czytać wykres TIOBE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="_images/header.png" /></p>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="wprowadzenie">
+<h1>Wprowadzenie<a class="headerlink" href="#wprowadzenie" title="Permalink to this heading">#</a></h1>
+<p>Ten moduł otwierający ma przypomnieć założenia kursu oraz sposób pracy. Zanim zagłębisz się w szczegóły (zespoły, cele, harmonogram), potraktuj tę sekcję jak szybki briefing: sprawdź, czy masz dostęp do materiałów, przeczytaj zasady i przygotuj pytania na pierwsze zajęcia. W kolejnych sekcjach znajdziesz szczegółowe informacje organizacyjne oraz opis zakresu modułów.</p>
+<section id="jak-pobrac-notatniki-z-jupyter-book">
+<h2>Jak pobrać notatniki z Jupyter Book<a class="headerlink" href="#jak-pobrac-notatniki-z-jupyter-book" title="Permalink to this heading">#</a></h2>
+<p>Na stronie kursu hostowanej na GitHub Pages (link znajdziesz w repozytorium i na Classroomie) każda lekcja ma wbudowane przyciski pobierania:</p>
+<ul class="simple">
+<li><p>w pasku po prawej stronie kliknij ikonę pobierania i wybierz <strong>.ipynb</strong>, aby ściągnąć interaktywny notatnik do własnego środowiska (np. VS Code, JupyterLab, Colab);</p></li>
+<li><p>w tym samym menu możesz wybrać <strong>PDF</strong>, żeby mieć statyczną wersję lekcji, np. do wydruku lub szybkiego przeglądu w terenie;</p></li>
+<li><p>pamiętaj, że oba formaty zawierają dokładnie te same przykłady orbit satelitarnych i skrypty, więc zawsze masz offline’ową kopię danych z modułu.</p></li>
+</ul>
+<p>W kolejnych aktualizacjach sekcja download będzie utrzymywana dla wszystkich modułów (Mod0–Mod9) oraz ćwiczeń, żebyś mógł testować kod nawet bez dostępu do internetu na stanowiskach laboratoryjnych.</p>
+</section>
+<section id="szybki-przyklad">
+<h2>Szybki przykład<a class="headerlink" href="#szybki-przyklad" title="Permalink to this heading">#</a></h2>
+<p>Poniższy fragment korzysta z biblioteki <code class="docutils literal notranslate"><span class="pre">skyfield</span></code>. Dzięki dwóm liniom <a class="reference external" href="https://pl.wikipedia.org/wiki/TLE">TLE</a> satelity GALILEO 20 (2C6) możemy w kilka sekund zobaczyć, nad jakimi współrzędnymi pojawi się w kolejnych godzinach UTC.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">skyfield.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">EarthSatellite</span><span class="p">,</span> <span class="n">load</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1 40544U 15017D   26046.45277384 -.00000000  00000-0  00000-0 0  9996&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;2 40544  55.3528 100.4419 0001033 300.8868  59.1327  1.70474466  5466&quot;</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">timescale</span><span class="p">();</span> <span class="n">sat</span> <span class="o">=</span> <span class="n">EarthSatellite</span><span class="p">(</span><span class="o">*</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;GALILEO 20&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">sat</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">times</span><span class="p">)</span><span class="o">.</span><span class="n">subpoint</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">utc_datetime</span><span class="p">(),</span> <span class="n">sp</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> UTC -&gt; lat </span><span class="si">{</span><span class="n">lat</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°, lon </span><span class="si">{</span><span class="n">lon</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Takie mini‑pipeline’y będziesz budować w kolejnych modułach: zaczniemy od podstaw typów i pętli, potem przejdziemy do funkcji, dokumentacji i obsługi wyjątków, by finalnie automatyzować całe procesy analizy danych.</p>
+</section>
+<section id="wizualizacja-przelotu">
+<h2>Wizualizacja przelotu<a class="headerlink" href="#wizualizacja-przelotu" title="Permalink to this heading">#</a></h2>
+<p>Aby szybko zobrazować tor lotu na mapie, możesz wykorzystać <code class="docutils literal notranslate"><span class="pre">Cartopy</span></code> i <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> – wystarczy przekazać wyliczone współrzędne.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">();</span> <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GALILEO 20 (2C6) w kolejnych godzinach UTC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>W kolejnych modułach wrócimy do takich miniwizualizacji, gdy będziesz tworzyć własne raporty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">skyfield.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">EarthSatellite</span><span class="p">,</span> <span class="n">load</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1 43056U 17079B   26040.43209333  .00000073  00000-0  00000-0 0  9991&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;2 43056  55.1137 225.0193 0001760 332.5357  27.4555  1.70474585 50820&quot;</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">load</span><span class="o">.</span><span class="n">timescale</span><span class="p">();</span> <span class="n">sat</span> <span class="o">=</span> <span class="n">EarthSatellite</span><span class="p">(</span><span class="o">*</span><span class="n">lines</span><span class="p">,</span> <span class="s1">&#39;GALILEO 20&#39;</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">sat</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="n">times</span><span class="p">)</span><span class="o">.</span><span class="n">subpoint</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">utc_datetime</span><span class="p">(),</span> <span class="n">sp</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">%H:%M</span><span class="si">}</span><span class="s2"> UTC -&gt; lat </span><span class="si">{</span><span class="n">lat</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°, lon </span><span class="si">{</span><span class="n">lon</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00:00 UTC -&gt; lat 17.4°, lon 119.1°
+01:00 UTC -&gt; lat 36.9°, lon 122.8°
+02:00 UTC -&gt; lat 51.7°, lon 137.4°
+03:00 UTC -&gt; lat 54.6°, lon 165.3°
+04:00 UTC -&gt; lat 43.3°, lon -174.2°
+05:00 UTC -&gt; lat 25.0°, lon -167.4°
+06:00 UTC -&gt; lat 4.3°, lon -166.7°
+07:00 UTC -&gt; lat -16.6°, lon -166.8°
+08:00 UTC -&gt; lat -36.2°, lon -163.4°
+09:00 UTC -&gt; lat -51.3°, lon -149.4°
+10:00 UTC -&gt; lat -54.8°, lon -121.7°
+11:00 UTC -&gt; lat -43.9°, lon -100.6°
+12:00 UTC -&gt; lat -25.8°, lon -93.4°
+13:00 UTC -&gt; lat -5.2°, lon -92.6°
+14:00 UTC -&gt; lat 15.8°, lon -92.8°
+15:00 UTC -&gt; lat 35.5°, lon -89.5°
+16:00 UTC -&gt; lat 50.8°, lon -76.1°
+17:00 UTC -&gt; lat 54.9°, lon -48.7°
+18:00 UTC -&gt; lat 44.5°, lon -27.0°
+19:00 UTC -&gt; lat 26.5°, lon -19.4°
+20:00 UTC -&gt; lat 6.0°, lon -18.4°
+21:00 UTC -&gt; lat -15.0°, lon -18.7°
+22:00 UTC -&gt; lat -34.8°, lon -15.7°
+23:00 UTC -&gt; lat -50.4°, lon -2.8°
+00:00 UTC -&gt; lat -55.0°, lon 24.3°
+01:00 UTC -&gt; lat -45.1°, lon 46.6°
+02:00 UTC -&gt; lat -27.3°, lon 54.6°
+03:00 UTC -&gt; lat -6.8°, lon 55.7°
+04:00 UTC -&gt; lat 14.2°, lon 55.4°
+05:00 UTC -&gt; lat 34.1°, lon 58.2°
+06:00 UTC -&gt; lat 49.9°, lon 70.5°
+07:00 UTC -&gt; lat 55.2°, lon 97.3°
+08:00 UTC -&gt; lat 45.7°, lon 120.2°
+09:00 UTC -&gt; lat 28.1°, lon 128.6°
+10:00 UTC -&gt; lat 7.6°, lon 129.8°
+11:00 UTC -&gt; lat -13.4°, lon 129.5°
+12:00 UTC -&gt; lat -33.3°, lon 132.1°
+13:00 UTC -&gt; lat -49.4°, lon 143.9°
+14:00 UTC -&gt; lat -55.2°, lon 170.2°
+15:00 UTC -&gt; lat -46.3°, lon -166.3°
+16:00 UTC -&gt; lat -28.8°, lon -157.5°
+17:00 UTC -&gt; lat -8.5°, lon -156.1°
+18:00 UTC -&gt; lat 12.5°, lon -156.4°
+19:00 UTC -&gt; lat 32.6°, lon -154.0°
+20:00 UTC -&gt; lat 49.0°, lon -142.7°
+21:00 UTC -&gt; lat 55.3°, lon -116.8°
+22:00 UTC -&gt; lat 46.8°, lon -92.8°
+23:00 UTC -&gt; lat 29.6°, lon -83.5°
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">();</span> <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">degrees</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GALILEO 20 w kolejnych godzinach UTC&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b1dfc891f99456d1e68322cb00208076e74ec74ddb97383cc9336121cebf69ba.png" src="_images/b1dfc891f99456d1e68322cb00208076e74ec74ddb97383cc9336121cebf69ba.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="zespol">
+<h1>Zespół<a class="headerlink" href="#zespol" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Osoba</p></th>
+<th class="head"><p>Zakres wsparcia i zainteresowania</p></th>
+<th class="head"><p>Kontakt</p></th>
+<th class="head"><p>Dyżur/forma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dr inż. Małgorzata Jarząbek-Rychard</p></td>
+<td><p>Python, uczenie maszynowe, AI, chmury punktów, modele 3D; wsparcie dla modułów 1‑8</p></td>
+<td><p><a class="reference external" href="mailto:malgorzata&#46;jarzabek-rychard&#37;&#52;&#48;upwr&#46;edu&#46;pl">malgorzata<span>&#46;</span>jarzabek-rychard<span>&#64;</span>upwr<span>&#46;</span>edu<span>&#46;</span>pl</a></p></td>
+<td><p>termin konsultacji w przygotowaniu – info na Classroomie</p></td>
+</tr>
+<tr class="row-odd"><td><p>dr inż. Radosław Zajdel</p></td>
+<td><p>Python, analiza danych satelitarnych, GNSS, monitorowanie Ziemi, systemy pozycjonowania na Księżycu i Marsie</p></td>
+<td><p><a class="reference external" href="mailto:radoslaw&#46;zajdel&#37;&#52;&#48;upwr&#46;edu&#46;pl">radoslaw<span>&#46;</span>zajdel<span>&#64;</span>upwr<span>&#46;</span>edu<span>&#46;</span>pl</a></p></td>
+<td><p>czwartek 12:00‑14:00 (Google Meet)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Classroom</span></code>: <strong>uxof6vz2</strong> – tam pojawiają się ogłoszenia i listy zadań, dlatego upewnij się, że dołączyłeś przed pierwszymi zajęciami.</p>
+<p>Preferowany kanał komunikacji to <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Classroom</span></code> lub e-mail.</p>
+<section id="jaki-jest-cel-tego-kursu">
+<h2>Jaki jest cel tego kursu?<a class="headerlink" href="#jaki-jest-cel-tego-kursu" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Naszym zadaniem jest przekazać praktyczne podstawy programowania w języku Python tak, aby stały się one solidnym fundamentem do wszystkich kolejnych przedmiotów na kierunku. W dalszych semestrach będziesz pisać kod w modułach dotyczących przetwarzania danych, modelowania, analiz inżynierskich i projektów zespołowych – dlatego kurs ma przygotować Cię do samodzielnego tworzenia i czytania skryptów.</p>
+<p>Po ukończeniu kursu powinieneś czuć się pewnie w:</p>
+<ul class="simple">
+<li><p>pisaniu skryptów automatyzujących codzienne zadania inżynierskie,</p></li>
+<li><p>tworzeniu prostych narzędzi bez interfejsu graficznego,</p></li>
+<li><p>korzystaniu z Pythona jako języka wspierającego raporty, analizy i prototypy (
+zarówno w pracach indywidualnych, jak i projektach zespołowych).</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Uwaga o asystentach AI:</strong> wiele zadań (zwłaszcza na listach) można rozwiąz
+wsząć z pomocą ChatGPT lub innego wspomagacza. Nie taki jest jednak cel kursu
+Chcemy, abyś zbudował(a) zrozumienie mechanizmów Pythona i nauczył(a) się inter
+pretować kod – dopiero wtedy narzędzia AI będą naprawdę użyteczne. Kartkówki i
+prace sprawdzające będą miały formę krótkich testów albo pisania prostych frag
+mentów kodu na kartce (bez asystentów).</p>
+</div></blockquote>
+</section>
+<section id="system-pracy-i-program">
+<h2>System pracy i program<a class="headerlink" href="#system-pracy-i-program" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Moduł</p></th>
+<th class="head"><p>Zakres</p></th>
+<th class="head"><p>Forma i materiały</p></th>
+<th class="head"><p>Punkty / ocena</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Przygotowanie środowiska: PowerShell, instalacja pakietów, wirtualne środowiska, praca w Google Colab</p></td>
+<td><p>warsztat technologiczny + lista kontrolna</p></td>
+<td><p>zaliczenie / bez punktów</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Podstawowe typy danych Pythona, napisy Unicode, sekwencje (<code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>), dynamiczne rzutowanie i formatowanie tekstu</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Kontrola przepływu: pakowanie/odpakowywanie sekwencji, instrukcje <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code>, pętle <code class="docutils literal notranslate"><span class="pre">for</span></code> i <code class="docutils literal notranslate"><span class="pre">while</span></code>, listy/słowniki składane, wprowadzenie <code class="docutils literal notranslate"><span class="pre">try/except</span></code></p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Funkcje i typy mapujące: podpisy z adnotacjami, <code class="docutils literal notranslate"><span class="pre">*args</span></code>/<code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, dokumentowanie (docstringi, Sphinx), słowniki i walidacja danych, obsługa wyjątków</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Klasy i obiektowość: projektowanie typów, dziedziczenie, dataclasses, podstawowe wzorce projektowe</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Macierze i praca z NumPy</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Analiza danych w Pandas/GeoPandas: selekcja, grupowanie, łączenie danych</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Wizualizacja w Matplotlib: wykresy, mapy, prezentacja wyników</p></td>
+<td><p>ćwiczenia + kartkówka</p></td>
+<td><p>do 5 pkt</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Tworzenie skryptów konsolowych: argumenty, przetwarzanie wsadowe, pipeline pobierz→przetwarzaj→raportuj</p></td>
+<td><p>wykład + projekt grupowy</p></td>
+<td><p>do 5 pkt (projekt)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wykład specjalny</p></td>
+<td><p>Generatywna sztuczna inteligencja w analizie i pisaniu kodu: modele, prompt engineering i wątki etyczne na przykładach zadań satelitarnych</p></td>
+<td><p>wykład + live coding</p></td>
+<td><p>materiały bonusowe / bez punktów</p></td>
+</tr>
+<tr class="row-even"><td><p>Kolokwium</p></td>
+<td><p>Test z całości materiału</p></td>
+<td><p>egzamin pisemny</p></td>
+<td><p>do 10 pkt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Łącznie zdobywasz punkty modułowe (2–9) oraz wynik z kolokwium końcowego. Każdy moduł rozwija konkretny zestaw umiejętności programistycznych i przygotowuje do dalszych zajęć praktycznych.</p>
+</section>
+<section id="zasady">
+<h2>Zasady<a class="headerlink" href="#zasady" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="punktacja-i-przeliczenia">
+<h3>Punktacja i przeliczenia<a class="headerlink" href="#punktacja-i-przeliczenia" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>każda lista zadań jest oddawana na zaliczenie (warunek dopuszczenia do kartkówki), ale sama lista nie generuje punktów;</p></li>
+<li><p>punkty zdobywasz podczas zajęć za aktywność: rozwiązanie zadania z listy + wytłumaczenie rozwiązania = 1 pkt aktywności;</p></li>
+<li><p>co dwa tygodnie piszemy krótką kartkówkę/test sprawdzający materiał z dwóch poprzednich modułów (max 6 pkt);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">punkty_modułu</span> <span class="pre">=</span> <span class="pre">min(6,</span> <span class="pre">punkty_test</span> <span class="pre">+</span> <span class="pre">punkty_aktywnosc)</span></code> – nadwyżka nie przechodzi dalej, dlatego warto systematycznie przychodzić na zajęcia i utrzymywać aktywność;</p></li>
+<li><p>łączny limit w kursie wynosi 50 pkt: 40 pkt z modułów + 10 pkt z kolokwium końcowego.</p></li>
+</ul>
+</section>
+<section id="przygotowanie-do-cwiczen">
+<h3>Przygotowanie do ćwiczeń<a class="headerlink" href="#przygotowanie-do-cwiczen" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>przed zajęciami przeczytaj opis listy, skonfiguruj środowisko i pobierz dane; oddanie listy w terminie jest warunkiem podejścia do kartkówki;</p></li>
+<li><p>zgłoszenie się i obronienie rozwiązania przy tablicy = 1 pkt do konta modułu (liczone jako punkty aktywności);</p></li>
+<li><p>brak przygotowania obniża maksymalny wynik modułu o 0.5 pkt – jeśli masz problem techniczny, zgłoś to wcześniej prowadzącemu.</p></li>
+</ul>
+<p>Checklist przed każdą sesją: (1) środowisko działa, (2) dane pobrane, (3) pytania zapisane w notatniku.</p>
+</section>
+<section id="kolokwium-i-zaliczenie">
+<h3>Kolokwium i zaliczenie<a class="headerlink" href="#kolokwium-i-zaliczenie" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>punkty z aktywności zmniejszają presję na kartkówkach (np. 2 pkt aktywności =&gt; musisz uzyskać 4 pkt na kartkówce, by mieć komplet 6);</p></li>
+<li><p>kolokwium końcowe obejmuje cały materiał, weryfikuje praktyczne umiejętności pracy z danymi satelitarnymi i decyduje o dodatkowych 15 pkt; brak zaliczonej listy przed kolokwium skutkuje brakiem dopuszczenia;</p></li>
+<li><p>ocena końcowa powstaje na podstawie procentu zdobytych punktów: 51-60% → 3.0, …, 91-100% → 5.0.</p></li>
+</ul>
+</section>
+</section>
+<section id="materialy-do-wykladow">
+<h2>Materiały do wykładów<a class="headerlink" href="#materialy-do-wykladow" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p><strong>Podstawy programowania</strong></p>
+<ul class="simple">
+<li><p>oficjalna dokumentacja: <a class="reference external" href="https://www.python.org/doc/">https://www.python.org/doc/</a></p></li>
+<li><p>A. B. Downey, J. Elkner, C. Meyers, <em>Think Python</em> (darmowy e-book)</p></li>
+<li><p>Swaroop CH, <em>A Byte of Python</em> (PL tłumaczenie: <a class="reference external" href="http://python.edu.pl/byteofpython/">http://python.edu.pl/byteofpython/</a>)</p></li>
+</ul>
+<p><strong>Analiza danych i wizualizacja</strong></p>
+<ul class="simple">
+<li><p>W. McKinney, <em>Python for Data Analysis</em></p></li>
+<li><p>J. VanderPlas, <em>Python Data Science Handbook</em> (<a class="github reference external" href="https://github.com/jakevdp/PythonDataScienceHandbook">jakevdp/PythonDataScienceHandbook</a>)</p></li>
+<li><p>dokumentacja NumPy / Pandas / Matplotlib linkowana w modułach 5-7</p></li>
+</ul>
+<p><strong>Dane satelitarne i kontekst kosmiczny</strong></p>
+<ul class="simple">
+<li><p>Copernicus Open Access Hub / ESA Earth Observation Browser – pozyskiwanie scen Sentinel (używane w modułach 5-7),</p></li>
+<li><p>NASA Earthdata + LP DAAC – produkty MODIS i VIIRS,</p></li>
+<li><p>CelesTrak oraz Space-Track (TLE) – źródła danych do zadań orbitacyjnych,</p></li>
+<li><p>biblioteki <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">satpy</span></code>, <code class="docutils literal notranslate"><span class="pre">sgp4</span></code> – instalowane z <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> i wykorzystywane w przykładach.</p></li>
+</ul>
+<p><strong>Materiały w repozytorium</strong></p>
+<ul class="simple">
+<li><p>katalog <code class="docutils literal notranslate"><span class="pre">src/</span></code> zawiera grafiki i przykładowe skrypty (<code class="docutils literal notranslate"><span class="pre">triangle.py</span></code>, <code class="docutils literal notranslate"><span class="pre">trojmian.py</span></code>), z których korzystamy w notatnikach;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_images/</span></code>, <code class="docutils literal notranslate"><span class="pre">_static/</span></code> i <code class="docutils literal notranslate"><span class="pre">reports/</span></code> przechowują zasoby wykorzystywane przy budowie materiałów – przed dodaniem nowych plików sprawdź, czy nie masz duplikatu.</p></li>
+</ul>
+<p><strong>Wsparcie online</strong></p>
+<ul class="simple">
+<li><p>pytania merytoryczne: Stack Overflow (oznacz pytanie tagiem <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">satellite-imagery</span></code>),</p></li>
+<li><p>organizacja kursu: Google Classroom <code class="docutils literal notranslate"><span class="pre">uxof6vz2</span></code>, gdzie wrzucamy listy zadań, dane do ćwiczeń i aktualizacje.</p></li>
+</ul>
+</section>
+<section id="python-na-rynku-pracy">
+<h2>Python na rynku pracy<a class="headerlink" href="#python-na-rynku-pracy" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>w inżynierii satelitarnej Python wspiera szybkie prototypowanie algorytmów planowania przelotów, analizy NDVI, a także automatyzację naziemnych stacji łączności;</p></li>
+<li><p>liczne misje kosmiczne (np. CubeSaty ESA, projekty NASA) publikują narzędzia w Pythonie, więc łatwo rozszerzysz istniejące pipeline’y o własne moduły;</p></li>
+<li><p>rośnie zapotrzebowanie na specjalistów łączących analizę danych obserwacji Ziemi z klasycznym przetwarzaniem sygnałów – Python jest wspólnym językiem dla zespołów operacyjnych i badawczych.</p></li>
+</ul>
+<p>Indeks TIOBE (poniżej) potwierdza wysoką pozycję języka: ocenia liczbę aktywnych inżynierów, kursów i dostawców. To dobra wskazówka, że czas poświęcony na kolejne moduły kursu inwestujesz w technologię, której używa branża satelitarna.</p>
+<section id="jak-czytac-wykres-tiobe">
+<h3>Jak czytać wykres TIOBE<a class="headerlink" href="#jak-czytac-wykres-tiobe" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<p>Aktualizowany co miesiąc ranking sumuje wyniki wielu wyszukiwarek (Google, Bing, Wikipedia, YouTube, Baidu). Nie mówi on o jakości języka, lecz o jego widoczności i społeczności. Szukając pracy lub praktyk w obszarze Satellite and Space Data Engineering, potraktuj go jako barometr – utrzymywanie się Pythona w czołówce oznacza dużą liczbę projektów misji i bibliotek dostępnych od ręki.</p>
+<p><img alt="" src="_images/Languages.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">platform</span><span class="w"> </span><span class="kn">import</span> <span class="n">python_version</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Witaj w kursie Python! Dzisiejsza data: </span><span class="si">{</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="si">:</span><span class="s1">%Y-%m-%d</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Używasz wersji Pythona: </span><span class="si">{</span><span class="n">python_version</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Spróbuj zmodyfikować ten komunikat i uruchomić komórkę ponownie.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Witaj w kursie Python! Dzisiejsza data: 2026-02-16
+Używasz wersji Pythona: 3.11.8
+Spróbuj zmodyfikować ten komunikat i uruchomić komórkę ponownie.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="Mod1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Moduł 1 - Środowisko Python - 2025/2026</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Wprowadzenie</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-pobrac-notatniki-z-jupyter-book">Jak pobrać notatniki z Jupyter Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#szybki-przyklad">Szybki przykład</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wizualizacja-przelotu">Wizualizacja przelotu</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zespol">Zespół</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jaki-jest-cel-tego-kursu">Jaki jest cel tego kursu?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-pracy-i-program">System pracy i program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zasady">Zasady</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punktacja-i-przeliczenia">Punktacja i przeliczenia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#przygotowanie-do-cwiczen">Przygotowanie do ćwiczeń</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolokwium-i-zaliczenie">Kolokwium i zaliczenie</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materialy-do-wykladow">Materiały do wykładów</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-na-rynku-pracy">Python na rynku pracy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jak-czytac-wykres-tiobe">Jak czytać wykres TIOBE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Radoslaw Zajdel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

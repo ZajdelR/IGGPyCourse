@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rados\anaconda3\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\rados\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def pobierz(komunikat): # funkcja przyjmuje jeden argument
+    user_input = input(komunikat.ljust(40))
+    return user_input   # zwraca dane użytkownika
+
+imie = pobierz("Jak masz na imię?") # komunikat = "Jak masz na imię?"
+wiek = pobierz(komunikat="Ile masz lat?")     # komunikat = "Ile masz lat?"
+
+print(imie, wiek)
+
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mStdinNotImplementedError[39m                  Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 5[39m
+[32m      2[39m     user_input = [38;5;28minput[39m(komunikat.ljust([32m40[39m))
+[32m      3[39m     [38;5;28;01mreturn[39;00m user_input   [38;5;66;03m# zwraca dane użytkownika[39;00m
+[32m----> [39m[32m5[39m imie = [43mpobierz[49m[43m([49m[33;43m"[39;49m[33;43mJak masz na imię?[39;49m[33;43m"[39;49m[43m)[49m [38;5;66;03m# komunikat = "Jak masz na imię?"[39;00m
+[32m      6[39m wiek = pobierz(komunikat=[33m"[39m[33mIle masz lat?[39m[33m"[39m)     [38;5;66;03m# komunikat = "Ile masz lat?"[39;00m
+[32m      8[39m [38;5;28mprint[39m(imie, wiek)
+
+[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 2[39m, in [36mpobierz[39m[34m(komunikat)[39m
+[32m      1[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mpobierz[39m(komunikat): [38;5;66;03m# funkcja przyjmuje jeden argument[39;00m
+[32m----> [39m[32m2[39m     user_input = [38;5;28;43minput[39;49m[43m([49m[43mkomunikat[49m[43m.[49m[43mljust[49m[43m([49m[32;43m40[39;49m[43m)[49m[43m)[49m
+[32m      3[39m     [38;5;28;01mreturn[39;00m user_input
+
+[36mFile [39m[32m~\Documents\GitHub\IGGPyCourse\.venv\Lib\site-packages\ipykernel\kernelbase.py:1402[39m, in [36mKernel.raw_input[39m[34m(self, prompt)[39m
+[32m   1400[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._allow_stdin:
+[32m   1401[39m     msg = [33m"[39m[33mraw_input was called, but this frontend does not support input requests.[39m[33m"[39m
+[32m-> [39m[32m1402[39m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[32m   1403[39m [38;5;28;01mreturn[39;00m [38;5;28mself[39m._input_request(
+[32m   1404[39m     [38;5;28mstr[39m(prompt),
+[32m   1405[39m     [38;5;28mself[39m._get_shell_context_var([38;5;28mself[39m._shell_parent_ident),
+[32m   1406[39m     [38;5;28mself[39m.get_parent([33m"[39m[33mshell[39m[33m"[39m),
+[32m   1407[39m     password=[38;5;28;01mFalse[39;00m,
+[32m   1408[39m )
+
+[31mStdinNotImplementedError[39m: raw_input was called, but this frontend does not support input requests.
+

@@ -1,3 +1,5 @@
-jupyter-book
+jupyter-book==0.15.1
 matplotlib
 numpy
+skyfield
+cartopy
